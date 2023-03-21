@@ -1,9 +1,9 @@
 <template>
+  <h1>gig explore</h1>
     <div class="container home">
       <ul class="gig-list">
         <li v-for="gig in gigs" :key="gig._id">
           <p>
-            {{gig.vendor}}
           </p>
           <p>
             ${{gig.price?.toLocaleString()}}
@@ -28,7 +28,7 @@
   <script>
   import {showErrorMsg, showSuccessMsg} from '../services/event-bus.service'
   import {gigService} from '../services/gig.service.local'
-  import { getActionRemoveGig, getActionUpdateGig, getActionAddGigMsg } from '../store/gig.store.js'
+  import { getActionRemoveGig, getActionUpdateGig, getActionAddGigMsg } from '../store/gig.store'
   
   export default {
     data() {
