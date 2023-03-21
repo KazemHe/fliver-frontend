@@ -6,6 +6,8 @@ import CarIndex from './views/CarIndex.vue'
 import ReviewIndex from './views/ReviewIndex.vue'
 import LoginSignup from './views/LoginSignup.vue'
 import UserDetails from './views/UserDetails.vue'
+import GigExplore from './views/GigExplore.vue'
+import GigDetails from './views/GigDetails.vue'
 
 const routes = [
   {
@@ -17,6 +19,11 @@ const routes = [
     path: '/car',
     name: 'CarIndex',
     component: CarIndex
+  },
+  {
+    path: '/explore',
+    name: 'GigExplore',
+    component: GigExplore
   },
   {
     path: '/review',
