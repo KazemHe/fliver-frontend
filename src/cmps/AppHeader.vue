@@ -10,13 +10,13 @@
       <RouterLink to="/chat">Chat</RouterLink>
       <RouterLink to="/login">Login / Signup</RouterLink>
     </nav>
-    <section class="loggedin-user" v-if="loggedInUser">
+    <!-- <section class="loggedin-user" v-if="loggedInUser">
       <RouterLink :to="`/user/${loggedInUser._id}`">
         {{ loggedInUser.fullname }}
       </RouterLink>
       <span>{{ loggedInUser.score.toLocaleString() }}</span>
       <img :src="loggedInUser.imgUrl" />
-    </section>
+    </section> -->
   </header>
 </template>
 <script>
