@@ -66,14 +66,14 @@ async function addGigMsg(gigId, txt) {
 
 function getEmptyGig() {
     return {
-        title: '',
-        price: utilService.getRandomIntInclusive(1000, 9000),
+        buyer: '',
+        seller: '',
     }
 }
 
 
 // TEST DATA
-// ;(async ()=>{
-//     await storageService.post(STORAGE_KEY, {title: 'I will edit,your logo in 24 hours', price: 180})
-//     await storageService.post(STORAGE_KEY, {title: 'I will make your website looke like a picasso paint', price: 240})
+// ; (async () => {
+//     await storageService.post(STORAGE_KEY, { buyer: 'mini user', seller: 'mini user' })
+//     await storageService.post(STORAGE_KEY, { buyer: 'mini user', seller: 'mini user' })
 // })()
