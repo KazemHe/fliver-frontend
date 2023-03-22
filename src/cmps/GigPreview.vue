@@ -5,12 +5,12 @@
 
 
 
-        <vueper-slides fade :touchable="false">
-            <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" :title="slide.title"
-                :content="slide.content" />
+        <vueper-slides class="main-img" fade :touchable="false" >
+            <vueper-slide  v-for="(slide, i) in slides" :key="i" :image="slide.image" 
+            />
         </vueper-slides>
 
-        <img class="main-img" :src="gig.imgUrl" />
+        <!-- <img  :src="gig.imgUrl" /> -->
 
         <div class="inner-seller">
             <img :src="gig.owner.imgUrl" class="owner-img" alt="">
@@ -64,6 +64,12 @@ export default {
                 title: 'El Teide Volcano, Spain',
                 content: 'Photo by Max Rive',
                 // You can also provide a URL for the image.
+                image: 'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/134290963/original/6c10882a3aa043e01338b4e26aed15bf1a356688.jpeg'
+            },
+            {
+                title: 'El Teide Volcano, Spain',
+                content: 'Photo by Max Rive',
+                // You can also provide a URL for the image.
                 image: 'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs2/275390527/original/68da5d5d026f7f8802f24056eb95a3c662b5f2dc.png'
             },
             {
@@ -81,10 +87,10 @@ export default {
         },
 
     },
-    components: { 
+    components: {
         VueperSlides,
-        VueperSlide 
-        },
+        VueperSlide
+    },
     emits: ['removeGig']
 }
 </script>

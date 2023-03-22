@@ -1,0 +1,188 @@
+.carosel-img{
+    background: transparent url(https://fiverr-res.cloudinary.com/app_assets/fiverr_logo_loader.svg) no-repeat 50%;
+    background-size: 80px;
+    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    min-height: 140px;
+    min-width: 140px;
+    -o-object-fit: contain;
+    object-fit: contain;
+    width: 100%;
+    border: 0;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+}
+
+
+
+.nav-info {
+    color: #95979d;
+    font-size: rem(14px);
+    font-weight: 600;
+    line-height: rem(53px);
+    padding: 0;
+    margin: 0;
+    display: flex;
+
+    font-family: Macan;
+    line-height: 3.7857142857em;
+    cursor: pointer;
+
+}
+
+.nav-info>li {
+    margin-right: rem(10px);
+    list-style-type: none;
+}
+
+.green {
+    box-shadow: 0 rem(-4px) #1dbf73 inset;
+}
+
+.gig-page {
+    display: flex
+}
+
+.main-gig {
+    margin-inline-end: 5.5%;
+    width: 59.5%;
+}
+
+.gig-page>h2 {
+    padding-block-end: rem(25px);
+    font-size: 1.25rem;
+}
+
+.info-img {
+    height: rem(30px);
+    width: rem(30px);
+    border-radius: 50%;
+}
+
+.gig-overview>h1 {
+    font-size: rem(28px);
+    padding: rem(0px) rem(0px) rem(16px);
+}
+
+.about-the-gig>p {
+    font-size: rem(16px);
+    color: $clr1;
+    margin: rem(10px) 0px 0px;
+}
+
+.contact-btn {
+    padding: rem(24px);
+}
+
+.selling-package {
+    position: sticky;
+    right: 0;
+    margin-right: 20px;
+}
+
+.contact-btn>* {
+    border: 1px solid transparent;
+    border-radius: 0.25em;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: inherit;
+    line-height: 100%;
+    padding: 0.75em 1.5em;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    transition: 70ms cubic-bezier(.75, 0, .25, 1);
+    cursor: pointer;
+    background: none;
+    border-color: currentColor;
+    color: clr1;
+}
+
+.package-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ull {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.regular {
+    color: $clr8;
+    font-size: rem(14px);
+    display: flex;
+
+}
+
+.more-info>* {
+    font-size: rem(14px)
+}
+
+.packages-tabs {
+    padding: 2em 1.5em;
+    border: 1px solid #dadbdd;
+    margin-block-end: 16px;
+}
+
+.packages-tabs>p {
+    font-size: rem(14px)
+}
+
+.contact-btn {
+    background-color: #fafafa
+}
+
+.continue-btn {
+    background-color: $clr0;
+    color: #fff;
+}
+
+.package-header>h3 {
+    font-size: rem(16px);
+    // margin: 0px;
+}
+
+
+
+b {
+    font-family: Macan;
+    margin: 0 0 0 8px;
+}
+
+.delivery-wrapper {
+    justify-content: space-between;
+}
+
+.profile-pic>img {
+    width: 110px;
+    height: 110px;
+    font-size: 2.2em;
+    border-radius: 50%;
+}
+
+.user-profile-label {
+    display: flex;
+    flex-direction: column;
+}
+
+profile-card {}
+
+.contact-me {
+    cursor: pointer;
+    color: #62646a;
+    padding: rem(12px) rem(24px);
+    font: rem(14px);
+    width: auto;
+    background: none;
+    font-weight: 600;
+    line-height: 100%;
+    border: 1px solid #62646a;
+    margin-block-start: 20px;
+    height: rem(40.47px);
+    border-radius: 0.2857142857em;
+    max-width: rem(130px);
+}

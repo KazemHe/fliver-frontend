@@ -1,65 +1,148 @@
 <template>
-
-<section class="gig-info full">
-     <ul>
-        <li>Overview</li>
-        <li>Description</li>
-        <li>Reviews</li>
-        <li>About the seller</li>
-        <li>Compare packages</li>
-        <li>Recommendations</li> 
-</ul>
-</section> 
-
-<section class="gig-page">
-    <section class="main-gig">
-      <div class="gig-overview">
-        <h1>{{gigs[1].title}}</h1>
-        <div>{{gigs[1].owner.fullname}}</div>
-        <div><img :src=gigs[1].imgUrl></div>
-        <div class="seller-overview">
-            <div class="flex">
-                <div></div>
-                <div></div>
-            </div>
-        </div>
-      </div>
-      <hr>
-      ABOUT THE GIG
-      <h1>{{gigs[1].description}}</h1>
-
-      <hr>
-      ABOUT THE SELLER
-      <div class="about-the-seller">
-        <h1>{{gigs[1].owner.fullname}}</h1>
-        <div><img :src=gigs[1].owner.imgUrl></div>
-        <h1>{{gigs[1].owner.rate}}</h1>
-        <h1>{{gigs[1].owner.level}}</h1>
-        <h1>{{gigs[1].country}}</h1>
-        <h1>{{gigs[1].about}}</h1>
-      </div>
-<hr>
-REVIEWS
-      <div class="reviews">
-        <ul class="reviews-list" v-for="review in gigs[1].reviews">
-            <li>
-             <h1>{{review.name}}</h1>
-             <h1>{{review.country}} {{review.flag}}</h1>
-             <h1>Rate: 4</h1>
-             <h1>{{review.review}}</h1>
-            </li>
+    <section class="gig-nav">
+        <ul class="nav-info" ref="nav-info">
+            <li class="green">Overview</li>
+            <li>About the seller</li>
+            <li>Compare packages</li>
+            <li>Reviews</li>
         </ul>
-      </div>
-    
     </section>
 
-    <section class="selling-package"></section>
-</section>
+    <section class="gig-info flex" ref="filter">
+        <section class="main-gig">
+            <div class="gig-overview">
+                <h1>{{ gigs[1].title }}</h1>
+                <div class=" seller-preview-short flex">
+                    <div><img :src=gigs[1].owner.imgUrl class="info-img"></div>
+                    <div>
+                        <span class="seller-name">{{ gigs[1].owner.fullname }}</span>
+                        <span class="seller-rate">{{ gigs[1].owner.rate }} |</span>
+                    </div>
+                </div>
+                <hr>
+                <div class=""><img :src=gigs[1].imgUrl class="carosel-img"></div>
+                <div class="seller-overview">
+                    <div class="flex">
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+            <div class="about-the-gig">
+                <h2>About the gig</h2>
+                <p>{{ gigs[1].description }}</p>
+            </div>
+
+            <hr>
+
+            ABOUT THE SELLER
+            <section class="profile-card">
+                <section class="profile-info flex">
+                    <div class="user-profile-pic flex">
+                        <label  for="">
+                            <div class="profile-pic"><img :src=gigs[1].owner.imgUrl></div>
+                        </label>
+                    </div>
+
+                    <div class="user-profile-label">
+                        <div class="username-line flex">
+                            <span>{{ gigs[1].owner.fullname }}</span>
+                            <div class="status" >
+                                <span class="glAQDp5 circle-icon" aria-hidden="true" style="width: 4px; height: 4px;"><svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16Z"></path></svg></span>
+                                Online
+                            </div>
+                        </div>
+                        <div class="one-liner-rating-wrapper flex">
+                            <p class="one-liner">UI UX Designer</p>
+                            <div class="flex">
+                                <div class="orca-rating seller-rating color-yellow tbody-6"><div class="stars"><span class="glAQDp5 orca-star" style="width:15px;height:15px" aria-hidden="true"><svg width="16" height="15" viewBox="0 0 16 15" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 5.81285C16 5.98299 15.875 6.14367 15.75 6.26654L12.2596 9.61248L13.0865 14.3384C13.0962 14.4045 13.0962 14.4612 13.0962 14.5274C13.0962 14.7732 12.9808 15 12.7019 15C12.5673 15 12.4327 14.9527 12.3173 14.8866L8 12.656L3.68269 14.8866C3.55769 14.9527 3.43269 15 3.29808 15C3.01923 15 2.89423 14.7732 2.89423 14.5274C2.89423 14.4612 2.90385 14.4045 2.91346 14.3384L3.74038 9.61248L0.240385 6.26654C0.125 6.14367 0 5.98299 0 5.81285C0 5.5293 0.298077 5.41588 0.538462 5.37807L5.36539 4.68809L7.52885 0.387524C7.61539 0.207939 7.77885 0 8 0C8.22115 0 8.38462 0.207939 8.47115 0.387524L10.6346 4.68809L15.4615 5.37807C15.6923 5.41588 16 5.5293 16 5.81285Z"></path></svg></span><span class="glAQDp5 orca-star" style="width:15px;height:15px" aria-hidden="true"><svg width="16" height="15" viewBox="0 0 16 15" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 5.81285C16 5.98299 15.875 6.14367 15.75 6.26654L12.2596 9.61248L13.0865 14.3384C13.0962 14.4045 13.0962 14.4612 13.0962 14.5274C13.0962 14.7732 12.9808 15 12.7019 15C12.5673 15 12.4327 14.9527 12.3173 14.8866L8 12.656L3.68269 14.8866C3.55769 14.9527 3.43269 15 3.29808 15C3.01923 15 2.89423 14.7732 2.89423 14.5274C2.89423 14.4612 2.90385 14.4045 2.91346 14.3384L3.74038 9.61248L0.240385 6.26654C0.125 6.14367 0 5.98299 0 5.81285C0 5.5293 0.298077 5.41588 0.538462 5.37807L5.36539 4.68809L7.52885 0.387524C7.61539 0.207939 7.77885 0 8 0C8.22115 0 8.38462 0.207939 8.47115 0.387524L10.6346 4.68809L15.4615 5.37807C15.6923 5.41588 16 5.5293 16 5.81285Z"></path></svg></span><span class="glAQDp5 orca-star" style="width:15px;height:15px" aria-hidden="true"><svg width="16" height="15" viewBox="0 0 16 15" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 5.81285C16 5.98299 15.875 6.14367 15.75 6.26654L12.2596 9.61248L13.0865 14.3384C13.0962 14.4045 13.0962 14.4612 13.0962 14.5274C13.0962 14.7732 12.9808 15 12.7019 15C12.5673 15 12.4327 14.9527 12.3173 14.8866L8 12.656L3.68269 14.8866C3.55769 14.9527 3.43269 15 3.29808 15C3.01923 15 2.89423 14.7732 2.89423 14.5274C2.89423 14.4612 2.90385 14.4045 2.91346 14.3384L3.74038 9.61248L0.240385 6.26654C0.125 6.14367 0 5.98299 0 5.81285C0 5.5293 0.298077 5.41588 0.538462 5.37807L5.36539 4.68809L7.52885 0.387524C7.61539 0.207939 7.77885 0 8 0C8.22115 0 8.38462 0.207939 8.47115 0.387524L10.6346 4.68809L15.4615 5.37807C15.6923 5.41588 16 5.5293 16 5.81285Z"></path></svg></span><span class="glAQDp5 orca-star" style="width:15px;height:15px" aria-hidden="true"><svg width="16" height="15" viewBox="0 0 16 15" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M16 5.81285C16 5.98299 15.875 6.14367 15.75 6.26654L12.2596 9.61248L13.0865 14.3384C13.0962 14.4045 13.0962 14.4612 13.0962 14.5274C13.0962 14.7732 12.9808 15 12.7019 15C12.5673 15 12.4327 14.9527 12.3173 14.8866L8 12.656L3.68269 14.8866C3.55769 14.9527 3.43269 15 3.29808 15C3.01923 15 2.89423 14.7732 2.89423 14.5274C2.89423 14.4612 2.90385 14.4045 2.91346 14.3384L3.74038 9.61248L0.240385 6.26654C0.125 6.14367 0 5.98299 0 5.81285C0 5.5293 0.298077 5.41588 0.538462 5.37807L5.36539 4.68809L7.52885 0.387524C7.61539 0.207939 7.77885 0 8 0C8.22115 0 8.38462 0.207939 8.47115 0.387524L10.6346 4.68809L15.4615 5.37807C15.6923 5.41588 16 5.5293 16 5.81285Z"></path></svg></span><span class="glAQDp5 orca-star" style="width:15px;height:15px" aria-hidden="true"><svg width="16" height="15" viewBox="0 0 16 15" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.4056 8.74291L13.8772 6.37996L10.4535 5.88847L9.81872 5.79395L9.53021 5.22684L8.00107 2.18336V11.2854L8.56849 11.5785L11.6268 13.1664L11.0497 9.81096L10.9343 9.18715L11.4056 8.74291ZM15.7525 6.26654L12.2615 9.61248L13.0886 14.3384C13.1559 14.7543 13.002 15 12.7039 15C12.5981 15 12.4635 14.9622 12.3192 14.8866L8.00107 12.656L3.68295 14.8866C3.53869 14.9622 3.40405 15 3.29826 15C3.00013 15 2.84625 14.7543 2.91357 14.3384L3.74065 9.61248L0.239988 6.26654C-0.173552 5.86011 -0.0389107 5.46314 0.538122 5.37807L5.36596 4.68809L7.52983 0.387524C7.65485 0.132325 7.82796 0 8.00107 0C8.17418 0 8.33767 0.132325 8.47231 0.387524L10.6362 4.68809L15.464 5.37807C16.0411 5.46314 16.1757 5.86011 15.7525 6.26654Z"></path></svg></span></div><b class="rating-score">4.7</b><span class="ratings-count">(<!-- -->33<!-- -->)</span></div>
+                            </div>
+                        </div>
+                        
+                        <button class="contact-me">contact-me</button>
+                    </div>
+                </section>
+                    
+
+
+              
+                    
 
 
 
 
 
+
+
+
+
+                <section class="seller-details-container"></section>
+             
+                <h1>{{ gigs[1].owner.rate }}</h1>
+                <h1>{{ gigs[1].owner.level }}</h1>
+                <h1>{{ gigs[1].country }}</h1>
+                <h1>{{ gigs[1].about }}</h1>
+            </section>
+            <hr>
+
+            REVIEWS
+            <section class="reviews grid">
+                <section>
+                    <ul class="reviews-list" v-for="review in gigs[1].reviews">
+                        <li>
+                            <h1>{{ review.name }}</h1>
+                            <h1>{{ review.country }} {{ review.flag }}</h1>
+                            <h1>Rate: 4</h1>
+                            <h1>{{ review.review }}</h1>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+        </section>
+
+        <aside class="selling-package">
+            <div class="packages-tabs">
+                <section class="package-header ">
+                    <h3>your order</h3>
+                    <h3>US$70</h3>
+                </section>
+                <p>1 Page Figma Web Design UI UX / Template Design (Max 3 Sections)</p>
+                <section class="more-info flex">
+                    <div class="delivery-wrapper flex"> 
+                        <span class="glAQDp5 delivery-icon" aria-hidden="true" style="width: 16px; height: 16px;"><svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 14c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z"></path><path d="M9 4H7v5h5V7H9V4z"></path></svg></span>
+                        <b class="delivery" >1 Day Delivery</b>
+                    </div>
+                    <div class="revisions-wrapper">
+                        <span class="glAQDp5 revisions-icon" aria-hidden="true" style="width: 16px; height: 16px;"><svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M4.50001 11.4999C6.40001 13.3999 9.60001 13.3999 11.5 11.4999C12.2 10.7999 12.7 9.7999 12.9 8.7999L14.9 9.0999C14.7 10.5999 14 11.8999 13 12.8999C10.3 15.5999 5.90001 15.5999 3.10001 12.8999L0.900012 15.0999L0.200012 8.6999L6.60001 9.3999L4.50001 11.4999Z"></path><path d="M15.8 7.2999L9.40001 6.5999L11.5 4.4999C9.60001 2.5999 6.40001 2.5999 4.50001 4.4999C3.80001 5.1999 3.30001 6.1999 3.10001 7.1999L1.10001 6.8999C1.30001 5.3999 2.00001 4.0999 3.00001 3.0999C4.40001 1.6999 6.10001 1.0999 7.90001 1.0999C9.70001 1.0999 11.5 1.7999 12.8 3.0999L15 0.899902L15.8 7.2999Z"></path></svg></span>
+                        <b>2 Revisions </b>
+                    </div>
+                </section>
+                <ul class="ull">
+                    <li class="regular"> 
+                        <span><svg width="16" height="16" viewBox="0 0 11 9" xmlns="http://www.w3.org/2000/svg" fill="#1dbf73"><path d="M3.645 8.102.158 4.615a.536.536 0 0 1 0-.759l.759-.758c.21-.21.549-.21.758 0l2.35 2.349L9.054.416c.21-.21.55-.21.759 0l.758.758c.21.21.21.55 0 .759L4.403 8.102c-.209.21-.549.21-.758 0Z"></path></svg></span>
+                        1 page/screen</li>
+                    <li class="regular"> <span><svg width="16" height="16" viewBox="0 0 11 9" xmlns="http://www.w3.org/2000/svg" fill="#1dbf73"><path d="M3.645 8.102.158 4.615a.536.536 0 0 1 0-.759l.759-.758c.21-.21.549-.21.758 0l2.35 2.349L9.054.416c.21-.21.55-.21.759 0l.758.758c.21.21.21.55 0 .759L4.403 8.102c-.209.21-.549.21-.758 0Z"></path></svg></span>
+                        Logo transparency</li>
+                    <li class="regular"> <span><svg width="16" height="16" viewBox="0 0 11 9" xmlns="http://www.w3.org/2000/svg" fill="#1dbf73"><path d="M3.645 8.102.158 4.615a.536.536 0 0 1 0-.759l.759-.758c.21-.21.549-.21.758 0l2.35 2.349L9.054.416c.21-.21.55-.21.759 0l.758.758c.21.21.21.55 0 .759L4.403 8.102c-.209.21-.549.21-.758 0Z"></path></svg></span>
+                        Printable file</li>
+                    <li class="regular"> <span> <svg width="16" height="16" viewBox="0 0 11 9" xmlns="http://www.w3.org/2000/svg" fill="#1dbf73"><path d="M3.645 8.102.158 4.615a.536.536 0 0 1 0-.759l.759-.758c.21-.21.549-.21.758 0l2.35 2.349L9.054.416c.21-.21.55-.21.759 0l.758.758c.21.21.21.55 0 .759L4.403 8.102c-.209.21-.549.21-.758 0Z"></path></svg></span>
+                        Include source file</li>
+                </ul>
+                <a href="">
+                    <button class="continue-btn"> Continue </button>
+                </a>
+            </div>
+
+
+            <div class="contact-seller">
+                <section class="contact-btn">
+                    <button>Contact seller</button>
+                </section>
+            </div>
+        </aside>
+    </section>
 </template>
   
 <script>
@@ -68,8 +151,15 @@ import { gigService } from '../services/gig.service.local'
 import { getActionRemoveGig, getActionUpdateGig, getActionAddGigMsg } from '../store/gig.store'
 
 export default {
-    props:['gig'],
-    data() {},
+    props: ['gig'],
+    data() { },
+
+    //     mounted(){
+    // this.headerObserver = new IntersectionObserver(this.headerObserver,{
+    //     rootMargin:"-91px 0px 0px"
+    // });
+    // this.headerObserver.observe(this.$refs.nav-info)
+    //     },
 
     computed: {
         loggedInUser() {
@@ -84,6 +174,12 @@ export default {
     },
 
     methods: {
+        onheaderObserver(entries) {
+            entries.forEach((entry) => {
+                this.stickyNav = entry.isIntersecthing ? false : true
+            })
+        },
+
         async addGigMsg(gigId) {
             try {
                 await this.$store.dispatch(getActionAddGigMsg(gigId))

@@ -1,5 +1,5 @@
 <template>
-    <h1>gig explore</h1>
+  
 
     <GigFilter class="filter"  :gigs="gigs" @setFilterBy="setFilterBy" /> 
     <GigList :gigs="gigs" @removeGig="removeGig" :user="user" /> 
