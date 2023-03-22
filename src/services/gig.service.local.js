@@ -73,7 +73,7 @@ function getEmptyGig() {
 
 
 // TEST DATA
-// ;(async ()=>{
-//     await storageService.post(STORAGE_KEY, {title: 'I will edit,your logo in 24 hours', price: 180})
-//     await storageService.post(STORAGE_KEY, {title: 'I will make your website looke like a picasso paint', price: 240})
-// })()
+;(async ()=>{
+    await storageService.post(STORAGE_KEY, {title: 'I will edit,your logo in 24 hours', price: 180})
+    await storageService.post(STORAGE_KEY, {title: 'I will make your website looke like a picasso paint', price: 240})
+})()
