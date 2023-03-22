@@ -14,14 +14,41 @@
 <section class="gig-page">
     <section class="main-gig">
       <div class="gig-overview">
-        <h1>{{gig.title}}</h1>
-        <!-- <img :src=gigs[0].img alt=""> -->
+        <h1>{{gigs[1].title}}</h1>
+        <div>{{gigs[1].owner.fullname}}</div>
+        <div><img :src=gigs[1].imgUrl></div>
         <div class="seller-overview">
             <div class="flex">
                 <div></div>
                 <div></div>
             </div>
         </div>
+      </div>
+      <hr>
+      ABOUT THE GIG
+      <h1>{{gigs[1].description}}</h1>
+
+      <hr>
+      ABOUT THE SELLER
+      <div class="about-the-seller">
+        <h1>{{gigs[1].owner.fullname}}</h1>
+        <div><img :src=gigs[1].owner.imgUrl></div>
+        <h1>{{gigs[1].owner.rate}}</h1>
+        <h1>{{gigs[1].owner.level}}</h1>
+        <h1>{{gigs[1].country}}</h1>
+        <h1>{{gigs[1].about}}</h1>
+      </div>
+<hr>
+REVIEWS
+      <div class="reviews">
+        <ul class="reviews-list" v-for="review in gigs[1].reviews">
+            <li>
+             <h1>{{review.name}}</h1>
+             <h1>{{review.country}} {{review.flag}}</h1>
+             <h1>Rate: 4</h1>
+             <h1>{{review.review}}</h1>
+            </li>
+        </ul>
       </div>
     
     </section>

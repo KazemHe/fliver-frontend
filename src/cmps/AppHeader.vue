@@ -11,7 +11,7 @@
             <button class="btn-serch" @click="search"><i class="fa-solid fa-magnifying-glass"></i></button>
           </div>
 
-        <RouterLink to="/explore">Fiverr Business</RouterLink>
+        <RouterLink class="fiverr-nav" to="/explore">Fiverr Business</RouterLink>
         <RouterLink to="/explore">Explore</RouterLink>
         <RouterLink to="/explore">Become a Seller</RouterLink>
         <RouterLink to="/login">Sign in</RouterLink>
