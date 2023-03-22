@@ -1,6 +1,5 @@
 header {
     // background-color: $clr5;
-    // padding: 10px;
     height: 77px;
     // display: flex;
     // justify-content: space-between;
@@ -11,6 +10,8 @@ header {
         font-family: macan-bold;
         font-size: 2.2rem;
         margin-inline-end: 29px;
+        // font-weight: 400;
+        // font: 400 16px/24px;
     }
 
     .logo::after {
@@ -31,9 +32,8 @@ header {
         margin: 10px;
     }
 
-    nav a:last-child {
-        // color: red;
-
+    .fiverr-nav {
+        color: $clr7;
     }
 
     nav a {
@@ -75,16 +75,17 @@ header {
         display: inline;
         position: absolute;
         // right: -446px;
-        bottom: 211px;
-        left: 688px;
+        // bottom: 211px;
+        // left: 688px;
     }
 
     nav a.join {
+        font-family: macan-bold;
         margin-left: auto;
         color: $clr0;
         border: 1px solid $clr0;
         border-radius: 4px;
-        transition: border-radius color 0.8s;
+        transition: border-radius color 0.8s;padding: 10px 16px;
     }
 
     .join:hover {
@@ -105,6 +106,5 @@ header {
 
     a {
         color: $clr1;
-
     }
 }
