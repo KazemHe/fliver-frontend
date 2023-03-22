@@ -3,7 +3,7 @@
 <template>
     <article className="gig-preview">
 
-        <img :src="gig.imgUrl" />
+        <img class="main-img" :src="gig.imgUrl" />
         <div class="inner-seller">
             <img :src="gig.owner.imgUrl" class="owner-img" alt="">
             <div>

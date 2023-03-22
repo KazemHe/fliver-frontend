@@ -1,6 +1,6 @@
 .owner-img {
-    width: 24px;
-    height: 24px;
+    width: rem(24px);
+    height: (24px);
     border-radius: 50%;
 }
 
@@ -55,4 +55,9 @@ li{
         gap: 1rem;
 
     }
+}
+
+
+.main-img{
+    width: 100%;
 }
