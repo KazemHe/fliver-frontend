@@ -1,3 +1,22 @@
+.carosel-img{
+    background: transparent url(https://fiverr-res.cloudinary.com/app_assets/fiverr_logo_loader.svg) no-repeat 50%;
+    background-size: 80px;
+    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    min-height: 140px;
+    min-width: 140px;
+    -o-object-fit: contain;
+    object-fit: contain;
+    width: 100%;
+    border: 0;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+}
+
+
+
 .nav-info {
     color: #95979d;
     font-size: rem(14px);
@@ -86,8 +105,8 @@
     justify-content: space-between;
 }
 
-.ull{
-    list-style:none;
+.ull {
+    list-style: none;
     margin: 0;
     padding: 0;
 }
@@ -96,7 +115,7 @@
     color: $clr8;
     font-size: rem(14px);
     display: flex;
-   
+
 }
 
 .more-info>* {
@@ -136,4 +155,34 @@ b {
 
 .delivery-wrapper {
     justify-content: space-between;
+}
+
+.profile-pic>img {
+    width: 110px;
+    height: 110px;
+    font-size: 2.2em;
+    border-radius: 50%;
+}
+
+.user-profile-label {
+    display: flex;
+    flex-direction: column;
+}
+
+profile-card {}
+
+.contact-me {
+    cursor: pointer;
+    color: #62646a;
+    padding: rem(12px) rem(24px);
+    font: rem(14px);
+    width: auto;
+    background: none;
+    font-weight: 600;
+    line-height: 100%;
+    border: 1px solid #62646a;
+    margin-block-start: 20px;
+    height: rem(40.47px);
+    border-radius: 0.2857142857em;
+    max-width: rem(130px);
 }
