@@ -9,7 +9,7 @@
 
     >* {
         grid-column: 2;
-        background-color: lightskyblue;
+        // background-color: lightskyblue;
 
         &.full {
             grid-column: 1 /-1;
@@ -28,7 +28,7 @@
 
     @include for-wide-layout {
         grid-template-columns:
-            minmax(20px, 1fr) minmax(auto, $normal-breakpoint) minmax(20px, 1fr);
+            minmax(20px, 1fr) minmax(auto, 1370px) minmax(20px, 1fr);
     }
 }
 
