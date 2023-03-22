@@ -1,0 +1,139 @@
+.nav-info {
+    color: #95979d;
+    font-size: rem(14px);
+    font-weight: 600;
+    line-height: rem(53px);
+    padding: 0;
+    margin: 0;
+    display: flex;
+
+    font-family: Macan;
+    line-height: 3.7857142857em;
+    cursor: pointer;
+
+}
+
+.nav-info>li {
+    margin-right: rem(10px);
+    list-style-type: none;
+}
+
+.green {
+    box-shadow: 0 rem(-4px) #1dbf73 inset;
+}
+
+.gig-page {
+    display: flex
+}
+
+.main-gig {
+    margin-inline-end: 5.5%;
+    width: 59.5%;
+}
+
+.gig-page>h2 {
+    padding-block-end: rem(25px);
+    font-size: 1.25rem;
+}
+
+.info-img {
+    height: rem(30px);
+    width: rem(30px);
+    border-radius: 50%;
+}
+
+.gig-overview>h1 {
+    font-size: rem(28px);
+    padding: rem(0px) rem(0px) rem(16px);
+}
+
+.about-the-gig>p {
+    font-size: rem(16px);
+    color: $clr1;
+    margin: rem(10px) 0px 0px;
+}
+
+.contact-btn {
+    padding: rem(24px);
+}
+
+.selling-package {
+    position: sticky;
+    right: 0;
+    margin-right: 20px;
+}
+
+.contact-btn>* {
+    border: 1px solid transparent;
+    border-radius: 0.25em;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: inherit;
+    line-height: 100%;
+    padding: 0.75em 1.5em;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    transition: 70ms cubic-bezier(.75, 0, .25, 1);
+    cursor: pointer;
+    background: none;
+    border-color: currentColor;
+    color: clr1;
+}
+
+.package-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ull{
+    list-style:none;
+    margin: 0;
+    padding: 0;
+}
+
+.regular {
+    color: $clr8;
+    font-size: rem(14px);
+    display: flex;
+   
+}
+
+.more-info>* {
+    font-size: rem(14px)
+}
+
+.packages-tabs {
+    padding: 2em 1.5em;
+    border: 1px solid #dadbdd;
+    margin-block-end: 16px;
+}
+
+.packages-tabs>p {
+    font-size: rem(14px)
+}
+
+.contact-btn {
+    background-color: #fafafa
+}
+
+.continue-btn {
+    background-color: $clr0;
+    color: #fff;
+}
+
+.package-header>h3 {
+    font-size: rem(16px);
+    // margin: 0px;
+}
+
+
+
+b {
+    font-family: Macan;
+    margin: 0 0 0 8px;
+}
+
+.delivery-wrapper {
+    justify-content: space-between;
+}
