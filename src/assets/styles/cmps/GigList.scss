@@ -8,6 +8,13 @@
         color: $clr6;
         padding: 5px;
         margin: 5px;
+        list-style: none;
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
     }
 
     a {
@@ -28,8 +35,9 @@
     display: grid;
     // grid-template-columns: minmax(0, 1fr);
     width: 100%;
-        grid-gap: 32px;
+    grid-gap: rem(32px);
     grid-template-columns: repeat(4, 1fr);
+    font-size: rem(16px);
 }
 
 

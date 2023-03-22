@@ -18,7 +18,7 @@ import { getActionRemoveGig, getActionUpdateGig, getActionAddGigMsg } from '../s
 import GigPreview from '../cmps/GigPreview.vue'
 
 export default {
-    props: ['gigs', 'user'],
+    props: ['toys', 'user'],
     data() {
         return {
             gigToAdd: gigService.getEmptyGig()
