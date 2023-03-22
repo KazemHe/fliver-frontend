@@ -61,3 +61,16 @@ li{
 .main-img{
     width: 100%;
 }
+
+
+.vueperslides__track-inner{
+
+    // width: 500px;
+    height:500px;
+    
+}
+
+.vueperslide__content-wrapper:not(.vueperslide__content-wrapper--outside-top):not(.vueperslide__content-wrapper--outside-bottom) {
+    height:600px;
+    margin: auto;
+}
