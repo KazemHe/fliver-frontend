@@ -1,6 +1,6 @@
 <template>
   <section class="container home text-center">
-    <h1>fiver</h1>
+    <!-- <h1>fiver</h1> -->
   </section>
 
   

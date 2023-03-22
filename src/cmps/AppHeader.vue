@@ -32,7 +32,7 @@
   </section>
 
 
-  <RouterLink to="/details">GigDetails</RouterLink>
+  <!-- <RouterLink to="/details">GigDetails</RouterLink> -->
 </template>
 
 <script>
