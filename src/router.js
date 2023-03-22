@@ -15,15 +15,20 @@ const routes = [
     name: 'Home',
     component: Home
   },
-  {
-    path: '/car',
-    name: 'CarIndex',
-    component: CarIndex
-  },
+  // {
+  //   path: '/car',
+  //   name: 'CarIndex',
+  //   component: CarIndex
+  // },
   {
     path: '/explore',
     name: 'GigExplore',
     component: GigExplore
+  },
+  {
+    path: '/details',
+    name: 'GigDetails',
+    component: GigDetails
   },
   {
     path: '/review',

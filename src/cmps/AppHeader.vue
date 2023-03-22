@@ -9,6 +9,7 @@
       <RouterLink to="/review">Reviews</RouterLink>
       <RouterLink to="/chat">Chat</RouterLink>
       <RouterLink to="/login">Login / Signup</RouterLink>
+      <RouterLink to="/details">GigDetails</RouterLink>
     </nav>
     <!-- <section class="loggedin-user" v-if="loggedInUser">
       <RouterLink :to="`/user/${loggedInUser._id}`">
