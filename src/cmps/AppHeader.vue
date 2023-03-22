@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="main-container full">
     <nav>
       <RouterLink to="/">
         <span role="img" aria-label="logo">🙏</span>

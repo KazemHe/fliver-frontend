@@ -1,11 +1,12 @@
 <template>
+    <section >
     <h1>gig explore</h1>
     <div class="container home">
         <ul class="gig-list">
             <li v-for="gig in gigs" :key="gig._id">
                 <pre>
-              {{ gig }}
-              </pre>
+                      <!-- {{ gig }} -->
+                      </pre>
                 <p>
                     ${{ gig.price?.toLocaleString() }}
                 </p>
@@ -24,6 +25,7 @@
             <button>Save</button>
         </form>
     </div>
+</section>
 </template>
   
 <script>
