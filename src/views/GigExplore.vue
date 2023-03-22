@@ -1,37 +1,18 @@
 <template>
-    <section >
     <h1>gig explore</h1>
-    <div class="container home">
-        <ul class="gig-list">
-            <li v-for="gig in gigs" :key="gig._id">
-                <pre>
-                      <!-- {{ gig }} -->
-                      </pre>
-                <p>
-                    ${{ gig.price?.toLocaleString() }}
-                </p>
-                <button @click="removeGig(gig._id)">x</button>
-                <button @click="updateGig(gig)">Update</button>
-                <hr />
-                <button @click="addGigMsg(gig._id)">Add gig msg</button>
-                <button @click="printGigToConsole(gig)">Print msgs to console</button>
 
-            </li>
-        </ul>
-        <hr />
-        <form @submit.prevent="addGig()">
-            <h2>Add gig</h2>
-            <input type="text" v-model="gigToAdd.vendor" />
-            <button>Save</button>
-        </form>
-    </div>
-</section>
+    <GigFilter class="filter"  :gigs="gigs" @setFilterBy="setFilterBy" /> 
+    <GigList :gigs="gigs" @removeGig="removeGig" :user="user" /> 
+
+    
 </template>
   
 <script>
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { gigService } from '../services/gig.service.local'
 import { getActionRemoveGig, getActionUpdateGig, getActionAddGigMsg } from '../store/gig.store'
+import GigFilter from '../cmps/GIgFilter.vue'
+import GigList from '../cmps/GigList.vue'
 
 export default {
     data() {
@@ -95,6 +76,10 @@ export default {
         printGigToConsole(gig) {
             console.log('Gig msgs:', gig.msgs)
         }
+    },
+    components:{
+        GigFilter,
+        GigList
     }
 
 
