@@ -1,41 +1,110 @@
 header {
     // background-color: $clr5;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
+    // padding: 10px;
+    height: 77px;
+    // display: flex;
+    // justify-content: space-between;
+    border-bottom: 1px solid $clr6;
 
-    // .loggedin-user {
-    //     background-color: $clr1;
-    //     padding: 2px 8px;
-    //     border-radius: 1em;
-    //     align-self: flex-end;
-    //     color: whitesmoke;
-    //     span{
-    //         background-color: $clr2;
-    //         padding: 4px;
-    //         margin: 10px;
-    //         border-radius: 50%;
-    //     }
-    //     img {
-    //         width: 2em;
-    //         height: 2em;
-    //         border-radius: 50%;
-    //     }
-    // }
+    .logo {
+        color: $clr3;
+        font-family: macan-bold;
+        font-size: 2.2rem;
+        margin-inline-end: 29px;
+    }
+
+    .logo::after {
+        content: '.';
+        color: $clr0;
+    }
+
     nav {
-        
-        background-color: rgba(210, 20, 20, 0);
+        display: flex;
+        // background-color: rgb(210, 20, 20);
         padding-bottom: 0;
-        padding-top:0;
+        padding-top: 0;
     }
+
     nav a:not(:first-child) {
-        border-top: 1px solid $clr1;
-        padding: 0 5px;
+        // border-top: 1px solid $clr6;
+        padding: 10px 16px;
         margin: 10px;
-        
     }
+
+    nav a:last-child {
+        // color: red;
+
+    }
+
+    nav a {
+        font-family: macan-regular;
+        // font-weight: 600;
+        color: black;
+    }
+
     nav .active {
         color: $clr1;
     }
-    
+
+    nav a:hover {
+        color: $clr4;
+        text-decoration: none;
+        color: $clr0;
+    }
+
+    input {
+        border: 1px solid #c5c6c9;
+        border-radius: 4px 0 0 4px;
+        font-family: macan-regular;
+        font-size: 1rem;
+        height: 42px;
+        letter-spacing: normal;
+        padding: 10px 2px 10px 16px;
+        width: 518px;
+        position: relative;
+        bottom: -11px;
+    }
+
+    button {
+        background-color: $clr5;
+        height: 42px;
+        border-radius: 0 4px 4px 0;
+        font-size: 14px;
+        padding: 8px 16px;
+        text-shadow: none;
+        display: inline;
+        position: absolute;
+        // right: -446px;
+        bottom: 211px;
+        left: 688px;
+    }
+
+    nav a.join {
+        margin-left: auto;
+        color: $clr0;
+        border: 1px solid $clr0;
+        border-radius: 4px;
+        transition: border-radius color 0.8s;
+    }
+
+    .join:hover {
+        background-color: $clr0;
+        color: $clr2;
+        transition: 0.8s;
+    }
+}
+
+.categories-list {
+    font-family: macan-regular;
+    font-weight: 400;
+
+    border-bottom: 1px solid $clr6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+        color: $clr1;
+
+    }
 }
