@@ -14,7 +14,8 @@
 <section class="gig-page">
     <section class="main-gig">
       <div class="gig-overview">
-        <h1>{{gigs[0].title}}</h1>
+        <h1>{{gig.title}}</h1>
+        <!-- <img :src=gigs[0].img alt=""> -->
         <div class="seller-overview">
             <div class="flex">
                 <div></div>
@@ -40,6 +41,7 @@ import { gigService } from '../services/gig.service.local'
 import { getActionRemoveGig, getActionUpdateGig, getActionAddGigMsg } from '../store/gig.store'
 
 export default {
+    props:['gig'],
     data() {},
 
     computed: {
