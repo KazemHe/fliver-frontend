@@ -5,12 +5,12 @@
 
 
 
-        <vueper-slides class="main-img" fade :touchable="false" >
+        <!-- <vueper-slides class="main-img" fade :touchable="false" >
             <vueper-slide  v-for="(slide, i) in slides" :key="i" :image="slide.image" 
             />
-        </vueper-slides>
+        </vueper-slides> -->
 
-        <!-- <img  :src="gig.imgUrl" /> -->
+        <img class="main-img" :src="gig.imgUrl" />
 
         <div class="inner-seller">
             <img :src="gig.owner.imgUrl" class="owner-img" alt="">
