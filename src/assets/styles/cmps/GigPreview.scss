@@ -4,7 +4,6 @@
     border-radius: 50%;
 }
 
-
 li {
     list-style: none;
 }
@@ -19,9 +18,7 @@ li {
     justify-content: flex-start;
     gap: rem(5px);
     padding: rem(5px);
-
 }
-
 
 .content-info>* {
     color: $clr8;
@@ -32,14 +29,10 @@ li {
     color: $clr6;
 }
 
-
 .preview-footer {
     display: flex;
     justify-content: space-between;
-
-
 }
-
 
 .gig-preview {
     align-items: center;
@@ -66,9 +59,9 @@ li {
     }
 }
 
-
 .main-img {
     width: 100%;
+    height: rem(162px);
     cursor: pointer;
 }
 
