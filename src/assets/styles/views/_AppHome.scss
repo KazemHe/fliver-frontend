@@ -1,40 +1,58 @@
 .trusted-by {
-    background-color: #fafafa;
     display: flex;
     justify-content: center;
-    gap:30px;
-    margin-bottom: 96px;
+    align-items: center;
+    gap: 120px;
+    background-color: $clr10;
+    margin-bottom: rem(63px);
+
+    span {
+        font-family: macan-regular;
+        font-weight: 600;
+        padding-right: rem(20px);
+        color: $clr6;
+    }
 }
 
-.popular-title {
-    color: #404145;
-    font-family: macan-regular;
-    font-weight: 700;
-    line-height: 130%;
-    font-size: 32px;
-    padding-top: 20px;
-}
+.popular-container {
+    padding: rem(32px) rem(32px) rem(64px);
 
-.popular-imgs {
-    cursor: pointer;
-    border-radius: 5px;
-    transition: opacity 0/7s;
-}
+    .popular-title {
+        font-family: macan-regular;
+        font-size: rem(32px);
+        font-weight: 700;
+        line-height: 130%;
+        padding-top: rem(20px);
+        color: $clr3;
+    }
 
-.popular-imgs:hover {
-    opacity: 0.8;
-    transition: opacity 0.7s;
-}
+    .popular-imgs {
+        font-size: 24px;
+        font-family: macan-regular;
+        line-height: 130%;
+        border-radius: 5px;
+        color: $clr2;
 
-.vueperslides__arrow svg {
-    color: $clr3;
-    background-color: $clr2;
-    border-radius: 50%;
-    font-family: macan-bold;
-    font-size: 16px;
-    height: 48px;
-}
+        transition: opacity 0.7s;
+        cursor: pointer;
+    }
 
-.vueperslides__bullet .default {
-    display: none;
+    .popular-imgs:hover {
+        opacity: 0.8;
+        transition: opacity 0.7s;
+    }
+
+    .vueperslides__arrow svg {
+        font-family: macan-bold;
+        font-size: rem(14px);
+        color: $clr3;
+        background-color: $clr2;
+        height: rem(48px);
+        border-radius: 50%;
+        box-shadow: 0px 1px $clr6;
+    }
+
+    .vueperslides__bullet .default {
+        display: none;
+    }
 }
