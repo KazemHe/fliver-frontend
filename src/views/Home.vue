@@ -7,14 +7,17 @@
   <section>
     <div class="popular-container">
       <h1 class="popular-title">Popular professional services</h1>
-      <vueper-slides class="no-shadow"
-        :visible-slides="5"
+      <vueper-slides :visible-slides="5"
         slide-multiple
         :gap="3"
         :slide-ratio="1 / 4"
         :dragging-distance="200" 
-        :breakpoints="{ 800: { visibleSlides: 2, slideMultiple: 2 } }">
-        <vueper-slide class="popular-imgs" v-for="(slide, i) in slides" :key="i" :image="slide.image" :title="slide.title" />
+        :breakpoints="{ 800: { visibleSlides: 2, slideMultiple: 2 } }"
+        class="no-shadow">
+        <vueper-slide v-for="(slide, i) in slides"
+         :key="i" :image="slide.image" 
+         :title="slide.title"
+         class="popular-imgs" />
       </vueper-slides>
     </div>
   </section>
