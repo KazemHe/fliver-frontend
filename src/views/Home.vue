@@ -1,23 +1,19 @@
 <template>
+  <!--  v-for="(img, idx) in heroImgs" -->
+  <section class="container hero-container home text-center full">
+  </section>
   <section class="trusted-by full">
     <span>Trusted by:</span>
-    <img :src="img"  v-for="img in trustedByImgs" :key="img"/>
+    <img :src="img" v-for="img in trustedByImgs" :key="img" />
   </section>
 
   <section>
     <div class="popular-container">
       <h1 class="popular-title">Popular professional services</h1>
-      <vueper-slides :visible-slides="5"
-        slide-multiple
-        :gap="3"
-        :slide-ratio="1 / 4"
-        :dragging-distance="200" 
-        :breakpoints="{ 800: { visibleSlides: 2, slideMultiple: 2 } }"
-        class="no-shadow">
-        <vueper-slide v-for="(slide, i) in slides"
-         :key="i" :image="slide.image" 
-         :title="slide.title"
-         class="popular-imgs" />
+      <vueper-slides :visible-slides="5" slide-multiple :gap="3" :slide-ratio="1 / 4" :dragging-distance="200"
+        :breakpoints="{ 800: { visibleSlides: 2, slideMultiple: 2 } }" class="no-shadow">
+        <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" :title="slide.title"
+          class="popular-imgs" />
       </vueper-slides>
     </div>
   </section>
@@ -39,7 +35,7 @@ export default {
       ],
       slides: [
         {
-          title:'Add talent to All Al Artists',
+          title: 'Add talent to All Al Artists',
           image: 'https://fiverr-res.cloudinary.com/q_auto,f_auto,w_550,dpr_1.0/v1/attachments/generic_asset/asset/f27bec553efc12cc60baed89b8f2223e-1674661140708/ai-artists-2x.png',
         },
         {
@@ -67,7 +63,7 @@ export default {
           image: 'https://fiverr-res.cloudinary.com/q_auto,f_auto,w_550,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741668/seo-2x.png',
         },
         {
-          title:'Showcase your story Book Covers',
+          title: 'Showcase your story Book Covers',
           image: 'https://fiverr-res.cloudinary.com/q_auto,f_auto,w_550,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741678/book-covers-2x.png',
         },
         {
@@ -79,14 +75,14 @@ export default {
           image: 'https://fiverr-res.cloudinary.com/q_auto,f_auto,w_550,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741674/translation-2x.png',
         },
         {
-          title:'Learn your business Data Entry',
+          title: 'Learn your business Data Entry',
           image: 'https://fiverr-res.cloudinary.com/q_auto,f_auto,w_550,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741664/data-entry-2x.png',
         },
       ],
     }
   },
   computed: {},
-  created() {},
+  created() { },
   methods: {},
   components: {
     VueperSlides,

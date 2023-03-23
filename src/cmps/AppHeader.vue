@@ -1,51 +1,50 @@
 <template>
-  <header>
-    <section>
-      <nav class="flex justify-center">
-        <RouterLink to="/">
-          <span aria-label="logo" class="logo">fiverr</span>
-        </RouterLink>
+  <div class="main-header main-container" :class="{'full-expand':isFirstScroll}">
+    <header>
+      <section>
+        <nav class="flex justify-center first-scroll">
+          <RouterLink to="/">
+            <span aria-label="logo" class="logo first-scroll">fiverr</span>
+          </RouterLink>
 
-        <div class="search-container">
-          <input type="text" v-model="userSearch" placeholder="What service are you looking for today?" />
-          <button class="btn-serch" @click="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+          <div class="search-container" >
+            <input type="text" v-model="userSearch" placeholder="What service are you looking for today?" />
+            <button class="btn-serch" @click="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
+
+          <RouterLink class="fiverr-nav" to="/explore">Fiverr Business</RouterLink>
+          <RouterLink to="/explore">Explore</RouterLink>
+          <RouterLink to="/explore">Become a Seller</RouterLink>
+          <RouterLink to="/login">Sign in</RouterLink>
+          <RouterLink class="join" to="/login">Join</RouterLink>
+        </nav>
+      </section>
+    </header>
+
+    <section class="full subheader">
+      <section class="main-container">
+        <div class="categories-list ">
+          <RouterLink to="/explore">Graphics & Design</RouterLink>
+          <RouterLink to="/explore">Digital Marketing</RouterLink>
+          <RouterLink to="/explore">Writing & Translation</RouterLink>
+          <RouterLink to="/explore">Video & Animation</RouterLink>
+          <RouterLink to="/explore">Music & Audio</RouterLink>
+          <RouterLink to="/explore">Programming & Tech</RouterLink>
+          <RouterLink to="/explore">Business</RouterLink>
+          <RouterLink to="/explore">AI Services</RouterLink>
         </div>
-
-        <RouterLink class="fiverr-nav" to="/explore">Fiverr Business</RouterLink>
-        <RouterLink to="/explore">Explore</RouterLink>
-        <RouterLink to="/explore">Become a Seller</RouterLink>
-        <RouterLink to="/login">Sign in</RouterLink>
-        <RouterLink class="join" to="/login">Join</RouterLink>
-      </nav>
+      </section>
     </section>
-  </header>
 
-  <section class="full subheader">
-    <section class="main-container">
-      <div class="categories-list ">
-        <RouterLink to="/explore">Graphics & Design</RouterLink>
-        <RouterLink to="/explore">Digital Marketing</RouterLink>
-        <RouterLink to="/explore">Writing & Translation</RouterLink>
-        <RouterLink to="/explore">Video & Animation</RouterLink>
-        <RouterLink to="/explore">Music & Audio</RouterLink>
-        <RouterLink to="/explore">Programming & Tech</RouterLink>
-        <RouterLink to="/explore">Business</RouterLink>
-        <RouterLink to="/explore">AI Services</RouterLink>
-      </div>
-    </section>
-  </section>
-
-  <!--  v-for="(img, idx) in heroImgs" -->
-  <section
-   class="container hero-container home text-center full">
-  </section>
-
+  </div>
 </template>
 
 <script>
 export default {
   data() {
     return {
+      isFirstScroll: false,
+      isSecondScroll: false,
       userSearch: '',
       heroImgs: [
         'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/93085acc959671e9e9e77f3ca8147f82-1599427734108/bg-hero-4-1792-x1.png',
@@ -56,19 +55,29 @@ export default {
       ]
     }
   },
-  created () {
-    window.addEventListener('scroll', this.handleScroll) 
+  created() {
+    window.addEventListener('scroll', this.handleScroll)
   },
-  unmounted () {
-    window.removeEventListener('scroll', this.handleScroll) 
+  unmounted() {
+    window.removeEventListener('scroll', this.handleScroll)
   },
   mounted() {
-    
+
   },
   methods: {
-    handleScroll (event) {
+    handleScroll(event) {
       // console.log('window.scrollY ', window.scrollY)
       // breakPoints: window.scrollY <= 100 | window.scrollY <= 200
+      if (window.scrollY > 50 && window.scrollY < 200) {
+        console.log('100')
+        this.isFirstScroll = true
+      } else if (window.scrollY > 200) {
+        this.isSecondScroll = true
+        console.log('200')
+      } else if ( window.scrollY < 50 ) {
+        this.isSecondScroll = false
+        this.isFirstScroll = false
+      }
     },
     search() {
       console.log('search', this.userSearch)
@@ -79,6 +88,9 @@ export default {
     loggedInUser() {
       return this.$store.getters.loggedinUser
     },
+    // headerStyle() {
+    //   if(this.isSecondScroll) return opacity
+    // }
   }
 }
 </script>
