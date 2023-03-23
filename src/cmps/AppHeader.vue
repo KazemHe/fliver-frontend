@@ -67,7 +67,7 @@ export default {
   },
   methods: {
     handleScroll (event) {
-      console.log('window.scrollY ', window.scrollY)
+      // console.log('window.scrollY ', window.scrollY)
       // breakPoints: window.scrollY <= 100 | window.scrollY <= 200
     },
     search() {
