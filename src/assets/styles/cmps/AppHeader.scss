@@ -8,7 +8,7 @@
         // background-color: #fcfdff;
 
         .logo {
-            color: $clr3;
+            color: $clr2;
             font-family: macan-bold;
             font-size: 2.2rem;
             margin-inline-end: rem(29px);
@@ -25,12 +25,12 @@
         }
 
         .fiverr-nav {
-            color: $clr7;
+            color: $clr2;
         }
 
         nav a {
+            color: $clr2;
             font-family: macan-regular;
-            color: $clr1;
         }
 
         nav a:hover {
@@ -91,15 +91,12 @@
             transition: 0.8s;
         }
     }
-
-    .first-scroll a,
-    .first-scroll .logo{
-        color: $clr2;
-    } 
 }
 
 
 .subheader {
+    display: none;
+    background-color: $clr2;
     border-top: rem(1px) solid $clr6;
     border-bottom: rem(1px) solid $clr6;
 }
@@ -113,26 +110,18 @@
     font-family: macan-regular;
 
     a {
-        text-decoration: none;
         color: $clr1;
+        text-decoration: none;
+        padding-block: 8px;
+        line-height: 24px;
     }
 
     a:hover {
-        box-shadow: 0 -4px $clr0 inset;
+        box-shadow: 0 -3px $clr0 inset;
     }
 }
 
-// .hero-container {
-//     background-image: url('https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/d14871e2d118f46db2c18ad882619ea8-1599835783966/bg-hero-3-1792-x1.png');
-//     height: 675px;
 
-//     img {
-
-//         width: 100%;
-//         height: 100%;
-//         object-fit: cover;
-//     }
-// }
 
 // base
 .sticy {
@@ -140,17 +129,33 @@
     top: 0;
 }
 
-.opacity{
+.opacity {
     opacity: 1;
 }
 
-
-.full-expand{
-   header .search-container {
+.full-expand {
+    header .search-container {
         opacity: 1;
     }
 
-    a{
-        color:black
+    nav {
+        color: $clr1;
+        background-color: $clr2;
+
+        .logo {
+            color: $clr3;
+        }
+
+        .fiverr-nav {
+            color: $clr7;
+        }
+
+        a:not(:first-child) {
+            color: $clr3;
+        }
+    }
+
+    .subheader {
+        display: block;
     }
 }

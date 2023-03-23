@@ -1,5 +1,5 @@
 <template>
-  <div class="main-header main-container" :class="{'full-expand':isFirstScroll}">
+  <div class="main-header main-container" :class="{ 'full-expand': isFirstScroll }">
     <header>
       <section>
         <nav class="flex justify-center first-scroll">
@@ -7,7 +7,7 @@
             <span aria-label="logo" class="logo first-scroll">fiverr</span>
           </RouterLink>
 
-          <div class="search-container" >
+          <div class="search-container">
             <input type="text" v-model="userSearch" placeholder="What service are you looking for today?" />
             <button class="btn-serch" @click="search"><i class="fa-solid fa-magnifying-glass"></i></button>
           </div>
@@ -40,6 +40,7 @@
 </template>
 
 <script>
+import { svgServive } from '../services/svg.service.js'
 export default {
   data() {
     return {
@@ -65,16 +66,17 @@ export default {
 
   },
   methods: {
+    getSvg(iconName) {
+      return (this.icon = svgServive.getGigSvg(iconName))
+    },
     handleScroll(event) {
-      // console.log('window.scrollY ', window.scrollY)
-      // breakPoints: window.scrollY <= 100 | window.scrollY <= 200
       if (window.scrollY > 50 && window.scrollY < 200) {
-        console.log('100')
+        // console.log('100')
         this.isFirstScroll = true
       } else if (window.scrollY > 200) {
         this.isSecondScroll = true
-        console.log('200')
-      } else if ( window.scrollY < 50 ) {
+        // console.log('200')
+      } else if (window.scrollY < 50) {
         this.isSecondScroll = false
         this.isFirstScroll = false
       }

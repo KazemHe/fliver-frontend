@@ -1,7 +1,7 @@
 <template>
   <!--  v-for="(img, idx) in heroImgs" -->
-  <section class="container hero-container home text-center full">
-  </section>
+  <section class="container hero-container home text-center full"></section>
+
   <section class="trusted-by full">
     <span>Trusted by:</span>
     <img :src="img" v-for="img in trustedByImgs" :key="img" />
@@ -17,9 +17,67 @@
       </vueper-slides>
     </div>
   </section>
+
+  <section class="video-section flex">
+    <div class="side-text">
+      <p>
+      <h2>A whole world of freelance talent at your fingertips</h2>
+      <ul>
+        <li>
+          <section class="flex align-center"><span class="icon" v-html="getSvg('videoUl')"></span>
+            <h6>The best for every budget</h6>
+          </section>
+          <p> Find high-quality services at every price point. No hourly rates, just project-based pricing.</p>
+        </li>
+        <li>
+          <section class="flex align-center"><span class="icon" v-html="getSvg('videoUl')"></span>
+            <h6>Quality work done quickly</h6>
+          </section>
+          <p> Find the right freelancer to begin working on your project within minutes.</p>
+        </li>
+        <li>
+          <section class="flex align-center"><span class="icon" v-html="getSvg('videoUl')"></span>
+            <h6>Protected payments, every time</h6>
+          </section>
+          <p> Always know what you'll pay upfront. Your payment isn't released until you approve the work.</p>
+        </li>
+        <li>
+          <section class="flex align-center"><span class="icon" v-html="getSvg('videoUl')"></span>
+            <h3>Quality work done quickly</h3>
+          </section>
+          <p> Find the right freelancer to begin working on your project within minutes.</p>
+        </li>
+      </ul>
+      </p>
+    </div>
+
+    <div class="side-video">
+      <img :src="imgVideo" />
+    </div>
+  </section>
+
+  <section class="marketplace-container">
+    <h1>Explore the marketplace</h1>
+    <div class="">
+      <h5> 
+        <span class="icon svg" v-html="getSvg('GraphicsAndDesign')"></span>
+        GraphicsAndDesign
+      </h5>
+      <span class="icon svg" v-html="getSvg('digitalMarketing')"></span>
+      <span class="icon svg" v-html="getSvg('writingAndTranslation')"></span>
+      <span class="icon svg" v-html="getSvg('videoAndAnimation')"></span>
+      <span class="icon svg" v-html="getSvg('musicAndAudio')"></span>
+      <span class="icon svg" v-html="getSvg('programmingAndTech')"></span>
+      <span class="icon svg" v-html="getSvg('business')"></span>
+      <span class="icon svg" v-html="getSvg('lifestyle')"></span>
+      <span class="icon svg" v-html="getSvg('data')"></span>
+      <span class="icon svg" v-html="getSvg('photography')"></span>
+    </div>
+  </section>
 </template>
 
 <script>
+import { svgServive } from '../services/svg.service.js'
 import { VueperSlides, VueperSlide } from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
 export default {
@@ -79,14 +137,45 @@ export default {
           image: 'https://fiverr-res.cloudinary.com/q_auto,f_auto,w_550,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741664/data-entry-2x.png',
         },
       ],
+      imgVideo: 'https://res.cloudinary.com/dhsdxj3y3/image/upload/v1670793711/gigs/ostlxosopzlu6ccomezg.webp'
     }
   },
   computed: {},
   created() { },
-  methods: {},
+  methods: {
+    getSvg(iconName) {
+      return (this.icon = svgServive.getGigSvg(iconName))
+    }
+  },
   components: {
     VueperSlides,
     VueperSlide
   },
 }
 </script>
+
+<style>
+
+
+.marketplace-container::after {
+  content: "";
+  position: absolute;
+  top: 60px;
+  right: 50%;
+  transform: translate(50%);
+  padding: 0 0 8px;
+  width: 48px;
+  border-bottom: 2px solid #c5c6c9;
+  transition: border-color .2s ease-in-out, width .2s ease-in-out;
+}
+
+/* 
+  > .svg {
+    width: 60px;
+  }
+
+  > .icon {
+    width: 30px;
+    height: 30px;
+  } */
+</style>
