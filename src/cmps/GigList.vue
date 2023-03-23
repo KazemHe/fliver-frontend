@@ -3,9 +3,7 @@
 
         <ul class="listing-container">
             <li v-for="gig in gigs" :key="gig._id">
-
                 <GigPreview :user="user" :gig="gig" @removeGig="removeGig" />
-
             </li>
         </ul>
     </section>

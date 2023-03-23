@@ -15,8 +15,6 @@
     padding: 0;
 }
 
-
-
 .nav-info {
     color: #95979d;
     font-size: rem(14px);
@@ -35,10 +33,6 @@
 .nav-info>li {
     margin-right: rem(10px);
     list-style-type: none;
-}
-
-.green {
-    box-shadow: 0 rem(-4px) #1dbf73 inset;
 }
 
 .gig-page {
@@ -83,7 +77,7 @@
 }
 
 .contact-btn>* {
-    border: 1px solid transparent;
+    border: rem(1px) solid transparent;
     border-radius: 0.25em;
     font-size: 1rem;
     font-weight: 600;
@@ -147,7 +141,6 @@
 }
 
 
-
 b {
     font-family: Macan;
     margin: 0 0 0 8px;
@@ -185,4 +178,10 @@ profile-card {}
     height: rem(40.47px);
     border-radius: 0.2857142857em;
     max-width: rem(130px);
+}
+
+.stat-header{
+    
+    justify-content: space-between;
+    padding-block-end: 20px
 }

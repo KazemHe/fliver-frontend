@@ -1,27 +1,26 @@
-
-
 <template>
     <article className="gig-preview">
 
-
-
-        <!-- <vueper-slides class="main-img" fade :touchable="false" >
+    <!-- <vueper-slides class="main-img" fade :touchable="false" >
             <vueper-slide  v-for="(slide, i) in slides" :key="i" :image="slide.image" 
-            />
-        </vueper-slides> -->
+              />
+            </vueper-slides> -->
 
-        <img class="main-img" :src="gig.imgUrl" />
+        <RouterLink :gig="gig" class="link" :to="'/gig/details/' + gig._id"><img class="main-img" :src="gig.imgUrl" />
+        </RouterLink>
 
         <div class="inner-seller">
             <img :src="gig.owner.imgUrl" class="owner-img" alt="">
-            <div>
+            <div class="owner-previwe">
                 <div>{{ gig.owner.fullname }}</div>
                 <div>{{ gig.owner.level }}</div>
             </div>
         </div>
-        <h1 class="preview-title">{{ gig.title }}</h1>
 
+        <RouterLink class="link" :to="'/gig/details/' + gig._id">
+            <h1 class="preview-title">{{ gig.title }}</h1>
 
+        </RouterLink>
         <div class="content-info">
             <div class="rating-wrapper"><span class="gig-rating text-body-2"><svg xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 1792 1792" width="15" height="15">
@@ -40,15 +39,11 @@
             <span>STARTING AT :${{ gig.price }}</span>
         </div>
 
-        <!-- <button> -->
-        <!-- <RouterLink class="link" :to="'/gig/details/' + gig._id">Details</RouterLink> -->
-        <!-- </button> -->
+
 
     </article>
 </template>
   
-
-
   
 <script>
 
