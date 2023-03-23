@@ -1,0 +1,17 @@
+
+.footer {
+    border-top: rem(1px) solid $clr6;
+    
+    .logo {
+        color: $clr6;
+        font-family: macan-bold;
+        font-size: 1.2rem;
+        margin-inline-end: rem(29px);
+    }
+    
+    .logo::after {
+        content: '@';
+        font-size: 0.5rem;
+        color: $clr4;
+    }
+}
