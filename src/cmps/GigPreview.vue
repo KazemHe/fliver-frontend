@@ -1,5 +1,3 @@
-
-
 <template>
     <article className="gig-preview">
 

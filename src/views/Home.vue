@@ -82,16 +82,12 @@ export default {
       ],
     }
   },
-  computed: {
-  },
-  created() {
-  },
-  methods: {
-  },
+  computed: {},
+  created() {},
+  methods: {},
   components: {
     VueperSlides,
     VueperSlide
   },
-
 }
 </script>

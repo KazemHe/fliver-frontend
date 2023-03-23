@@ -1,8 +1,7 @@
 <template>
-
   <header>
     <section>
-      <nav>
+      <nav class="flex justify-center">
         <RouterLink to="/">
           <span aria-label="logo" class="logo">fiverr</span>
         </RouterLink>
