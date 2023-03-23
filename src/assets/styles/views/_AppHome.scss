@@ -1,3 +1,15 @@
+// .hero-container {
+//     background-image: url('https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/d14871e2d118f46db2c18ad882619ea8-1599835783966/bg-hero-3-1792-x1.png');
+//     height: 675px;
+
+//     img {
+
+//         width: 100%;
+//         height: 100%;
+//         object-fit: cover;
+//     }
+// }
+
 .trusted-by {
     display: flex;
     justify-content: center;
@@ -56,3 +68,46 @@
         display: none;
     }
 }
+
+.video-section {
+    justify-content: space-between;
+    padding-bottom: 96px;
+    padding-top: 96px;
+
+    background-color: #f1fdf7;
+    .side-text {
+        h2 {
+            width: 471px;
+            font-size: 32px;
+            line-height: 120%;
+            color: #404145;
+            font-family: macan-regular, Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-weight: 700;
+        }
+
+        h6 {
+            font-size: 18px;
+            line-height: 140%;
+            color: #404145;
+            font-family: macan-regular, Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-weight: 700;
+        }
+
+        p {
+            width: 474px;
+            font-size: 18px;
+            line-height: 26px;
+        }
+    }
+
+    .side-video {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.marketplace-container {
+    
+    width: 60px;
+  }

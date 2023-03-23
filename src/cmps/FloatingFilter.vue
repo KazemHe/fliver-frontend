@@ -100,6 +100,7 @@ export default {
 }
 
 
+
 .v-popper__wrapper {
   width: 100%;
 }

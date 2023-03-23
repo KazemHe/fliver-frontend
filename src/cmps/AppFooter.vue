@@ -4,8 +4,13 @@
         <div class="flex">
             <h3> <span aria-label="logo" class="logo">fiverr</span></h3>
             <h4>© Fiverr International Ltd. 2023</h4>
-        </div>
 
+        </div>
+        <span class="icon" v-html="getSvg('twitter')"></span>
+        <span class="icon" v-html="getSvg('facebook')"></span>
+        <span class="icon" v-html="getSvg('linkedIn')"></span>
+        <span class="icon" v-html="getSvg('pinterest')"></span>
+        <span class="icon" v-html="getSvg('instagram')"></span>
         <div>
 
         </div>
@@ -14,11 +19,13 @@
 
 
 <script>
+import { svgServive } from '../services/svg.service.js'
+
 export default {
     // name: 'footer',
     data() {
         return {
-            
+
         }
     },
     computed: {
@@ -26,6 +33,9 @@ export default {
     created() {
     },
     methods: {
+        getSvg(iconName) {
+            return (this.icon = svgServive.getGigSvg(iconName))
+        },
     },
     components: {
 
@@ -33,3 +43,10 @@ export default {
 
 }
 </script>
+
+<style>
+.icon {
+  width: 30px;
+  height: 30px;
+}
+</style>
