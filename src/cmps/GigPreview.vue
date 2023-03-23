@@ -38,7 +38,7 @@
             </svg>
             <span>STARTING AT :${{ gig.price }}</span>
         </div>
-
+<div @click="removeGig(gig._id)">x</div>
 
 
     </article>

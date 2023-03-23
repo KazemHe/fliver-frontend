@@ -1,10 +1,8 @@
 <template>
-  
+    <router-link to="/gig/edit">Add New gig</router-link>
 
-    <GigFilter class="filter"  :gigs="gigs" @setFilterBy="setFilterBy" /> 
+    <GigFilter class="filter" :gigs="gigs" @setFilterBy="setFilterBy" />
     <GigList :gigs="gigs" @removeGig="removeGig" :user="user" />
-
-    
 </template>
   
 <script>
@@ -12,7 +10,9 @@ import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { gigService } from '../services/gig.service.local'
 import { getActionRemoveGig, getActionUpdateGig, getActionAddGigMsg } from '../store/gig.store'
 import GigFilter from '../cmps/GIgFilter.vue'
+
 import GigList from '../cmps/GigList.vue'
+
 
 export default {
     data() {
@@ -79,7 +79,8 @@ export default {
     },
     components: {
         GigFilter,
-        GigList
+        GigList,
+
     }
 
 

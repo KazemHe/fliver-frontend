@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 ::selection {
@@ -8,7 +10,7 @@
 }
 
 html {
-    font-family: montserrat;
+    font-family: macan-regular;
     line-height: 1.6;
     color: $clr1;
 }
@@ -18,7 +20,12 @@ body {
     margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: caveat;
     margin: 0 0 0.6em;
     line-height: 1;
@@ -41,6 +48,7 @@ p {
 a {
     text-decoration: none;
 }
+
 a:hover {
     text-decoration: underline;
 }
@@ -54,4 +62,3 @@ ul {
 .green {
     box-shadow: 0 rem(-4px) #1dbf73 inset;
 }
-

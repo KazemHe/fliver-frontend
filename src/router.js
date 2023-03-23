@@ -2,12 +2,12 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 
 import Home from './views/Home.vue'
 import Chat from './views/Chat.vue'
-import CarIndex from './views/CarIndex.vue'
 import ReviewIndex from './views/ReviewIndex.vue'
 import LoginSignup from './views/LoginSignup.vue'
 import UserDetails from './views/UserDetails.vue'
 import GigExplore from './views/GigExplore.vue'
 import GigDetails from './views/GigDetails.vue'
+import GigEdit from './views/GigEdit.vue'
 
 const routes = [
   {
@@ -44,7 +44,12 @@ const routes = [
     path: '/user/:id',
     name: 'UserDetails',
     component: UserDetails
-  }
+  },
+  {
+    path: '/gig/edit/:gigId?',
+    name: 'edit',
+    component: GigEdit
+  },
 ]
 
 
