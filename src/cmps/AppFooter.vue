@@ -1,8 +1,14 @@
 
 <template>
     <footer class="flex">
-        <h3> <span aria-label="logo" class="logo">fiverr</span></h3>
-        <h4>© Fiverr International Ltd. 2023</h4>
+        <div class="flex">
+            <h3> <span aria-label="logo" class="logo">fiverr</span></h3>
+            <h4>© Fiverr International Ltd. 2023</h4>
+        </div>
+
+        <div>
+
+        </div>
     </footer>
 </template>
 
@@ -12,6 +18,7 @@ export default {
     // name: 'footer',
     data() {
         return {
+            
         }
     },
     computed: {
@@ -21,7 +28,7 @@ export default {
     methods: {
     },
     components: {
-       
+
     },
 
 }
