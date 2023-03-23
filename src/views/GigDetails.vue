@@ -335,8 +335,19 @@ import { getActionRemoveGig, getActionUpdateGig, getActionAddGigMsg } from '../s
 
 export default {
     props: ['gig'],
-    data() { },
+    data() {
+        return {
+            gig: null,
+        }
+    },
 
+//     async created() {
+//     try {
+//       await this.loadGig()
+//     } catch (err) {
+//       console.error(err)
+//     }
+//   },
     //     mounted(){
     // this.headerObserver = new IntersectionObserver(this.headerObserver,{
     //     rootMargin:"-91px 0px 0px"
@@ -352,11 +363,28 @@ export default {
             return this.$store.getters.gigs
         }
     },
-    created() {
-        this.$store.dispatch({ type: 'loadGigs' })
-    },
+    // created() {
+    //     this.$store.dispatch({ type: 'loadGigs' })
+    // },
 
-    methods: {
+    // methods: {
+    //     async loadGig() {
+    //   try {
+    //     const { gigId } = this.$route.params
+        
+        
+    //     const gig = await gigService.getById(gigId)
+       
+    //     this.gig = gig
+    //   } catch {
+    //     console.log('Could Not load gig')
+    //   }
+    // },
+
+
+        goToHome() {
+            this.$router.push(`/`)
+        },
         // onheaderObserver(entries) {
         //     entries.forEach((entry) => {
         //         this.stickyNav = entry.isIntersecthing ? false : true
@@ -376,5 +404,5 @@ export default {
             console.log('Gig msgs:', gig.msgs)
         }
     }
-}
+
 </script>
