@@ -2,7 +2,7 @@
   
 
     <GigFilter class="filter"  :gigs="gigs" @setFilterBy="setFilterBy" /> 
-    <GigList :gigs="gigs" @removeGig="removeGig" :user="user" /> 
+    <GigList :gigs="gigs" @removeGig="removeGig" :user="user" />
 
     
 </template>
@@ -77,7 +77,7 @@ export default {
             console.log('Gig msgs:', gig.msgs)
         }
     },
-    components:{
+    components: {
         GigFilter,
         GigList
     }
