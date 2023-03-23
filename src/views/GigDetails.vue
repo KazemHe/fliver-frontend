@@ -11,16 +11,16 @@
     <section class="gig-info flex" ref="filter">
         <section class="main-gig">
             <div class="gig-overview">
-                <h1>{{ gigs[1].title }}</h1>
+                <h1>{{ gig.title }}</h1>
                 <div class=" seller-preview-short flex">
-                    <div><img :src=gigs[1].owner.imgUrl class="info-img"></div>
+                    <div><img :src=gig.owner.imgUrl class="info-img"></div>
                     <div>
-                        <span class="seller-name">{{ gigs[1].owner.fullname }}</span>
-                        <span class="seller-rate">{{ gigs[1].owner.rate }} |</span>
+                        <span class="seller-name">{{ gig.owner.fullname }}</span>
+                        <span class="seller-rate">{{ gig.owner.rate }} |</span>
                     </div>
                 </div>
                 <hr>
-                <div class=""><img :src=gigs[1].imgUrl class="carosel-img"></div>
+                <div class=""><img :src=gig.imgUrl class="carosel-img"></div>
                 <div class="seller-overview">
                     <div class="flex">
                         <div></div>
@@ -32,7 +32,7 @@
 
             <div class="about-the-gig">
                 <h2>About the gig</h2>
-                <p>{{ gigs[1].description }}</p>
+                <p>{{ gig.description }}</p>
             </div>
 
             <hr>
@@ -42,13 +42,13 @@
                 <section class="profile-info flex">
                     <div class="user-profile-pic flex">
                         <label for="">
-                            <div class="profile-pic"><img :src=gigs[1].owner.imgUrl></div>
+                            <div class="profile-pic"><img :src=gig.owner.imgUrl></div>
                         </label>
                     </div>
 
                     <div class="user-profile-label">
                         <div class="username-line flex">
-                            <span>{{ gigs[1].owner.fullname }}</span>
+                            <span>{{ gig.owner.fullname }}</span>
                             <div class="status">
                                 <span class="glAQDp5 circle-icon" aria-hidden="true" style="width: 4px; height: 4px;"><svg
                                         width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
@@ -106,13 +106,13 @@
 
                 <section class="seller-details-container"></section>
 
-                <h1>{{ gigs[1].owner.rate }}</h1>
-                <h1>{{ gigs[1].owner.level }}</h1>
-                <h1>{{ gigs[1].country }}</h1>
-                <h1>{{ gigs[1].about }}</h1>
+                <h1>{{ gig.owner.rate }}</h1>
+                <h1>{{ gig.owner.level }}</h1>
+                <h1>{{ gig.country }}</h1>
+                <h1>{{ gig.about }}</h1>
             </section>
             <hr>
-            <section class="reviews-container">
+            <section class="reviews-container" v-if="gig.reviews">
                 <section class="reviews-stat flex column">
                     <section class="stat-header flex align-center">
                         <h2>200 Reviews</h2>
@@ -237,8 +237,8 @@
 
 
 
-                <section class="review-list">
-                    <ul class="reviews-list" v-for="review in gigs[1].reviews">
+                <section class="review-list" v-if="gig.reviews">
+                    <ul class="reviews-list" v-for="review in gig.reviews">
                         <li>
                             <h1>{{ review.name }}</h1>
                             <h1>{{ review.country }} {{ review.flag }}</h1>
@@ -247,84 +247,105 @@
                         </li>
                     </ul>
                 </section>
+
+            </section>
+            <section v-else>This user dont have reviews for now </section>
+        </section>
+
+
+        <section class="package-container">
+            <section class="gig-package">
+                <section class="package-content">
+                    <section class="header flex space-between">
+                        <h3 class="title">Order Details</h3>
+                        <h3 class="price regular"> US$50</h3>
+                    </section>
+                    <p>1 custom logo+high resolution file+3d mockup+logo transparency+ 300dpi</p>
+                    <section class="additional-info flex">
+                        <div class="delivery-wrapper flex">
+                            <span><svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"
+                                    fill="#62646a">
+                                    <path
+                                        d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 14c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z">
+                                    </path>
+                                    <path d="M9 4H7v5h5V7H9V4z"></path>
+                                </svg>
+                            </span>
+                            <p>1 Days Delivery</p>
+                        </div>
+                        <div class="revisions-wrapper flex"><span><svg width="16" height="16" viewBox="0 0 16 16"
+                                    xmlns="http://www.w3.org/2000/svg" fill="#62646a">
+                                    <path
+                                        d="M4.50001 11.4999C6.40001 13.3999 9.60001 13.3999 11.5 11.4999C12.2 10.7999 12.7 9.7999 12.9 8.7999L14.9 9.0999C14.7 10.5999 14 11.8999 13 12.8999C10.3 15.5999 5.90001 15.5999 3.10001 12.8999L0.900012 15.0999L0.200012 8.6999L6.60001 9.3999L4.50001 11.4999Z">
+                                    </path>
+                                    <path
+                                        d="M15.8 7.2999L9.40001 6.5999L11.5 4.4999C9.60001 2.5999 6.40001 2.5999 4.50001 4.4999C3.80001 5.1999 3.30001 6.1999 3.10001 7.1999L1.10001 6.8999C1.30001 5.3999 2.00001 4.0999 3.00001 3.0999C4.40001 1.6999 6.10001 1.0999 7.90001 1.0999C9.70001 1.0999 11.5 1.7999 12.8 3.0999L15 0.899902L15.8 7.2999Z">
+                                    </path>
+                                </svg></span>
+                            <p> Unlimited Revisions </p>
+                        </div>
+                    </section>
+                    <ul class="features clean-list">
+                        <li class="regular"><span><svg width="16" height="16" viewBox="0 0 11 9"
+                                    xmlns="http://www.w3.org/2000/svg" fill="#1dbf73">
+                                    <path
+                                        d="M3.645 8.102.158 4.615a.536.536 0 0 1 0-.759l.759-.758c.21-.21.549-.21.758 0l2.35 2.349L9.054.416c.21-.21.55-.21.759 0l.758.758c.21.21.21.55 0 .759L4.403 8.102c-.209.21-.549.21-.758 0Z">
+                                    </path>
+                                </svg></span> 1 concept included</li>
+                        <li class="regular"><span><svg width="16" height="16" viewBox="0 0 11 9"
+                                    xmlns="http://www.w3.org/2000/svg" fill="#1dbf73">
+                                    <path
+                                        d="M3.645 8.102.158 4.615a.536.536 0 0 1 0-.759l.759-.758c.21-.21.549-.21.758 0l2.35 2.349L9.054.416c.21-.21.55-.21.759 0l.758.758c.21.21.21.55 0 .759L4.403 8.102c-.209.21-.549.21-.758 0Z">
+                                    </path>
+                                </svg></span> Logo transparency</li>
+                        <li class="regular"><span><svg width="16" height="16" viewBox="0 0 11 9"
+                                    xmlns="http://www.w3.org/2000/svg" fill="#1dbf73">
+                                    <path
+                                        d="M3.645 8.102.158 4.615a.536.536 0 0 1 0-.759l.759-.758c.21-.21.549-.21.758 0l2.35 2.349L9.054.416c.21-.21.55-.21.759 0l.758.758c.21.21.21.55 0 .759L4.403 8.102c-.209.21-.549.21-.758 0Z">
+                                    </path>
+                                </svg></span> Vector file</li>
+                        <li class="regular"><span><svg width="16" height="16" viewBox="0 0 11 9"
+                                    xmlns="http://www.w3.org/2000/svg" fill="#1dbf73">
+                                    <path
+                                        d="M3.645 8.102.158 4.615a.536.536 0 0 1 0-.759l.759-.758c.21-.21.549-.21.758 0l2.35 2.349L9.054.416c.21-.21.55-.21.759 0l.758.758c.21.21.21.55 0 .759L4.403 8.102c-.209.21-.549.21-.758 0Z">
+                                    </path>
+                                </svg></span> Printable file</li>
+                        <li class="regular"><span><svg width="16" height="16" viewBox="0 0 11 9"
+                                    xmlns="http://www.w3.org/2000/svg" fill="#1dbf73">
+                                    <path
+                                        d="M3.645 8.102.158 4.615a.536.536 0 0 1 0-.759l.759-.758c.21-.21.549-.21.758 0l2.35 2.349L9.054.416c.21-.21.55-.21.759 0l.758.758c.21.21.21.55 0 .759L4.403 8.102c-.209.21-.549.21-.758 0Z">
+                                    </path>
+                                </svg></span> Include 3D mockup</li>
+                        <li class="regular"><span><svg width="16" height="16" viewBox="0 0 11 9"
+                                    xmlns="http://www.w3.org/2000/svg" fill="#1dbf73">
+                                    <path
+                                        d="M3.645 8.102.158 4.615a.536.536 0 0 1 0-.759l.759-.758c.21-.21.549-.21.758 0l2.35 2.349L9.054.416c.21-.21.55-.21.759 0l.758.758c.21.21.21.55 0 .759L4.403 8.102c-.209.21-.549.21-.758 0Z">
+                                    </path>
+                                </svg></span> Include source file</li>
+                        <li class="regular"><span><svg width="16" height="16" viewBox="0 0 11 9"
+                                    xmlns="http://www.w3.org/2000/svg" fill="#1dbf73">
+                                    <path
+                                        d="M3.645 8.102.158 4.615a.536.536 0 0 1 0-.759l.759-.758c.21-.21.549-.21.758 0l2.35 2.349L9.054.416c.21-.21.55-.21.759 0l.758.758c.21.21.21.55 0 .759L4.403 8.102c-.209.21-.549.21-.758 0Z">
+                                    </path>
+                                </svg></span> Include social media kit</li>
+                    </ul>
+                    <a href="#/gig/payment/63910d5246b48fa0aaeec9ab" class="">
+                        <button class="continue-btn"> Continue <span><svg width="16" height="16" viewBox="0 0 16 16"
+                                    xmlns="http://www.w3.org/2000/svg" fill="#fff">
+                                    <path
+                                        d="M9.92332 2.96885C9.63854 2.66807 9.1768 2.66807 8.89202 2.96885C8.60723 3.26963 8.60723 3.75729 8.89202 4.05807L11.6958 7.01931H1.48616C1.08341 7.01931 0.756918 7.36413 0.756918 7.7895C0.756918 8.21487 1.08341 8.5597 1.48616 8.5597H11.8436L8.89202 11.677C8.60723 11.9778 8.60723 12.4654 8.89202 12.7662C9.1768 13.067 9.63854 13.067 9.92332 12.7662L14.0459 8.41213C14.3307 8.11135 14.3307 7.62369 14.0459 7.32291L13.977 7.25011C13.9737 7.24661 13.9704 7.24315 13.9671 7.23972L9.92332 2.96885Z">
+                                    </path>
+                                </svg></span>
+                        </button>
+                    </a>
+                </section>
+                <section class="contact-seller">
+                    <button>Contact Seller</button>
+                </section>
             </section>
         </section>
 
-        <aside class="selling-package">
-            <div class="packages-tabs">
-                <section class="package-header ">
-                    <h3>your order</h3>
-                    <h3>US$70</h3>
-                </section>
-                <p>1 Page Figma Web Design UI UX / Template Design (Max 3 Sections)</p>
-                <section class="more-info flex">
-                    <div class="delivery-wrapper flex">
-                        <span class="glAQDp5 delivery-icon" aria-hidden="true" style="width: 16px; height: 16px;"><svg
-                                width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 14c-3.3 0-6-2.7-6-6s2.7-6 6-6 6 2.7 6 6-2.7 6-6 6z">
-                                </path>
-                                <path d="M9 4H7v5h5V7H9V4z"></path>
-                            </svg></span>
-                        <b class="delivery">1 Day Delivery</b>
-                    </div>
-                    <div class="revisions-wrapper">
-                        <span class="glAQDp5 revisions-icon" aria-hidden="true" style="width: 16px; height: 16px;"><svg
-                                width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M4.50001 11.4999C6.40001 13.3999 9.60001 13.3999 11.5 11.4999C12.2 10.7999 12.7 9.7999 12.9 8.7999L14.9 9.0999C14.7 10.5999 14 11.8999 13 12.8999C10.3 15.5999 5.90001 15.5999 3.10001 12.8999L0.900012 15.0999L0.200012 8.6999L6.60001 9.3999L4.50001 11.4999Z">
-                                </path>
-                                <path
-                                    d="M15.8 7.2999L9.40001 6.5999L11.5 4.4999C9.60001 2.5999 6.40001 2.5999 4.50001 4.4999C3.80001 5.1999 3.30001 6.1999 3.10001 7.1999L1.10001 6.8999C1.30001 5.3999 2.00001 4.0999 3.00001 3.0999C4.40001 1.6999 6.10001 1.0999 7.90001 1.0999C9.70001 1.0999 11.5 1.7999 12.8 3.0999L15 0.899902L15.8 7.2999Z">
-                                </path>
-                            </svg></span>
-                        <b>2 Revisions </b>
-                    </div>
-                </section>
-                <ul class="ull">
-                    <li class="regular">
-                        <span><svg width="16" height="16" viewBox="0 0 11 9" xmlns="http://www.w3.org/2000/svg"
-                                fill="#1dbf73">
-                                <path
-                                    d="M3.645 8.102.158 4.615a.536.536 0 0 1 0-.759l.759-.758c.21-.21.549-.21.758 0l2.35 2.349L9.054.416c.21-.21.55-.21.759 0l.758.758c.21.21.21.55 0 .759L4.403 8.102c-.209.21-.549.21-.758 0Z">
-                                </path>
-                            </svg></span>
-                        1 page/screen
-                    </li>
-                    <li class="regular"> <span><svg width="16" height="16" viewBox="0 0 11 9"
-                                xmlns="http://www.w3.org/2000/svg" fill="#1dbf73">
-                                <path
-                                    d="M3.645 8.102.158 4.615a.536.536 0 0 1 0-.759l.759-.758c.21-.21.549-.21.758 0l2.35 2.349L9.054.416c.21-.21.55-.21.759 0l.758.758c.21.21.21.55 0 .759L4.403 8.102c-.209.21-.549.21-.758 0Z">
-                                </path>
-                            </svg></span>
-                        Logo transparency</li>
-                    <li class="regular"> <span><svg width="16" height="16" viewBox="0 0 11 9"
-                                xmlns="http://www.w3.org/2000/svg" fill="#1dbf73">
-                                <path
-                                    d="M3.645 8.102.158 4.615a.536.536 0 0 1 0-.759l.759-.758c.21-.21.549-.21.758 0l2.35 2.349L9.054.416c.21-.21.55-.21.759 0l.758.758c.21.21.21.55 0 .759L4.403 8.102c-.209.21-.549.21-.758 0Z">
-                                </path>
-                            </svg></span>
-                        Printable file</li>
-                    <li class="regular"> <span> <svg width="16" height="16" viewBox="0 0 11 9"
-                                xmlns="http://www.w3.org/2000/svg" fill="#1dbf73">
-                                <path
-                                    d="M3.645 8.102.158 4.615a.536.536 0 0 1 0-.759l.759-.758c.21-.21.549-.21.758 0l2.35 2.349L9.054.416c.21-.21.55-.21.759 0l.758.758c.21.21.21.55 0 .759L4.403 8.102c-.209.21-.549.21-.758 0Z">
-                                </path>
-                            </svg></span>
-                        Include source file</li>
-                </ul>
-                <a href="">
-                    <button class="continue-btn" @click="goToHome"> Continue </button>
-                </a>
-            </div>
 
-
-            <div class="contact-seller">
-                <section class="contact-btn">
-                    <button>Contact seller</button>
-                </section>
-            </div>
-        </aside>
     </section>
 </template>
   
@@ -372,11 +393,11 @@ export default {
         }
     },
 
-    created() {
+    async created() {
         const { gigId } = this.$route.params
-        console.log({ gigId });
-        const gig = gigService.getById(gigId)
-        console.log('gig', gig);
+        console.log(gigId);
+        const gig = await gigService.getById(gigId)
+        console.log('gig', gig.reviews);
     },
 
     methods: {
@@ -454,3 +475,6 @@ export default {
 // }
 
 </script>
+
+
+
