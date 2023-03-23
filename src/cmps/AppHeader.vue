@@ -36,13 +36,13 @@
   </section>
 
   <!--  v-for="(img, idx) in heroImgs" -->
-  <section
-   class="container hero-container home text-center full">
+  <section class="container hero-container home text-center full">
   </section>
-
 </template>
 
 <script>
+import { emitToFilter } from '../services/event-bus.service'
+
 export default {
   data() {
     return {
@@ -56,23 +56,26 @@ export default {
       ]
     }
   },
-  created () {
-    window.addEventListener('scroll', this.handleScroll) 
+  created() {
+    window.addEventListener('scroll', this.handleScroll)
   },
-  unmounted () {
-    window.removeEventListener('scroll', this.handleScroll) 
+  unmounted() {
+    window.removeEventListener('scroll', this.handleScroll)
   },
   mounted() {
-    
+
   },
   methods: {
-    handleScroll (event) {
+    handleScroll(event) {
       // console.log('window.scrollY ', window.scrollY)
       // breakPoints: window.scrollY <= 100 | window.scrollY <= 200
     },
     search() {
       console.log('search', this.userSearch)
-      this.userSearch = ''
+      const txt = this.userSearch
+
+      console.log(txt)
+      emitToFilter(txt)
     }
   },
   computed: {

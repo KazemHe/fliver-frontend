@@ -3,35 +3,41 @@
     <VDropdown>
       <button class="filter-btn">budget</button>
       <template #popper>
-        <div class="menu-content">
-          <div class="content-scroll" style="max-height: 331.753px;">
-            <div class="budget-filter">
-              <div class="price-range-filter">
-                <div class="input-wrapper"><label>MIN.</label><input type="number" name="gig_price_range" class="min"
-                    placeholder="Any" min="0" max="5000" value=""><i>$</i></div>
-                <div class="input-wrapper"><label>MAX.</label><input type="number" name="gig_price_range" class="max"
-                    placeholder="Any" min="0" max="5000" value=""><i>$</i></div>
+        <section class="filter-modal" style="left: 0px;">
+          <form id="filters" class="budget" name="budget" @submit.prevent="setFilterBy">
+            <div class="min">
+              <p>MIN.</p>
+              <div class="minmax-input"><input v-model="filterBy.bugdet.min" placeholder="Any" type="number" name="min"
+                  class="min-price"><span>$</span>
               </div>
             </div>
-          </div>
-          <div class="button-row"><button class="ZQi_S8t YmeteBT a1WZUBV co-grey-1000 clear-all">Clear All</button><button
-              class="ZQi_S8t mtfDr08 co-white apply bg-co-black">Apply</button></div>
-        </div>
-
+            <div class="max">
+              <p>MAX.</p>
+              <div class="minmax-input"><input v-model="filterBy.bugdet.max" placeholder="Any" type="number" name="max"
+                  class="max-price"><span>$</span>
+              </div>
+            </div>
+          </form>
+          <div class="filters-footer"><button class="clear" type="button">Clear All</button><button class="apply"
+              form="filters" type="submit">Apply</button></div>
+        </section>
       </template>
     </VDropdown>
     <VDropdown>
       <button class="filter-btn">Delivery Time</button>
       <template #popper>
         <section class="filter-modal" style="left: 301px;">
-          <form id="filters" name="daysToMake" class="delivery">
-            <div><input type="radio" id="24h" name="delivery-time" value="1"><label for="24h">Express 24H</label></div>
-            <div><input type="radio" id="3d" name="delivery-time" value="3"><label for="3d">Up to 3 days</label></div>
-            <div><input type="radio" id="7d" name="delivery-time" value="7"><label for="7d">Up to 7 days</label></div>
+          <form id="filters" name="daysToMake" class="delivery" @submit.prevent="setFilterBy">
+            <div><input type="radio" id="24h" name="delivery-time" v-model="filterBy.DeliveryTime" value="1"><label
+                for="24h">Express 24H</label></div>
+            <div><input type="radio" id="3d" name="delivery-time" v-model="filterBy.DeliveryTime" value="3"><label
+                for="3d">Up to 3 days</label></div>
+            <div><input type="radio" id="7d" name="delivery-time" v-model="filterBy.DeliveryTime" value="7"><label
+                for="7d">Up to 7 days</label></div>
             <div><input type="radio" id="anytime" name="delivery-time" value="" checked=""><label
                 for="anytime">Anytime</label></div>
           </form>
-          <div class="filters-footer"><button class="clear" type="button">Clear All</button><button class="apply"
+          <div class="filgitters-footer"><button class="clear" type="button">Clear All</button><button class="apply"
               form="filters" type="submit">Apply</button></div>
         </section>
       </template>
@@ -39,7 +45,28 @@
   </section>
 </template>
 <script>
+export default {
+  data() {
+    return {
+      filterBy: {
+        title: '',
+        bugdet: { min: 'Any', max: 'Any' },
+        DeliveryTime: 0,
+      },
+      sortBy: {
+        rate: '',
+        price: 0,
+      }
+    }
+  },
+  methods: {
+    setFilterBy() {
+      console.log('check the filter', this.filterBy)
 
+      this.$emit('setFilterBy', { ...this.filterBy })
+    },
+  },
+}
 </script>
 <style scoped>
 .v-popper {
@@ -73,13 +100,12 @@
 }
 
 
-
-.v-popper__wrapper{
+.v-popper__wrapper {
   width: 100%;
 }
 
 
-.popper_gk90nxa9_l8juon{
+.popper_gk90nxa9_l8juon {
   width: 900px;
 }
 </style>

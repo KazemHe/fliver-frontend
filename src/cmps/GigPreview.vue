@@ -1,10 +1,9 @@
 <template>
     <article className="gig-preview">
 
-    <!-- <vueper-slides class="main-img" fade :touchable="false" >
-            <vueper-slide  v-for="(slide, i) in slides" :key="i" :image="slide.image" 
-              />
-            </vueper-slides> -->
+        <!-- <vueper-slides class="main-img" fade :touchable="false">
+            <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" />
+        </vueper-slides> -->
 
         <RouterLink :gig="gig" class="link" :to="'/gig/' + gig._id"><img class="main-img" :src="gig.imgUrl" />
         </RouterLink>
@@ -38,7 +37,7 @@
             </svg>
             <span>STARTING AT :${{ gig.price }}</span>
         </div>
-<div @click="removeGig(gig._id)">x</div>
+        <div @click="removeGig(gig._id)">x</div>
 
 
     </article>
@@ -89,3 +88,8 @@ export default {
     emits: ['removeGig']
 }
 </script>
+<style>
+.vueperslides__parallax-wrapper {
+    padding-bottom: 80%;
+}
+</style>
