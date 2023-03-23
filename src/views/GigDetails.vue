@@ -314,7 +314,7 @@
                         Include source file</li>
                 </ul>
                 <a href="">
-                    <button class="continue-btn"> Continue </button>
+                    <button class="continue-btn" @click="goToHome"> Continue </button>
                 </a>
             </div>
 
@@ -341,13 +341,21 @@ export default {
         }
     },
 
-//     async created() {
-//     try {
-//       await this.loadGig()
-//     } catch (err) {
-//       console.error(err)
-//     }
-//   },
+    watch: {
+        '$route.params': {
+            async handler() {
+                this.loadGig()
+            },
+            immediate: true,
+        },
+    },
+    //     async created() {
+    //     try {
+    //       await this.loadGig()
+    //     } catch (err) {
+    //       console.error(err)
+    //     }
+    //   },
     //     mounted(){
     // this.headerObserver = new IntersectionObserver(this.headerObserver,{
     //     rootMargin:"-91px 0px 0px"
@@ -363,46 +371,86 @@ export default {
             return this.$store.getters.gigs
         }
     },
-    // created() {
-    //     this.$store.dispatch({ type: 'loadGigs' })
-    // },
 
-    // methods: {
-    //     async loadGig() {
-    //   try {
-    //     const { gigId } = this.$route.params
-        
-        
-    //     const gig = await gigService.getById(gigId)
-       
-    //     this.gig = gig
-    //   } catch {
-    //     console.log('Could Not load gig')
-    //   }
-    // },
+    created() {
+        const { gigId } = this.$route.params
+        console.log({ gigId });
+        const gig = gigService.getById(gigId)
+        console.log('gig', gig);
+    },
 
-
-        goToHome() {
-            this.$router.push(`/`)
-        },
-        // onheaderObserver(entries) {
-        //     entries.forEach((entry) => {
-        //         this.stickyNav = entry.isIntersecthing ? false : true
-        //     })
-        // },
-
-        async addGigMsg(gigId) {
+    methods: {
+        async loadGig() {
             try {
-                await this.$store.dispatch(getActionAddGigMsg(gigId))
-                showSuccessMsg('Gig msg added')
-            } catch (err) {
-                console.log(err)
-                showErrorMsg('Cannot add gig msg')
+                const { gigId } = this.$route.params
+                const gig = await gigService.getById(gigId)
+
+
+                this.gig = gig
+            } catch {
+                console.log('Could Not load gig')
             }
-        },
-        printGigToConsole(gig) {
-            console.log('Gig msgs:', gig.msgs)
         }
+    },
+
+
+    goToHome() {
+        this.$router.push(`/`)
+    },
+    // onheaderObserver(entries) {
+    //     entries.forEach((entry) => {
+    //         this.stickyNav = entry.isIntersecthing ? false : true
+    //     })
+    // },
+
+    async addGigMsg(gigId) {
+        try {
+            await this.$store.dispatch(getActionAddGigMsg(gigId))
+            showSuccessMsg('Gig msg added')
+        } catch (err) {
+            console.log(err)
+            showErrorMsg('Cannot add gig msg')
+        }
+    },
+    printGigToConsole(gig) {
+        console.log('Gig msgs:', gig.msgs)
     }
+}
+
+
+
+// const icon = {
+//   mounted: (el, binding) => {
+//     const icon = iconService.getSvg(binding.value)
+//     el.innerHTML = icon
+//   },
+// }
+
+// const clickOutsideDirective = {
+//   mounted(el, { value: cb }) {
+//     el.clickOutside = ({ clientX, clientY }) => {
+//       const { left, top, width, height } = el.getBoundingClientRect()
+//       if (
+//         !(
+//           clientX > left &&
+//           clientX < left + width &&
+//           clientY > top &&
+//           clientY < top + height
+//         )
+//       ) {
+//         cb()
+//         // console.log('outside')
+//       } else {
+//         // console.log('inside')
+//       }
+//     }
+//     setTimeout(() => {
+//       document.addEventListener('click', el.clickOutside)
+//     }, 0)
+//   },
+//   unmounted(el) {
+//     document.removeEventListener('click', el.clickOutside)
+//   },
+// }
 
 </script>

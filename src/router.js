@@ -21,7 +21,7 @@ const routes = [
     component: GigExplore
   },
   {
-    path: '/details',
+    path: '/gig/:gigId',
     name: 'GigDetails',
     component: GigDetails
   },

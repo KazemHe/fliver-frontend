@@ -6,7 +6,7 @@
               />
             </vueper-slides> -->
 
-        <RouterLink :gig="gig" class="link" :to="'/gig/details/' + gig._id"><img class="main-img" :src="gig.imgUrl" />
+        <RouterLink :gig="gig" class="link" :to="'/gig/' + gig._id"><img class="main-img" :src="gig.imgUrl" />
         </RouterLink>
 
         <div class="inner-seller">
@@ -17,7 +17,7 @@
             </div>
         </div>
 
-        <RouterLink class="link" :to="'/gig/details/' + gig._id">
+        <RouterLink class="link" :to="'/gig/' + gig._id">
             <h1 class="preview-title">{{ gig.title }}</h1>
 
         </RouterLink>
