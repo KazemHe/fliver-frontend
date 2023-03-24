@@ -1,5 +1,7 @@
 <template>
-  <section class="container hero-container home text-center full"></section>
+  <section class="container hero-container home text-center full">
+    <!-- <img src="https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049983/bg-hero-1-1792-x1.png"/> -->
+  </section>
 
   <section class="trusted-by full">
     <span>Trusted by:</span>

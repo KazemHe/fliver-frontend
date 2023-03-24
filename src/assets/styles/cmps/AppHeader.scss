@@ -1,11 +1,11 @@
 .main-header {
     position: fixed;
+    margin-left: 50px;
     top: 0;
     z-index: 100;
 
     header {
         height: rem(77px);
-        // background-color: #fcfdff;
 
         .logo {
             color: $clr2;
@@ -19,18 +19,17 @@
             color: $clr0;
         }
 
+        .header-links {
+            margin-inline-start: 250px;
+        }
+
         nav a:not(:first-child) {
             padding: rem(10px) rem(16px);
             margin: rem(10px);
         }
 
-        .fiverr-nav {
-            color: $clr2;
-        }
-
         nav a {
             color: $clr2;
-            font-family: macan-regular;
         }
 
         nav a:hover {
@@ -57,7 +56,7 @@
             width: rem(534px);
         }
 
-        button {
+        button.btn-serch {
             cursor: pointer;
             background-color: $clr5;
             height: rem(42px);
@@ -75,10 +74,12 @@
             background-color: $clr3;
         }
 
-        nav a.join {
+        nav button.join {
+            cursor: pointer;
             font-family: macan-bold;
             margin-left: auto;
             color: $clr0;
+            background-color: #ffffff00;
             border: 1px solid $clr0;
             border-radius: rem(4px);
             transition: border-radius color 0.8s;
@@ -92,7 +93,6 @@
         }
     }
 }
-
 
 .subheader {
     display: none;
@@ -121,23 +121,7 @@
     }
 }
 
-
-
-// base
-.sticy {
-    position: sticky;
-    top: 0;
-}
-
-.opacity {
-    opacity: 1;
-}
-
-.full-expand {
-    header .search-container {
-        opacity: 1;
-    }
-
+.first-expansion {
     nav {
         color: $clr1;
         background-color: $clr2;
@@ -146,13 +130,33 @@
             color: $clr3;
         }
 
-        .fiverr-nav {
-            color: $clr7;
+        nav a:nth-child(3) {
+            margin-inline-start: 263px;
         }
 
         a:not(:first-child) {
-            color: $clr3;
+            margin-inline-start: 263px;
+            color: $clr4;
         }
+
+        a:first-child {
+            color: $clr4;
+        }
+    }
+    // second expansion
+    header .search-container {
+        opacity: 1;
+    }
+
+    .subheader {
+        display: block;
+    }
+}
+
+.second-expansion {
+
+    header .search-container {
+        opacity: 1;
     }
 
     .subheader {
