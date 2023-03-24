@@ -9,17 +9,81 @@
     </section>
 
     <section class="gig-info flex" ref="filter">
+
         <section class="main-gig">
             <div class="gig-overview">
                 <h1>{{ gig.title }}</h1>
-                <div class=" seller-preview-short flex">
-                    <div><img :src=gig.owner.imgUrl class="info-img"></div>
-                    <div>
-                        <span class="seller-name">{{ gig.owner.fullname }}</span>
-                        <span class="seller-rate">{{ gig.owner.rate }} |</span>
-                    </div>
-                </div>
-                <hr>
+                <section class="user-preview">
+                    <section class="seller-preview-short flex align-center">
+                        <div class="img-container"><img :src=gig.owner.imgUrl></div>
+                        <div class="text-container">
+                            <div class="text">
+                                <a aria-current="page" href="#/gig/63910d5246b48fa0aaeec9ab#aboutSeller"
+                                    class="router-link-active router-link-exact-active">
+                                    <p class="seller-username">rashin07</p>
+                                </a>
+                                <p class="seller-level">Level 2 Seller </p>
+                                <div class="line"> |
+
+                                </div>
+                            </div>
+                            <div class="rate">
+                                <ul class="stars clean-list flex">
+                                    <li><span class="flex justify-center align-center"><svg
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15"
+                                                height="15">
+                                                <path
+                                                    d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                </path>
+                                            </svg></span>
+                                    </li>
+                                    <li><span class="flex justify-center align-center"><svg
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15"
+                                                height="15">
+                                                <path
+                                                    d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                </path>
+                                            </svg></span>
+                                    </li>
+                                    <li>
+                                        <span class="flex justify-center align-center"><svg
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15"
+                                                height="15">
+                                                <path
+                                                    d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                </path>
+                                            </svg></span>
+                                    </li>
+                                    <li><span class="flex justify-center align-center"><svg
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15"
+                                                height="15">
+                                                <path
+                                                    d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                </path>
+                                            </svg></span>
+                                    </li>
+                                    <li><span class="flex justify-center align-center"><svg
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15"
+                                                height="15">
+                                                <path
+                                                    d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                </path>
+                                            </svg></span>
+                                    </li>
+                                </ul>
+                                <p class="rate-score">4.9</p>
+                                <p class="seller-reviews-count">(344)</p>
+                            </div>
+                        </div>
+                    </section><!---->
+                </section>
+
+
+
+
+
+
+
                 <div class=""><img :src=gig.imgUrl class="carosel-img"></div>
                 <div class="seller-overview">
                     <div class="flex">
@@ -28,94 +92,157 @@
                     </div>
                 </div>
             </div>
-            <hr>
+
+            <header class="What-people-loved flex">
+                <h2 class="section-title">What people loved about this seller</h2>
+                <button class="sPdE5j4 zUvc8Si co-white text-button reviews-button bg-co-green-700">See all reviews</button>
+            </header>
+            <section class="review-list-container">
+                <section class="review-list">
+                    <section>
+                        <section class="review-preview">
+                            <section class="review-preview-snippet">
+                                <section class="review-snippet-temporary grid">
+                                    <img class="reviewer-img" src="https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/dea22d35dccefb507c34eb906cc01554-1672399959338/f0a729bd-0973-47a8-b4d7-e3e2b1c6b858.jpg" alt="user-img">
+                                    <section class="reviewer-details flex"><p class="username">jaygreen341</p>
+                                        <section class="country-wrapper flex">
+                                            <img src="https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ec-1f1e7.png" alt="reviewer-flag">
+                                            <p class="country">United States</p><ul class="stars clean-list flex">
+                                                <li>
+                                                    <span class="flex justify-center align-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15" height="15"><path d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z"></path></svg></span>
+                                                </li>
+                                                <li><span class="flex justify-center align-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15" height="15"><path d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z"></path></svg></span>
+                                                </li>
+                                                <li><span class="flex justify-center align-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15" height="15"><path d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z"></path></svg></span>
+                                                </li>
+                                                <li><span class="flex justify-center align-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15" height="15"><path d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z"></path></svg></span>
+                                                </li>
+                                                <li><span class="flex justify-center align-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15" height="15"><path d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z"></path></svg></span>
+                                                </li>
+                                            </ul>
+                                            <p class="rating-score">5</p>
+                                        </section>
+                                    </section>
+                                    <section class="review-content">
+                                        <p class="review-description">Working with bnn_marketing has been very easy! They provided a product that is better than what I expected. Even when I made a mistake on my order, Daniel was very understanding and professional. There are many companies to choose from; However, I can see why bnn_marketing is a top seller, I would highly recommend them to anyone!</p><p class="reviewed-at">Published 1 month ago</p>
+                                    </section>
+                                </section>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+            </section>
+
+
 
             <div class="about-the-gig">
                 <h2>About the gig</h2>
                 <p>{{ gig.description }}</p>
             </div>
 
-            <hr>
-
-            ABOUT THE SELLER
-            <section class="profile-card">
-                <section class="profile-info flex">
-                    <div class="user-profile-pic flex">
-                        <label for="">
-                            <div class="profile-pic"><img :src=gig.owner.imgUrl></div>
-                        </label>
-                    </div>
-
-                    <div class="user-profile-label">
-                        <div class="username-line flex">
-                            <span>{{ gig.owner.fullname }}</span>
-                            <div class="status">
-                                <span class="glAQDp5 circle-icon" aria-hidden="true" style="width: 4px; height: 4px;"><svg
-                                        width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                                        <path
-                                            d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16Z">
-                                        </path>
-                                    </svg></span>
-                                Online
-                            </div>
+            <section id="aboutSeller" class="seller-preview">
+                <h2>About The Seller</h2>
+                <section class="user-preview">
+                    <section class="seller-preview-long flex">
+                        <div class="img-container">
+                            <img src="https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/1fe02234f0b300905f098d1c2eef2599-1621414093019/30dd09bd-748a-49c0-b3bc-ee3071bdfadb.jpg"
+                                alt="seller-img">
                         </div>
-                        <div class="one-liner-rating-wrapper flex">
-                            <p class="one-liner">UI UX Designer</p>
-                            <div class="flex">
-                                <div class="orca-rating seller-rating color-yellow tbody-6">
-                                    <div class="stars"><span class="glAQDp5 orca-star" style="width:15px;height:15px"
-                                            aria-hidden="true"><svg width="16" height="15" viewBox="0 0 16 15"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                                    d="M16 5.81285C16 5.98299 15.875 6.14367 15.75 6.26654L12.2596 9.61248L13.0865 14.3384C13.0962 14.4045 13.0962 14.4612 13.0962 14.5274C13.0962 14.7732 12.9808 15 12.7019 15C12.5673 15 12.4327 14.9527 12.3173 14.8866L8 12.656L3.68269 14.8866C3.55769 14.9527 3.43269 15 3.29808 15C3.01923 15 2.89423 14.7732 2.89423 14.5274C2.89423 14.4612 2.90385 14.4045 2.91346 14.3384L3.74038 9.61248L0.240385 6.26654C0.125 6.14367 0 5.98299 0 5.81285C0 5.5293 0.298077 5.41588 0.538462 5.37807L5.36539 4.68809L7.52885 0.387524C7.61539 0.207939 7.77885 0 8 0C8.22115 0 8.38462 0.207939 8.47115 0.387524L10.6346 4.68809L15.4615 5.37807C15.6923 5.41588 16 5.5293 16 5.81285Z">
-                                                </path>
-                                            </svg></span><span class="glAQDp5 orca-star" style="width:15px;height:15px"
-                                            aria-hidden="true"><svg width="16" height="15" viewBox="0 0 16 15"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                                    d="M16 5.81285C16 5.98299 15.875 6.14367 15.75 6.26654L12.2596 9.61248L13.0865 14.3384C13.0962 14.4045 13.0962 14.4612 13.0962 14.5274C13.0962 14.7732 12.9808 15 12.7019 15C12.5673 15 12.4327 14.9527 12.3173 14.8866L8 12.656L3.68269 14.8866C3.55769 14.9527 3.43269 15 3.29808 15C3.01923 15 2.89423 14.7732 2.89423 14.5274C2.89423 14.4612 2.90385 14.4045 2.91346 14.3384L3.74038 9.61248L0.240385 6.26654C0.125 6.14367 0 5.98299 0 5.81285C0 5.5293 0.298077 5.41588 0.538462 5.37807L5.36539 4.68809L7.52885 0.387524C7.61539 0.207939 7.77885 0 8 0C8.22115 0 8.38462 0.207939 8.47115 0.387524L10.6346 4.68809L15.4615 5.37807C15.6923 5.41588 16 5.5293 16 5.81285Z">
-                                                </path>
-                                            </svg></span><span class="glAQDp5 orca-star" style="width:15px;height:15px"
-                                            aria-hidden="true"><svg width="16" height="15" viewBox="0 0 16 15"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                                    d="M16 5.81285C16 5.98299 15.875 6.14367 15.75 6.26654L12.2596 9.61248L13.0865 14.3384C13.0962 14.4045 13.0962 14.4612 13.0962 14.5274C13.0962 14.7732 12.9808 15 12.7019 15C12.5673 15 12.4327 14.9527 12.3173 14.8866L8 12.656L3.68269 14.8866C3.55769 14.9527 3.43269 15 3.29808 15C3.01923 15 2.89423 14.7732 2.89423 14.5274C2.89423 14.4612 2.90385 14.4045 2.91346 14.3384L3.74038 9.61248L0.240385 6.26654C0.125 6.14367 0 5.98299 0 5.81285C0 5.5293 0.298077 5.41588 0.538462 5.37807L5.36539 4.68809L7.52885 0.387524C7.61539 0.207939 7.77885 0 8 0C8.22115 0 8.38462 0.207939 8.47115 0.387524L10.6346 4.68809L15.4615 5.37807C15.6923 5.41588 16 5.5293 16 5.81285Z">
-                                                </path>
-                                            </svg></span><span class="glAQDp5 orca-star" style="width:15px;height:15px"
-                                            aria-hidden="true"><svg width="16" height="15" viewBox="0 0 16 15"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                                    d="M16 5.81285C16 5.98299 15.875 6.14367 15.75 6.26654L12.2596 9.61248L13.0865 14.3384C13.0962 14.4045 13.0962 14.4612 13.0962 14.5274C13.0962 14.7732 12.9808 15 12.7019 15C12.5673 15 12.4327 14.9527 12.3173 14.8866L8 12.656L3.68269 14.8866C3.55769 14.9527 3.43269 15 3.29808 15C3.01923 15 2.89423 14.7732 2.89423 14.5274C2.89423 14.4612 2.90385 14.4045 2.91346 14.3384L3.74038 9.61248L0.240385 6.26654C0.125 6.14367 0 5.98299 0 5.81285C0 5.5293 0.298077 5.41588 0.538462 5.37807L5.36539 4.68809L7.52885 0.387524C7.61539 0.207939 7.77885 0 8 0C8.22115 0 8.38462 0.207939 8.47115 0.387524L10.6346 4.68809L15.4615 5.37807C15.6923 5.41588 16 5.5293 16 5.81285Z">
-                                                </path>
-                                            </svg></span><span class="glAQDp5 orca-star" style="width:15px;height:15px"
-                                            aria-hidden="true"><svg width="16" height="15" viewBox="0 0 16 15"
-                                                xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                                    d="M11.4056 8.74291L13.8772 6.37996L10.4535 5.88847L9.81872 5.79395L9.53021 5.22684L8.00107 2.18336V11.2854L8.56849 11.5785L11.6268 13.1664L11.0497 9.81096L10.9343 9.18715L11.4056 8.74291ZM15.7525 6.26654L12.2615 9.61248L13.0886 14.3384C13.1559 14.7543 13.002 15 12.7039 15C12.5981 15 12.4635 14.9622 12.3192 14.8866L8.00107 12.656L3.68295 14.8866C3.53869 14.9622 3.40405 15 3.29826 15C3.00013 15 2.84625 14.7543 2.91357 14.3384L3.74065 9.61248L0.239988 6.26654C-0.173552 5.86011 -0.0389107 5.46314 0.538122 5.37807L5.36596 4.68809L7.52983 0.387524C7.65485 0.132325 7.82796 0 8.00107 0C8.17418 0 8.33767 0.132325 8.47231 0.387524L10.6362 4.68809L15.464 5.37807C16.0411 5.46314 16.1757 5.86011 15.7525 6.26654Z">
-                                                </path>
-                                            </svg></span></div><b class="rating-score">4.7</b><span
-                                        class="ratings-count">(<!-- -->33<!-- -->)</span>
+                        <section class="seller-details flex column">
+                            <section class="name-line flex">
+                                <p class="seller-username">rashin07</p>
+                                <div class="online-indicator">
+                                    <span><svg width="4px" height="4px" viewBox="0 0 16 16"
+                                            xmlns="http://www.w3.org/2000/svg" fill="#1dbf73">
+                                            <path
+                                                d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16Z">
+                                            </path>
+                                        </svg></span>
+                                    <p>Online</p>
                                 </div>
-                            </div>
-                        </div>
-
-                        <button class="contact-me">contact-me</button>
-                    </div>
+                            </section>
+                            <p class="seller-level">Level 2 Seller </p>
+                            <section class="seller-reviews-stat flex align-center">
+                                <ul class="stars clean-list flex">
+                                    <li>
+                                        <span class="flex justify-center align-center"><svg
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15"
+                                                height="15">
+                                                <path
+                                                    d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                </path>
+                                            </svg></span>
+                                    </li>
+                                    <li><span class="flex justify-center align-center"><svg
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15"
+                                                height="15">
+                                                <path
+                                                    d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                </path>
+                                            </svg></span>
+                                    </li>
+                                    <li><span class="flex justify-center align-center"><svg
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15"
+                                                height="15">
+                                                <path
+                                                    d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                </path>
+                                            </svg></span>
+                                    </li>
+                                    <li><span class="flex justify-center align-center"><svg
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15"
+                                                height="15">
+                                                <path
+                                                    d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                </path>
+                                            </svg></span></li>
+                                    <li><span class="flex justify-center align-center"><svg
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15"
+                                                height="15">
+                                                <path
+                                                    d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                </path>
+                                            </svg></span></li>
+                                </ul>
+                                <p class="rate-score">4.9</p>
+                                <p class="seller-reviews-count">(344)</p>
+                            </section>
+                            <button class="contact-me-btn">Contact Me</button>
+                        </section>
+                    </section>
                 </section>
-
-
-                <section class="seller-details-container"></section>
-
-                <h1>{{ gig.owner.rate }}</h1>
-                <h1>{{ gig.owner.level }}</h1>
-                <h1>{{ gig.country }}</h1>
-                <h1>{{ gig.about }}</h1>
+                <section class="seller-details-container">
+                    <section class="seller-stat">
+                        <ul class="grid clean-list user-info">
+                            <li class="flex column"><span class="key">From</span>
+                                <span class="value">Bangladesh</span>
+                            </li>
+                            <li class="flex column"><span class="key">Member since</span>
+                                <span class="value">Jan 2023</span>
+                            </li>
+                            <li class="flex column"><span class="key">Avg. response time</span>
+                                <span class="value">1 hour</span>
+                            </li>
+                            <li class="flex column"><span class="key">Last delivery</span>
+                                <span class="value">about 12 hours</span>
+                            </li>
+                        </ul>
+                    </section>
+                    <section class="seller-desc">
+                        <p>Hello! This is Rashin Faria, a Data Entry Specialist &amp; Virtual Assistant at your service. I
+                            have excellent experience in Data Entry, Data Processing, Data Uploading, MS Word/Excel, Google
+                            Spreadsheet, PDF, Web Research, Ecommerce Product Entry, Data Scraping and others. With a 24/7
+                            supporting team we work together for the betterment of the projects. We have extensive
+                            experience to do our project very fast and professionally. Client satisfaction is our first
+                            priority. Order Now! Regards Rashin Faria</p>
+                    </section>
+                </section>
             </section>
-            <hr>
-            <section class="reviews-container" v-if="gig.reviews">
+
+            <section id="reviews" class="reviews-container">
                 <section class="reviews-stat flex column">
                     <section class="stat-header flex align-center">
-                        <h2>200 Reviews</h2>
+                        <h2>344 Reviews </h2>
                         <section class="reviews-rate flex">
                             <ul class="stars clean-list flex">
                                 <li><span class="flex justify-center align-center"><svg xmlns="http://www.w3.org/2000/svg"
@@ -123,26 +250,10 @@
                                             <path
                                                 d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
                                             </path>
-                                        </svg></span></li>
-                                <li><span class="flex justify-center align-center"><svg xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 1792 1792" width="15" height="15">
-                                            <path
-                                                d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
-                                            </path>
-                                        </svg></span></li>
-                                <li><span class="flex justify-center align-center"><svg xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 1792 1792" width="15" height="15">
-                                            <path
-                                                d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
-                                            </path>
-                                        </svg></span></li>
-                                <li><span class="flex justify-center align-center"><svg xmlns="http://www.w3.org/2000/svg"
-                                            viewBox="0 0 1792 1792" width="15" height="15">
-                                            <path
-                                                d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
-                                            </path>
-                                        </svg></span></li>
-                                <li><span class="flex justify-center align-center"><svg xmlns="http://www.w3.org/2000/svg"
+                                        </svg></span>
+                                </li>
+                                <li>
+                                    <span class="flex justify-center align-center"><svg xmlns="http://www.w3.org/2000/svg"
                                             viewBox="0 0 1792 1792" width="15" height="15">
                                             <path
                                                 d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
@@ -150,64 +261,65 @@
                                         </svg>
                                     </span>
                                 </li>
+                                <li><span class="flex justify-center align-center"><svg xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 1792 1792" width="15" height="15">
+                                            <path
+                                                d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                            </path>
+                                        </svg></span></li>
+                                <li><span class="flex justify-center align-center"><svg xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 1792 1792" width="15" height="15">
+                                            <path
+                                                d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                            </path>
+                                        </svg></span></li>
+                                <li><span class="flex justify-center align-center"><svg xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 1792 1792" width="15" height="15">
+                                            <path
+                                                d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                            </path>
+                                        </svg></span></li>
                             </ul>
                             <p class="rating-score">5</p>
                         </section>
-
                     </section>
                     <section class="stat-main flex">
                         <section class="stars-counters">
                             <ul class="clean-list flex column">
-                                <li class="flex align-center">
-                                    <span class="key">5 Stars</span>
-                                    <section class="progress-container flex align-center">
-                                        <progress max="344" value="310"></progress>
-                                        <span class="star-num">(310)</span>
-                                    </section>
+                                <li class="flex align-center"><span class="key">5 Stars</span>
+                                    <section class="progress-container flex align-center"><progress max="344"
+                                            value="310"></progress><span class="star-num">(310)</span></section>
                                 </li>
-                                <li class="flex align-center">
-                                    <span class="key">4 Stars</span>
-                                    <section class="progress-container flex align-center">
-                                        <progress max="344" value="28"></progress>
-                                        <span class="star-num">(28)</span>
-                                    </section>
+                                <li class="flex align-center"><span class="key">4 Stars</span>
+                                    <section class="progress-container flex align-center"><progress max="344"
+                                            value="28"></progress><span class="star-num">(28)</span></section>
                                 </li>
-                                <li class="flex align-center">
-                                    <span class="key">3 Stars</span>
-                                    <section class="progress-container flex align-center">
-                                        <progress max="344" value="6"></progress>
-                                        <span class="star-num">(6)</span>
-                                    </section>
+                                <li class="flex align-center"><span class="key">3 Stars</span>
+                                    <section class="progress-container flex align-center"><progress max="344"
+                                            value="6"></progress><span class="star-num">(6)</span></section>
                                 </li>
-                                <li class="flex align-center">
-                                    <span class="key">2 Stars</span>
-                                    <section class="progress-container flex align-center">
-                                        <progress max="344" value="2"></progress>
-                                        <span class="star-num">(2)</span>
-                                    </section>
+                                <li class="flex align-center"><span class="key">2 Stars</span>
+                                    <section class="progress-container flex align-center"><progress max="344"
+                                            value="2"></progress><span class="star-num">(2)</span></section>
                                 </li>
-                                <li class="flex align-center">
-                                    <span class="key">1 Star</span>
-                                    <section class="progress-container flex align-center">
-                                        <progress max="344" value="1"></progress>
-                                        <span class="star-num">(1)</span>
-                                    </section>
+                                <li class="flex align-center"><span class="key">1 Star</span>
+                                    <section class="progress-container flex align-center"><progress max="344"
+                                            value="1"></progress><span class="star-num">(1)</span></section>
                                 </li>
                             </ul>
                         </section>
                         <section class="ranking flex column">
                             <h6>Rating Breakdown</h6>
                             <ul class="clean-list flex column">
-                                <li class="flex align-center space-between">
-                                    <span class="key">Seller communication level</span>
-                                    <section class="star-container flex align-center">
-                                        <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15"
+                                <li class="flex align-center space-between"><span class="key">Seller communication
+                                        level</span>
+                                    <section class="star-container flex align-center"><span><svg
+                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15"
                                                 height="15">
                                                 <path
                                                     d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
                                                 </path>
-                                            </svg></span><span class="value">5</span>
-                                    </section>
+                                            </svg></span><span class="value">5</span></section>
                                 </li>
                                 <li class="flex align-center space-between"><span class="key">Recommend to a friend</span>
                                     <section class="star-container flex align-center"><span><svg
@@ -225,33 +337,320 @@
                                                 <path
                                                     d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
                                                 </path>
-                                            </svg></span>
-                                        <span class="value">5</span>
-                                    </section>
+                                            </svg></span><span class="value">5</span></section>
                                 </li>
                             </ul>
                         </section>
                     </section>
                 </section>
-
-
-
-
-                <section class="review-list" v-if="gig.reviews">
-                    <ul class="reviews-list" v-for="review in gig.reviews">
-                        <li>
-                            <h1>{{ review.name }}</h1>
-                            <h1>{{ review.country }} {{ review.flag }}</h1>
-                            <h1>Rate: 4</h1>
-                            <h1>{{ review.review }}</h1>
-                        </li>
-                    </ul>
+                <section class="review-list"><!---->
+                    <section>
+                        <ul class="clean-list">
+                            <section class="review-preview"><!---->
+                                <section class="review-preview-long grid"><img class="reviewer-img"
+                                        src="https://randomuser.me/api/portraits/men/17.jpg" alt="user-img">
+                                    <section class="reviewer-details flex column">
+                                        <p class="username">bartstrijbos</p>
+                                        <section class="country-wrapper flex"><img
+                                                src="https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1f3-1f1f1.png"
+                                                alt="reviewer-flag">
+                                            <p class="country">Netherlands</p>
+                                        </section>
+                                    </section>
+                                    <section class="review-content">
+                                        <section class="review-rate flex align-center">
+                                            <ul class="stars clean-list flex">
+                                                <li><span class="flex justify-center align-center"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
+                                                            width="15" height="15">
+                                                            <path
+                                                                d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                            </path>
+                                                        </svg></span></li>
+                                                <li><span class="flex justify-center align-center"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
+                                                            width="15" height="15">
+                                                            <path
+                                                                d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                            </path>
+                                                        </svg></span></li>
+                                                <li><span class="flex justify-center align-center"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
+                                                            width="15" height="15">
+                                                            <path
+                                                                d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                            </path>
+                                                        </svg></span></li>
+                                                <li><span class="flex justify-center align-center"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
+                                                            width="15" height="15">
+                                                            <path
+                                                                d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                            </path>
+                                                        </svg></span></li>
+                                            </ul>
+                                            <p class="rating-score">4</p>
+                                            <p class="reviewed-at">2 months ago</p>
+                                        </section>
+                                        <p class="review-description">Use your revisions and communication, and you will
+                                            have something that works for you! I recommend modernmarvel for the price they
+                                            ask! I did not know what to expect from my first buy on FIverr. The previews
+                                            where what I was going for, so I thought why not give it a try. The initial
+                                            delivery had two good concepts and three concepts I did not like. The two good
+                                            concepts however, where not really what I wanted though. I submitted a revision
+                                            proposal and hoped for the best. This is where this seller shines! From the
+                                            initial designs, he worked quickly with every suggestion I made for revisions
+                                            and was good in communication. I slowly saw my project evolving to something I
+                                            love. Recommended!</p>
+                                    </section>
+                                </section>
+                            </section>
+                            <section class="review-preview"><!---->
+                                <section class="review-preview-long grid"><img class="reviewer-img"
+                                        src="https://randomuser.me/api/portraits/men/9.jpg" alt="user-img">
+                                    <section class="reviewer-details flex column">
+                                        <p class="username">v_winko33</p>
+                                        <section class="country-wrapper flex"><img
+                                                src="https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png"
+                                                alt="reviewer-flag">
+                                            <p class="country">United States</p>
+                                        </section>
+                                    </section>
+                                    <section class="review-content">
+                                        <section class="review-rate flex align-center">
+                                            <ul class="stars clean-list flex">
+                                                <li><span class="flex justify-center align-center"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
+                                                            width="15" height="15">
+                                                            <path
+                                                                d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                            </path>
+                                                        </svg></span></li>
+                                                <li><span class="flex justify-center align-center"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
+                                                            width="15" height="15">
+                                                            <path
+                                                                d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                            </path>
+                                                        </svg></span></li>
+                                                <li><span class="flex justify-center align-center"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
+                                                            width="15" height="15">
+                                                            <path
+                                                                d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                            </path>
+                                                        </svg></span></li>
+                                                <li><span class="flex justify-center align-center"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
+                                                            width="15" height="15">
+                                                            <path
+                                                                d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                            </path>
+                                                        </svg></span></li>
+                                                <li><span class="flex justify-center align-center"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
+                                                            width="15" height="15">
+                                                            <path
+                                                                d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                            </path>
+                                                        </svg></span></li>
+                                            </ul>
+                                            <p class="rating-score">5</p>
+                                            <p class="reviewed-at"> 3 weeks ago</p>
+                                        </section>
+                                        <p class="review-description">Working with this seller was a great experience in
+                                            that he was quick to respond (considering the 11+ hr time zone difference),
+                                            friendly, reliable, and professional. He created some concepts with literally no
+                                            reference the first time around, and the second time around I gave him more of
+                                            an idea of what I was looking for and found the ideal logo. You get what you pay
+                                            for, and the price I think is a very good deal that's hard to find.
+                                            Communication +asking questions is key to get all that you want and need from
+                                            this great offer. Although I am satisfied with the logo, I probably would've
+                                            liked something more like the work he shows in his second picture on his
+                                            profile/gigs. I do recommend him!</p>
+                                    </section>
+                                </section>
+                            </section>
+                            <section class="review-preview"><!---->
+                                <section class="review-preview-long grid"><img class="reviewer-img"
+                                        src="https://randomuser.me/api/portraits/women/10.jpg" alt="user-img">
+                                    <section class="reviewer-details flex column">
+                                        <p class="username">brendanpaull</p>
+                                        <section class="country-wrapper flex"><img
+                                                src="https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ef-1f1f5.png"
+                                                alt="reviewer-flag">
+                                            <p class="country">Japan</p>
+                                        </section>
+                                    </section>
+                                    <section class="review-content">
+                                        <section class="review-rate flex align-center">
+                                            <ul class="stars clean-list flex">
+                                                <li><span class="flex justify-center align-center"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
+                                                            width="15" height="15">
+                                                            <path
+                                                                d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                            </path>
+                                                        </svg></span></li>
+                                                <li><span class="flex justify-center align-center"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
+                                                            width="15" height="15">
+                                                            <path
+                                                                d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                            </path>
+                                                        </svg></span></li>
+                                                <li><span class="flex justify-center align-center"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
+                                                            width="15" height="15">
+                                                            <path
+                                                                d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                            </path>
+                                                        </svg></span></li>
+                                                <li><span class="flex justify-center align-center"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
+                                                            width="15" height="15">
+                                                            <path
+                                                                d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                            </path>
+                                                        </svg></span></li>
+                                                <li><span class="flex justify-center align-center"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
+                                                            width="15" height="15">
+                                                            <path
+                                                                d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                            </path>
+                                                        </svg></span></li>
+                                            </ul>
+                                            <p class="rating-score">5</p>
+                                            <p class="reviewed-at"> 1 month ago</p>
+                                        </section>
+                                        <p class="review-description">Seller was extremely communicative and always
+                                            responded very quickly even on his/her day off (Sunday). While I got something
+                                            that will get my started and I suppose I got what I paid for (the price was
+                                            definitely quite low), I would be hard pressed to call the designs I got as
+                                            "modern" or "minimalist" like the logo presented in the profile. They felt like
+                                            clip-art from 10 to 15 years ago attached to my website name.</p>
+                                    </section>
+                                </section>
+                            </section>
+                            <section class="review-preview"><!---->
+                                <section class="review-preview-long grid"><img class="reviewer-img"
+                                        src="https://randomuser.me/api/portraits/women/72.jpg" alt="user-img">
+                                    <section class="reviewer-details flex column">
+                                        <p class="username">tracyblehm</p>
+                                        <section class="country-wrapper flex"><img
+                                                src="https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1e8-1f1e6.png"
+                                                alt="reviewer-flag">
+                                            <p class="country">Canada</p>
+                                        </section>
+                                    </section>
+                                    <section class="review-content">
+                                        <section class="review-rate flex align-center">
+                                            <ul class="stars clean-list flex">
+                                                <li><span class="flex justify-center align-center"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
+                                                            width="15" height="15">
+                                                            <path
+                                                                d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                            </path>
+                                                        </svg></span></li>
+                                                <li><span class="flex justify-center align-center"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
+                                                            width="15" height="15">
+                                                            <path
+                                                                d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                            </path>
+                                                        </svg></span></li>
+                                                <li><span class="flex justify-center align-center"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
+                                                            width="15" height="15">
+                                                            <path
+                                                                d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                            </path>
+                                                        </svg></span></li>
+                                                <li><span class="flex justify-center align-center"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
+                                                            width="15" height="15">
+                                                            <path
+                                                                d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                            </path>
+                                                        </svg></span></li>
+                                            </ul>
+                                            <p class="rating-score">4</p>
+                                            <p class="reviewed-at"> 2 months ago</p>
+                                        </section>
+                                        <p class="review-description">I was a little nervous as I had never hired anyone
+                                            before and have had bad experiences on other platforms. However this was
+                                            absolutely marvelous. I loved the design. It was shocking how fast it was done
+                                            and how amazing it turned out. I will definitely be hiring them again for my
+                                            other projects that are coming up. Thank-you!!</p>
+                                    </section>
+                                </section>
+                            </section>
+                            <section class="review-preview"><!---->
+                                <section class="review-preview-long grid"><img class="reviewer-img"
+                                        src="https://randomuser.me/api/portraits/women/10.jpg" alt="user-img">
+                                    <section class="reviewer-details flex column">
+                                        <p class="username">jai_s22</p>
+                                        <section class="country-wrapper flex"><img
+                                                src="https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png"
+                                                alt="reviewer-flag">
+                                            <p class="country">United States</p>
+                                        </section>
+                                    </section>
+                                    <section class="review-content">
+                                        <section class="review-rate flex align-center">
+                                            <ul class="stars clean-list flex">
+                                                <li><span class="flex justify-center align-center"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
+                                                            width="15" height="15">
+                                                            <path
+                                                                d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                            </path>
+                                                        </svg></span></li>
+                                                <li><span class="flex justify-center align-center"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
+                                                            width="15" height="15">
+                                                            <path
+                                                                d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                            </path>
+                                                        </svg></span></li>
+                                                <li><span class="flex justify-center align-center"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
+                                                            width="15" height="15">
+                                                            <path
+                                                                d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                            </path>
+                                                        </svg></span></li>
+                                                <li><span class="flex justify-center align-center"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
+                                                            width="15" height="15">
+                                                            <path
+                                                                d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                            </path>
+                                                        </svg></span></li>
+                                            </ul>
+                                            <p class="rating-score">4</p>
+                                            <p class="reviewed-at">2 weeks ago</p>
+                                        </section>
+                                        <p class="review-description">Using this service was a pretty decent experience. It
+                                            took a bit longer than I wanted to finally get the final design. I had to go
+                                            back and forth for a week trying to find the correct revision of the design. At
+                                            first, I thought the experience of the designer was not the best due to finding
+                                            some logos with minimal effort. Once I messaged the designer that I felt that
+                                            the designs that they were producing were not satisfying me, they then were able
+                                            to put a lot of effort into my ideas. I personally had to come up with the
+                                            design of my logo instead of them using their experience and trusting them to
+                                            come up with one themselves. Eventually, they did deliver so I am happy with the
+                                            way it finished.</p>
+                                    </section>
+                                </section>
+                            </section>
+                        </ul>
+                    </section>
                 </section>
-
             </section>
-            <section v-else>This user dont have reviews for now </section>
         </section>
-
 
         <section class="package-container">
             <section class="gig-package">
@@ -353,7 +752,7 @@
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { gigService } from '../services/gig.service.local'
 import { getActionRemoveGig, getActionUpdateGig, getActionAddGigMsg } from '../store/gig.store'
-
+// import { svgServive } from '../services/svg.service.js'
 export default {
     props: ['gig'],
     data() {
@@ -401,6 +800,9 @@ export default {
     },
 
     methods: {
+        getSvg(iconName) {
+            return (this.icon = svgServive.getGigSvg(iconName))
+        },
         async loadGig() {
             try {
                 const { gigId } = this.$route.params

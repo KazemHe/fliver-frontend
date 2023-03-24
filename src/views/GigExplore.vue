@@ -6,7 +6,7 @@
 </template>
   
 <script>
-import { showErrorMsg, showSuccessMsg, getFilterFrom } from '../services/event-bus.service'
+import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { gigService } from '../services/gig.service.local'
 import { getActionRemoveGig, getActionUpdateGig, getActionAddGigMsg } from '../store/gig.store'
 import GigFilter from '../cmps/GIgFilter.vue'

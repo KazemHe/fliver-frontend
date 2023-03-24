@@ -31,8 +31,18 @@
     &.align-center {
         align-items: center;
     }
+
+    &.space-between {
+        justify-content: space-between;
+    }
+    
+
 }
 
+
+.grid{
+    display: grid;
+}
 // Media helpers
 
 .square-ratio {
