@@ -10,6 +10,9 @@
 
     <section class="gig-info flex" ref="filter">
 
+
+        <my-star-rating :gig="gig" ></my-star-rating>
+        
         <section class="main-gig">
             <div class="gig-overview">
                 <h1>{{ gig.title }}</h1>
@@ -18,11 +21,12 @@
                         <div class="img-container"><img :src=gig.owner.imgUrl></div>
                         <div class="text-container">
                             <div class="text">
-                                <a aria-current="page" href="#/gig/63910d5246b48fa0aaeec9ab#aboutSeller"
-                                    class="router-link-active router-link-exact-active">
-                                    <p class="seller-username">rashin07</p>
+                                <a aria-current="page" href="#aboutSeller"
+                                    class="router-link-active router-link-exact-active"
+                                    @click.prevent="scrollToAboutSeller">
+                                    <p class="seller-username">{{ gig.owner.fullname }}</p>
                                 </a>
-                                <p class="seller-level">Level 2 Seller </p>
+                                <p class="seller-level">Level {{ gig.owner.level }} Seller </p>
                                 <div class="line"> |
 
                                 </div>
@@ -103,28 +107,67 @@
                         <section class="review-preview">
                             <section class="review-preview-snippet">
                                 <section class="review-snippet-temporary grid">
-                                    <img class="reviewer-img" src="https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/dea22d35dccefb507c34eb906cc01554-1672399959338/f0a729bd-0973-47a8-b4d7-e3e2b1c6b858.jpg" alt="user-img">
-                                    <section class="reviewer-details flex"><p class="username">jaygreen341</p>
+                                    <img class="reviewer-img"
+                                        src="https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/dea22d35dccefb507c34eb906cc01554-1672399959338/f0a729bd-0973-47a8-b4d7-e3e2b1c6b858.jpg"
+                                        alt="user-img">
+                                    <section class="reviewer-details flex">
+                                        <p class="username">jaygreen341</p>
                                         <section class="country-wrapper flex">
-                                            <img src="https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ec-1f1e7.png" alt="reviewer-flag">
-                                            <p class="country">United States</p><ul class="stars clean-list flex">
-                                                <li>
-                                                    <span class="flex justify-center align-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15" height="15"><path d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z"></path></svg></span>
+                                            <img src="https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ec-1f1e7.png"
+                                                alt="reviewer-flag">
+                                            <p class="country">United States</p>
+                                            <ul class="stars clean-list flex">
+                                                <li><span class="flex justify-center align-center"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
+                                                            width="15" height="15">
+                                                            <path
+                                                                d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                            </path>
+                                                        </svg></span>
                                                 </li>
-                                                <li><span class="flex justify-center align-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15" height="15"><path d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z"></path></svg></span>
+                                                <li><span class="flex justify-center align-center"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
+                                                            width="15" height="15">
+                                                            <path
+                                                                d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                            </path>
+                                                        </svg></span>
                                                 </li>
-                                                <li><span class="flex justify-center align-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15" height="15"><path d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z"></path></svg></span>
+                                                <li><span class="flex justify-center align-center"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
+                                                            width="15" height="15">
+                                                            <path
+                                                                d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                            </path>
+                                                        </svg></span>
                                                 </li>
-                                                <li><span class="flex justify-center align-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15" height="15"><path d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z"></path></svg></span>
+                                                <li><span class="flex justify-center align-center"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
+                                                            width="15" height="15">
+                                                            <path
+                                                                d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                            </path>
+                                                        </svg></span>
                                                 </li>
-                                                <li><span class="flex justify-center align-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792" width="15" height="15"><path d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z"></path></svg></span>
+                                                <li><span class="flex justify-center align-center"><svg
+                                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1792"
+                                                            width="15" height="15">
+                                                            <path
+                                                                d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
+                                                            </path>
+                                                        </svg></span>
                                                 </li>
                                             </ul>
                                             <p class="rating-score">5</p>
                                         </section>
                                     </section>
                                     <section class="review-content">
-                                        <p class="review-description">Working with bnn_marketing has been very easy! They provided a product that is better than what I expected. Even when I made a mistake on my order, Daniel was very understanding and professional. There are many companies to choose from; However, I can see why bnn_marketing is a top seller, I would highly recommend them to anyone!</p><p class="reviewed-at">Published 1 month ago</p>
+                                        <p class="review-description">Working with bnn_marketing has been very easy! They
+                                            provided a product that is better than what I expected. Even when I made a
+                                            mistake on my order, Daniel was very understanding and professional. There are
+                                            many companies to choose from; However, I can see why bnn_marketing is a top
+                                            seller, I would highly recommend them to anyone!</p>
+                                        <p class="reviewed-at">Published 1 month ago</p>
                                     </section>
                                 </section>
                             </section>
@@ -140,17 +183,16 @@
                 <p>{{ gig.description }}</p>
             </div>
 
-            <section id="aboutSeller" class="seller-preview">
+            <section ref="aboutSeller" id="aboutSeller" class="seller-preview">
                 <h2>About The Seller</h2>
                 <section class="user-preview">
                     <section class="seller-preview-long flex">
                         <div class="img-container">
-                            <img src="https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/1fe02234f0b300905f098d1c2eef2599-1621414093019/30dd09bd-748a-49c0-b3bc-ee3071bdfadb.jpg"
-                                alt="seller-img">
+                            <img :src="'https://' + gig.owner.imgUrl" alt="seller-img">
                         </div>
                         <section class="seller-details flex column">
                             <section class="name-line flex">
-                                <p class="seller-username">rashin07</p>
+                                <p class="seller-username">{{ gig.owner.fullname }}</p>
                                 <div class="online-indicator">
                                     <span><svg width="4px" height="4px" viewBox="0 0 16 16"
                                             xmlns="http://www.w3.org/2000/svg" fill="#1dbf73">
@@ -749,15 +791,19 @@
 </template>
   
 <script>
+import MyStarRating from '../cmps/MyStarRating.vue'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { gigService } from '../services/gig.service.local'
 import { getActionRemoveGig, getActionUpdateGig, getActionAddGigMsg } from '../store/gig.store'
-// import { svgServive } from '../services/svg.service.js'
+import { svgServive } from '../services/svg.service.js'
+
 export default {
     props: ['gig'],
+    
     data() {
         return {
             gig: null,
+           
         }
     },
 
@@ -799,7 +845,12 @@ export default {
         console.log('gig', gig.reviews);
     },
 
+
     methods: {
+        scrollToAboutSeller() {
+            this.$refs.aboutSeller.scrollIntoView({ behavior: 'smooth' });
+        },
+
         getSvg(iconName) {
             return (this.icon = svgServive.getGigSvg(iconName))
         },
@@ -837,7 +888,11 @@ export default {
     },
     printGigToConsole(gig) {
         console.log('Gig msgs:', gig.msgs)
-    }
+    },
+
+    components: {
+    MyStarRating
+  },
 }
 
 
