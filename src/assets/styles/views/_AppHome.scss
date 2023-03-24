@@ -3,7 +3,6 @@
 //     height: 675px;
 
 //     img {
-
 //         width: 100%;
 //         height: 100%;
 //         object-fit: cover;
@@ -67,14 +66,33 @@
     .vueperslides__bullet .default {
         display: none;
     }
+
+    .vueperslide__content-wrapper:not(.vueperslide__content-wrapper--outside-top):not(.vueperslide__content-wrapper--outside-bottom) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    div.vueperslides__title {
+        padding: 10px;
+        color: red;
+    }
+}
+
+.bgc-marketplace {
+    background-color: #f1fdf7;
 }
 
 .video-section {
+    .bgc-marketplace {
+        background-color: #f1fdf7;
+    }
     justify-content: space-between;
     padding-bottom: 96px;
     padding-top: 96px;
-
     background-color: #f1fdf7;
+    margin-bottom: 96px;
+
     .side-text {
         h2 {
             width: 471px;
@@ -108,6 +126,54 @@
 }
 
 .marketplace-container {
-    
-    width: 60px;
-  }
+    margin-bottom: 64px;
+
+    h4 {
+        text-align: center;
+        line-height: 7;
+    }
+
+    div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+    }
+
+    section.svg-container {
+
+        display: grid;
+        padding-inline-start: 20px;
+        padding-inline-end: 20px;
+        grid-template-columns: repeat(5, 1fr);
+        justify-items: center;
+        gap: 55px;
+    }
+
+    .bold {
+        font-size: 2rem;
+        line-height: 120%;
+        color: #404145;
+        margin-bottom: 64px;
+        font-family: macan-bold;
+    }
+
+    svg {
+        width: 60px;
+    }
+
+    svg::after {
+        content: "";
+        // position: absolute;
+        // top: 60px;
+        // right: 50%;
+        // transform: translate(50%);
+        // padding: 0 0 8px;
+        // width: 48px;
+        border-bottom: 2px solid #1f46ba;
+        transition: border-color .2s ease-in-out, width .2s ease-in-out;
+    }
+}
