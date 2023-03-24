@@ -1,11 +1,12 @@
 <template>
-  <FloatingFilter class="filter" :gigs="gigs" @setFilterBy="setFilterBy" />
-  <div class="sort-bar">
+  <FloatingFilter  :gigs="gigs" @setFilterBy="setFilterBy" />
+  <!-- <div class="sort-bar">
     <div class="count">11 services available</div>
     <div class="sort-by">
+     
       <p>Sort by</p>
     </div>
-  </div>
+  </div> -->
 </template>
 <script>
 
