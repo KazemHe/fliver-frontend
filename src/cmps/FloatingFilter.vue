@@ -1,40 +1,40 @@
 <template>
   <section>
     <VDropdown>
-      <button class="filter-btn">budget</button>
+      <button class="filter-btn">budget <span class="icon" v-html="getSvg('filterArrow')"></span></button>
       <template #popper>
         <section class="filter-mode" style="left: 0px;">
           <form id="filters" class="budget-modal" name="budget" @submit.prevent="setFilterBy">
             <div class="min">
               <p>MIN.</p>
-              <div class="minmax-input"><input v-model="filterBy.bugdet.min" placeholder="Any" type="number" name="min"
-                  class="min-price"><span>$</span>
+              <div class="minmax-input"><input v-model="filterBy.bugdet.min" placeholder="Any$" type="number" name="min"
+                  class="min-price">
               </div>
             </div>
             <div class="max">
               <p>MAX.</p>
-              <div class="minmax-input"><input v-model="filterBy.bugdet.max" placeholder="Any" type="number" name="max"
-                  class="max-price"><span>$</span>
+              <div class="minmax-input"><input v-model="filterBy.bugdet.max" placeholder="Any$" type="number" name="max"
+                  class="max-price">
               </div>
             </div>
           </form>
           <div class="filters-footer"><button class="clear" type="button">Clear All</button><button class="apply"
-              form="filters" type="submit">Apply</button></div>
+              form="filters" type="submit">Apply </button></div>
         </section>
       </template>
     </VDropdown>
     <VDropdown>
-      <button class="filter-btn">Delivery Time</button>
+      <button class="filter-btn">Delivery Time <span class="icon arrow" v-html="getSvg('filterArrow')"></span></button>
       <template #popper>
-        <section class="filter-mode check" style="left: 301px;">
+        <section class="filter-mode " style="left: 301px;">
           <form id="filters" name="daysToMake" class="delivery" @submit.prevent="setFilterBy">
-            <div><input type="radio" id="24h" name="delivery-time" v-model="filterBy.DeliveryTime" value="1"><label
-                for="24h">Express 24H</label></div>
-            <div><input type="radio" id="3d" name="delivery-time" v-model="filterBy.DeliveryTime" value="3"><label
-                for="3d">Up to 3 days</label></div>
-            <div><input type="radio" id="7d" name="delivery-time" v-model="filterBy.DeliveryTime" value="7"><label
-                for="7d">Up to 7 days</label></div>
-            <div><input type="radio" id="anytime" name="delivery-time" value="" checked=""><label
+            <div class="delivery-option"><input class="delivery-input" type="radio" id="24h" name="delivery-time"
+                v-model="filterBy.DeliveryTime" value="1"><label for="24h">Express 24H</label></div>
+            <div class="delivery-option"><input class="delivery-input" type="radio" id="3d" name="delivery-time" v-model="filterBy.DeliveryTime"
+                value="3"><label for="3d">Up to 3 days</label></div>
+            <div class="delivery-option"><input class="delivery-input" type="radio" id="7d" name="delivery-time" v-model="filterBy.DeliveryTime"
+                value="7"><label for="7d">Up to 7 days</label></div>
+            <div class="delivery-option"><input class="delivery-input" type="radio" id="anytime" name="delivery-time" value="" checked=""><label
                 for="anytime">Anytime</label></div>
           </form>
           <div class="filters-footer"><button class="clear" type="button">Clear All</button><button class="apply"
@@ -45,6 +45,7 @@
   </section>
 </template>
 <script>
+import { svgServive } from '../services/svg.service.js'
 export default {
   data() {
     return {
@@ -64,6 +65,9 @@ export default {
       console.log('check the filter', this.filterBy)
 
       this.$emit('setFilterBy', { ...this.filterBy })
+    },
+    getSvg(iconName) {
+      return (this.icon = svgServive.getGigSvg(iconName))
     },
   },
 }
@@ -98,20 +102,21 @@ export default {
   box-shadow: 0 12px 18px rgba(0, 0, 0, .14);
   color: #404145;
   font-size: 14px;
-  line-height: 22px;
+  /* line-height: 22px; */
   /* /* margin-top: 8px; */
   min-height: 150px;
   /* min-width: 250px; */
   /* position: absolute;  */
   top: 100%;
   z-index: 100;
+
 }
 
 
 
 .filter-btn {
   font: 400 16px/24px Macan-regular, Helvetica Neue, Helvetica, Arial, sans-serif;
-  ;
+
   font-weight: 600;
   border: 1px solid #e4e5e7;
   border-radius: 8px;
@@ -132,9 +137,9 @@ export default {
   user-select: none;
 }
 
-.filter-btn :hover {
+/* .filter-btn :hover {
   border: 1px solid #222325;
-}
+} */
 
 .v-popper__wrapper {
   width: 100%;
@@ -143,17 +148,16 @@ export default {
 
 
 
+.delivery {
 
-
-
-.check {
-
+  width: 260px;
+  height: 232px;
   color: #404145;
   font-size: 14px;
   line-height: 22px;
   overflow-y: scroll;
-  padding: 12px
-
+  padding: 12px;
+  font: 400 16px/24px Macan-regular, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 
@@ -170,18 +174,24 @@ export default {
 }
 
 
-input {
-  width: 90px;
+.min-price,
+.max-price {
+  width: 120px;
+  height: 40px;
 }
 
-.filter-mode form {
-  padding: 12px 24px;
-}
 
 .filters-footer {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  border-top: 1px solid #e4e5e7;
+  padding: 16px 24px;
 }
+
+.filters-footer>.apply {
+  background-color: #222325;
+}
+
 
 
 .clear {
@@ -198,22 +208,41 @@ input {
 
 
 
-.apply{
+.apply {
   border: 1px solid transparent;
-    border-radius: 4px;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 100%;
-    padding: 12px 24px;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    -webkit-transition: 70ms cubic-bezier(.75,0,.25,1);
-    -o-transition: 70ms cubic-bezier(.75,0,.25,1);
-    transition: 70ms cubic-bezier(.75,0,.25,1);
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 100%;
+  padding: 12px 24px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: 70ms cubic-bezier(.75, 0, .25, 1);
+  -o-transition: 70ms cubic-bezier(.75, 0, .25, 1);
+  transition: 70ms cubic-bezier(.75, 0, .25, 1);
+}
+
+
+.v-popper :hover {
+  cursor: pointer;
+}
+
+.delivery-input {
+  height: 20px;
+  width: 20px;
+  margin: 8px;
+}
+
+.delivery-option {
+  font-size: 14px;
+  font-family: macan-bold;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 </style>

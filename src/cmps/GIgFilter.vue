@@ -1,5 +1,5 @@
 <template>
-  <FloatingFilter :gigs="gigs" @setFilterBy="setFilterBy" />
+  <FloatingFilter class="filter" :gigs="gigs" @setFilterBy="setFilterBy" />
   <div class="sort-bar">
     <div class="count">11 services available</div>
     <div class="sort-by">
@@ -27,7 +27,7 @@ export default {
   methods: {
 
     setFilterBy(filterBy) {
-      getFilterFrom(txt)
+
       console.log('check the filter', filterBy)
 
       this.$emit('setFilterBy', { ...filterBy })
