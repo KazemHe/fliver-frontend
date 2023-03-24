@@ -1,19 +1,23 @@
 
 <template>
-    <footer class="flex">
-        <div class="flex">
-            <h3> <span aria-label="logo" class="logo">fiverr</span></h3>
-            <h4>© Fiverr International Ltd. 2023</h4>
+    <footer class="main-container full">
+        <div class="flex space-between align-center">
+            <div class="flex">
+                <h3> <span aria-label="logo" class="logo">fiverr</span></h3>
+                <h4>© Fiverr International Ltd. 2023</h4>
+            </div>
 
+            <div class="flex footer-links">
+                <a href="https://twitter.com/fiverr"><span class="icon" v-html="getSvg('twitter')"></span></a>
+                <a href="https://www.facebook.com/Fiverr/"><span class="icon" v-html="getSvg('facebook')"></span></a>
+                <a href="https://www.linkedin.com/company/fiverr-com"><span class="icon" v-html="getSvg('linkedIn')"></span></a>
+                <a href="https://www.pinterest.com/fiverr/"><span class="icon" v-html="getSvg('pinterest')"></span></a>
+                <a href="https://www.instagram.com/fiverr/"><span class="icon" v-html="getSvg('instagram')"></span></a>
+                <div>
+                </div>
+            </div>
         </div>
-        <span class="icon" v-html="getSvg('twitter')"></span>
-        <span class="icon" v-html="getSvg('facebook')"></span>
-        <span class="icon" v-html="getSvg('linkedIn')"></span>
-        <span class="icon" v-html="getSvg('pinterest')"></span>
-        <span class="icon" v-html="getSvg('instagram')"></span>
-        <div>
 
-        </div>
     </footer>
 </template>
 
@@ -46,7 +50,7 @@ export default {
 
 <style>
 .icon {
-  width: 30px;
-  height: 30px;
+    width: 30px;
+    height: 30px;
 }
 </style>

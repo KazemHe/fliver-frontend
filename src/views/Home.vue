@@ -1,5 +1,4 @@
 <template>
-  <!--  v-for="(img, idx) in heroImgs" -->
   <section class="container hero-container home text-center full"></section>
 
   <section class="trusted-by full">
@@ -18,8 +17,8 @@
     </div>
   </section>
 
-  <section class="video-section flex">
-    <div class="side-text">
+  <section class="video-section flex ">
+    <div class="side-text main-container">
       <p>
       <h2>A whole world of freelance talent at your fingertips</h2>
       <ul>
@@ -50,29 +49,31 @@
       </ul>
       </p>
     </div>
-
+    
     <div class="side-video">
       <img :src="imgVideo" />
     </div>
   </section>
 
   <section class="marketplace-container">
-    <h1>Explore the marketplace</h1>
-    <div class="">
-      <h5> 
-        <span class="icon svg" v-html="getSvg('GraphicsAndDesign')"></span>
-        GraphicsAndDesign
-      </h5>
-      <span class="icon svg" v-html="getSvg('digitalMarketing')"></span>
-      <span class="icon svg" v-html="getSvg('writingAndTranslation')"></span>
-      <span class="icon svg" v-html="getSvg('videoAndAnimation')"></span>
-      <span class="icon svg" v-html="getSvg('musicAndAudio')"></span>
-      <span class="icon svg" v-html="getSvg('programmingAndTech')"></span>
-      <span class="icon svg" v-html="getSvg('business')"></span>
-      <span class="icon svg" v-html="getSvg('lifestyle')"></span>
-      <span class="icon svg" v-html="getSvg('data')"></span>
-      <span class="icon svg" v-html="getSvg('photography')"></span>
-    </div>
+    <p class="bold">Explore the marketplace</p>
+    <section class="svg-container">
+      <span>
+        <div>
+          <span class="icon svg" v-html="getSvg('GraphicsAndDesign')"></span>
+          <h4 class="svg-type">Graphics &amp; Design</h4>
+        </div>
+      </span>
+      <span><div><span class="icon svg" v-html="getSvg('digitalMarketing')"></span><h4 class="svg-type">Digital Marketing</h4></div></span>
+      <span><div><span class="icon svg" v-html="getSvg('writingAndTranslation')"></span><h4 class="svg-type">Writing & Translation</h4></div></span>
+      <span><div><span class="icon svg" v-html="getSvg('videoAndAnimation')"></span><h4 class="svg-type">Video & Animation</h4></div></span>
+      <span><div><span class="icon svg" v-html="getSvg('musicAndAudio')"></span><h4 class="svg-type">Music & Audio</h4></div></span>
+      <span><div><span class="icon svg" v-html="getSvg('programmingAndTech')"></span><h4 class="svg-type">Programming & Tech</h4></div></span>
+      <span><div><span class="icon svg" v-html="getSvg('business')"></span><h4 class="svg-type">Business</h4></div></span>
+      <span><div><span class="icon svg" v-html="getSvg('lifestyle')"></span><h4 class="svg-type">Lifestyle</h4></div></span>
+      <span><div><span class="icon svg" v-html="getSvg('data')"></span><h4 class="svg-type">Data</h4></div></span>
+      <span><div><span class="icon svg" v-html="getSvg('photography')"></span><h4 class="svg-type">Photography</h4></div></span>
+    </section>
   </section>
 </template>
 
@@ -141,7 +142,7 @@ export default {
     }
   },
   computed: {},
-  created() { },
+  created() {},
   methods: {
     getSvg(iconName) {
       return (this.icon = svgServive.getGigSvg(iconName))
@@ -154,28 +155,3 @@ export default {
 }
 </script>
 
-<style>
-
-
-.marketplace-container::after {
-  content: "";
-  position: absolute;
-  top: 60px;
-  right: 50%;
-  transform: translate(50%);
-  padding: 0 0 8px;
-  width: 48px;
-  border-bottom: 2px solid #c5c6c9;
-  transition: border-color .2s ease-in-out, width .2s ease-in-out;
-}
-
-/* 
-  > .svg {
-    width: 60px;
-  }
-
-  > .icon {
-    width: 30px;
-    height: 30px;
-  } */
-</style>
