@@ -1,16 +1,29 @@
 footer {
     border-top: rem(1px) solid $clr6;
-    
+    height: 80px;
+   
     .logo {
         color: $clr6;
         font-family: macan-bold;
         font-size: 1.2rem;
-        margin-inline-end: rem(29px);
+        margin-inline-end: rem(500px);
     }
-    
+
     .logo::after {
         content: '@';
         font-size: 0.5rem;
         color: $clr4;
+    }
+
+    .footer-links>* {
+        margin: 10px;
+        width: 40px;
+        height: 40px;
+       
+    }
+    .footer-links>*:hover {
+        background-color: #efeff0;
+        border-radius: 50%;
+        transition: background-color .2s;
     }
 }

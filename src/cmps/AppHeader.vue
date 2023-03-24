@@ -66,14 +66,12 @@ export default {
   },
   methods: {
     handleScroll(event) {
-      // console.log('window.scrollY ', window.scrollY)
-      // breakPoints: window.scrollY <= 100 | window.scrollY <= 200
       if (window.scrollY > 50 && window.scrollY < 200) {
-        console.log('100')
+        // console.log('100')
         this.isFirstScroll = true
       } else if (window.scrollY > 200) {
         this.isSecondScroll = true
-        console.log('200')
+        // console.log('200')
       } else if ( window.scrollY < 50 ) {
         this.isSecondScroll = false
         this.isFirstScroll = false

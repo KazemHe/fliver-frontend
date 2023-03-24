@@ -1,7 +1,6 @@
 <template>
-  <!--  v-for="(img, idx) in heroImgs" -->
-  <section class="container hero-container home text-center full">
-  </section>
+  <section class="container hero-container home text-center full"></section>
+
   <section class="trusted-by full">
     <span>Trusted by:</span>
     <img :src="img" v-for="img in trustedByImgs" :key="img" />
@@ -17,9 +16,69 @@
       </vueper-slides>
     </div>
   </section>
+
+  <section class="video-section flex ">
+    <div class="side-text main-container">
+      <p>
+      <h2>A whole world of freelance talent at your fingertips</h2>
+      <ul>
+        <li>
+          <section class="flex align-center"><span class="icon" v-html="getSvg('videoUl')"></span>
+            <h6>The best for every budget</h6>
+          </section>
+          <p> Find high-quality services at every price point. No hourly rates, just project-based pricing.</p>
+        </li>
+        <li>
+          <section class="flex align-center"><span class="icon" v-html="getSvg('videoUl')"></span>
+            <h6>Quality work done quickly</h6>
+          </section>
+          <p> Find the right freelancer to begin working on your project within minutes.</p>
+        </li>
+        <li>
+          <section class="flex align-center"><span class="icon" v-html="getSvg('videoUl')"></span>
+            <h6>Protected payments, every time</h6>
+          </section>
+          <p> Always know what you'll pay upfront. Your payment isn't released until you approve the work.</p>
+        </li>
+        <li>
+          <section class="flex align-center"><span class="icon" v-html="getSvg('videoUl')"></span>
+            <h3>Quality work done quickly</h3>
+          </section>
+          <p> Find the right freelancer to begin working on your project within minutes.</p>
+        </li>
+      </ul>
+      </p>
+    </div>
+    
+    <div class="side-video">
+      <img :src="imgVideo" />
+    </div>
+  </section>
+
+  <section class="marketplace-container">
+    <p class="bold">Explore the marketplace</p>
+    <section class="svg-container">
+      <span>
+        <div>
+          <span class="icon svg" v-html="getSvg('GraphicsAndDesign')"></span>
+          <h4 class="svg-type">Graphics &amp; Design</h4>
+        </div>
+      </span>
+      <span><div><span class="icon svg" v-html="getSvg('digitalMarketing')"></span><h4 class="svg-type">Digital Marketing</h4></div></span>
+      <span><div><span class="icon svg" v-html="getSvg('writingAndTranslation')"></span><h4 class="svg-type">Writing & Translation</h4></div></span>
+      <span><div><span class="icon svg" v-html="getSvg('videoAndAnimation')"></span><h4 class="svg-type">Video & Animation</h4></div></span>
+      <span><div><span class="icon svg" v-html="getSvg('musicAndAudio')"></span><h4 class="svg-type">Music & Audio</h4></div></span>
+      <span><div><span class="icon svg" v-html="getSvg('programmingAndTech')"></span><h4 class="svg-type">Programming & Tech</h4></div></span>
+      <span><div><span class="icon svg" v-html="getSvg('business')"></span><h4 class="svg-type">Business</h4></div></span>
+      <span><div><span class="icon svg" v-html="getSvg('lifestyle')"></span><h4 class="svg-type">Lifestyle</h4></div></span>
+      <span><div><span class="icon svg" v-html="getSvg('data')"></span><h4 class="svg-type">Data</h4></div></span>
+      <span><div><span class="icon svg" v-html="getSvg('photography')"></span><h4 class="svg-type">Photography</h4></div></span>
+    </section>
+  </section>
 </template>
 
 <script>
+import { svgServive } from '../services/svg.service.js'
 import { VueperSlides, VueperSlide } from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
 export default {
@@ -79,14 +138,20 @@ export default {
           image: 'https://fiverr-res.cloudinary.com/q_auto,f_auto,w_550,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741664/data-entry-2x.png',
         },
       ],
+      imgVideo: 'https://res.cloudinary.com/dhsdxj3y3/image/upload/v1670793711/gigs/ostlxosopzlu6ccomezg.webp'
     }
   },
   computed: {},
-  created() { },
-  methods: {},
+  created() {},
+  methods: {
+    getSvg(iconName) {
+      return (this.icon = svgServive.getGigSvg(iconName))
+    }
+  },
   components: {
     VueperSlides,
     VueperSlide
   },
 }
 </script>
+

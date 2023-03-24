@@ -30,8 +30,26 @@ export default {
     },
     created() {
         this.$store.dispatch({ type: 'loadGigs' })
+
+
     },
     methods: {
+
+
+        async setFilterBy(filterBy) {
+
+            console.log('filter by from explore', filterBy)
+            // try {
+            this.$store.dispatch({ type: 'filterGigs', filterBy })
+            // }
+
+            // catch {
+            //     console.log(err)
+            //     showErrorMsg('Cannot filter Gigs')
+            // }
+
+        },
+
         async addGig() {
             try {
                 await this.$store.dispatch({ type: 'addGig', gig: this.gigToAdd })
