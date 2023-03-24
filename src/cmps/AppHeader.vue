@@ -1,5 +1,5 @@
 <template>
-  <div class="main-header main-container" :class="{'full-expand':isFirstScroll}">
+  <div class="main-header main-container" :class="{'first-expansion':isFirstScroll}">
     <header>
       <section>
         <nav class="flex justify-center first-scroll">
@@ -12,12 +12,15 @@
             <button class="btn-serch" @click="search"><i class="fa-solid fa-magnifying-glass"></i></button>
           </div>
 
-          <RouterLink class="fiverr-nav" to="/explore">Fiverr Business</RouterLink>
-          <RouterLink to="/explore">Explore</RouterLink>
-          <RouterLink to="/explore">Become a Seller</RouterLink>
-          <RouterLink to="/login">Sign in</RouterLink>
-          <RouterLink class="join" to="/login">Join</RouterLink>
-        </nav>
+          <!-- <RouterLink class="fiverr-nav" to="/explore">Fiverr Business</RouterLink> -->
+          <section class="header-links flex justify-center align-center">
+            <RouterLink to="/explore">Explore</RouterLink>
+            <RouterLink to="/explore">Become a Seller</RouterLink>
+            <RouterLink to="/login">Sign in</RouterLink>
+            <button class="join">Join</button>
+            <!-- <RouterLink  to="/login">Join</RouterLink> -->
+          </section>
+          </nav>
       </section>
     </header>
 
@@ -40,6 +43,7 @@
 </template>
 
 <script>
+import { emitToFilter } from '../services/event-bus.service'
 export default {
   data() {
     return {
@@ -79,6 +83,7 @@ export default {
     },
     search() {
       console.log('search', this.userSearch)
+      emitToFilter(txt)
       this.userSearch = ''
     }
   },
@@ -86,9 +91,6 @@ export default {
     loggedInUser() {
       return this.$store.getters.loggedinUser
     },
-    // headerStyle() {
-    //   if(this.isSecondScroll) return opacity
-    // }
   }
 }
 </script>
