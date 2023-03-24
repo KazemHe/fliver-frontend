@@ -19,7 +19,7 @@
     border: 1px solid #dadbdd;
     border-radius: rem(4px);
     box-shadow: 0 rem(12px) rem(18px) rgba(0, 0, 0, .14);
-    color: #404145;
+    color: $clr3;
     font-size: 14px;
     min-height: rem(150px);
     top: 100%;
@@ -55,7 +55,7 @@
 .delivery {
     width: rem(260px);
     height: rem(232px);
-    color: #404145;
+    color: $clr3;
     font-size: rem(14px);
     line-height: rem(22px);
     overflow-y: scroll;
@@ -143,17 +143,29 @@
 
 .sorting {
     display: flex;
-    justify-content: space-between
+    align-items: center;
+    justify-content: space-between;
+    padding: rem(16px);
+
 }
 
 .sort-btn {
     background-color: $clr2;
     color: rgb(98, 100, 106);
     font-family: Macan-regular;
+    font-size: rem(16px);
 }
 
 
 .sort-modal {
     display: flex;
     flex-direction: column;
+}
+
+.count {
+    color: $clr4;
+    font-size: rem(14px);
+    font-weight: 600;
+    line-height: rem(22px);
+    padding-right: rem(10px);
 }

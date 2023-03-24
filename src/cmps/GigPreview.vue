@@ -4,14 +4,13 @@
         <!-- <vueper-slides class="main-img" fade :touchable="false">
             <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" />
         </vueper-slides> -->
-
         <RouterLink :gig="gig" class="link" :to="'/gig/' + gig._id"><img class="main-img" :src="gig.imgUrl" />
         </RouterLink>
 
         <div class="inner-seller">
             <img :src="gig.owner.imgUrl" class="owner-img" alt="">
             <div class="owner-previwe">
-                <div>{{ gig.owner.fullname }}</div>
+                <div class="full-name">{{ gig.owner.fullname }}</div>
                 <div>{{ gig.owner.level }}</div>
             </div>
         </div>
@@ -35,9 +34,11 @@
                     d="M14.4469 1.95625C12.7344 0.496875 10.1875 0.759375 8.61561 2.38125L7.99999 3.01562L7.38436 2.38125C5.81561 0.759375 3.26561 0.496875 1.55311 1.95625C-0.409388 3.63125 -0.512513 6.6375 1.24374 8.45312L7.29061 14.6969C7.68124 15.1 8.31561 15.1 8.70624 14.6969L14.7531 8.45312C16.5125 6.6375 16.4094 3.63125 14.4469 1.95625Z">
                 </path>
             </svg>
-            <span>STARTING AT :${{ gig.price }}</span>
+            <!-- <span class="icon" v-html="getSvg('heart')"></span> -->
+
+            <div><span class="starting-at">starting at </span><span class="gig-price">${{ gig.price }}</span></div>
         </div>
-        <div @click="removeGig(gig._id)">x</div>
+        <!-- <div @click="removeGig(gig._id)">x</div> -->
 
 
     </article>
@@ -48,6 +49,7 @@
 
 import { VueperSlides, VueperSlide } from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
+import { svgServive } from '../services/svg.service.js'
 export default {
 
     props: ['gig', 'user'],
@@ -79,6 +81,9 @@ export default {
         removeGig(gigId) {
             this.$emit('removeGig', gigId)
         },
+        getSvg(iconName) {
+            return (this.icon = svgServive.getGigSvg(iconName))
+        },
 
     },
     components: {
@@ -89,7 +94,6 @@ export default {
 }
 </script>
 <style>
-.vueperslides__parallax-wrapper {
-    padding-bottom: 80%;
-}
-</style>
+.heart {
+    color: black;
+}</style>

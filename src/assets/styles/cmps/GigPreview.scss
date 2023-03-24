@@ -52,11 +52,10 @@ li {
         gap: 1rem;
 
     }
-
-    >.preview-title {
-        padding: rem(10px);
-        cursor: pointer;
-    }
+}
+.preview-title {
+    cursor: pointer;
+    padding: 0 rem(12px) rem(5px);
 }
 
 .main-img {
@@ -70,4 +69,35 @@ li {
     >.preview-title {
         color: $clr0;
     }
+}
+
+.vueperslides__parallax-wrapper {
+    padding-bottom: 80%;
+}
+
+
+.starting-at {
+    font-size: 10px;
+    font-family: macan-bold;
+    /* font-weight: bolder; */
+    color: $clr4;
+    font-size: rem(10px);
+    font-weight: 700;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    padding-block-start: 0.4em;
+}
+
+.gig-price {
+    font-size: rem(18px);
+    color: $clr3;
+    margin-inline-start: 0.3125em;
+
+    line-height: 1.25rem;
+}
+
+.full-name {
+    color: $clr5;
+    line-height: rem(18px);
+    font-family: macan-bold;
 }
