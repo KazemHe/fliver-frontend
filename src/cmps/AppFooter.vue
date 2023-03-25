@@ -17,11 +17,8 @@
                     <span class="icon flex" v-html="getSvg('pinterest')"></span></a>
                 <a class="flex align-center justify-center" href="https://www.instagram.com/fiverr/">
                     <span class="icon flex" v-html="getSvg('instagram')"></span></a>
-                <div>
-                </div>
             </div>
         </div>
-
     </footer>
 </template>
 

@@ -3,15 +3,12 @@
     <!-- <img src="https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049983/bg-hero-1-1792-x1.png"/> -->
    
     <!-- SEARCH - HERO - CONTAINER -->
-    <!-- <div class="search-hero-container flex"> -->
       <div class="hero-search-container flex">
-        <h1>Find the perfect
-          <span>freelance</span> services for your business
-        </h1>
+        <h1>Find the perfect<span>freelance</span> services for your business</h1>
         <div class="hero-search flex">
           <div class="flex input-container">
-            <div class="search-icon"><span></span></div>
-            <input placeholder="Try &quot;Logo Design&quot; ">
+            <div class="search-icon"><span class="flex" v-html="getSvg('search')"></span></div>
+            <input placeholder="Try &quot;building mobile app&quot; ">
           </div>
           <button class="el-button" aria-disabled="false" type="button">
             <span class="">Search</span>
@@ -24,7 +21,6 @@
           <div class="tag">Video Editing</div>
         </div>
       </div>
-    <!-- </div> -->
   </section>
 
   <section class="trusted-by full">
@@ -83,6 +79,7 @@
 
   <section class="marketplace-container">
     <p class="bold">Explore the marketplace</p>
+
     <section class="svg-container">
       <span>
         <div>
@@ -236,4 +233,3 @@ export default {
   },
 }
 </script>
-
