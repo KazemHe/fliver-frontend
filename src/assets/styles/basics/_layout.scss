@@ -6,16 +6,17 @@
 .main-container {
     padding: 0;
     display: grid;
-    grid-template-columns:  1fr 2000px 1fr;
+    grid-template-columns: 1fr 2000px 1fr;
 
     >* {
         grid-column: 2;
-        // background-color: lightskyblue;
 
+        // background-color: lightskyblue;
         &.full {
             grid-column: 1 /-1;
         }
     }
+    
 
     @include for-narrow-layout {
         grid-template-columns:
@@ -38,3 +39,9 @@
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 20px;
 }
+
+// .main-container >.main-header {
+    
+//     grid-column: 0 /-1;
+//     background-color: red;
+// }
