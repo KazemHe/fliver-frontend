@@ -11,13 +11,11 @@
       </li>
     </ul>
     <p class="rate-score">{{gig.owner.rate}}</p>
-    <p class="seller-reviews-count">(344)</p>
+    <p class="seller-reviews-count">({{gig.reviews.length}})</p>
 </template>
 
 <script>
 export default {
   props: ['gig'],
 }
-  
-
 </script>

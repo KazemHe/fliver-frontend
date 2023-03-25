@@ -33,11 +33,13 @@
 
         .contact-seller {
             padding: rem(24px);
+            background-color: $clr10;
 
             button {
+                margin: 0;
                 background: none;
                 border-color: currentColor;
-                color: $clr1;
+                color: $clr3;
             }
         }
 
@@ -52,6 +54,7 @@
                 margin-inline-start: rem(8px);
                 line-height: 1.5714285714em;
                 margin: 0;
+                padding: 0 0 0 rem(8px)
             }
 
             .revisions-wrapper {
@@ -81,6 +84,11 @@
         padding: 2em 1.5em;
         border: rem(1px) solid $clr12;
         margin-block-end: rem(16px);
+
+        .price {
+            line-height: 0;
+            font-size: rem(24px);
+        }
 
         .header {
             margin-block-end: rem(18px);
