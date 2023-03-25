@@ -20,12 +20,13 @@
 
         </RouterLink>
         <div class="content-info">
-            <div class="rating-wrapper"><span class="gig-rating text-body-2"><svg xmlns="http://www.w3.org/2000/svg"
+            <div class="rating-wrapper"><span class="gig-rating "><svg xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 1792 1792" width="15" height="15">
                         <path fill="currentColor"
                             d="M1728 647q0 22-26 48l-363 354 86 500q1 7 1 20 0 21-10.5 35.5t-30.5 14.5q-19 0-40-12l-449-236-449 236q-22 12-40 12-21 0-31.5-14.5t-10.5-35.5q0-6 2-20l86-500-364-354q-25-27-25-48 0-37 56-46l502-73 225-455q19-41 49-41t49 41l225 455 502 73q56 9 56 46z">
                         </path>
-                    </svg>4.9<span class="review-count">(<!-- -->130<!-- -->)</span></span></div>
+                    </svg></span><span class="owner-rate">{{ ownerRate }}</span><span class="review-count">({{ sumOfReviews
+                    }})</span></div>
         </div>
 
         <div class="preview-footer">
@@ -77,6 +78,7 @@ export default {
             }
         ]
     }),
+
     methods: {
         removeGig(gigId) {
             this.$emit('removeGig', gigId)
@@ -86,6 +88,18 @@ export default {
         },
 
     },
+
+    computed: {
+
+        sumOfReviews() {
+            return this.gig.reviews?.length
+        },
+        ownerRate() {
+            return this.gig.owner.rate
+        }
+
+    },
+
     components: {
         VueperSlides,
         VueperSlide
@@ -93,7 +107,4 @@ export default {
     emits: ['removeGig']
 }
 </script>
-<style>
-.heart {
-    color: black;
-}</style>
+
