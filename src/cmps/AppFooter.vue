@@ -1,4 +1,3 @@
-
 <template>
     <footer class="main-container full">
         <div class="flex space-between align-center">
@@ -8,11 +7,16 @@
             </div>
 
             <div class="flex footer-links">
-                <a href="https://twitter.com/fiverr"><span class="icon" v-html="getSvg('twitter')"></span></a>
-                <a href="https://www.facebook.com/Fiverr/"><span class="icon" v-html="getSvg('facebook')"></span></a>
-                <a href="https://www.linkedin.com/company/fiverr-com"><span class="icon" v-html="getSvg('linkedIn')"></span></a>
-                <a href="https://www.pinterest.com/fiverr/"><span class="icon" v-html="getSvg('pinterest')"></span></a>
-                <a href="https://www.instagram.com/fiverr/"><span class="icon" v-html="getSvg('instagram')"></span></a>
+                <a class="flex align-center justify-center" href="https://twitter.com/fiverr">
+                    <span class="icon flex" v-html="getSvg('twitter')"></span></a>
+                <a class="flex align-center justify-center" href="https://www.facebook.com/Fiverr/">
+                    <span class="icon flex" v-html="getSvg('facebook')"></span></a>
+                <a class="flex align-center justify-center" href="https://www.linkedin.com/company/fiverr-com">
+                    <span class="icon flex" v-html="getSvg('linkedIn')"></span></a>
+                <a class="flex align-center justify-center" href="https://www.pinterest.com/fiverr/">
+                    <span class="icon flex" v-html="getSvg('pinterest')"></span></a>
+                <a class="flex align-center justify-center" href="https://www.instagram.com/fiverr/">
+                    <span class="icon flex" v-html="getSvg('instagram')"></span></a>
                 <div>
                 </div>
             </div>

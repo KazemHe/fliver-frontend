@@ -1,12 +1,14 @@
 footer {
     border-top: rem(1px) solid $clr6;
     height: 80px;
-   
+    h4 {
+    }
+    
     .logo {
         color: $clr6;
         font-family: macan-bold;
         font-size: 1.2rem;
-        margin-inline-end: rem(500px);
+        margin-inline-end: rem(30px);
     }
 
     .logo::after {

@@ -1,6 +1,6 @@
 <template>
   <section class="main-container">
-    <!-- <AppHeader /> -->
+    <AppHeader />
     <RouterView/>
     <UserMsg/>
     <appFooter/>

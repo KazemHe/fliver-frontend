@@ -3,8 +3,10 @@
     margin-left: 50px;
     top: 0;
     z-index: 100;
+    background-color:rgba(255, 255, 255, 0);
 
     header {
+        padding-top: 11px;
         height: rem(77px);
 
         .logo {
@@ -122,6 +124,9 @@
 }
 
 .first-expansion {
+    background-color: $clr2;
+
+    transition: opacity .25s ease;
     nav {
         color: $clr1;
         background-color: $clr2;
@@ -130,9 +135,9 @@
             color: $clr3;
         }
 
-        nav a:nth-child(3) {
-            margin-inline-start: 263px;
-        }
+        // nav a:nth-child(3) {
+        //     margin-inline-start: 263px;
+        // }
 
         a:not(:first-child) {
             margin-inline-start: 263px;
@@ -141,8 +146,10 @@
 
         a:first-child {
             color: $clr4;
+            margin-inline-end: 22px;
         }
     }
+
     // second expansion
     header .search-container {
         opacity: 1;
@@ -161,5 +168,46 @@
 
     .subheader {
         display: block;
+    }
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 120;
+    border: rem(1px) solid $clr4;
+    border-radius: rem(10px);
+    overflow: hidden;
+    background-color: $clr2;
+    width: rem(400px);
+    height: rem(450px);
+    padding: rem(40px);
+
+    transition: all .3s;
+
+    input {
+        margin: rem(10px);
+        padding: rem(9px);
+        height: rem(34px);
+    }
+
+    button {
+        background-color: $clr0;
+        border-radius: rem(5px);
+    }
+
+    .user-picture {
+        margin: rem(20px);
+        margin-inline: auto;
+        width: rem(90px);
+        height: rem(90px);
+        border: rem(1px) solid $clr0;
+        border-radius: 50%;
     }
 }
