@@ -1,9 +1,9 @@
 <template>
   <section class="main-container">
-    <AppHeader />
-    <RouterView />
-    <UserMsg />
-    <appFooter />
+    <!-- <AppHeader /> -->
+    <RouterView/>
+    <UserMsg/>
+    <appFooter/>
   </section>
 </template>
 

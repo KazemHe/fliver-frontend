@@ -1,5 +1,5 @@
 <template>
-  <div class="main-header main-container" :class="{'first-expansion':isFirstScroll}">
+  <div class="main-header " :class="{ 'first-expansion': isFirstScroll }">
     <header>
       <section>
         <nav class="flex justify-center first-scroll">
@@ -7,24 +7,23 @@
             <span aria-label="logo" class="logo first-scroll">fiverr</span>
           </RouterLink>
 
-          <div class="search-container" >
+          <div class="search-container">
             <input type="text" v-model="userSearch" placeholder="What service are you looking for today?" />
             <button class="btn-serch" @click="search"><i class="fa-solid fa-magnifying-glass"></i></button>
           </div>
 
-          <!-- <RouterLink class="fiverr-nav" to="/explore">Fiverr Business</RouterLink> -->
           <section class="header-links flex justify-center align-center">
             <RouterLink to="/explore">Explore</RouterLink>
-            <RouterLink to="/explore">Become a Seller</RouterLink>
+            <RouterLink to="/gig/edit">Become a Seller</RouterLink>
             <RouterLink to="/login">Sign in</RouterLink>
-            <button class="join">Join</button>
-            <!-- <RouterLink  to="/login">Join</RouterLink> -->
+            <button @click="showJoinModal = !showJoinModal" class="join">Join</button>
           </section>
-          </nav>
+        </nav>
       </section>
+
     </header>
 
-    <section class="full subheader">
+    <section class="full subheader main-container">
       <section class="main-container">
         <div class="categories-list ">
           <RouterLink to="/explore">Graphics & Design</RouterLink>
@@ -40,6 +39,15 @@
     </section>
 
   </div>
+
+  <div class="modal" v-if="showJoinModal">
+    <h1>Join Fiverr</h1>
+    <div class="user-picture"></div>
+    <input type="text" placeholder="Your full name" />
+    <input type="text" placeholder="Username" />
+    <input type="password" placeholder="Password" />
+    <button @click="showJoinModal = false">Signup</button>
+  </div>
 </template>
 
 <script>
@@ -47,6 +55,7 @@ import { emitToFilter } from '../services/event-bus.service'
 export default {
   data() {
     return {
+      showJoinModal: false,
       isFirstScroll: false,
       isSecondScroll: false,
       userSearch: '',
@@ -76,7 +85,7 @@ export default {
       } else if (window.scrollY > 200) {
         this.isSecondScroll = true
         // console.log('200')
-      } else if ( window.scrollY < 50 ) {
+      } else if (window.scrollY < 50) {
         this.isSecondScroll = false
         this.isFirstScroll = false
       }
@@ -85,6 +94,9 @@ export default {
       console.log('search', this.userSearch)
       emitToFilter(txt)
       this.userSearch = ''
+    },
+    joinModal() {
+      console.log('open-modal')
     }
   },
   computed: {
