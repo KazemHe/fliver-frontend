@@ -135,10 +135,6 @@
             color: $clr3;
         }
 
-        // nav a:nth-child(3) {
-        //     margin-inline-start: 263px;
-        // }
-
         a:not(:first-child) {
             margin-inline-start: 263px;
             color: $clr4;
@@ -161,7 +157,6 @@
 }
 
 .second-expansion {
-
     header .search-container {
         opacity: 1;
     }
@@ -210,4 +205,20 @@
         border: rem(1px) solid $clr0;
         border-radius: 50%;
     }
+}
+
+@media only screen and (min-width: 600px) {
+   
+}
+
+@media only screen and (min-width: 900px) {
+    
+}
+
+@media only screen and (min-width: 1160px) {
+   .main-header {
+    .header-links {
+        margin-inline-start: 250px;
+    }
+   }
 }

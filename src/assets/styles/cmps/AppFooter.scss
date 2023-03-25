@@ -1,8 +1,7 @@
 footer {
     border-top: rem(1px) solid $clr6;
-    height: 80px;
-    h4 {
-    }
+    max-height: 80px;
+    bottom: 0;
     
     .logo {
         color: $clr6;
@@ -21,8 +20,8 @@ footer {
         margin: 10px;
         width: 40px;
         height: 40px;
-       
     }
+
     .footer-links>*:hover {
         background-color: #efeff0;
         border-radius: 50%;
