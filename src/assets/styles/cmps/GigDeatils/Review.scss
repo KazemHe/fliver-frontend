@@ -63,7 +63,6 @@
 }
 
 .rating-score {
-    padding-top: rem(3px);
     color: $clr8;
     padding-inline-start: 0.2857142857em;
     padding-inline-end: 0.5714285714em;
@@ -119,16 +118,16 @@
         color: $clr16;
     }
 
-    ul>li progress[value] {
-        -webkit-appearance: none;
-        appearance: none;
-    }
+    // ul>li progress[value] {
+    //     -webkit-appearance: none;
+    //     appearance: none;
+    // }
 
-    ul>li progress {
-        margin-inline-end: rem(10px);
-        margin-block-start: rem(8px);
-        display: flex;
-    }
+    // ul>li progress {
+    //     margin-inline-end: rem(10px);
+    //     margin-block-start: rem(8px);
+    //     display: flex;
+    // }
 }
 
 
