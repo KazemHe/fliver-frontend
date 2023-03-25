@@ -63,6 +63,7 @@
 }
 
 .rating-score {
+    padding-top: rem(3px);
     color: $clr8;
     padding-inline-start: 0.2857142857em;
     padding-inline-end: 0.5714285714em;
@@ -75,6 +76,13 @@
     padding-inline-start: 0.5714285714em;
     color: $clr1;
 }
+
+.reviews-rate{
+    ul {
+        padding-top: 10px
+    }
+}
+
 
 
 .stat-header h2 {
@@ -94,10 +102,12 @@
     padding-inline-end: rem(2px);
 }
 
+
 .stars-counters {
     min-width: 50%;
 
     ul>li .key {
+        font-size: rem(16px);
         color: $clr16;
         font-weight: 700;
         padding: 0.375em;
@@ -105,6 +115,7 @@
     }
 
     ul>li .star-num {
+        font-size: rem(16px);
         color: $clr16;
     }
 
@@ -126,6 +137,7 @@
     padding-inline-start: rem(6px);
 
     h6 {
+        line-height: rem(38px); 
         margin: 0 0 0em;
         line-height: 0;
         font-size: 1rem;
@@ -137,8 +149,11 @@
 
     ul {
         li {
+            .key{
+                font-size: 18px;
+            }
             
-            padding-block-end: 0.5em;
+            padding-block-end: 1em;
             color: $clr9;
 
             .star-container {
@@ -166,3 +181,4 @@
     }
 
 }
+
