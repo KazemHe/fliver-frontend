@@ -6,7 +6,7 @@
         <!-- <RouterLink :gig="gig" class="link" :to="'/gig/' + gig._id"><img class="main-img" :src="gig.imgUrl" />
         </RouterLink> -->
         <vueper-slides class="main-img" fade :touchable="false">
-            <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" />
+            <vueper-slide v-for="img in gig.images" :key="img" :image="gig.imgUrl" />
         </vueper-slides>
         <div class="inner-seller">
 
@@ -169,6 +169,7 @@ export default {
     /* border-radius: 50%; */
     margin: 9px 0;
     padding: 0.3em 0;
+    /* transition: 1s; */
 
 }
 
@@ -178,6 +179,20 @@ export default {
     right: -1.5em;
     /* border-radius: 30px 0 0 30px; */
 
+}
+
+.vueperslides__arrow .vueperslides__arrow--next {
+
+
+    right: 1;
+
+}
+
+.vueperslides__arrow--next,
+.vueperslides--rtl .vueperslides__arrow--prev {
+    /* left: auto;
+    right: -2.5em; */
+    /* /* border-radius: 30px 0 0 30px; */
 }
 </style>
  

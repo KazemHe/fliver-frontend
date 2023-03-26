@@ -71,7 +71,7 @@ a {
     cursor: pointer;
     font-family: macan-regular;
     overflow: hidden;
-    color: black;
+    color: $clr5;
     font-weight: 400;
     text-overflow: ellipsis;
 }
@@ -88,9 +88,9 @@ a {
     }
 }
 
-.gig-preview :hover {
+.gig-preview:hover {
 
-    >.preview-title {
+    .preview-title {
         color: $clr0;
     }
 }

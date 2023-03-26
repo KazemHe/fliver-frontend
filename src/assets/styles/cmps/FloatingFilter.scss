@@ -31,6 +31,7 @@
 }
 
 .filter-btn {
+    margin-left: 0;
     font: 400 16px/24px Macan-regular, Helvetica Neue, Helvetica, Arial, sans-serif;
     font-weight: 600;
     border: 1px solid #e4e5e7;
@@ -49,6 +50,13 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+
+.filter-btn:hover {
+
+    border: 1px solid rgb(34, 35, 37);
+    ;
 }
 
 .v-popper__wrapper {
@@ -165,7 +173,15 @@
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
+
+    >* {
+        margin: 5px;
+        padding: 5px;
+        cursor: pointer;
+    }
+
 }
+
 
 .count {
     color: $clr4;
