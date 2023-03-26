@@ -39,10 +39,12 @@
                 </div> -->
             </div>
 
-
-            <vueper-slides class="main-img" fade :touchable="false">
-            <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" />
-        </vueper-slides>
+           
+            <section class="gigg-preview">
+                <vueper-slides class="main-img" fade :touchable="false">
+                <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" />
+            </vueper-slides>
+            </section>
 
             <section class="gig-gallery">
                 <section class="slideshow">
@@ -709,5 +711,17 @@ progress[value]::-webkit-progress-value {
     padding: 24px 32px 16px;
     z-index: index 8888;
 }
+
+
+
+.gig-preview .vueperslides__inner {
+    height: 100%;
+}
+
+.gig-preview .vueperslides__parallax-wrapper {
+    height: 100%;
+}
+
+
 
 </style>
