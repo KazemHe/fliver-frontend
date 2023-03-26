@@ -157,11 +157,16 @@ export default {
     padding: 0.3em 0;
     stroke-width: 2;
     color: transparent;
+    border-radius: 50%;
 }
 
 
 .gig-preview .vueperslides:hover .vueperslides__arrow svg {
     color: #636161d3;
+    background: white;
+    /* border-radius: 50%; */
+    margin: 9px 0;
+
 }
 </style>
  

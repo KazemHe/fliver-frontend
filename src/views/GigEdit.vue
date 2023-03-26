@@ -9,7 +9,7 @@
             <input type="number" placeholder="Price" v-model.number="gigToEdit.price" />
             <button>Save</button>
         </form>
-        <router-link to="/gig">Back</router-link>
+        <router-link to="/explore">Back</router-link>
     </section>
 </template>
    
@@ -43,11 +43,13 @@ export default {
 
                 showSuccessMsg('gig Added')
                 this.gigToEdit = gigService.getEmptyGig()
+                 this.$router.push('/explore')
+
             }
 
             catch {
                 showErrorMsg('Cannot add gig')
-                this.$router.push('/gig')
+                this.$router.push('/explore')
             }
         },
     },
