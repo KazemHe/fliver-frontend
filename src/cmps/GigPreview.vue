@@ -1,14 +1,15 @@
 <template>
     <article className="gig-preview">
 
-        <!-- <vueper-slides class="main-img" fade :touchable="false">
+
+
+        <!-- <RouterLink :gig="gig" class="link" :to="'/gig/' + gig._id"><img class="main-img" :src="gig.imgUrl" />
+        </RouterLink> -->
+        <vueper-slides class="main-img" fade :touchable="false">
             <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" />
-        </vueper-slides> -->
-
-        <RouterLink :gig="gig" class="link" :to="'/gig/' + gig._id"><img class="main-img" :src="gig.imgUrl" />
-        </RouterLink>
-
+        </vueper-slides>
         <div class="inner-seller">
+
             <img :src="gig.owner.imgUrl" class="owner-img" alt="">
             <div class="owner-previwe">
                 <div class="full-name">{{ gig.owner.fullname }}</div>
@@ -58,7 +59,7 @@ export default {
                     title: 'El Teide Volcano, Spain',
                     content: 'Photo by Max Rive',
                     // You can also provide a URL for the image.
-                    image: 'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/134290963/original/6c10882a3aa043e01338b4e26aed15bf1a356688.jpeg'
+                    image: 'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/231682055/original/77cc585046a1ceb81a809218fef35ee8252bbb3b.jpg'
                 },
                 {
                     title: 'El Teide Volcano, Spain',
@@ -70,7 +71,7 @@ export default {
                     title: 'dark life',
                     content: 'Photo by eli',
                     // You can also provide a URL for the image.
-                    image: 'https://fiverr-res.cloudinary.com/video/upload/so_24.424506,t_gig_cards_web/cntx7wdyjiklz6hmbeao.png'
+                    image: 'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg'
                     // Other slides.
                 }
             ],
@@ -94,7 +95,11 @@ export default {
     },
 
     computed: {
-
+        gigImages() {
+            // check if images 
+            // if not return custom images array
+            // this.gig.images ? [this.gig.imgUrl,]
+        },
         sumOfReviews() {
             return this.gig.reviews?.length
         },
@@ -119,7 +124,44 @@ export default {
     emits: ['removeGig']
 }
 </script>
-<style>
+<style >
+.gig-preview .vueperslides__inner {
+    height: 100%;
+}
 
+.gig-preview .vueperslides__parallax-wrapper {
+    height: 100%;
+}
+
+.vueperslides__arrows {
+    margin: 3rem;
+}
+
+/* .vueperslides__arrow.vueperslides__arrow--next {
+  margin-left: ;
+
+} */
+.vueperslides__arrows>.vueperslides__arrow.vueperslides__arrow--prev {
+    right: 214px;
+    size: 20px;
+    width: 20px;
+}
+
+
+.gig-preview .vueperslides .vueperslides__arrow svg {
+    width: 1.6em;
+    height: 1.4em;
+    vertical-align: middle;
+    stroke: currentColor;
+    fill: none;
+    padding: 0.3em 0;
+    stroke-width: 2;
+    color: transparent;
+}
+
+
+.gig-preview .vueperslides:hover .vueperslides__arrow svg {
+    color: #636161d3;
+}
 </style>
-
+ 

@@ -57,12 +57,21 @@ li {
 
 }
 
+
+a{
+    text-decoration: none;
+
+}
 .preview-title {
 
+    text-decoration: none;
     padding: 0 rem(12px) rem(5px);
     cursor: pointer;
     font-family: macan-regular;
     overflow: hidden;
+    color: black;
+    font-weight: 400;
+    text-overflow: ellipsis;
 }
 
 
@@ -142,6 +151,12 @@ li {
 }
 
 .link {
+    text-decoration: none;
+}
+
+
+
+a:hover {
     text-decoration: none;
 }
 
