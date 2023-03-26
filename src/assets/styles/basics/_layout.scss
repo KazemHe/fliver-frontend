@@ -6,7 +6,7 @@
 .main-container {
     padding: 0;
     display: grid;
-    grid-template-columns: 1fr rem(1200px) 1fr;
+    grid-template-columns: 1fr rem(1337px) 1fr;
 
     >* {
         grid-column: 2;
@@ -30,7 +30,7 @@
 
     @include for-wide-layout {
         grid-template-columns:
-            minmax(20px, 1fr) minmax(auto, rem(1200px)) minmax(20px, 1fr);
+            minmax(20px, 1fr) minmax(auto, rem(1337px)) minmax(20px, 1fr);
     }
 }
 
