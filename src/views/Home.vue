@@ -1,5 +1,5 @@
 <template>
-  <section class="container hero-container home text-center full">
+  <section class=" hero-container home text-center full">
     <!-- <img src="https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049983/bg-hero-1-1792-x1.png"/> -->
    
       <div class="hero-search-container flex">
@@ -27,18 +27,18 @@
     <img :src="img" v-for="img in trustedByImgs" :key="img" />
   </section>
 
-  <section>
-    <div class="popular-container">
+    <section class="popular-container">
       <h1 class="popular-title">Popular professional services</h1>
-      <vueper-slides :visible-slides="5" slide-multiple :gap="3" :slide-ratio="1 / 4" :dragging-distance="200"
-        :breakpoints="{ 800: { visibleSlides: 2, slideMultiple: 2 } }" class="no-shadow">
-        <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" :title="slide.title"
-          :content="slide.content" class="popular-imgs" />
+      <vueper-slides :visible-slides="5" slide-multiple 
+                     :gap="3" :slide-ratio="1 / 4" :dragging-distance="200"
+                     :breakpoints="{ 800: { visibleSlides: 2, slideMultiple: 2 } }" class="no-shadow">
+        <vueper-slide v-for="(slide, i) in slides" :key="i" 
+                      :image="slide.image" :title="slide.title" :content="slide.content" 
+                      @click="popularFilter(slide.content)" class="popular-imgs" />
       </vueper-slides>
-    </div>
-  </section>
+    </section>
 
-  <section class="video-section flex ">
+  <section class="video-section">
     <div class="side-text main-container">
       <p>
       <h2>A whole world of freelance talent at your fingertips</h2>
@@ -63,9 +63,9 @@
         </li>
         <li>
           <section class="flex align-center"><span class="icon" v-html="getSvg('videoUl')"></span>
-            <h3>Quality work done quickly</h3>
+            <h6>24/7 support</h6>
           </section>
-          <p> Find the right freelancer to begin working on your project within minutes.</p>
+          <p> Questions? Our round-the-clock support team is available to help anytime, anywhere.</p>
         </li>
       </ul>
       </p>
@@ -208,6 +208,10 @@ export default {
   methods: {
     getSvg(iconName) {
       return (this.icon = svgServive.getGigSvg(iconName))
+    },
+    popularFilter(content) {
+      console.log('content', content) 
+      this.$router.push('/explore')
     }
   },
   components: {

@@ -116,73 +116,69 @@
     }
 }
 
-// .popular-container {
-// padding: rem(32px) rem(32px) rem(64px);
+.popular-container {
+    padding: rem(32px) rem(32px) rem(64px);
 
-.popular-title {
-    font-family: macan-regular;
-    font-size: rem(32px);
-    font-weight: 700;
-    line-height: 130%;
-    padding-top: rem(20px);
-    padding-bottom: rem(25px);
-    color: $clr3;
+    .popular-title {
+        font-family: macan-regular;
+        font-size: rem(32px);
+        font-weight: 700;
+        line-height: 130%;
+        padding-top: rem(20px);
+        padding-bottom: rem(25px);
+        color: $clr3;
+    }
+
+    .popular-imgs {
+        color: $clr2;
+        font-family: macan-regular;
+        font-size: rem(14px);
+        border-radius: rem(5px);
+        padding: rem(16px);
+
+        transition: opacity 0.7s;
+        cursor: pointer;
+    }
+
+    .popular-imgs:hover {
+        opacity: 0.8;
+        transition: opacity 0.7s ease;
+    }
+
+    .vueperslides__arrow svg {
+        font-family: macan-bold;
+        font-size: rem(14px);
+        color: $clr3;
+        background-color: $clr2;
+        height: rem(48px);
+        border-radius: 50%;
+        box-shadow: 0px 1px $clr6;
+    }
+
+    .vueperslides__bullet .default {
+        display: none;
+    }
+
+    .vueperslide__content-wrapper:not(.vueperslide__content-wrapper--outside-top):not(.vueperslide__content-wrapper--outside-bottom) {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .vueperslide__content {
+        font-size: 24px;
+        line-height: 130%;
+        font-family: macan-bold;
+    }
+
 }
-
-.popular-imgs {
-    color: $clr2;
-    font-family: macan-regular;
-    font-size: rem(14px);
-    border-radius: rem(5px);
-    padding: rem(16px);
-
-    transition: opacity 0.7s;
-    cursor: pointer;
-}
-
-.popular-imgs:hover {
-    opacity: 0.8;
-    transition: opacity 0.7s ease;
-}
-
-.vueperslides__arrow svg {
-    font-family: macan-bold;
-    font-size: rem(14px);
-    color: $clr3;
-    background-color: $clr2;
-    height: rem(48px);
-    border-radius: 50%;
-    box-shadow: 0px 1px $clr6;
-}
-
-.vueperslides__bullet .default {
-    display: none;
-}
-
-.vueperslide__content-wrapper:not(.vueperslide__content-wrapper--outside-top):not(.vueperslide__content-wrapper--outside-bottom) {
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
-}
-
-.vueperslide__content {
-    font-size: 24px;
-    line-height: 130%;
-    font-family: macan-bold;
-}
-
-// }
 
 .bgc-marketplace {
     background-color: #f1fdf7;
 }
 
 .video-section {
-    // .bgc-marketplace {
-    //     background-color: #f1fdf7;
-    // }
 
-    justify-content: space-between;
     padding-bottom: 96px;
     padding-top: 96px;
     background-color: #f1fdf7;
@@ -207,13 +203,13 @@
         h6 {
             font-size: 18px;
             line-height: 140%;
-            color: #404145;
+            color: $clr5;
             font-family: macan-regular, Helvetica Neue, Helvetica, Arial, sans-serif;
             font-weight: 700;
         }
 
         p {
-            width: 474px;
+            // width: 474px;
             font-size: 18px;
             line-height: 26px;
         }
@@ -223,15 +219,16 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
+        img {
+            width: 443px;
+            height: 283px;
+        }
     }
 }
 
 .marketplace-container {
     margin-bottom: 64px;
-
-    div h4:nth-child(9) {
-        color: #1f46ba;
-    }
 
     h4 {
         text-align: center;
@@ -249,11 +246,10 @@
     }
 
     section.svg-container {
-
         display: grid;
         padding-inline-start: 20px;
         padding-inline-end: 20px;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         justify-items: center;
         gap: 55px;
     }
@@ -271,4 +267,42 @@
         border-bottom: 1px solid $clr4;
     }
 
+}
+
+
+@media only screen and (min-width: 600px) {
+    
+}
+
+@media only screen and (min-width: 900px) {
+    .video-section {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .marketplace-container {
+        section.svg-container {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+@media only screen and (min-width: 1160px) {
+    .video-section {
+        p {
+            width: rem(417px);
+        }
+
+        .side-video {
+            img {
+                width: rem(700px);
+                height: rem(450px);
+            }
+        }
+    }
+    .marketplace-container {
+        section.svg-container {
+            grid-template-columns: repeat(5, 1fr);
+        }
+    }
 }

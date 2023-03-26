@@ -1,5 +1,5 @@
 <template>
-  <div class="main-header " :class="{ 'first-expansion': isFirstScroll }">
+  <div class="main-header " :class="handleHeader">
     <header>
       <section>
         <nav class="flex justify-center first-scroll">
@@ -20,7 +20,6 @@
           </section>
         </nav>
       </section>
-
     </header>
 
     <section class="full subheader main-container">
@@ -80,14 +79,12 @@ export default {
   methods: {
     handleScroll(event) {
       if (window.scrollY > 50 && window.scrollY < 200) {
-        // console.log('100')
         this.isFirstScroll = true
-      } else if (window.scrollY > 200) {
+      } else if (window.scrollY > 100) {
         this.isSecondScroll = true
-        // console.log('200')
       } else if (window.scrollY < 50) {
-        this.isSecondScroll = false
         this.isFirstScroll = false
+        this.isSecondScroll = false
       }
     },
     search() {
@@ -95,13 +92,20 @@ export default {
       emitToFilter(txt)
       this.userSearch = ''
     },
-    joinModal() {
-      console.log('open-modal')
-    }
   },
   computed: {
     loggedInUser() {
       return this.$store.getters.loggedinUser
+    },
+    isHomePage() {
+      return this.$route.path === '/'
+    },
+    handleHeader() {
+      return {
+        'first-expansion': !this.isHomePage || this.isFirstScroll,
+        'second-expansion': !this.isHomePage || this.isSecondScroll,
+        'static-pos': !this.isHomePage
+      }
     },
   }
 }
