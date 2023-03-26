@@ -51,7 +51,7 @@
 .stars {
     margin-block-start: rem(-3px);
 
-    li{
+    li {
         margin: 0;
         padding: 0;
         padding-inline-end: 2px;
@@ -76,21 +76,36 @@
     color: $clr1;
 }
 
-.reviews-rate{
+.reviews-rate {
     ul {
-        padding-top: 10px
+        padding-top: rem(5px)
     }
+
+    p {
+        color: #ffbe5b;
+        padding-inline-start: 0.2857142857em;
+        font-weight: 700;
+        border: 0;
+        font-size: rem(14px);
+        padding-top: rem(2px)
+    }
+
 }
 
 
 
-.stat-header h2 {
-    margin: 0;
-    margin-inline-end: 0.4em;
-    font-size: 1.25rem;
-    line-height: 1.4em;
-    font-weight: 700;
-    color: $clr3;
+.stat-header {
+
+    h2 {
+
+        margin: 0;
+        margin-inline-end: 0.4em;
+        font-size: 1.25rem;
+        line-height: 1.4em;
+        font-weight: 700;
+        color: $clr3;
+        font-size: rem(16px);
+    }
 }
 
 .reviews-rate .stars {
@@ -136,22 +151,21 @@
     padding-inline-start: rem(6px);
 
     h6 {
-        line-height: rem(38px); 
-        margin: 0 0 0em;
-        line-height: 0;
+        color: $clr17;
         font-size: 1rem;
         font-weight: 700;
         padding-block-end: 1em;
         line-height: 140%;
-        color: $clr17;
     }
 
     ul {
-        li {
-            .key{
-                font-size: 18px;
+        li 
+        
+        {
+            .key {
+                font-size: rem(16px);
             }
-            
+
             padding-block-end: 1em;
             color: $clr9;
 
@@ -180,4 +194,7 @@
     }
 
 }
-
+.ranking ul>li {
+    padding-block-end: 0.5em;
+    color: #95979d;
+}

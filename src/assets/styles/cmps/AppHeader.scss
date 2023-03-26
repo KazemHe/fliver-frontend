@@ -21,7 +21,6 @@
             color: $clr2;
             font-family: macan-bold;
             font-size: 2.2rem;
-            // margin-inline-end: rem(29px);
         }
 
         .logo::after {
@@ -84,13 +83,14 @@
         }
 
         nav button.join {
+            font-weight: 700;
             margin: 0;
             cursor: pointer;
             font-family: macan-bold;
             margin-left: auto;
-            color: $clr0;
+            color: $clr2;
             background-color: #ffffff00;
-            border: 1px solid $clr0;
+            border: 1px solid $clr2;
             border-radius: rem(4px);
             transition: border-radius color 0.8s;
             padding: rem(10px) rem(16px);
@@ -99,6 +99,7 @@
         .join:hover {
             color: $clr2;
             background-color: $clr0;
+            border: 1px solid $clr0;
             transition: 0.8s;
         }
     }
@@ -140,15 +141,14 @@
 
 .first-expansion {
     background-color: $clr2;
-    // .main-header{
-    //     header nav button.join{
-    //         color: $clr0;
-    //     }
-    // }
+    .header-links{
+         button.join{
+            color: $clr0;
+            background-color: #ffffff00;
+            border: 1px solid $clr0;
+        }
+    }
     nav {
-        color: $clr1;
-        // background-color: $clr2;
-
         .logo {
             color: $clr3;
         }
@@ -162,10 +162,7 @@
             color: $clr4;
             margin-inline-end: 22px;
         }
-        // button .join{
-        //     color: $clr0;
-        //     background-color: $clr0;
-        //  }
+       
     }
 }
 
@@ -235,3 +232,4 @@
 }
 
 @media only screen and (min-width: 1160px) {}
+

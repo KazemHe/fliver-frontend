@@ -136,6 +136,9 @@
         border-top: rem(1px) solid $clr14;
         line-height: 150%;
         padding-block-start: 0.9375em;
+        p{
+            font-size: rem(16px);   
+        }
     }
 
     .seller-stat>ul {
@@ -144,10 +147,12 @@
         grid-template-rows: repeat(2, 1fr);
 
         .key {
+            font-size: rem(16px);
             padding-block-end: 0.25em;
         }
 
         .value {
+            font-size: rem(16px);
             font-weight: 700;
         }
     }
@@ -155,7 +160,5 @@
     .seller-stat>ul>li {
         padding-block-end: 1em;
     }
-
-
 
 }

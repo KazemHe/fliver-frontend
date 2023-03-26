@@ -1,5 +1,5 @@
 <template>
-  <section class="hero-container home text-center full" :style="{ 'background-image': `url(${heroImgs[currIdx]})` }">
+  <section class="hero-container home text-center full" :style="{ 'background-image': `url(${heroImgs[currIdx].img})` }">
 
     <div class="hero-search-container main-container flex">
       <h1>Find the perfect<span>freelance</span> services for your business</h1>
@@ -18,6 +18,12 @@
         <div class="tag">Logo Design</div>
         <div class="tag">Video Editing</div>
       </div>
+
+      <div class="test">
+        <div class="hero-name">
+          <p>{{ heroImgs[currIdx].owner }}</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -35,45 +41,47 @@
     </vueper-slides>
   </section>
 
+  <div class="main-container full bgc-video">
   <section class="video-section">
     <!-- <div class="main-container"> full -->
-      <div class="side-text">
-        <p>
-        <h2>A whole world of freelance talent at your fingertips</h2>
-        <ul>
-          <li>
-            <section class="flex align-center"><span class="icon" v-html="getSvg('videoUl')"></span>
-              <h6>The best for every budget</h6>
-            </section>
-            <p> Find high-quality services at every price point. No hourly rates, just project-based pricing.</p>
-          </li>
-          <li>
-            <section class="flex align-center"><span class="icon" v-html="getSvg('videoUl')"></span>
-              <h6>Quality work done quickly</h6>
-            </section>
-            <p> Find the right freelancer to begin working on your project within minutes.</p>
-          </li>
-          <li>
-            <section class="flex align-center"><span class="icon" v-html="getSvg('videoUl')"></span>
-              <h6>Protected payments, every time</h6>
-            </section>
-            <p> Always know what you'll pay upfront. Your payment isn't released until you approve the work.</p>
-          </li>
-          <li>
-            <section class="flex align-center"><span class="icon" v-html="getSvg('videoUl')"></span>
-              <h6>24/7 support</h6>
-            </section>
-            <p> Questions? Our round-the-clock support team is available to help anytime, anywhere.</p>
-          </li>
-        </ul>
-        </p>
-      </div>
+    <div class="side-text">
+      <p>
+      <h2>A whole world of freelance talent at your fingertips</h2>
+      <ul>
+        <li>
+          <section class="flex align-center"><span class="icon" v-html="getSvg('videoUl')"></span>
+            <h6>The best for every budget</h6>
+          </section>
+          <p> Find high-quality services at every price point. No hourly rates, just project-based pricing.</p>
+        </li>
+        <li>
+          <section class="flex align-center"><span class="icon" v-html="getSvg('videoUl')"></span>
+            <h6>Quality work done quickly</h6>
+          </section>
+          <p> Find the right freelancer to begin working on your project within minutes.</p>
+        </li>
+        <li>
+          <section class="flex align-center"><span class="icon" v-html="getSvg('videoUl')"></span>
+            <h6>Protected payments, every time</h6>
+          </section>
+          <p> Always know what you'll pay upfront. Your payment isn't released until you approve the work.</p>
+        </li>
+        <li>
+          <section class="flex align-center"><span class="icon" v-html="getSvg('videoUl')"></span>
+            <h6>24/7 support</h6>
+          </section>
+          <p> Questions? Our round-the-clock support team is available to help anytime, anywhere.</p>
+        </li>
+      </ul>
+      </p>
+    </div>
 
-      <div class="side-video">
-        <img :src="imgVideo" />
-      </div>
+    <div class="side-video">
+      <img :src="imgVideo" />
+    </div>
     <!-- </div> -->
   </section>
+</div>
 
   <section class="marketplace-container">
     <p class="bold">Explore the marketplace</p>
@@ -135,23 +143,28 @@ export default {
       heroImgs: [
         {
           img: 'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/93085acc959671e9e9e77f3ca8147f82-1599427734108/bg-hero-4-1792-x1.png',
-          owner: ''
+          owner: 'Zach, Bar Owner',
+          reviews: 0
         },
         {
           img: 'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049983/bg-hero-1-1792-x1.png',
-          owner: ''
+          owner: 'Andrea, Fashion Designer',
+          reviews: 0
         },
         {
           img: 'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/2413b8415dda9dbd7756d02cb87cd4b1-1599595203045/bg-hero-2-1792-x1.png',
-          owner: ''
+          owner: 'Moon, Marketing Expert',
+          reviews: 5
         },
         {
           img: 'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/d14871e2d118f46db2c18ad882619ea8-1599835783966/bg-hero-3-1792-x1.png',
-          owner: ''
+          owner: 'Ritika, Shoemaker and Designer',
+          reviews: 0
         },
         {
           img: 'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049970/bg-hero-5-1792-x1.png',
-          owner: ''
+          owner: 'Gabrielle, Video Editor',
+          reviews: 5
         },
       ],
       trustedByImgs: [
@@ -233,7 +246,7 @@ export default {
       return (this.icon = svgServive.getGigSvg(iconName))
     },
     popularFilter(content) {
-      console.log('content', content)
+      // console.log('content', content)
       this.$router.push('/explore')
     }
   },
