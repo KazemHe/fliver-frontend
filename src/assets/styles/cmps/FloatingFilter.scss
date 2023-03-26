@@ -4,6 +4,7 @@
 }
 
 .filter-modal {
+
     background-color: $clr2;
     border: 1px solid black;
     box-shadow: 0 12px 18px rgba(0, 0, 0, .14);
@@ -17,6 +18,7 @@
 }
 
 .filter-mode {
+
     background-color: $clr2;
     border: 1px solid #dadbdd;
     border-radius: rem(4px);
@@ -26,7 +28,6 @@
     min-height: rem(150px);
     top: 100%;
     z-index: 100;
-
 }
 
 .filter-btn {
@@ -147,17 +148,18 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: rem(16px);
+    // padding: rem(16px);
 
 }
 
 .sort-btn {
+    margin: 0;
+    padding: 0;
     background-color: $clr2;
     color: rgb(98, 100, 106);
     font-family: Macan-regular;
     font-size: rem(16px);
 }
-
 
 .sort-modal {
     display: flex;

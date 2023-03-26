@@ -13,7 +13,7 @@ li {
     font-size: .875rem;
     display: flex;
     align-items: center;
-    height: 3.375em;
+    height: 3.9em;
     margin-block-end: 0.75em;
     justify-content: flex-start;
     gap: rem(5px);
@@ -27,6 +27,7 @@ li {
 .preview-footer {
     display: flex;
     justify-content: space-between;
+
 
     >svg {
 
@@ -49,7 +50,7 @@ li {
         border-top: 1px solid #efeff0;
         clear: both;
         min-height: rem(20px);
-        padding: 10px 12px;
+        padding: rem(9px) rem(12px);
         gap: 1rem;
 
     }
@@ -58,10 +59,11 @@ li {
 }
 
 
-a{
+a {
     text-decoration: none;
 
 }
+
 .preview-title {
 
     text-decoration: none;
@@ -78,11 +80,11 @@ a{
 
 .main-img {
     width: 100%;
-    height: 11.5rem;
+    height: 10.07rem;
     cursor: pointer;
 
     .vueperslide__image {
-        height: 20.5rem;
+        // height: 15.5rem;
     }
 }
 
@@ -119,6 +121,8 @@ a{
 }
 
 .full-name {
+    margin-top: rem(5px);
+    line-height: normal;
     font-family: macan-bold;
     font-weight: 600;
     color: $clr5;
@@ -163,12 +167,17 @@ a:hover {
 .heart {
     vertical-align: rem(2px);
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .like {
-    fill: red
+    fill: red;
+    vertical-align: rem(2px);
 }
 
 .unlike {
-    fill: gray
+    fill: gray;
+    vertical-align: rem(2px);
 }

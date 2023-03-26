@@ -29,10 +29,10 @@
 
         <div class="preview-footer">
 
-            <span :class="heartColor" class="heart" @click="heartClick" v-html="getSvg('heart')"></span>
+            <span class="heart" :class="heartColor" @click="heartClick" v-html="getSvg('heart')"></span>
 
 
-            <div><span class="starting-at">starting at </span><span class="gig-price">${{ gig.price }}</span></div>
+            <div><span class="starting-at">starting at </span><span class="gig-price">US${{ gig.price }}</span></div>
         </div>
         <!-- <div @click="removeGig(gig._id)">x</div> -->
 
@@ -154,7 +154,7 @@ export default {
     vertical-align: middle;
     stroke: currentColor;
     fill: none;
-    padding: 0.3em 0;
+    padding: -3px 3px;
     stroke-width: 2;
     color: transparent;
     border-radius: 50%;
@@ -168,6 +168,7 @@ export default {
     background: white;
     /* border-radius: 50%; */
     margin: 9px 0;
+    padding: 0.3em 0;
 
 }
 
