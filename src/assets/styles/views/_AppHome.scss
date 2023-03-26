@@ -90,6 +90,11 @@
         font-weight: 600;
     }
 
+    .categories div:hover {
+        background-color: #fff;
+        color: #000;
+    }
+
     .tag {
         display: block;
         text-decoration: none;
