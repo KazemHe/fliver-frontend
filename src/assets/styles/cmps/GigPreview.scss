@@ -80,7 +80,7 @@ a {
 
 .main-img {
     width: 100%;
-    height: 10.07rem;
+    height: 11.6rem;
     cursor: pointer;
 
     .vueperslide__image {
@@ -178,6 +178,6 @@ a:hover {
 }
 
 .unlike {
-    fill: gray;
+    fill: $clr6;
     vertical-align: rem(2px);
 }
