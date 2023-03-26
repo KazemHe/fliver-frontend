@@ -37,7 +37,6 @@
         </div>
       </section>
     </section>
-
   </div>
 
   <div class="modal" v-if="showJoinModal">
