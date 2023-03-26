@@ -1,11 +1,12 @@
 <template>
     <section class="gig-nav">
         <ul class="nav-info" ref="nav-info">
-            <li class="green" @click.prevent="scrollToElement('overview')">Overview</li>
-            <li @click.prevent="scrollToElement('aboutSeller')">About the seller</li>
-            <li @click.prevent="scrollToElement('reviews')">Reviews</li>
+            <li ><a :class="{ selected: selectedLink === 'overview' }" @click.prevent="scrollToElement('overview')">Overview</a></li>
+            <li ><a :class="{ selected: selectedLink === 'aboutSeller' }" @click.prevent="scrollToElement('aboutSeller')">About the seller</a></li>
+            <li ><a :class="{ selected: selectedLink === 'reviews' }" @click.prevent="scrollToElement('reviews')">Reviews</a></li>
         </ul>
     </section>
+
     <section class="gig-info flex" ref="overview">
         <section class="main-gig">
             <div class="gig-overview">
@@ -30,13 +31,90 @@
                         </div>
                     </section>
                 </section>
-                <div class=""><img :src=gig.imgUrl class="carosel-img"></div>
+                <!-- <div class=""><img :src=gig.imgUrl class="carosel-img"></div>
                 <div class="seller-overview">
                     <div class="flex">
 
                     </div>
-                </div>
+                </div> -->
             </div>
+
+
+            <vueper-slides class="main-img" fade :touchable="false">
+            <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" />
+        </vueper-slides>
+
+            <section class="gig-gallery">
+                <section class="slideshow">
+                    <div class="vueperslides vueperslides--ready" aria-label="Slideshow"><!---->
+                        <div class="vueperslides__inner">
+                            <div class="vueperslides__parallax-wrapper" aria-live="polite" style="padding-bottom: 71.6418%;">
+                                <div class="vueperslides__track">
+                                    <div class="vueperslides__track-inner" style="transition-duration: 600ms; transform: translate3d(0%, 0px, 0px); will-change: auto;">
+                                        <div class="vueperslide vueperslide--active vueperslide--visible" href="false" target="_self" face="false" aria-hidden="false" style="background-image: url(&quot;https://res.cloudinary.com/dja6gjgcd/image/upload/v1670540520/samples/higherr/30f75e896954dc0ea9e28a87209a28053bcccc18_qnzyx5.webp&quot;); cursor: pointer;"><!----><!---->
+                                            <div class="vueperslide__content-wrapper"><!----><!---->
+                                            </div><!---->
+                                        </div>
+                                        <div class="vueperslide" href="false" target="_self" face="false" aria-hidden="true" style="background-image: url(&quot;https://res.cloudinary.com/dja6gjgcd/image/upload/v1670540520/samples/higherr/0149d53275d914f681e8685b9e6c263dcc4309ab_fu4myp.webp&quot;); cursor: pointer;"><!----><!----><div class="vueperslide__content-wrapper"><!----><!---->
+                                        </div><!---->
+                                    </div>
+                                    <div class="vueperslide" href="false" target="_self" face="false" aria-hidden="true" style="background-image: url(&quot;https://res.cloudinary.com/dja6gjgcd/image/upload/v1670540520/samples/higherr/e2a835f360f5fcbcf15e14eb01ffde9892f85e85_rvhafp.webp&quot;); cursor: pointer;"><!----><!---->
+                                        <div class="vueperslide__content-wrapper"><!----><!---->
+                                        </div><!---->
+                                    </div>
+                                    <div class="vueperslide" href="false" target="_self" face="false" aria-hidden="true" style="background-image: url(&quot;https://res.cloudinary.com/dja6gjgcd/image/upload/v1670540520/samples/higherr/logo-05_mnet94_dxu4so.jpg&quot;); cursor: pointer;"><!----><!---->
+                                        <div class="vueperslide__content-wrapper"><!----><!---->
+                                        </div><!---->
+                                    </div>
+                                    <div class="vueperslide vueperslide--clone vueperslide--clone-1" href="false" target="_self" face="false" aria-hidden="true" style="background-image: url(&quot;https://res.cloudinary.com/dja6gjgcd/image/upload/v1670540520/samples/higherr/logo-05_mnet94_dxu4so.jpg&quot;); cursor: pointer;"><!----><!---->
+                                        <div class="vueperslide__content-wrapper"><!----><!---->
+                                        </div><!---->
+                                    </div>
+                                    <div class="vueperslide vueperslide--clone vueperslide--clone-2" href="false" target="_self" face="false" aria-hidden="true" style="background-image: url(&quot;https://res.cloudinary.com/dja6gjgcd/image/upload/v1670540520/samples/higherr/30f75e896954dc0ea9e28a87209a28053bcccc18_qnzyx5.webp&quot;); cursor: pointer;"><!----><!---->
+                                        <div class="vueperslide__content-wrapper"><!----><!---->
+                                        </div><!---->
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!----><!----><!---->
+                        <div class="vueperslides__arrows">
+                            <button class="vueperslides__arrow vueperslides__arrow--prev" type="button" aria-label="Previous"><svg viewBox="0 0 9 18"><path stroke-linecap="round" d="m8 1 l-7 8 7 8"></path></svg></button
+                                ><button class="vueperslides__arrow vueperslides__arrow--next" type="button" aria-label="Next"><svg viewBox="0 0 9 18"><path stroke-linecap="round" d="m1 1 l7 8 -7 8"></path></svg></button>
+                            </div><!---->
+                        </div><!----><!---->
+                    </div>
+                    <div class="thumbnails-slider">
+                        <div class="vueperslides vueperslides--ready vueperslides--fixed-height vueperslides--bullets-outside no-shadow thumbnails" aria-label="Slideshow" style="height: 80px;"><!---->
+                            <div class="vueperslides__inner">
+                                <div class="vueperslides__parallax-wrapper" aria-live="polite" style="padding-bottom: 33.3333%;">
+                                    <div class="vueperslides__track">
+                                        <div class="vueperslides__track-inner" style="transition-duration: 600ms; transform: translate3d(0%, 0px, 0px); will-change: auto;">
+                                            <div class="vueperslide vueperslide--active vueperslide--visible" href="false" target="_self" face="false" aria-hidden="false" slide-ratio="0.7164179104477612" style="background-image: url(&quot;https://res.cloudinary.com/dja6gjgcd/image/upload/v1670540520/samples/higherr/30f75e896954dc0ea9e28a87209a28053bcccc18_qnzyx5.webp&quot;); width: 24.25%; margin-right: 1%; cursor: pointer;"><!----><!---->
+                                                <div class="vueperslide__content-wrapper"><!----><!---->
+                                                </div><!---->
+                                            </div>
+                                            <div class="vueperslide vueperslide--visible" href="false" target="_self" face="false" aria-hidden="false" slide-ratio="0.7164179104477612" style="background-image: url(&quot;https://res.cloudinary.com/dja6gjgcd/image/upload/v1670540520/samples/higherr/0149d53275d914f681e8685b9e6c263dcc4309ab_fu4myp.webp&quot;); width: 24.25%; margin-right: 1%; cursor: pointer;"><!----><!---->
+                                                <div class="vueperslide__content-wrapper"><!----><!---->
+                                                </div><!---->
+                                            </div>
+                                            <div class="vueperslide vueperslide--visible" href="false" target="_self" face="false" aria-hidden="false" slide-ratio="0.7164179104477612" style="background-image: url(&quot;https://res.cloudinary.com/dja6gjgcd/image/upload/v1670540520/samples/higherr/e2a835f360f5fcbcf15e14eb01ffde9892f85e85_rvhafp.webp&quot;); width: 24.25%; margin-right: 1%; cursor: pointer;"><!----><!---->
+                                                <div class="vueperslide__content-wrapper"><!----><!---->
+                                                </div><!---->
+                                            </div>
+                                            <div class="vueperslide vueperslide--visible" href="false" target="_self" face="false" aria-hidden="false" slide-ratio="0.7164179104477612" style="background-image: url(&quot;https://res.cloudinary.com/dja6gjgcd/image/upload/v1670540520/samples/higherr/logo-05_mnet94_dxu4so.jpg&quot;); width: 24.25%; margin-right: 1%; cursor: pointer;"><!----><!---->
+                                                <div class="vueperslide__content-wrapper"><!----><!---->
+                                                </div><!---->
+                                            </div><!----><!---->
+                                        </div>
+                                    </div>
+                                </div><!----><!----><!----><!----><!---->
+                            </div><!----><!---->
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+
 
             <header class="What-people-loved flex">
                 <h2 class="section-title">What people loved about this seller</h2>
@@ -90,6 +168,7 @@
                 <h2>About the gig</h2>
                 <p>{{ gig.description }}</p>
             </div>
+
             <section ref="aboutSeller" id="aboutSeller" class="seller-preview">
                 <h2>About The Seller</h2>
                 <section class="user-preview">
@@ -366,11 +445,8 @@
                     </section>
                 </section>
             </section>
+
         </section>
-
-
-
-
 
         <section class="package-container">
             <section class="gig-package">
@@ -461,11 +537,9 @@
 
     </section>
 
-    <vueper-slides class="main-img" fade :touchable="false">
-            <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" />
-        </vueper-slides>
+   
 
-
+  
     <!-- <section class="popup-pay">
         <header class="fEjFzgF flex space-between">
             <div class="checkout-conteiner"><span class="penta-drawer tbody-5">Order options</span>
@@ -473,23 +547,27 @@
             <button class="glAQDp5 _Q5OMo2 YjdDvFm" style="width: 32px; height: 32px;"><svg width="16" height="16" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" fill="#62646A"><path d="m8.485 7 4.487-4.487.926-.925a.35.35 0 0 0 0-.495l-.99-.99a.35.35 0 0 0-.495 0L7 5.515 1.588.102a.35.35 0 0 0-.495 0l-.99.99a.35.35 0 0 0 0 .495L5.514 7 .102 12.413a.35.35 0 0 0 0 .495l.99.99a.35.35 0 0 0 .495 0L7 8.485l4.487 4.487.926.926a.35.35 0 0 0 .495 0l.99-.99a.35.35 0 0 0 0-.495L8.485 7Z"></path></svg></button>
         </header>
     </section> -->
-
 </template>
   
 <script>
-
 import MyStarRating from '../cmps/MyStarRating.vue'
+
+import { VueperSlides, VueperSlide } from 'vueperslides'
+import 'vueperslides/dist/vueperslides.css'
+
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
-import { gigService } from '../services/gig.service.local'
 import { getActionRemoveGig, getActionUpdateGig, getActionAddGigMsg } from '../store/gig.store'
+
+import { gigService } from '../services/gig.service.local'
 import { svgServive } from '../services/svg.service.js'
 
 export default {
     props: ['gig'],
-
     data() {
         return {
             gig: null,
+            selectedLink: 'overview',
+        
             slides: [
                 {
                     title: 'El Teide Volcano, Spain',
@@ -524,6 +602,12 @@ export default {
         },
     },
     computed: {
+        green() {
+            return {
+                'green': this.green,
+                'no-green': !this.green
+            }
+        },
         loggedInUser() {
             return this.$store.getters.loggedinUser
         },
@@ -542,12 +626,13 @@ export default {
 
     methods: {
         scrollToElement(element) {
+            this.selectedLink = element;
             this.$refs[element].scrollIntoView({ behavior: 'smooth' });
         },
-
         getSvg(iconName) {
             return (this.icon = svgServive.getGigSvg(iconName))
         },
+
         async loadGig() {
             try {
                 const { gigId } = this.$route.params
@@ -568,12 +653,16 @@ export default {
             showErrorMsg('Cannot add gig msg')
         }
     },
+
+
     printGigToConsole(gig) {
         console.log('Gig msgs:', gig.msgs)
     },
 
     components: {
-        MyStarRating
+        MyStarRating,
+        VueperSlides,
+        VueperSlide
     },
 }
 
@@ -620,4 +709,5 @@ progress[value]::-webkit-progress-value {
     padding: 24px 32px 16px;
     z-index: index 8888;
 }
+
 </style>

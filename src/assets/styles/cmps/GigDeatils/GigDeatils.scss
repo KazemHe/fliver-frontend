@@ -4,11 +4,10 @@
 @import "../GigDeatils/AboutTheGig.scss";
 @import "../GigDeatils/Review.scss";
 @import "../GigDeatils/WhatPeopleLoved.scss";
-
+@import "../GigDeatils/Nav.scss";
 .gig-info{
-    padding-left: rem(32px);
-    padding-right: rem(32px);
-   
+    padding-top: rem(32px);
+    padding-bottom: rem(32px);
 }
 
 .carosel-img {
@@ -28,27 +27,7 @@
     padding: 0;
 }
 
-.nav-info {
-    border-bottom: 0.0625rem solid #E4E5E7;
-    color: #95979d;
-    font-size: rem(14px);
-    font-weight: 600;
-    line-height: rem(53px);
-    padding: 0;
-    margin: 0;
-    display: flex;
-    padding-bottom: rem(32px);
-    font-family: macan-regular;
-    line-height: 3.7857142857em;
-    cursor: pointer;
 
-}
-
-.nav-info>li {
-    margin-right: rem(10px);
-    list-style-type: none;
-    
-}
 
 .gig-page {
     display: flex
@@ -71,9 +50,14 @@
 }
 
 .gig-overview {margin-bottom: 64px} 
+
 .gig-overview>h1 {
-    font-size: rem(28px);
-    padding: rem(0px) rem(0px) rem(16px);
+    font-size: 1.75rem;
+    padding-block-end: 0.5714285714em;
+    overflow-wrap: break-word;
+    color: var(--yro524);
+    font-weight: 700;
+    line-height: 130%;
 }
 
 
