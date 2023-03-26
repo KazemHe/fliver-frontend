@@ -31,7 +31,7 @@
     margin: 0;
     display: flex;
 
-    font-family: Macan;
+    font-family: macan-regular;
     line-height: 3.7857142857em;
     cursor: pointer;
 
@@ -47,8 +47,8 @@
 }
 
 .main-gig {
-    margin-inline-end: 5.5%;
-    width: 59.5%;
+    margin-right: 9.15%;
+    width: 57.42%
 }
 
 .gig-page>h2 {
@@ -62,16 +62,13 @@
     border-radius: 50%;
 }
 
+.gig-overview {margin-bottom: 64px} 
 .gig-overview>h1 {
     font-size: rem(28px);
     padding: rem(0px) rem(0px) rem(16px);
 }
 
-.about-the-gig>p {
-    font-size: rem(16px);
-    color: $clr1;
-    margin: rem(10px) 0px 0px;
-}
+
 
 .contact-btn {
     padding: rem(24px);
@@ -82,7 +79,7 @@
 }
 
 b {
-    font-family: Macan;
+    font-family: macan-regular;
     margin: 0 0 0 8px;
 }
 
@@ -100,13 +97,31 @@ b {
 
 .stat-header {
 
-    padding-block-end: rem(20px)
+    padding-block-end: rem(12px)
 }
 
 
 
 
 
+@media only screen and (min-width: 600px) {
+    .gig-info {
+   
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .gig-info {
+       
+    }
+}
+
+// @media only screen and (min-width: 1160px) {
+//     .listing-container {
+//         grid-gap: rem(32px);
+//         grid-template-columns: repeat(4, 1fr);
+//     }
+// }
 
 
 
