@@ -18,6 +18,19 @@
 
     .text-container {
         display: flex;
+
+        .text{ 
+            a {
+                color: #404145;
+                cursor: pointer;
+                font-weight: 700;
+            }
+
+            p:hover{
+
+                text-decoration: underline;
+            }
+        }
     }
 
     .text,
