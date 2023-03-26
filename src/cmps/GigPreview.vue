@@ -142,9 +142,9 @@ export default {
 
 } */
 .vueperslides__arrows>.vueperslides__arrow.vueperslides__arrow--prev {
-    right: 214px;
     size: 20px;
     width: 20px;
+    left: -1.44em;
 }
 
 
@@ -158,6 +158,8 @@ export default {
     stroke-width: 2;
     color: transparent;
     border-radius: 50%;
+    /* position: absolute; */
+    /* border-radius: 30px 0 0 30px; */
 }
 
 
@@ -166,6 +168,14 @@ export default {
     background: white;
     /* border-radius: 50%; */
     margin: 9px 0;
+
+}
+
+.vueperslides__arrow--next,
+.vueperslides--rtl .vueperslides__arrow--prev {
+    left: auto;
+    right: -1.5em;
+    /* border-radius: 30px 0 0 30px; */
 
 }
 </style>
