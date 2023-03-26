@@ -2,7 +2,6 @@
   <section class="container hero-container home text-center full">
     <!-- <img src="https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049983/bg-hero-1-1792-x1.png"/> -->
    
-    <!-- SEARCH - HERO - CONTAINER -->
       <div class="hero-search-container flex">
         <h1>Find the perfect<span>freelance</span> services for your business</h1>
         <div class="hero-search flex">
@@ -81,66 +80,46 @@
     <p class="bold">Explore the marketplace</p>
 
     <section class="svg-container">
-      <span>
         <div>
           <span class="flex" v-html="getSvg('GraphicsAndDesign')"></span>
           <h4 class="svg-type">Graphics &amp; Design</h4>
         </div>
-      </span>
-      <span>
         <div>
           <span class="flex" v-html="getSvg('digitalMarketing')"></span>
           <h4 class="svg-type">Digital Marketing</h4>
         </div>
-      </span>
-      <span>
         <div>
           <span class="flex" v-html="getSvg('writingAndTranslation')"></span>
           <h4 class="svg-type">Writing & Translation</h4>
         </div>
-      </span>
-      <span>
         <div>
           <span class="flex" v-html="getSvg('videoAndAnimation')"></span>
           <h4 class="svg-type">Video & Animation</h4>
         </div>
-      </span>
-      <span>
         <div>
           <span class="flex" v-html="getSvg('musicAndAudio')"></span>
           <h4 class="svg-type">Music & Audio</h4>
         </div>
-      </span>
-      <span>
         <div>
           <span class="flex" v-html="getSvg('programmingAndTech')"></span>
           <h4 class="svg-type">Programming & Tech</h4>
         </div>
-      </span>
-      <span>
         <div>
           <span class="flex" v-html="getSvg('business')"></span>
           <h4 class="svg-type">Business</h4>
         </div>
-      </span>
-      <span>
         <div>
           <span class="flex" v-html="getSvg('lifestyle')"></span>
           <h4 class="svg-type">Lifestyle</h4>
         </div>
-      </span>
-      <span>
         <div>
           <span class="flex" v-html="getSvg('data')"></span>
-          <h4 class="svg-type" :style="{'line-height': 7}">Data</h4>
+          <h4 class="svg-type" :style="{'line-height': 4}">Data</h4>
         </div>
-      </span>
-      <span>
         <div>
           <span class="flex" v-html="getSvg('photography')"></span>
           <h4 class="svg-type">Photography</h4>
         </div>
-      </span>
     </section>
   </section>
 </template>
@@ -221,7 +200,11 @@ export default {
     }
   },
   computed: {},
-  created() { },
+  created() {
+    // setInterval(() => {
+    //   console.log('change img')
+    // }, 5000)
+   },
   methods: {
     getSvg(iconName) {
       return (this.icon = svgServive.getGigSvg(iconName))
