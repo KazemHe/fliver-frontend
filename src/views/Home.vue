@@ -1,25 +1,24 @@
 <template>
-  <section class=" hero-container home text-center full">
-    <!-- <img src="https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049983/bg-hero-1-1792-x1.png"/> -->
-   
-      <div class="hero-search-container  flex">
-        <h1>Find the perfect<span>freelance</span> services for your business</h1>
-        <div class="hero-search flex">
-          <div class="flex input-container">
-            <div class="search-icon"><span class="flex" v-html="getSvg('search')"></span></div>
-            <input placeholder="Try &quot;building mobile app&quot; ">
-          </div>
-          <button class="el-button" aria-disabled="false" type="button">
-            <span class="">Search</span>
-          </button>
+  <section class="hero-container home text-center full" :style="{ 'background-image': `url(${heroImgs[currIdx]})` }">
+
+    <div class="hero-search-container main-container flex">
+      <h1>Find the perfect<span>freelance</span> services for your business</h1>
+      <div class="hero-search flex">
+        <div class="flex input-container">
+          <div class="search-icon"><span class="flex" v-html="getSvg('search')"></span></div>
+          <input placeholder="Try &quot;building mobile app&quot; ">
         </div>
-        <div class="categories flex"> Popular:
-          <div class="tag">Website Design</div>
-          <div class="tag">WordPress</div>
-          <div class="tag">Logo Design</div>
-          <div class="tag">Video Editing</div>
-        </div>
+        <button class="el-button" aria-disabled="false" type="button">
+          <span class="">Search</span>
+        </button>
       </div>
+      <div class="categories flex"> Popular:
+        <div class="tag">Website Design</div>
+        <div class="tag">WordPress</div>
+        <div class="tag">Logo Design</div>
+        <div class="tag">Video Editing</div>
+      </div>
+    </div>
   </section>
 
   <section class="trusted-by full">
@@ -27,99 +26,99 @@
     <img :src="img" v-for="img in trustedByImgs" :key="img" />
   </section>
 
-    <section class="popular-container">
-      <h1 class="popular-title">Popular professional services</h1>
-      <vueper-slides :visible-slides="5" slide-multiple 
-                     :gap="3" :slide-ratio="1 / 4" :dragging-distance="200"
-                     :breakpoints="{ 800: { visibleSlides: 2, slideMultiple: 2 } }" class="no-shadow">
-        <vueper-slide v-for="(slide, i) in slides" :key="i" 
-                      :image="slide.image" :title="slide.title" :content="slide.content" 
-                      @click="popularFilter(slide.content)" class="popular-imgs" />
-      </vueper-slides>
-    </section>
+  <section class="popular-container">
+    <h1 class="popular-title">Popular professional services</h1>
+    <vueper-slides :visible-slides="5" slide-multiple :gap="3" :slide-ratio="1 / 4" :dragging-distance="200"
+      :breakpoints="{ 800: { visibleSlides: 2, slideMultiple: 2 } }" class="no-shadow">
+      <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" :title="slide.title"
+        :content="slide.content" @click="popularFilter(slide.content)" class="popular-imgs" />
+    </vueper-slides>
+  </section>
 
   <section class="video-section">
-    <div class="side-text main-container">
-      <p>
-      <h2>A whole world of freelance talent at your fingertips</h2>
-      <ul>
-        <li>
-          <section class="flex align-center"><span class="icon" v-html="getSvg('videoUl')"></span>
-            <h6>The best for every budget</h6>
-          </section>
-          <p> Find high-quality services at every price point. No hourly rates, just project-based pricing.</p>
-        </li>
-        <li>
-          <section class="flex align-center"><span class="icon" v-html="getSvg('videoUl')"></span>
-            <h6>Quality work done quickly</h6>
-          </section>
-          <p> Find the right freelancer to begin working on your project within minutes.</p>
-        </li>
-        <li>
-          <section class="flex align-center"><span class="icon" v-html="getSvg('videoUl')"></span>
-            <h6>Protected payments, every time</h6>
-          </section>
-          <p> Always know what you'll pay upfront. Your payment isn't released until you approve the work.</p>
-        </li>
-        <li>
-          <section class="flex align-center"><span class="icon" v-html="getSvg('videoUl')"></span>
-            <h6>24/7 support</h6>
-          </section>
-          <p> Questions? Our round-the-clock support team is available to help anytime, anywhere.</p>
-        </li>
-      </ul>
-      </p>
-    </div>
+    <!-- <div class="main-container"> full -->
+      <div class="side-text">
+        <p>
+        <h2>A whole world of freelance talent at your fingertips</h2>
+        <ul>
+          <li>
+            <section class="flex align-center"><span class="icon" v-html="getSvg('videoUl')"></span>
+              <h6>The best for every budget</h6>
+            </section>
+            <p> Find high-quality services at every price point. No hourly rates, just project-based pricing.</p>
+          </li>
+          <li>
+            <section class="flex align-center"><span class="icon" v-html="getSvg('videoUl')"></span>
+              <h6>Quality work done quickly</h6>
+            </section>
+            <p> Find the right freelancer to begin working on your project within minutes.</p>
+          </li>
+          <li>
+            <section class="flex align-center"><span class="icon" v-html="getSvg('videoUl')"></span>
+              <h6>Protected payments, every time</h6>
+            </section>
+            <p> Always know what you'll pay upfront. Your payment isn't released until you approve the work.</p>
+          </li>
+          <li>
+            <section class="flex align-center"><span class="icon" v-html="getSvg('videoUl')"></span>
+              <h6>24/7 support</h6>
+            </section>
+            <p> Questions? Our round-the-clock support team is available to help anytime, anywhere.</p>
+          </li>
+        </ul>
+        </p>
+      </div>
 
-    <div class="side-video">
-      <img :src="imgVideo" />
-    </div>
+      <div class="side-video">
+        <img :src="imgVideo" />
+      </div>
+    <!-- </div> -->
   </section>
 
   <section class="marketplace-container">
     <p class="bold">Explore the marketplace</p>
 
     <section class="svg-container">
-        <div>
-          <span class="flex" v-html="getSvg('GraphicsAndDesign')"></span>
-          <h4 class="svg-type">Graphics &amp; Design</h4>
-        </div>
-        <div>
-          <span class="flex" v-html="getSvg('digitalMarketing')"></span>
-          <h4 class="svg-type">Digital Marketing</h4>
-        </div>
-        <div>
-          <span class="flex" v-html="getSvg('writingAndTranslation')"></span>
-          <h4 class="svg-type">Writing & Translation</h4>
-        </div>
-        <div>
-          <span class="flex" v-html="getSvg('videoAndAnimation')"></span>
-          <h4 class="svg-type">Video & Animation</h4>
-        </div>
-        <div>
-          <span class="flex" v-html="getSvg('musicAndAudio')"></span>
-          <h4 class="svg-type">Music & Audio</h4>
-        </div>
-        <div>
-          <span class="flex" v-html="getSvg('programmingAndTech')"></span>
-          <h4 class="svg-type">Programming & Tech</h4>
-        </div>
-        <div>
-          <span class="flex" v-html="getSvg('business')"></span>
-          <h4 class="svg-type">Business</h4>
-        </div>
-        <div>
-          <span class="flex" v-html="getSvg('lifestyle')"></span>
-          <h4 class="svg-type">Lifestyle</h4>
-        </div>
-        <div>
-          <span class="flex" v-html="getSvg('data')"></span>
-          <h4 class="svg-type" :style="{'line-height': 4}">Data</h4>
-        </div>
-        <div>
-          <span class="flex" v-html="getSvg('photography')"></span>
-          <h4 class="svg-type">Photography</h4>
-        </div>
+      <div>
+        <span class="flex" v-html="getSvg('GraphicsAndDesign')"></span>
+        <h4 class="svg-type">Graphics &amp; Design</h4>
+      </div>
+      <div>
+        <span class="flex" v-html="getSvg('digitalMarketing')"></span>
+        <h4 class="svg-type">Digital Marketing</h4>
+      </div>
+      <div>
+        <span class="flex" v-html="getSvg('writingAndTranslation')"></span>
+        <h4 class="svg-type">Writing & Translation</h4>
+      </div>
+      <div>
+        <span class="flex" v-html="getSvg('videoAndAnimation')"></span>
+        <h4 class="svg-type">Video & Animation</h4>
+      </div>
+      <div>
+        <span class="flex" v-html="getSvg('musicAndAudio')"></span>
+        <h4 class="svg-type">Music & Audio</h4>
+      </div>
+      <div>
+        <span class="flex" v-html="getSvg('programmingAndTech')"></span>
+        <h4 class="svg-type">Programming & Tech</h4>
+      </div>
+      <div>
+        <span class="flex" v-html="getSvg('business')"></span>
+        <h4 class="svg-type">Business</h4>
+      </div>
+      <div>
+        <span class="flex" v-html="getSvg('lifestyle')"></span>
+        <h4 class="svg-type">Lifestyle</h4>
+      </div>
+      <div>
+        <span class="flex" v-html="getSvg('data')"></span>
+        <h4 class="svg-type" :style="{ 'line-height': 4 }">Data</h4>
+      </div>
+      <div>
+        <span class="flex" v-html="getSvg('photography')"></span>
+        <h4 class="svg-type">Photography</h4>
+      </div>
     </section>
   </section>
 </template>
@@ -132,8 +131,31 @@ export default {
   name: 'home',
   data() {
     return {
+      currIdx: 0,
+      heroImgs: [
+        {
+          img: 'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/93085acc959671e9e9e77f3ca8147f82-1599427734108/bg-hero-4-1792-x1.png',
+          owner: ''
+        },
+        {
+          img: 'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049983/bg-hero-1-1792-x1.png',
+          owner: ''
+        },
+        {
+          img: 'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/2413b8415dda9dbd7756d02cb87cd4b1-1599595203045/bg-hero-2-1792-x1.png',
+          owner: ''
+        },
+        {
+          img: 'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/d14871e2d118f46db2c18ad882619ea8-1599835783966/bg-hero-3-1792-x1.png',
+          owner: ''
+        },
+        {
+          img: 'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049970/bg-hero-5-1792-x1.png',
+          owner: ''
+        },
+      ],
       trustedByImgs: [
-        'https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/facebook.31d5f92.png',
+        'https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/meta.12b5e5c.png',
         'https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/google.517da09.png',
         'https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/netflix.e3ad953.png',
         'https://fiverr-res.cloudinary.com/npm-assets/@fiverr/logged_out_homepage_perseus/apps/pandg.8b7310b.png',
@@ -201,16 +223,17 @@ export default {
   },
   computed: {},
   created() {
-    // setInterval(() => {
-    //   console.log('change img')
-    // }, 5000)
-   },
+    setInterval(() => {
+      this.currIdx++
+      if (this.currIdx === this.heroImgs.length) this.currIdx = 0
+    }, 5000)
+  },
   methods: {
     getSvg(iconName) {
       return (this.icon = svgServive.getGigSvg(iconName))
     },
     popularFilter(content) {
-      console.log('content', content) 
+      console.log('content', content)
       this.$router.push('/explore')
     }
   },

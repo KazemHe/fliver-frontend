@@ -2,6 +2,7 @@
     background-image: url('https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049983/bg-hero-1-1792-x1.png');
     background-size: cover;
     background-repeat: no-repeat;
+    transition: 1s;
     height: 675px;
     display: flex;
 
@@ -10,93 +11,96 @@
         width: 100%;
         object-fit: cover;
     }
+}
 
-    >.hero-search-container {
-        flex-direction: column;
-        color: $clr2;
-        align-self: center;
-        gap: 28px;
+.hero-search-container {
+    // grid-column: 2;
+    margin: 0 auto;
+    flex-direction: column;
+    color: $clr2;
+    align-self: center;
+    gap: 28px;
 
-        h1 {
-            max-width: 650px;
-            font-family: macan-regular;
-            font-size: 2.5rem;
-            line-height: 48px;
+    h1 {
+        text-align: left;
+        max-width: 650px;
+        font-family: macan-regular;
+        font-size: 2.5rem;
+        line-height: 48px;
 
-            span {
-                font-family: Domain-Display-Medium-Italic;
-                font-style: italic;
-                margin-inline-start: 23px;
-                font-weight: 400;
-                font-size: 47px;
-            }
+        span {
+            font-family: Domain-Display-Medium-Italic;
+            font-style: italic;
+            margin-inline-start: 15px;
+            font-weight: 400;
+            font-size: 47px;
         }
+    }
 
-        .hero-search {
-            flex-wrap: wrap;
-            margin-inline-start: 73px;
-            position: relative;
-        }
+    .hero-search {
+        flex-wrap: wrap;
+        // margin-inline-start: 73px;
+        position: relative;
+    }
 
-        .search-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #fff;
-            border-radius: 4px 0 0 4px;
-            width: 41px;
-            padding-top: 3px;
-        }
+    .search-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+        border-radius: 4px 0 0 4px;
+        width: 41px;
+        padding-top: 3px;
+    }
 
-        input {
-            width: 511px;
-            height: 48px;
-            flex: 1;
-            border: 0;
-            font-size: 16px;
-        }
+    input {
+        width: 511px;
+        height: 48px;
+        flex: 1;
+        border: 0;
+        font-size: 16px;
+    }
 
-        button {
-            background-color: #1dbf73;
-            border: 1px solid #1dbf73;
-            border-radius: 0 4px 4px 0;
-            color: #fff;
-            font-weight: 600;
-            font-size: 1rem;
-            height: 3rem;
-            position: absolute;
-            right: -75px;
-            top: -5px;
-            width: 99px;
-        }
+    button {
+        background-color: $clr0;
+        border: 1px solid $clr0;
+        border-radius: 0 4px 4px 0;
+        color: #fff;
+        font-weight: 600;
+        font-size: 1rem;
+        height: 3rem;
+        position: absolute;
+        right: 747px;
+        top: -5px;
+        width: 99px;
+    }
 
-        button:hover {
-            background-color: #18ad68;
-        }
+    button:hover {
+        background-color: #18ad68;
+    }
 
-        .categories {
-            margin-inline-start: 73px;
+    .categories {
+        // margin-inline-start: 73px;
 
-            flex-wrap: wrap;
-            text-decoration: none;
-            align-items: center;
-            gap: 10px;
-            font-size: .875rem;
-            font-weight: 600;
-        }
+        flex-wrap: wrap;
+        text-decoration: none;
+        align-items: center;
+        gap: 10px;
+        font-size: .875rem;
+        font-weight: 600;
+    }
 
-        .tag {
-            display: block;
-            text-decoration: none;
-            color: #fff;
-            border: 1px solid white;
-            border-radius: 2.5rem;
-            padding: 1px 12px 0;
-            font-size: .875rem;
-            line-height: 24px;
-            transition: all .2s ease-in-out;
-            cursor: pointer;
-        }
+    .tag {
+        display: block;
+        text-decoration: none;
+        color: #fff;
+        border: 1px solid white;
+        border-radius: 2.5rem;
+        padding: 1px 12px 0;
+        font-size: .875rem;
+        line-height: 24px;
+        transition: all .2s ease-in-out;
+        cursor: pointer;
     }
 }
 
@@ -104,20 +108,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 120px;
+    gap: rem(58px);
     background-color: $clr10;
     margin-bottom: rem(63px);
+    padding: rem(19px);
 
     span {
         font-family: macan-regular;
         font-weight: 600;
-        padding-right: rem(20px);
         color: $clr6;
+        font-size: rem(16px);
     }
 }
 
 .popular-container {
-    padding: rem(32px) rem(32px) rem(64px);
 
     .popular-title {
         font-family: macan-regular;
@@ -146,13 +150,20 @@
     }
 
     .vueperslides__arrow svg {
-        font-family: macan-bold;
         font-size: rem(14px);
         color: $clr3;
         background-color: $clr2;
         height: rem(48px);
         border-radius: 50%;
         box-shadow: 0px 1px $clr6;
+    }
+
+    .vueperslides__arrow vueperslides__arrow--prev {
+        left: -2.44em;
+    }
+
+    .vueperslides__arrow vueperslides__arrow--next {
+        right: -2.4em;
     }
 
     .vueperslides__bullet .default {
@@ -170,7 +181,6 @@
         line-height: 130%;
         font-family: macan-bold;
     }
-
 }
 
 .bgc-marketplace {
@@ -178,6 +188,9 @@
 }
 
 .video-section {
+    .main-container {
+        margin: 0 auto;
+    }
 
     padding-bottom: 96px;
     padding-top: 96px;
@@ -270,9 +283,7 @@
 }
 
 
-@media only screen and (min-width: 600px) {
-    
-}
+@media only screen and (min-width: 600px) {}
 
 @media only screen and (min-width: 900px) {
     .video-section {
@@ -300,6 +311,7 @@
             }
         }
     }
+
     .marketplace-container {
         section.svg-container {
             grid-template-columns: repeat(5, 1fr);

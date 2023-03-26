@@ -7,15 +7,21 @@
     background-color: rgba(255, 255, 255, 0);
     transition: .5s ease;
 
+   
+
     header {
-        padding-top: 11px;
+        padding-top: 6px;
         height: rem(77px);
+        .main-nav {
+            align-items: center;
+            justify-content: space-between;
+        }
 
         .logo {
             color: $clr2;
             font-family: macan-bold;
             font-size: 2.2rem;
-            margin-inline-end: rem(29px);
+            // margin-inline-end: rem(29px);
         }
 
         .logo::after {
@@ -24,7 +30,7 @@
         }
 
         .header-links {
-            margin-inline-start: 150px;
+            margin-inline-start: 210px;
         }
 
         nav a:not(:first-child) {
@@ -44,7 +50,6 @@
 
         .search-container {
             position: relative;
-            top: rem(11px);
             opacity: 0;
         }
 
@@ -79,6 +84,7 @@
         }
 
         nav button.join {
+            margin: 0;
             cursor: pointer;
             font-family: macan-bold;
             margin-left: auto;
@@ -118,6 +124,7 @@
     margin: 0;
     padding: 0;
     font-family: macan-regular;
+    font-size: rem(16px);
 
     a {
         color: $clr1;
@@ -133,10 +140,14 @@
 
 .first-expansion {
     background-color: $clr2;
-
+    // .main-header{
+    //     header nav button.join{
+    //         color: $clr0;
+    //     }
+    // }
     nav {
         color: $clr1;
-        background-color: $clr2;
+        // background-color: $clr2;
 
         .logo {
             color: $clr3;
@@ -151,6 +162,10 @@
             color: $clr4;
             margin-inline-end: 22px;
         }
+        // button .join{
+        //     color: $clr0;
+        //     background-color: $clr0;
+        //  }
     }
 }
 
@@ -211,14 +226,12 @@
 
 @media only screen and (min-width: 900px) {
     .main-header {
-        header{
-            .header-links {
-                // margin-inline-start: 250px;
-            }
+        header {
+            // .header-links {
+            //     // margin-inline-start: 250px;
+            // }
         }
     }
 }
 
-@media only screen and (min-width: 1160px) {
- 
-}
+@media only screen and (min-width: 1160px) {}

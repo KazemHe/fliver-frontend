@@ -1,10 +1,10 @@
 <template>
-  <div class="main-header " :class="handleHeader">
+  <div class="main-header main-container" :class="handleHeader">
     <header>
       <section>
-        <nav class="flex justify-center first-scroll">
+        <nav class="flex first-scroll main-nav">
           <RouterLink to="/">
-            <span aria-label="logo" class="logo first-scroll">fiverr</span>
+            <span aria-label="logo" class="logo first-scroll">winner</span>
           </RouterLink>
 
           <div class="search-container">
@@ -31,6 +31,7 @@
           <RouterLink to="/explore">Video & Animation</RouterLink>
           <RouterLink to="/explore">Music & Audio</RouterLink>
           <RouterLink to="/explore">Programming & Tech</RouterLink>
+          <RouterLink to="/explore">Photography</RouterLink>
           <RouterLink to="/explore">Business</RouterLink>
           <RouterLink to="/explore">AI Services</RouterLink>
         </div>
@@ -58,13 +59,7 @@ export default {
       isFirstScroll: false,
       isSecondScroll: false,
       userSearch: '',
-      heroImgs: [
-        'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/93085acc959671e9e9e77f3ca8147f82-1599427734108/bg-hero-4-1792-x1.png',
-        'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049983/bg-hero-1-1792-x1.png',
-        'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/2413b8415dda9dbd7756d02cb87cd4b1-1599595203045/bg-hero-2-1792-x1.png',
-        'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/d14871e2d118f46db2c18ad882619ea8-1599835783966/bg-hero-3-1792-x1.png',
-        'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049970/bg-hero-5-1792-x1.png',
-      ]
+    
     }
   },
   created() {
