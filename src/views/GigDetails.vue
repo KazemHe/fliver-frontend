@@ -40,7 +40,7 @@
 
             <header class="What-people-loved flex">
                 <h2 class="section-title">What people loved about this seller</h2>
-                <button  @click.prevent="scrollToElement('reviews')"
+                <button @click.prevent="scrollToElement('reviews')"
                     class="sPdE5j4 zUvc8Si co-white text-button reviews-button bg-co-green-700">See all reviews</button>
             </header>
             <section v-if="gig.reviews?.length" class="review-list-container">
@@ -136,7 +136,7 @@
                         </ul>
                     </section>
                     <section class="seller-desc">
-                        <p>{{gig.about}}</p>
+                        <p>{{ gig.about }}</p>
                     </section>
                 </section>
             </section>
@@ -181,8 +181,8 @@
                                             value="2"></progress><span class="star-num">(2)</span></section>
                                 </li>
                                 <li class="flex align-center"><span class="key">1 Star</span>
-                                    <section class="progress-container flex align-center"><progress class="progress" max="344"
-                                            value="1"></progress><span class="star-num">(1)</span></section>
+                                    <section class="progress-container flex align-center"><progress class="progress"
+                                            max="344" value="1"></progress><span class="star-num">(1)</span></section>
                                 </li>
                             </ul>
                         </section>
@@ -211,7 +211,7 @@
                 </section>
                 <section class="review-list">
                     <section>
-                        
+
                         <ul class="clean-list">
                             <section class="review-preview">
                                 <section class="review-preview-long grid"><img class="reviewer-img"
@@ -371,7 +371,7 @@
 
 
 
-        
+
         <section class="package-container">
             <section class="gig-package">
                 <section class="package-content">
@@ -459,6 +459,15 @@
             </section>
         </section>
 
+    </section>
+
+    <section class="popup-pay">
+
+        <header class="fEjFzgF flex space-between">
+            <div class="checkout-conteiner"><span class="penta-drawer tbody-5">Order options</span>
+            </div>
+            <button class="glAQDp5 _Q5OMo2 YjdDvFm" style="width: 32px; height: 32px;"><svg width="16" height="16" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" fill="#62646A"><path d="m8.485 7 4.487-4.487.926-.925a.35.35 0 0 0 0-.495l-.99-.99a.35.35 0 0 0-.495 0L7 5.515 1.588.102a.35.35 0 0 0-.495 0l-.99.99a.35.35 0 0 0 0 .495L5.514 7 .102 12.413a.35.35 0 0 0 0 .495l.99.99a.35.35 0 0 0 .495 0L7 8.485l4.487 4.487.926.926a.35.35 0 0 0 .495 0l.99-.99a.35.35 0 0 0 0-.495L8.485 7Z"></path></svg></button>
+        </header>
     </section>
 </template>
   
@@ -548,16 +557,41 @@ export default {
 
 <style>
 progress[value] {
-  width: 250px;
-  height: 20px;
-  border-radius: 50%;
-   appearance: none;
-   
- 
+    width: 250px;
+    height: 20px;
+    border-radius: 50%;
+    appearance: none;
 }
 
 progress[value]::-webkit-progress-value {
 
-    background-color:#ffbe5b;
+    background-color: #ffbe5b;
+}
+
+
+.popup-pay {
+    background-color: cadetblue;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    width: 100%;
+    transform: translate(0%, 0%);
+    height: 100%;
+    max-width: 480px;
+    /* z-index: index 8888; */
+    display: flex;
+    flex-direction: column;
+}
+
+.text-display-4 {
+    font-size: 24px;
+    line-height: 130%;
+}
+
+
+.fEjFzgF {
+    padding: 24px 32px 16px;
+    z-index: index 8888;
 }
 </style>

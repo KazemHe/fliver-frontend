@@ -31,7 +31,7 @@
     margin: 0;
     display: flex;
 
-    font-family: Macan;
+    font-family: macan-regular;
     line-height: 3.7857142857em;
     cursor: pointer;
 
@@ -68,11 +68,7 @@
     padding: rem(0px) rem(0px) rem(16px);
 }
 
-.about-the-gig>p {
-    font-size: rem(16px);
-    color: $clr1;
-    margin: rem(10px) 0px 0px;
-}
+
 
 .contact-btn {
     padding: rem(24px);
@@ -83,7 +79,7 @@
 }
 
 b {
-    font-family: Macan;
+    font-family: macan-regular;
     margin: 0 0 0 8px;
 }
 
@@ -101,7 +97,7 @@ b {
 
 .stat-header {
 
-    padding-block-end: rem(20px)
+    padding-block-end: rem(12px)
 }
 
 
@@ -126,6 +122,7 @@ b {
 //         grid-template-columns: repeat(4, 1fr);
 //     }
 // }
+
 
 
 
