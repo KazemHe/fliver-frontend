@@ -461,14 +461,19 @@
 
     </section>
 
-    <section class="popup-pay">
+    <vueper-slides class="main-img" fade :touchable="false">
+            <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" />
+        </vueper-slides>
 
+
+    <!-- <section class="popup-pay">
         <header class="fEjFzgF flex space-between">
             <div class="checkout-conteiner"><span class="penta-drawer tbody-5">Order options</span>
             </div>
             <button class="glAQDp5 _Q5OMo2 YjdDvFm" style="width: 32px; height: 32px;"><svg width="16" height="16" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" fill="#62646A"><path d="m8.485 7 4.487-4.487.926-.925a.35.35 0 0 0 0-.495l-.99-.99a.35.35 0 0 0-.495 0L7 5.515 1.588.102a.35.35 0 0 0-.495 0l-.99.99a.35.35 0 0 0 0 .495L5.514 7 .102 12.413a.35.35 0 0 0 0 .495l.99.99a.35.35 0 0 0 .495 0L7 8.485l4.487 4.487.926.926a.35.35 0 0 0 .495 0l.99-.99a.35.35 0 0 0 0-.495L8.485 7Z"></path></svg></button>
         </header>
-    </section>
+    </section> -->
+
 </template>
   
 <script>
@@ -485,6 +490,27 @@ export default {
     data() {
         return {
             gig: null,
+            slides: [
+                {
+                    title: 'El Teide Volcano, Spain',
+                    content: 'Photo by Max Rive',
+                    // You can also provide a URL for the image.
+                    image: 'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/231682055/original/77cc585046a1ceb81a809218fef35ee8252bbb3b.jpg'
+                },
+                {
+                    title: 'El Teide Volcano, Spain',
+                    content: 'Photo by Max Rive',
+                    // You can also provide a URL for the image.
+                    image: 'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs2/275390527/original/68da5d5d026f7f8802f24056eb95a3c662b5f2dc.png'
+                },
+                {
+                    title: 'dark life',
+                    content: 'Photo by eli',
+                    // You can also provide a URL for the image.
+                    image: 'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg'
+                    // Other slides.
+                }
+            ],
 
         }
     },
