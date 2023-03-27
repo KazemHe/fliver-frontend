@@ -83,8 +83,9 @@ export default {
       }
     },
     search() {
-      utilService.setQueryStringParams('title', this.userSearch)
-      emitToFilter(txt) // ?
+      this.$router.push({ query: { title: this.userSearch } })
+
+      // emitToFilter(txt) // ?
       this.userSearch = ''
     },
   },

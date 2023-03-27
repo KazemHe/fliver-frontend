@@ -1,5 +1,5 @@
 import { createApp } from 'vue'
-
+import { useRoute } from 'vue-router';
 import { router } from './router.js'
 import { store } from './store/store.js'
 // import FloatingVue from 'floating-vue'
@@ -18,6 +18,8 @@ import 'floating-vue/dist/style.css'
 import './assets/styles/main.scss'
 import './assets/styles/setup/_typography.scss'
 import App from './App.vue'
+
+const route = useRoute();
 
 const app = createApp(App)
 app.use(router)
