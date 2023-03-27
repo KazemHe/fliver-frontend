@@ -49,13 +49,13 @@
   <section class="sorting">
     <div class="count">11 services available</div>
     <VDropdown>
-      <button class="sort-btn">Sort by {{ changeSortTxt }}<span class="icon arrow"
+      <button class="sort-btn">Sort by <span class="sorting-txt">{{ changeSortTxt }} </span><span class="icon arrow"
           v-html="getSvg('filterArrow')"></span></button>
       <template #popper>
         <div class="sort-modal">
-          <button @click="sortTxtby" class="sort-btn">recomended</button>
-          <button @click="sortTxtby" class="sort-btn">Best selling</button>
-          <button @click="sortTxtby" class="sort-btn">News arrival</button>
+          <button @click="setFilterBy('delivery Time')" class="sort-btn">delivery Time</button>
+          <button @click="setFilterBy('Best price')" class="sort-btn">Best price</button>
+          <button @click="setFilterBy('Highest Rating')" class="sort-btn">Highest Rating</button>
 
         </div>
       </template>
@@ -67,43 +67,41 @@ import { svgServive } from '../services/svg.service.js'
 export default {
   data() {
     return {
-      sortTxt: '',
       filterBy: {
         title: '',
         bugdet: { min: 'Any', max: 'Any' },
         DeliveryTime: 0,
+        category: '',
+        sortBy: '',
 
 
-        sortBy: {
-          recomended: '',
-          BestSelling: '',
-          NewsArrival: ''
-        }
+        // sortBy: {
+        //   recomended: '',
+        //   BestSelling: '',
+        //   NewsArrival: ''
+        // }
       }
     }
   },
   methods: {
 
 
-    sortTxtby() {
-      console.log('txt')
-      this.sortTxt = 'reco'
-    },
-    setFilterBy() {
+    // sortTxtby(sortBy) {
+    //   console.log('txt', sortBy)
+    //   this.filterBy.sortBy = sortBy
+    // },
+    setFilterBy(sortBy) {
       console.log('check the filter', this.filterBy)
 
-      // const key = this.filterBy
-      // const value = this.filterBy.bugdet
-
-
-
-      // $router.push({ path: '/explore', query: { key: value } })
-
+      this.filterBy.sortBy = sortBy
       this.$router.push({
         query: {
+          title: this.filterBy.title || '',
           min: this.filterBy.bugdet?.min || '',
           max: this.filterBy.bugdet?.max || '',
-          DeliveryTime: this.filterBy.DeliveryTime || ''
+          DeliveryTime: this.filterBy.DeliveryTime || '',
+          category: this.filterBy.category || '',
+          sortBy: this.filterBy.sortBy || '',
         }
       })
 
@@ -138,3 +136,10 @@ export default {
   },
 }
 </script>
+<style>
+.sorting-txt {
+  color: black;
+  font-weight: bolder;
+  margin: px;
+}
+</style>

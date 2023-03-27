@@ -143,7 +143,7 @@ export default {
 .gig-preview .vueperslides__parallax-wrapper {
     position: relative;
     overflow: hidden;
-    padding-bottom: 61.8% !important;
+    // padding-bottom: 61.8% !important;
 }
 
 .gig-preview .vueperslides {
