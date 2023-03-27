@@ -6,6 +6,29 @@
 @import "../GigDeatils/WhatPeopleLoved.scss";
 @import "../GigDeatils/Nav.scss";
 
+
+progress[value] {
+    -webkit-appearance: none;
+    appearance: none;
+    margin-right: rem(10px);
+    height: 8px
+}
+
+progress[value]::-webkit-progress-bar {
+    background-color: $clr15;
+    border-radius: 999px;
+    height: 8px
+}
+
+progress[value]::-webkit-progress-value {
+    background-color:$clr8;
+    border-radius: 999px;
+    height: 8px
+
+}
+
+
+
 .gig-info {
     padding-top: rem(32px);
     padding-bottom: rem(32px);
@@ -99,19 +122,3 @@ b {
 // }
 
 
-progress[value] {
-    -webkit-appearance: none;
-    appearance: none;
-}
-
-progress[value]::-webkit-progress-bar {
-    background-color:
-        grey;
-    border-radius: 999px;
-}
-
-progress[value]::-webkit-progress-value {
-    background-color:
-    yellow;
-    border-radius: 999px;
-}
