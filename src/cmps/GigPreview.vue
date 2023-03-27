@@ -124,7 +124,7 @@ export default {
     emits: ['removeGig']
 }
 </script>
-<style lang="scss">
+<style  lang="scss">
 .gig-preview .vueperslides__inner {
     height: 100%;
 }
@@ -138,13 +138,15 @@ export default {
 }
 
 
-.vueperslides__parallax-wrapper {
+
+
+.gig-preview .vueperslides__parallax-wrapper {
     position: relative;
     overflow: hidden;
     padding-bottom: 61.8% !important;
 }
 
-.vueperslides {
+.gig-preview .vueperslides {
     position: relative;
 
     .vueperslides__arrow {
@@ -200,26 +202,26 @@ export default {
     }
 }
 
-.vueperslides__inner {
+.gig-preview .vueperslides__inner {
     position: relative;
     -webkit-user-select: none;
     -moz-user-select: none;
     user-select: none;
 }
 
-.vueperslides__parallax-wrapper {
+.gig-preview .vueperslides__parallax-wrapper {
     position: relative;
     overflow: hidden;
 }
 
-.vueperslides__bullet {
+.gig-preview .vueperslides__bullet {
     margin: 0.6em 0.2em;
     padding: 0;
     border: none;
     background: none;
 }
 
-.vueperslides__bullet .default {
+.gig-preview .vueperslides__bullet .default {
     width: em(8px);
     height: em(8px);
     border-radius: em(8px);
@@ -230,7 +232,7 @@ export default {
     box-sizing: border-box;
 }
 
-.vueperslides__bullet--active .default {
+.gig-preview .vueperslides__bullet--active .default {
     width: em(12px);
     height: em(12px);
     border-radius: em(12px);
