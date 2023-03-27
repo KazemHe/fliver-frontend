@@ -6,7 +6,9 @@
 .main-container {
     padding: 0;
     display: grid;
-    grid-template-columns: 1fr rem(1337px) 1fr;
+    grid-template-columns: 20px 1fr 20px;
+    grid-gap: rem(24px);
+    gap : 24px;
 
     >* {
         grid-column: 2;
@@ -19,17 +21,17 @@
 
     @include for-narrow-layout {
         grid-template-columns:
-            minmax(20px, 1fr) $mobile-breakpoint minmax(20px, 1fr);
+            20px 1fr 20px;
     }
 
     @include for-normal-layout {
         grid-template-columns:
-            minmax(20px, 1fr) $narrow-breakpoint minmax(20px, 1fr);
+            minmax(20px, 1fr) minmax(auto, $narrow-breakpoint) minmax(20px, 1fr);
     }
 
     @include for-wide-layout {
         grid-template-columns:
-            minmax(20px, 1fr) rem(1337px) minmax(20px, 1fr);
+            minmax(20px, 1fr) minmax(auto, rem(1337px)) minmax(20px, 1fr);
     }
 }
 
