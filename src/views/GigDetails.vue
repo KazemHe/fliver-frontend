@@ -40,15 +40,15 @@
 
                 <vueper-slides ref="vueperslides1" :touchable="false" fade :autoplay="false" :bullets="false"
                     @slide="$refs.vueperslides2.goToSlide($event.currentSlide.index, { emit: false })" fixed-height="400px">
-                    <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image">
+                    <vueper-slide v-for="(img, i) in gig.images" :key="i" :image="img">
                     </vueper-slide>
                 </vueper-slides>
 
                 <vueper-slides class="no-shadow thumbnails" ref="vueperslides2"
                     @slide="$refs.vueperslides1.goToSlide($event.currentSlide.index, { emit: false })"
-                    :visible-slides="slides.length" fixed-height="75px" :bullets="false" :touchable="false" :gap="2.5"
+                    :visible-slides="gig.images.length" fixed-height="75px" :bullets="false" :touchable="false" :gap="2.5"
                     :arrows="false">
-                    <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image"
+                    <vueper-slide v-for="(img, i) in gig.images" :key="i" :image="img"
                         @click.native="$refs.vueperslides2.goToSlide(i)">
                     </vueper-slide>
                 </vueper-slides>
@@ -146,7 +146,7 @@
                                 <span class="value">Jan 2023</span>
                             </li>
                             <li class="flex column"><span class="key">Avg. response time</span>
-                                <span class="value">1 hour</span>
+                                <span class="value">{{ gig.avgResponceTime }}</span>
                             </li>
                             <li class="flex column"><span class="key">Last delivery</span>
                                 <span class="value">about 12 hours</span>
@@ -393,7 +393,7 @@
                 <section class="package-content">
                     <section class="header flex space-between">
                         <h3 class="price regular">Order deatils</h3>
-                        <h3 class="price regular">US$50</h3>
+                        <h3 class="price regular">US${{ gig.price }}</h3>
                     </section>
                     <p>1 custom logo+high resolution file+3d mockup+logo transparency+ 300dpi</p>
                     <section class="additional-info flex">
@@ -465,16 +465,14 @@
                                 </svg></span> Include social media kit</li>
                     </ul>
 
-                    <RouterLink :gig="gig" :to="'/payment/' + gig._id">
-                        <h1>PAY</h1>
-                    </RouterLink>
-
-
-                    <a class="">
-                        <button class="continue-btn"> Continue <span><span class="svg flex justify-center align-center"
-                                    v-html="getSvg('continueBtn')"></span></span>
+                    <router-link  :to="'/payment/' + gig._id">
+                        <button class="continue-btn">
+                            Continue
+                            <span>
+                                <span class="svg flex justify-center align-center" v-html="getSvg('continueBtn')"></span>
+                            </span>
                         </button>
-                    </a>
+                    </router-link>
                 </section>
                 <section class="contact-seller">
                     <button>Contact Seller</button>
@@ -503,30 +501,6 @@ export default {
         return {
             gig: null,
             selectedLink: 'overview',
-
-            slides: [
-                {
-                    title: 'El Teide Volcano, Spain',
-                    content: 'Photo by Max Rive',
-                    // You can also provide a URL for the image.
-                    image: 'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/231682055/original/77cc585046a1ceb81a809218fef35ee8252bbb3b.jpg'
-                },
-                {
-                    title: 'El Teide Volcano, Spain',
-                    content: 'Photo by Max Rive',
-                    // You can also provide a URL for the image.
-                    image: 'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs2/275390527/original/68da5d5d026f7f8802f24056eb95a3c662b5f2dc.png'
-                },
-
-                {
-                    title: 'dark life',
-                    content: 'Photo by eli',
-                    // You can also provide a URL for the image.
-                    image: 'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg'
-                    // Other slides.
-                }
-            ],
-
         }
     },
 
@@ -599,7 +573,7 @@ export default {
 
 
 <style  lang="scss">
-.gig-info .thumbnails {
+.thumbnails {
     margin: auto;
     max-width: 300px;
     padding: 5px 0 5px 5px;
