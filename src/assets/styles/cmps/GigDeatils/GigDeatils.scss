@@ -5,28 +5,11 @@
 @import "../GigDeatils/Review.scss";
 @import "../GigDeatils/WhatPeopleLoved.scss";
 @import "../GigDeatils/Nav.scss";
-.gig-info{
+
+.gig-info {
     padding-top: rem(32px);
     padding-bottom: rem(32px);
 }
-
-.carosel-img {
-    background: transparent url(https://fiverr-res.cloudinary.com/app_assets/fiverr_logo_loader.svg) no-repeat 50%;
-    background-size: 80px;
-    height: 100%;
-    max-height: 100%;
-    max-width: 100%;
-    min-height: 140px;
-    min-width: 140px;
-    -o-object-fit: contain;
-    object-fit: contain;
-    width: 100%;
-    border: 0;
-    margin: 0;
-    outline: 0;
-    padding: 0;
-}
-
 
 
 .gig-page {
@@ -51,7 +34,7 @@
 
 .gig-overview {
     margin-bottom: rem(30px)
-} 
+}
 
 .gig-overview>h1 {
     font-size: 1.75rem;
@@ -95,19 +78,17 @@ b {
 }
 
 
-
+.last-li {
+    padding-bottom: rem(24px);
+}
 
 
 @media only screen and (min-width: 600px) {
-    .gig-info {
-   
-    }
+    .gig-info {}
 }
 
 @media only screen and (min-width: 900px) {
-    .gig-info {
-       
-    }
+    .gig-info {}
 }
 
 // @media only screen and (min-width: 1160px) {
@@ -118,12 +99,19 @@ b {
 // }
 
 
+progress[value] {
+    -webkit-appearance: none;
+    appearance: none;
+}
 
+progress[value]::-webkit-progress-bar {
+    background-color:
+        grey;
+    border-radius: 999px;
+}
 
-
-
-
-
-
-
-
+progress[value]::-webkit-progress-value {
+    background-color:
+    yellow;
+    border-radius: 999px;
+}

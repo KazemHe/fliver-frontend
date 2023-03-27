@@ -1,6 +1,6 @@
 // ************** Order SECTION *************
 .package-container {
-    top: 0;
+    top: 100px;
     width: 35%;
     background-color: #fff;
     position: sticky;
@@ -72,7 +72,7 @@
                 color: $clr9;
                 font-weight: 400;
                 line-height: 1.7142857143em;
-
+                font-family: macan-regular;
                 >span {
                     padding-inline-end: rem(12px);
                 }
@@ -87,7 +87,7 @@
 
         .price {
             line-height: 0;
-            font-size: rem(24px);
+            font-size: rem(20px);
         }
 
         .header {

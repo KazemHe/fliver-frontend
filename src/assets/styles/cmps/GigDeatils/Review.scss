@@ -151,6 +151,7 @@
     padding-inline-start: rem(6px);
 
     h6 {
+        padding-top: rem(8px);
         color: $clr17;
         font-size: 1rem;
         font-weight: 700;
@@ -198,3 +199,71 @@
     padding-block-end: 0.5em;
     color: #95979d;
 }
+
+
+.details-container {
+    .vueperslides__arrow {
+        position: absolute;
+        font-size: inherit;
+        color: inherit;
+        text-align: center;
+        transform: translateY(-50%);
+        transition: .3s ease-in-out;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+        outline: none;
+        z-index: 2;
+        line-height: 1;
+        background-color: #fff;
+        opacity: 1;
+        border-radius: 50%;
+        color: #62646a;
+        box-shadow: 0 2px 5px #00000026;
+    }
+}
+
+.vueperslides__arrow {
+    svg {
+        vertical-align: middle;
+        stroke: currentColor;
+        fill: none;
+        width: 3.5em;
+        padding: 1em;
+        stroke-width: 1;
+        transition: .3s ease-in-out;
+        box-sizing: border-box;
+    }
+}
+
+.details-container .vueperslides__arrow svg {
+    color: #62646a;
+    height: 48px;
+    width: 48px;
+    stroke-width: 3px;
+}
+
+.details-container .vueperslides__arrow {
+    position: absolute;
+    font-size: inherit;
+    color: inherit;
+    text-align: center;
+    transform: translateY(-50%);
+    transition: .3s ease-in-out;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    outline: none;
+    z-index: 2;
+    line-height: 1;
+    background-color: #fff;
+    opacity: 1;
+    border-radius: 50%;
+    color: #62646a;
+}
+
+// .vueperslides__parallax-wrapper {
+//     height: 50vh;
+// }

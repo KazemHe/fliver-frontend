@@ -1,9 +1,12 @@
 <template>
     <section class="gig-nav">
         <ul class="nav-info" ref="nav-info">
-            <li ><a :class="{ selected: selectedLink === 'overview' }" @click.prevent="scrollToElement('overview')">Overview</a></li>
-            <li ><a :class="{ selected: selectedLink === 'aboutSeller' }" @click.prevent="scrollToElement('aboutSeller')">About the seller</a></li>
-            <li ><a :class="{ selected: selectedLink === 'reviews' }" @click.prevent="scrollToElement('reviews')">Reviews</a></li>
+            <li><a :class="{ selected: selectedLink === 'overview' }"
+                    @click.prevent="scrollToElement('overview')">Overview</a></li>
+            <li><a :class="{ selected: selectedLink === 'aboutSeller' }"
+                    @click.prevent="scrollToElement('aboutSeller')">About the seller</a></li>
+            <li v-if="gig.reviews"><a :class="{ selected: selectedLink === 'reviews' }"
+                    @click.prevent="scrollToElement('reviews')">Reviews</a></li>
         </ul>
     </section>
 
@@ -33,19 +36,31 @@
                 </section>
             </div>
 
-           
-            <section class="gigg-preview">
-                
-                <section class="slideshow"><div class="vueperslides vueperslides--ready" aria-label="Slideshow"><!----><div class="vueperslides__inner"><div class="vueperslides__parallax-wrapper" aria-live="polite" style="padding-bottom: 71.6418%;"><div class="vueperslides__track"><div class="vueperslides__track-inner" style="transition-duration: 600ms; transform: translate3d(-200%, 0px, 0px); will-change: auto;"><div class="vueperslide" href="false" target="_self" face="false" aria-hidden="true" style="background-image: url(&quot;https://res.cloudinary.com/dja6gjgcd/image/upload/v1670540520/samples/higherr/30f75e896954dc0ea9e28a87209a28053bcccc18_qnzyx5.webp&quot;); cursor: pointer;"><!----><!----><div class="vueperslide__content-wrapper"><!----><!----></div><!----></div><div class="vueperslide" href="false" target="_self" face="false" aria-hidden="true" style="background-image: url(&quot;https://res.cloudinary.com/dja6gjgcd/image/upload/v1670540520/samples/higherr/0149d53275d914f681e8685b9e6c263dcc4309ab_fu4myp.webp&quot;); cursor: pointer;"><!----><!----><div class="vueperslide__content-wrapper"><!----><!----></div><!----></div><div class="vueperslide vueperslide--active vueperslide--visible" href="false" target="_self" face="false" aria-hidden="false" style="background-image: url(&quot;https://res.cloudinary.com/dja6gjgcd/image/upload/v1670540520/samples/higherr/e2a835f360f5fcbcf15e14eb01ffde9892f85e85_rvhafp.webp&quot;); cursor: pointer;"><!----><!----><div class="vueperslide__content-wrapper"><!----><!----></div><!----></div><div class="vueperslide" href="false" target="_self" face="false" aria-hidden="true" style="background-image: url(&quot;https://res.cloudinary.com/dja6gjgcd/image/upload/v1670540520/samples/higherr/logo-05_mnet94_dxu4so.jpg&quot;); cursor: pointer;"><!----><!----><div class="vueperslide__content-wrapper"><!----><!----></div><!----></div><div class="vueperslide vueperslide--clone vueperslide--clone-1" href="false" target="_self" face="false" aria-hidden="true" style="background-image: url(&quot;https://res.cloudinary.com/dja6gjgcd/image/upload/v1670540520/samples/higherr/logo-05_mnet94_dxu4so.jpg&quot;); cursor: pointer;"><!----><!----><div class="vueperslide__content-wrapper"><!----><!----></div><!----></div><div class="vueperslide vueperslide--clone vueperslide--clone-2" href="false" target="_self" face="false" aria-hidden="true" style="background-image: url(&quot;https://res.cloudinary.com/dja6gjgcd/image/upload/v1670540520/samples/higherr/30f75e896954dc0ea9e28a87209a28053bcccc18_qnzyx5.webp&quot;); cursor: pointer;"><!----><!----><div class="vueperslide__content-wrapper"><!----><!----></div><!----></div></div></div></div><!----><!----><!----><div class="vueperslides__arrows"><button class="vueperslides__arrow vueperslides__arrow--prev" type="button" aria-label="Previous"><svg viewBox="0 0 9 18"><path stroke-linecap="round" d="m8 1 l-7 8 7 8"></path></svg></button><button class="vueperslides__arrow vueperslides__arrow--next" type="button" aria-label="Next"><svg viewBox="0 0 9 18"><path stroke-linecap="round" d="m1 1 l7 8 -7 8"></path></svg></button></div><!----></div><!----><!----></div><div class="thumbnails-slider"><div class="vueperslides vueperslides--ready vueperslides--fixed-height vueperslides--bullets-outside no-shadow thumbnails" aria-label="Slideshow" style="height: 90px;"><!----><div class="vueperslides__inner"><div class="vueperslides__parallax-wrapper" aria-live="polite" style="padding-bottom: 33.3333%;"><div class="vueperslides__track"><div class="vueperslides__track-inner" style="transition-duration: 600ms; transform: translate3d(0%, 0px, 0px); will-change: auto;"><div class="vueperslide vueperslide--visible" href="false" target="_self" face="false" aria-hidden="false" slide-ratio="0.7164179104477612" style="background-image: url(&quot;https://res.cloudinary.com/dja6gjgcd/image/upload/v1670540520/samples/higherr/30f75e896954dc0ea9e28a87209a28053bcccc18_qnzyx5.webp&quot;); width: 24.25%; margin-right: 1%; cursor: pointer;"><!----><!----><div class="vueperslide__content-wrapper"><!----><!----></div><!----></div><div class="vueperslide vueperslide--visible" href="false" target="_self" face="false" aria-hidden="false" slide-ratio="0.7164179104477612" style="background-image: url(&quot;https://res.cloudinary.com/dja6gjgcd/image/upload/v1670540520/samples/higherr/0149d53275d914f681e8685b9e6c263dcc4309ab_fu4myp.webp&quot;); width: 24.25%; margin-right: 1%; cursor: pointer;"><!----><!----><div class="vueperslide__content-wrapper"><!----><!----></div><!----></div><div class="vueperslide vueperslide--active vueperslide--visible" href="false" target="_self" face="false" aria-hidden="false" slide-ratio="0.7164179104477612" style="background-image: url(&quot;https://res.cloudinary.com/dja6gjgcd/image/upload/v1670540520/samples/higherr/e2a835f360f5fcbcf15e14eb01ffde9892f85e85_rvhafp.webp&quot;); width: 24.25%; margin-right: 1%; cursor: pointer;"><!----><!----><div class="vueperslide__content-wrapper"><!----><!----></div><!----></div><div class="vueperslide vueperslide--visible" href="false" target="_self" face="false" aria-hidden="false" slide-ratio="0.7164179104477612" style="background-image: url(&quot;https://res.cloudinary.com/dja6gjgcd/image/upload/v1670540520/samples/higherr/logo-05_mnet94_dxu4so.jpg&quot;); width: 24.25%; margin-right: 1%; cursor: pointer;"><!----><!----><div class="vueperslide__content-wrapper"><!----><!----></div><!----></div><!----><!----></div></div></div><!----><!----><!----><!----><!----></div><!----><!----></div></div></section>
+            <section class="pic">
+
+                <vueper-slides ref="vueperslides1" :touchable="false" fade :autoplay="false" :bullets="false"
+                    @slide="$refs.vueperslides2.goToSlide($event.currentSlide.index, { emit: false })" fixed-height="400px">
+                    <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image">
+                    </vueper-slide>
+                </vueper-slides>
+
+                <vueper-slides class="no-shadow thumbnails" ref="vueperslides2"
+                    @slide="$refs.vueperslides1.goToSlide($event.currentSlide.index, { emit: false })"
+                    :visible-slides="slides.length" fixed-height="75px" :bullets="false" :touchable="false" :gap="2.5"
+                    :arrows="false">
+                    <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image"
+                        @click.native="$refs.vueperslides2.goToSlide(i)">
+                    </vueper-slide>
+                </vueper-slides>
             </section>
 
 
-            <header class="What-people-loved flex">
+            <header v-if="gig.reviews" class="What-people-loved flex">
                 <h2 class="section-title">What people loved about this seller</h2>
                 <button @click.prevent="scrollToElement('reviews')"
                     class="sPdE5j4 zUvc8Si co-white text-button reviews-button bg-co-green-700">See all reviews</button>
             </header>
-            <section v-if="gig.reviews?.length" class="review-list-container">
+            <section v-if="gig.reviews" class="review-list-container">
                 <section class="review-list">
                     <section>
                         <section class="review-preview">
@@ -84,9 +99,9 @@
                 </section>
             </section>
 
-            <section v-else class="review-list-container">
+            <!-- <section v-else class="review-list-container">
                 No review yet
-            </section>
+            </section> -->
 
             <div class="about-the-gig">
                 <h2>About the gig</h2>
@@ -145,7 +160,7 @@
             </section>
 
             <section ref="reviews" id="reviews" class="reviews-container">
-                <section class="reviews-stat flex column">
+                <section v-if="gig.reviews" class="reviews-stat flex column">
                     <section class="stat-header flex align-center">
                         <h2>344 Reviews </h2>
                         <section class="reviews-rate flex">
@@ -183,7 +198,7 @@
                                     <section class="progress-container flex align-center"><progress max="344"
                                             value="2"></progress><span class="star-num">(2)</span></section>
                                 </li>
-                                <li class="flex align-center"><span class="key">1 Star</span>
+                                <li class="flex align-center last-li"><span class="key">1 Star</span>
                                     <section class="progress-container flex align-center"><progress class="progress"
                                             max="344" value="1"></progress><span class="star-num">(1)</span></section>
                                 </li>
@@ -212,7 +227,7 @@
                         </section>
                     </section>
                 </section>
-                <section class="review-list">
+                <section class="review-list" v-if="gig.reviews">
                     <section>
 
                         <ul class="clean-list">
@@ -349,6 +364,7 @@
                                     <section class="review-content">
                                         <section class="review-rate flex align-center">
                                             <ul class="stars clean-list flex">
+
                                                 <li><span class="svg flex justify-center align-center"
                                                         v-html="getSvg('goldStar')"></span></li>
                                                 <li><span class="svg flex justify-center align-center"
@@ -376,6 +392,7 @@
             <section class="gig-package">
                 <section class="package-content">
                     <section class="header flex space-between">
+                        <h3 class="price regular">Order deatils</h3>
                         <h3 class="price regular">US$50</h3>
                     </section>
                     <p>1 custom logo+high resolution file+3d mockup+logo transparency+ 300dpi</p>
@@ -447,7 +464,13 @@
                                     </path>
                                 </svg></span> Include social media kit</li>
                     </ul>
-                    <a href="/" class="">
+
+                    <RouterLink :to="'/payment/' + gig._id">
+                        <h1>PAY</h1>
+                    </RouterLink>
+
+
+                    <a class="">
                         <button class="continue-btn"> Continue <span><span class="svg flex justify-center align-center"
                                     v-html="getSvg('continueBtn')"></span></span>
                         </button>
@@ -460,10 +483,6 @@
         </section>
 
     </section>
-
-   
-
-  
 </template>
   
 <script>
@@ -484,7 +503,7 @@ export default {
         return {
             gig: null,
             selectedLink: 'overview',
-        
+
             slides: [
                 {
                     title: 'El Teide Volcano, Spain',
@@ -498,6 +517,7 @@ export default {
                     // You can also provide a URL for the image.
                     image: 'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs2/275390527/original/68da5d5d026f7f8802f24056eb95a3c662b5f2dc.png'
                 },
+
                 {
                     title: 'dark life',
                     content: 'Photo by eli',
@@ -533,14 +553,6 @@ export default {
         }
     },
 
-    // async created() {
-    //     const { gigId } = this.$route.params
-    //     console.log(gigId);
-    //     const gig = await gigService.getById(gigId)
-    //     this.gig = gig
-    // },
-
-
     methods: {
         scrollToElement(element) {
             this.selectedLink = element;
@@ -571,7 +583,6 @@ export default {
         }
     },
 
-
     printGigToConsole(gig) {
         console.log('Gig msgs:', gig.msgs)
     },
@@ -587,34 +598,46 @@ export default {
 
 
 
-<style>
-/* progress[value] {
-    width: 250px;
-    height: 20px; */
-    
-    /* border-radius: 50%; */
-    /* appearance: none; */
-/* } */
-
-
-
-progress{
-    margin-inline-end: 10px;
+<style  lang="scss">
+.thumbnails {
+    margin: auto;
+    max-width: 300px;
+    padding: 5px 0 5px 5px;
 }
 
+.thumbnails .vueperslide {
 
+    box-sizing: border-box;
+    border: 1px solid #fff;
+    transition: 0.3s ease-in-out;
+    opacity: 0.7;
+    cursor: pointer;
+}
 
-progress::-webkit-progress-value { background: rgb(186, 26, 26);  }
+.vueperslides__arrow.vueperslides__arrow--next {
+    background: black;
 
+    svg {
+        display: block;
+        height: 50px;
+        width: 50px;
+    }
 
-/* progress[value]::-webkit-progress-value {
-  
-} */
+}
 
+.thumbnails .vueperslide--active {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+    opacity: 1;
+    border-color: #000;
+}
 
+// progress {
+//     margin-inline-end: 10px;
+// }
 
-
-
+// progress::-webkit-progress-value {
+//     background: rgb(186, 26, 26);
+// }
 
 .vueperslides__parallax-wrapper {
     height: 50vh;

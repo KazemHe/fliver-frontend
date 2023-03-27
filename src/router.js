@@ -8,6 +8,7 @@ import UserDetails from './views/UserDetails.vue'
 import GigExplore from './views/GigExplore.vue'
 import GigDetails from './views/GigDetails.vue'
 import GigEdit from './views/GigEdit.vue'
+import GigPayment from './views/GigPayment.vue'
 
 const routes = [
   {
@@ -25,6 +26,13 @@ const routes = [
     name: 'GigDetails',
     component: GigDetails
   },
+
+  {
+    path: '/payment/:gigId?',
+    name: 'GigPayment',
+    component: GigPayment
+  },
+
   {
     path: '/review',
     name: 'ReviewIndex',
@@ -50,6 +58,8 @@ const routes = [
     name: 'edit',
     component: GigEdit
   },
+
+  
 ]
 
 
