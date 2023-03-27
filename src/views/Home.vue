@@ -13,13 +13,13 @@
         </button>
       </div>
       <div class="categories flex"> Popular:
-        <div class="tag">Website Design</div>
-        <div class="tag">WordPress</div>
-        <div class="tag">Logo Design</div>
-        <div class="tag">Video Editing</div>
+        <div class="tag"><RouterLink to="/explore?category=Website+Design">Website Design</RouterLink></div>
+        <div class="tag"><RouterLink to="/explore?category=WordPress">WordPress</RouterLink></div>
+        <div class="tag"><RouterLink to="/explore?category=Logo+Design">Logo Design</RouterLink></div>
+        <div class="tag"><RouterLink to="/explore?category=Video+Editing">Video Editing</RouterLink></div>
       </div>
 
-      <div class="test">
+      <div class="owner-name">
         <div class="hero-name flex">
           <div v-if="heroImgs[currIdx].reviews">
             <span v-for="n in 5" v-html="getSvg('goldStar')" class="svg"></span>
@@ -37,10 +37,13 @@
 
   <section class="popular-container">
     <h1 class="popular-title">Popular professional services</h1>
-    <vueper-slides fixed-height="345px" :visible-slides="5" slide-multiple :gap="3" :slide-ratio="1 / 4"
-      :dragging-distance="200" :breakpoints="{ 800: { visibleSlides: 2, slideMultiple: 2 } }" class="no-shadow">
-      <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" :title="slide.title"
-        :content="slide.content" @click="popularFilter(slide.content)" class="popular-imgs" />
+    <vueper-slides fixed-height="345px" :visible-slides="5" slide-multiple 
+                   :gap="3" :slide-ratio="1 / 4" :dragging-distance="200"
+                   :breakpoints="{ 800: { visibleSlides: 2, slideMultiple: 2 } }" class="no-shadow">
+      <vueper-slide v-for="(slide, i) in slides" :key="i" 
+                    :image="slide.image" :title="slide.title"
+                    :content="slide.content"
+                     @click="popularFilter(slide.content)" class="popular-imgs" />
     </vueper-slides>
   </section>
 
@@ -87,47 +90,12 @@
   <section class="marketplace-container">
     <p class="marketplace-title">Explore the marketplace</p>
     <section class="marketplace-svg">
-      <div>
-        <span class="flex" v-html="getSvg('GraphicsAndDesign')"></span>
-        <h4 class="svg-type">Graphics &amp; Design</h4>
+      <div @click="marketplaceRoutes(market.titleMarketplace)"
+           v-for="market in marketPlaces">
+        <span class="flex" v-html="getSvg(market.svgMarketplace)"></span>
+        <h4 class="svg-type">{{ market.titleMarketplace }}</h4>
       </div>
-      <div>
-        <span class="flex" v-html="getSvg('digitalMarketing')"></span>
-        <h4 class="svg-type">Digital Marketing</h4>
-      </div>
-      <div>
-        <span class="flex" v-html="getSvg('writingAndTranslation')"></span>
-        <h4 class="svg-type">Writing & Translation</h4>
-      </div>
-      <div>
-        <span class="flex" v-html="getSvg('videoAndAnimation')"></span>
-        <h4 class="svg-type">Video & Animation</h4>
-      </div>
-      <div>
-        <span class="flex" v-html="getSvg('musicAndAudio')"></span>
-        <h4 class="svg-type">Music & Audio</h4>
-      </div>
-      <div>
-        <span class="flex" v-html="getSvg('programmingAndTech')"></span>
-        <h4 class="svg-type">Programming & Tech</h4>
-      </div>
-      <div>
-        <span class="flex" v-html="getSvg('business')"></span>
-        <h4 class="svg-type">Business</h4>
-      </div>
-      <div>
-        <span class="flex" v-html="getSvg('lifestyle')"></span>
-        <h4 class="svg-type">Lifestyle</h4>
-      </div>
-      <div>
-        <span class="flex" v-html="getSvg('data')"></span>
-        <h4 class="svg-type" :style="{ 'line-height': 4 }">Data</h4>
-      </div>
-      <div>
-        <span class="flex" v-html="getSvg('photography')"></span>
-        <h4 class="svg-type">Photography</h4>
-      </div>
-    </section>
+    </section>  
   </section>
 </template>
 
@@ -138,14 +106,51 @@ import 'vueperslides/dist/vueperslides.css'
 export default {
   name: 'home',
   data() {
-    return {
-      filterParams: {
-        subCategory: 'subCategory',
-        category: 'category',
-        search: 'title'
-      },
+    return {     
       userSearch: '',
       currIdx: 0,
+      marketPlaces: [
+        {
+          titleMarketplace: 'Graphics & Design',
+          svgMarketplace: 'GraphicsAndDesign'
+        },
+        {
+          titleMarketplace: 'Digital Marketing',
+          svgMarketplace: 'digitalMarketing'
+        },
+        {
+          titleMarketplace: 'Writing & Translation',
+          svgMarketplace: 'writingAndTranslation'
+        },
+        {
+          titleMarketplace: 'Video & Animation',
+          svgMarketplace: 'videoAndAnimation'
+        },
+        {
+          titleMarketplace: 'Music & Audio',
+          svgMarketplace: 'musicAndAudio'
+        },
+        {
+          titleMarketplace: 'Programming & Tech',
+          svgMarketplace: 'programmingAndTech'
+        },
+        {
+          titleMarketplace: 'Business',
+          svgMarketplace: 'business'
+        },
+        {
+          titleMarketplace: 'Lifestyle',
+          svgMarketplace: 'lifestyle'
+        },
+        {
+          titleMarketplace: 'Data',
+          svgMarketplace: 'data'
+        },
+        {
+          titleMarketplace: 'Photography',
+          svgMarketplace: 'photography'
+        },
+      ],
       heroImgs: [
         {
           img: 'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/93085acc959671e9e9e77f3ca8147f82-1599427734108/bg-hero-4-1792-x1.png',
@@ -249,10 +254,13 @@ export default {
       return (this.icon = svgServive.getGigSvg(iconName))
     },
     popularFilter(content) {
-      this.$router.push({ query: { subCategory: content }, path: '/explore'})
+      this.$router.push({ query: { subCategory: content }, path: '/explore' })
     },
     search() {
       this.$router.push({ query: { title: this.userSearch } })
+    },
+    marketplaceRoutes (title) {
+      this.$router.push({ query: { categories: title }, path: '/explore' })
     }
   },
   components: {
