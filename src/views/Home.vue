@@ -6,9 +6,9 @@
       <div class="hero-search flex">
         <div class="flex input-container">
           <div class="search-icon"><span class="flex" v-html="getSvg('search')"></span></div>
-          <input placeholder="Try &quot;building mobile app&quot; ">
+          <input v-model="userSearch" placeholder="Try &quot;building mobile app&quot; ">
         </div>
-        <button class="el-button" aria-disabled="false" type="button">
+        <button @click="search" class="el-button" aria-disabled="false" type="button">
           <span class="">Search</span>
         </button>
       </div>
@@ -132,7 +132,6 @@
 </template>
 
 <script>
-import { utilService } from '../services/util.service.js'
 import { svgServive } from '../services/svg.service.js'
 import { VueperSlides, VueperSlide } from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
@@ -141,10 +140,11 @@ export default {
   data() {
     return {
       filterParams: {
-        subCategory:'subCategory',
-        category:'category',
+        subCategory: 'subCategory',
+        category: 'category',
         search: 'title'
       },
+      userSearch: '',
       currIdx: 0,
       heroImgs: [
         {
@@ -249,10 +249,11 @@ export default {
       return (this.icon = svgServive.getGigSvg(iconName))
     },
     popularFilter(content) {
-      utilService.setQueryStringParams(this.filterParams.subCategory, content)
-      // this.$router.push('/explore')
+      this.$router.push({ query: { subCategory: content }, path: '/explore'})
     },
-
+    search() {
+      this.$router.push({ query: { title: this.userSearch } })
+    }
   },
   components: {
     VueperSlides,
