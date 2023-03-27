@@ -80,7 +80,7 @@
     }
 
     .categories {
-        opacity: 0;
+       opacity: 0;
         flex-wrap: wrap;
         text-decoration: none;
         align-items: center;
@@ -286,8 +286,8 @@
 
     h4 {
         text-align: center;
-        line-height: 4;
-        font-size: rem(15px);
+        line-height: 1;
+        font-size: 15px;
     }
 
     div {
@@ -305,10 +305,11 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         justify-items: center;
-        gap: rem(11px);
+        gap: 2.3125rem;
         padding-inline-start: rem(20px);
         padding-inline-end: rem(20px);
 
+        
     }
 
     .marketplace-title {
@@ -321,12 +322,13 @@
 
     svg {
         width: rem(48px);
+        height: 80px;
     }
 
     div a::after {
         content: "";
         position: absolute;
-        top: rem(45px);
+        top: rem(60px);
         right: 50%;
         transform: translate(50%);
         padding: 0 0 rem(8px);
@@ -340,6 +342,7 @@
         border-color: $clr0;
         transition: border-color .2s ease-in-out, width .2s ease-in-out;
     }
+
 }
 
 @media only screen and (min-width: 600px) {}
@@ -348,7 +351,6 @@
     .hero-search-container .categories {
         opacity: 1;
     }
-
     .bgc-video {
         height: rem(750px);
 
@@ -361,7 +363,6 @@
     .marketplace-container {
         section.marketplace-svg {
             grid-template-columns: repeat(3, 1fr);
-            gap: rem(20px);
         }
     }
 }
