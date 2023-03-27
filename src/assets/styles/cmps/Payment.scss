@@ -37,7 +37,12 @@
                     margin-block-end: 10px;
                     line-height: 120%;
                     font-weight: 500;
+
+                    
                 }
+                .bold-price{
+                          font-weight: 700;
+                      }
             }
 
             .img-container {
@@ -65,8 +70,7 @@
                     border-radius: 0.25em;
                     font-size: 1rem;
                     font-weight: 600;
-                    font-family: inherit;
-                    line-height: 100%;
+                    font-family: Macan-Regular;                   
                     padding: 0.75em 1.5em;
                     position: relative;
                     text-align: center;
@@ -102,6 +106,8 @@
                     line-height: 140%;
                     font-weight: 500;
                     color: #62646a;
+                    
+                    
                 }
 
                 .features {
@@ -111,7 +117,7 @@
                         display: flex;
                         align-items: center;
                         font-size: .875rem;
-                        color: var(--yro5248);
+                        color: $clr9;
                         line-height: 1.7142857143em;
                     }
 
@@ -144,6 +150,10 @@
         .credit-txt {
             display: flex;
             align-items: center;
+
+            p{
+                font-size: 16px;
+            }
         }
     }
 
@@ -172,7 +182,7 @@
 
 
         h2 {
-
+            padding-bottom: 10px;
             font-size: 24px;
         }
 
@@ -219,3 +229,4 @@
     height: 50px;
     width: 100px;
 }
+

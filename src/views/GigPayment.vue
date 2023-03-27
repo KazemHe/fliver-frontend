@@ -62,37 +62,28 @@
                     <section class="package-content">
                         <section class="header flex space-between">
                             <div class="img-container">
-                                <img
-                                    src="https://res.cloudinary.com/dja6gjgcd/image/upload/v1670540520/samples/higherr/30f75e896954dc0ea9e28a87209a28053bcccc18_qnzyx5.webp">
+                                <img :src=gig.images[0]>
                             </div>
-                            <p class="title">I will design 3 modern minimalist logo design</p>
+                            <p class="title">{{ gig.title }}</p>
                         </section>
-                        <h3 class="price">US$50</h3>
-                        <p> 1 custom logo+high resolution file+3d mockup+logo transparency+ 300dpi </p>
-                        <ul class="features clean-list">
-                            <li class="regular">
-                                <div class="v-svg-container"></div> 1 concept included
-                            </li>
-                            <li class="regular">
-                                
-                                <div class="v-svg-container"><span class="svg flex justify-center align-center"
-                                                        v-html="getSvg('greeV')"></span></div> Logo transparency
-                            </li>
-                            <li class="regular">
-                                <div class="v-svg-container"><span><svg width="16" height="16" viewBox="0 0 11 9"
-                                            xmlns="http://www.w3.org/2000/svg" fill="#1dbf73">
+                        <h3 class="price">US${{ gig.price }}</h3>
+                        <p>
+                            <span v-for="(tag) in list"> {{tag}} +</span>
+                        </p>
+                            
+                        <ul class="features clean-list" >
+                            <li class="regular" v-for="(tag) in list" :key="index">
+                                <div class="v-svg-container">
+                                    <span>
+                                        <svg width="16" height="16" viewBox="0 0 11 9" xmlns="http://www.w3.org/2000/svg"
+                                            fill="#1dbf73">
                                             <path
                                                 d="M3.645 8.102.158 4.615a.536.536 0 0 1 0-.759l.759-.758c.21-.21.549-.21.758 0l2.35 2.349L9.054.416c.21-.21.55-.21.759 0l.758.758c.21.21.21.55 0 .759L4.403 8.102c-.209.21-.549.21-.758 0Z">
                                             </path>
-                                        </svg></span></div> Printable file
-                            </li>
-                            <li class="regular">
-                                <div class="v-svg-container"><span><svg width="16" height="16" viewBox="0 0 11 9"
-                                            xmlns="http://www.w3.org/2000/svg" fill="#1dbf73">
-                                            <path
-                                                d="M3.645 8.102.158 4.615a.536.536 0 0 1 0-.759l.759-.758c.21-.21.549-.21.758 0l2.35 2.349L9.054.416c.21-.21.55-.21.759 0l.758.758c.21.21.21.55 0 .759L4.403 8.102c-.209.21-.549.21-.758 0Z">
-                                            </path>
-                                        </svg></span></div> Include 3D mockup
+                                        </svg>
+                                    </span>
+                                </div>
+                                {{ tag }}
                             </li>
                         </ul>
                         <div class="pricing">
@@ -104,12 +95,12 @@
                             <p>US$7.26</p>
                         </div>
                         <div class="pricing total">
-                            <p>Total</p>
-                            <p>US$66.00</p>
+                            <p class="bold-price">Total</p>
+                            <p class="bold-price">{{lastPrice}}</p>
                         </div>
                         <div class="pricing">
-                            <p class="bold">Delivery Time</p>
-                            <p>1 Days</p>
+                            <p class="bold-price">Delivery Time</p>
+                            <p class="bold-price">1 Days</p>
                         </div>
                         <button class="continue-btn">Confirm And Pay</button>
                     </section>
@@ -124,10 +115,12 @@
 
 
 import { svgServive } from '../services/svg.service.js'
+import { gigService } from '../services/gig.service.local'
 export default {
-    props: ['gig'],
+
     data() {
         return {
+            list: ['Include 3D mockup', 'Printable file', 'Logo transparency', '1 concept included'],
             gig: null,
         }
     },
@@ -141,6 +134,9 @@ export default {
         },
     },
     computed: {
+        lastPrice(){
+           return this.gig.price + 7.26 + 7.5
+        },
         loggedInUser() {
             return this.$store.getters.loggedinUser
         },
@@ -149,27 +145,22 @@ export default {
         }
     },
 
+    async created() {
+        const { gigId } = this.$route.params
+        const gig = await gigService.getById(gigId)
+        this.gig = gig
+    },
     methods: {
         getSvg(iconName) {
             return (this.icon = svgServive.getGigSvg(iconName))
         },
 
-        async loadGig() {
-            try {
-                const { gigId } = this.$route.params
-                const gig = await gigService.getById(gigId)
-                this.gig = gig
-            } catch {
-                console.log('Could Not load gig')
-            }
-        }
-    },
-
-
-
-    printGigToConsole(gig) {
+        printGigToConsole(gig) {
         console.log('Gig msgs:', gig.msgs)
     },
+    },
+    
+   
 
 
 }
