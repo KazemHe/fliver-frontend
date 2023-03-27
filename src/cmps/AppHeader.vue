@@ -51,6 +51,7 @@
 
 <script>
 import { emitToFilter } from '../services/event-bus.service'
+import { utilService } from '../services/util.service'
 export default {
   data() {
     return {
@@ -82,8 +83,8 @@ export default {
       }
     },
     search() {
-      console.log('search', this.userSearch)
-      emitToFilter(txt)
+      utilService.setQueryStringParams('title', this.userSearch)
+      emitToFilter(txt) // ?
       this.userSearch = ''
     },
   },

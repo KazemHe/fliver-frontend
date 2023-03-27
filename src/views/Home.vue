@@ -252,7 +252,7 @@ export default {
       utilService.setQueryStringParams(this.filterParams.subCategory, content)
       // this.$router.push('/explore')
     },
-
+    
   },
   components: {
     VueperSlides,
