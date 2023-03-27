@@ -465,7 +465,7 @@
                                 </svg></span> Include social media kit</li>
                     </ul>
 
-                    <RouterLink :to="'/payment/' + gig._id">
+                    <RouterLink :gig="gig" :to="'/payment/' + gig._id">
                         <h1>PAY</h1>
                     </RouterLink>
 
@@ -599,14 +599,13 @@ export default {
 
 
 <style  lang="scss">
-.thumbnails {
+.gig-info .thumbnails {
     margin: auto;
     max-width: 300px;
     padding: 5px 0 5px 5px;
 }
 
-.thumbnails .vueperslide {
-
+.gig-info .thumbnails .vueperslide {
     box-sizing: border-box;
     border: 1px solid #fff;
     transition: 0.3s ease-in-out;
@@ -614,15 +613,18 @@ export default {
     cursor: pointer;
 }
 
-.vueperslides__arrow.vueperslides__arrow--next {
-    background: black;
 
-    svg {
-        display: block;
-        height: 50px;
-        width: 50px;
+.gig-info {
+    .vueperslides__arrow.vueperslides__arrow--next {
+        background: black;
+
+        svg {
+            display: block;
+            height: 50px;
+            width: 50px;
+        }
+
     }
-
 }
 
 .thumbnails .vueperslide--active {

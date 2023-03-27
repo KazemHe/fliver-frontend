@@ -1,10 +1,129 @@
-// .something{
-//     grid-column: 1/-1;
-// }
+
 .gig-payment {
     display: flex;
     margin: 32px;
     justify-content: space-between;
+
+
+
+    .package-container {
+        min-width: 350px;
+        flex: 1;
+        width: 35%;
+        background-color: #fff;
+        position: sticky;
+        align-self: flex-start;
+        top: 53px;
+        overflow-y: auto;
+
+        .svg {
+            float: left;
+            height: 100%;
+            width: 100%;
+        }
+
+
+        .gig-package-payment {
+            min-width: 340px;
+
+            .pricing {
+                display: flex;
+                justify-content: space-between;
+                color: #62646a;
+
+                p {
+                    font-size: 1rem;
+                    min-height: 45px;
+                    margin-block-end: 10px;
+                    line-height: 120%;
+                    font-weight: 500;
+                }
+            }
+
+            .img-container {
+                height: 70px;
+                margin-inline-end: 10px;
+                margin-block-start: 5px
+            }
+
+            .img-container img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .package-content {
+                border-radius: 3px;
+                padding: 2em 1.5em;
+                border: 1px solid $clr12;
+                margin-block-end: 16px;
+
+                .continue-btn {
+                    background-color: #222325;
+                    color: #fff;
+                    border: 1px solid transparent;
+                    border-radius: 0.25em;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    font-family: inherit;
+                    line-height: 100%;
+                    padding: 0.75em 1.5em;
+                    position: relative;
+                    text-align: center;
+                    width: 100%;
+                    transition: 70ms cubic-bezier(.75, 0, .25, 1);
+                    cursor: pointer;
+                }
+
+                .total {
+                    border-top: 1px solid #dadbdd;
+                    padding-top: 15px;
+                    color: #404145;
+                }
+
+
+                .header {
+                    margin-block-end: 18px;
+                    min-height: 48px;
+
+                }
+
+                .price {
+                    font-size: 1.25rem;
+                    line-height: 1.5em;
+                    font-weight: 400;
+                    color: var(--yro524b);
+                }
+
+                >p {
+                    font-size: 0.875rem;
+                    min-height: 3.9375rem;
+                    margin-block-end: 0.625rem;
+                    line-height: 140%;
+                    font-weight: 500;
+                    color: #62646a;
+                }
+
+                .features {
+                    margin-block-end: 20px;
+
+                    li {
+                        display: flex;
+                        align-items: center;
+                        font-size: .875rem;
+                        color: var(--yro5248);
+                        line-height: 1.7142857143em;
+                    }
+
+                }
+                .v-svg-container {
+                    width: 16px;
+                    height: 16px;
+                    margin-inline-end: 10px;
+                }
+            }
+        }
+    }
 
     .payment-container {
         flex-wrap: wrap;
@@ -40,6 +159,18 @@
         color: #74767e;
         margin-inline-end: 50px;
 
+        .name-inputs {
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            .name-input {
+                width: 240px;
+                margin-inline-end: 50px;
+            }
+        }
+
+
+
         h2 {
 
             font-size: 24px;
@@ -48,6 +179,21 @@
         .payment-option {
             .card-info {
                 flex-wrap: wrap;
+
+                .card-num {
+                    display: flex;
+                    margin-inline-end: 50px;
+                    min-width: 240px;
+                }
+
+                .shorts-input {
+                    display: flex;
+
+                    .short {
+                        max-width: 110px;
+                        margin-inline-end: 20px;
+                    }
+                }
             }
 
             p {
@@ -57,7 +203,7 @@
                 font-weight: 700;
             }
 
-            input{
+            input {
                 height: 40px;
                 border-radius: 3px;
                 border: 1px solid #dadbdd;
@@ -67,4 +213,9 @@
             }
         }
     }
+}
+
+.svg-visa{
+    height: 50px;
+    width: 100px;
 }

@@ -22,9 +22,9 @@ async function query(filterBy = { txt: '', DeliveryTime: '', }) {
         const regex = new RegExp(filterBy.txt, 'i')
         gigs = gigs.filter(gig => regex.test(gig.title) || regex.test(gig.description))
     }
-    if (filterBy.bugdet) {
-        console.log('hello filterBy.bugdet you arrived to gig service local congratulations ', filterBy.bugdet)
-        gigs = gigs.filter(gig => gig.price > filterBy.bugdet.min && gig.price < filterBy.bugdet.max)
+    if (filterBy.min && filterBy.max) {
+        console.log('hello filterBy.bugdet you arrived to gig service local congratulations ', filterBy.min, filterBy.max)
+        gigs = gigs.filter(gig => gig.price > filterBy.min && gig.price < filterBy.max)
     }
 
 

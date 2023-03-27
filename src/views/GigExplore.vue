@@ -40,7 +40,7 @@ export default {
 
             console.log('filter by from explore', filterBy)
             // try {
-            this.$store.dispatch({ type: 'filterGigs', filterBy })
+            this.$store.dispatch({ type: 'filterGigs', ...filterBy })
             // }
 
             // catch {
