@@ -73,6 +73,7 @@ export default {
         bugdet: { min: 'Any', max: 'Any' },
         DeliveryTime: 0,
 
+
         sortBy: {
           recomended: '',
           BestSelling: '',
@@ -83,6 +84,7 @@ export default {
   },
   methods: {
 
+
     sortTxtby() {
       console.log('txt')
       this.sortTxt = 'reco'
@@ -90,7 +92,22 @@ export default {
     setFilterBy() {
       console.log('check the filter', this.filterBy)
 
-      this.$emit('setFilterBy', { ...this.filterBy })
+      // const key = this.filterBy
+      // const value = this.filterBy.bugdet
+
+
+
+      // $router.push({ path: '/explore', query: { key: value } })
+
+      this.$router.push({
+        query: {
+          min: this.filterBy.bugdet?.min || '',
+          max: this.filterBy.bugdet?.max || '',
+          DeliveryTime: this.filterBy.DeliveryTime || ''
+        }
+      })
+
+
     },
     getSvg(iconName) {
       return (this.icon = svgServive.getGigSvg(iconName))
@@ -101,7 +118,23 @@ export default {
     changeSortTxt() {
       return this.sortTxt
     }
-  }
+  },
 
+
+  watch: {
+    "$route.query.": {
+      handler(newValue) {
+        const filterBy = this.$route.query
+        // console.log(filter)
+        // this.filterBy = newValue 
+
+        // filterBy = filter
+        // console.log(this.filterBy)
+        this.$emit('setFilterBy', { filterBy })
+      },
+      deep: true,
+      immediate: true
+    },
+  },
 }
 </script>
