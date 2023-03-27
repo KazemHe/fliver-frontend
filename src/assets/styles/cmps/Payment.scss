@@ -1,0 +1,70 @@
+// .something{
+//     grid-column: 1/-1;
+// }
+.gig-payment {
+    display: flex;
+    margin: 32px;
+    justify-content: space-between;
+
+    .payment-container {
+        flex-wrap: wrap;
+    }
+
+    .visa {
+        width: 100px;
+        height: 50px;
+    }
+
+
+    .credit-selection {
+        background-color: #fff;
+        height: 50px;
+        margin: 0 -24px;
+        padding-inline-start: 24px;
+
+        .credit-txt {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .payment-details-container {
+        flex: 1.5;
+        flex-wrap: wrap;
+        min-width: 350px;
+        border: 1px solid #dadbdd;
+        border-radius: 0.1875em;
+        padding: 1.5em;
+        margin-block-end: 64px;
+        background-color: #fafafa;
+        color: #74767e;
+        margin-inline-end: 50px;
+
+        h2 {
+
+            font-size: 24px;
+        }
+
+        .payment-option {
+            .card-info {
+                flex-wrap: wrap;
+            }
+
+            p {
+                font-size: 14px;
+                margin-bottom: 15px;
+                margin-top: 40px;
+                font-weight: 700;
+            }
+
+            input{
+                height: 40px;
+                border-radius: 3px;
+                border: 1px solid #dadbdd;
+                padding-inline-start: 15px;
+                font-size: 18px;
+                color: #62646a;
+            }
+        }
+    }
+}
