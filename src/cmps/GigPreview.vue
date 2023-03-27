@@ -6,7 +6,7 @@
         <!-- <RouterLink :gig="gig" class="link" :to="'/gig/' + gig._id"><img class="main-img" :src="gig.imgUrl" />
         </RouterLink> -->
         <vueper-slides class="main-img" fade :touchable="false">
-            <vueper-slide v-for="img in gig.images" :key="img" :image="gig.imgUrl" />
+            <vueper-slide v-for="img in gig.images" :key="img" :image="img" />
         </vueper-slides>
         <div class="inner-seller">
 
@@ -124,7 +124,7 @@ export default {
     emits: ['removeGig']
 }
 </script>
-<style >
+<style lang="scss">
 .gig-preview .vueperslides__inner {
     height: 100%;
 }
@@ -137,62 +137,103 @@ export default {
     margin: 3rem;
 }
 
-/* .vueperslides__arrow.vueperslides__arrow--next {
-  margin-left: ;
 
-} */
-.vueperslides__arrows>.vueperslides__arrow.vueperslides__arrow--prev {
-    size: 20px;
-    width: 20px;
-    left: -1.44em;
+.vueperslides__parallax-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 61.8% !important;
 }
 
+.vueperslides {
+    position: relative;
 
-.gig-preview .vueperslides .vueperslides__arrow svg {
-    width: 1.6em;
-    height: 1.4em;
-    vertical-align: middle;
-    stroke: currentColor;
-    fill: none;
-    padding: -3px 3px;
-    stroke-width: 2;
-    color: transparent;
-    border-radius: 50%;
-    /* position: absolute; */
-    /* border-radius: 30px 0 0 30px; */
+    .vueperslides__arrow {
+        width: 25px;
+        padding: 0.2em 0.1em;
+        transition: 0.2s;
+
+        & svg {
+            width: 1.6em;
+            height: 1.4em;
+            vertical-align: middle;
+            stroke: currentColor;
+            fill: none;
+            padding: 0.3em 0;
+            stroke-width: 2;
+            color: transparent;
+        }
+    }
+
+    .vueperslides__arrow--prev {
+        border-radius: 0 50px 50px 0;
+
+        & svg {
+            width: 1em;
+        }
+    }
+
+    .vueperslides__arrow--next {
+        border-radius: 50px 0 0 50px;
+    }
+
+    &:hover .vueperslides__arrow {
+        margin: 0 -9px;
+        background-color: #ffffff;
+        opacity: 1;
+        border: 1px solid rgba(126, 125, 125, 0.6);
+
+        & svg {
+            color: rgba(99, 97, 97, 0.828);
+        }
+    }
+
+    .vueperslides__arrow--prev {
+        border-radius: 0 50px 50px 0;
+
+        & svg {
+            width: 1em;
+        }
+
+        .vueperslides__arrow--next {
+            border-radius: 50px 0 0 50px;
+        }
+    }
 }
 
-
-.gig-preview .vueperslides:hover .vueperslides__arrow svg {
-    color: #636161d3;
-    background: white;
-    /* border-radius: 50%; */
-    margin: 9px 0;
-    padding: 0.3em 0;
-    /* transition: 1s; */
-
+.vueperslides__inner {
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
 }
 
-.vueperslides__arrow--next,
-.vueperslides--rtl .vueperslides__arrow--prev {
-    left: auto;
-    right: -1.5em;
-    /* border-radius: 30px 0 0 30px; */
-
+.vueperslides__parallax-wrapper {
+    position: relative;
+    overflow: hidden;
 }
 
-.vueperslides__arrow .vueperslides__arrow--next {
-
-
-    right: 1;
-
+.vueperslides__bullet {
+    margin: 0.6em 0.2em;
+    padding: 0;
+    border: none;
+    background: none;
 }
 
-.vueperslides__arrow--next,
-.vueperslides--rtl .vueperslides__arrow--prev {
-    /* left: auto;
-    right: -2.5em; */
-    /* /* border-radius: 30px 0 0 30px; */
+.vueperslides__bullet .default {
+    width: em(8px);
+    height: em(8px);
+    border-radius: em(8px);
+    border: em(1px) solid currentColor;
+    background-color: #fafafa;
+    box-shadow: 0 0 1px #00000080, 0 0 3px #0000004d;
+    transition: 0.4s ease-in-out;
+    box-sizing: border-box;
+}
+
+.vueperslides__bullet--active .default {
+    width: em(12px);
+    height: em(12px);
+    border-radius: em(12px);
 }
 </style>
  
