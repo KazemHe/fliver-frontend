@@ -5,6 +5,7 @@
     transition: 1s;
     height: 675px;
     display: flex;
+    position: relative;
 
     img {
         height: 100%;
@@ -108,15 +109,18 @@
     .hero-name {
         display: flex;
         justify-content: flex-end;
-        align-items: flex-end;
-        position: relative;
-        position: relative;
+        align-items: flex-start;
+        flex-direction: column;
         top: 393px;
         right: -1200px;
     }
 
     .test {
         position: absolute;
+        bottom: 0;
+        right: 0;
+        padding-bottom: 22px;
+        padding-right: 282px;
     }
 }
 
@@ -174,12 +178,15 @@
         box-shadow: 0px 1px $clr6;
     }
 
-    .vueperslides__arrow vueperslides__arrow--prev {
+    .vueperslides__arrow.vueperslides__arrow--prev {
         left: -2.44em;
+        opacity: 1;
     }
 
-    .vueperslides__arrow vueperslides__arrow--next {
+    .vueperslides__arrow.vueperslides__arrow--next {
         right: -2.4em;
+        opacity: 1;
+
     }
 
     .vueperslides__bullet .default {
@@ -216,42 +223,40 @@
         margin: 0 auto;
     }
 
-    // padding-bottom: 96px;
-    // padding-top: 96px;
-    // margin-bottom: 96px;
-
-    // padding: 94px;
     h2,
     p {
-        padding-bottom: 24px;
+        padding-bottom: rem(24px);
     }
 
-    .side-text {
+    .text-side {
         h2 {
-            width: 471px;
-            font-size: 32px;
-            line-height: 120%;
-            color: #404145;
             font-family: macan-regular, Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: rem(32px);
+            line-height: 120%;
             font-weight: 700;
+            width: rem(471px);
+            color: $clr3;
         }
 
         h6 {
-            font-size: 18px;
-            line-height: 140%;
-            color: $clr5;
             font-family: macan-regular, Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: rem(18px);
+            line-height: 140%;
             font-weight: 700;
+            color: $clr5;
         }
 
         p {
-            // width: 474px;
             font-size: 18px;
             line-height: 26px;
         }
+        .icon{
+            width: 30px;
+            height: 30px;
+          }
     }
 
-    .side-video {
+    .video-side {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -272,35 +277,53 @@
     }
 
     div {
-        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        cursor: pointer;
+
+        width: 100%;
         position: relative;
+        cursor: pointer;
     }
 
-    section.svg-container {
+    section.marketplace-svg {
         display: grid;
-        padding-inline-start: 20px;
-        padding-inline-end: 20px;
         grid-template-columns: repeat(2, 1fr);
         justify-items: center;
-        gap: 55px;
+        gap: rem(55px);
+        padding-inline-start: rem(20px);
+        padding-inline-end: rem(20px);
     }
 
-    .bold {
+    .marketplace-title {
         font-size: 2rem;
         line-height: 120%;
-        color: #404145;
-        margin-bottom: 64px;
+        color: $clr3;
+        margin-bottom: rem(64px);
         font-family: macan-bold;
     }
 
     svg {
-        width: 60px;
-        border-bottom: 1px solid $clr4;
+        width: rem(60px);
+    }
+
+    div span::after {
+        content: "";
+        position: absolute;
+        top: rem(60px);
+        right: 50%;
+        transform: translate(50%);
+        padding: 0 0 rem(8px);
+        width: rem(48px);
+        border-bottom: 2px solid $clr11;
+        transition: border-color .2s ease-in-out, width .2s ease-in-out;
+    }
+
+    div span:hover::after {
+        width: rem(90px);
+        border-color: $clr0;
+        transition: border-color .2s ease-in-out, width .2s ease-in-out;
     }
 
 }
@@ -315,7 +338,7 @@
     }
 
     .marketplace-container {
-        section.svg-container {
+        section.marketplace-svg {
             grid-template-columns: repeat(3, 1fr);
         }
     }
@@ -327,7 +350,7 @@
             width: rem(417px);
         }
 
-        .side-video {
+        .video-side {
             img {
                 width: rem(700px);
                 height: rem(450px);
@@ -336,7 +359,7 @@
     }
 
     .marketplace-container {
-        section.svg-container {
+        section.marketplace-svg {
             grid-template-columns: repeat(5, 1fr);
         }
     }

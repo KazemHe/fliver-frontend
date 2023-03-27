@@ -20,7 +20,10 @@
       </div>
 
       <div class="test">
-        <div class="hero-name">
+        <div class="hero-name flex">
+          <div v-if="heroImgs[currIdx].reviews">
+            <span v-for="n in 5" v-html="getSvg('goldStar')" class="svg"></span>
+          </div>
           <p>{{ heroImgs[currIdx].owner }}</p>
         </div>
       </div>
@@ -34,59 +37,56 @@
 
   <section class="popular-container">
     <h1 class="popular-title">Popular professional services</h1>
-    <vueper-slides :visible-slides="5" slide-multiple :gap="3" :slide-ratio="1 / 4" :dragging-distance="200"
-      :breakpoints="{ 800: { visibleSlides: 2, slideMultiple: 2 } }" class="no-shadow">
+    <vueper-slides fixed-height="345px" :visible-slides="5" slide-multiple :gap="3" :slide-ratio="1 / 4"
+      :dragging-distance="200" :breakpoints="{ 800: { visibleSlides: 2, slideMultiple: 2 } }" class="no-shadow">
       <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" :title="slide.title"
         :content="slide.content" @click="popularFilter(slide.content)" class="popular-imgs" />
     </vueper-slides>
   </section>
 
   <div class="main-container full bgc-video">
-  <section class="video-section">
-    <!-- <div class="main-container"> full -->
-    <div class="side-text">
-      <p>
-      <h2>A whole world of freelance talent at your fingertips</h2>
-      <ul>
-        <li>
-          <section class="flex align-center"><span class="icon" v-html="getSvg('videoUl')"></span>
-            <h6>The best for every budget</h6>
-          </section>
-          <p> Find high-quality services at every price point. No hourly rates, just project-based pricing.</p>
-        </li>
-        <li>
-          <section class="flex align-center"><span class="icon" v-html="getSvg('videoUl')"></span>
-            <h6>Quality work done quickly</h6>
-          </section>
-          <p> Find the right freelancer to begin working on your project within minutes.</p>
-        </li>
-        <li>
-          <section class="flex align-center"><span class="icon" v-html="getSvg('videoUl')"></span>
-            <h6>Protected payments, every time</h6>
-          </section>
-          <p> Always know what you'll pay upfront. Your payment isn't released until you approve the work.</p>
-        </li>
-        <li>
-          <section class="flex align-center"><span class="icon" v-html="getSvg('videoUl')"></span>
-            <h6>24/7 support</h6>
-          </section>
-          <p> Questions? Our round-the-clock support team is available to help anytime, anywhere.</p>
-        </li>
-      </ul>
-      </p>
-    </div>
+    <section class="video-section">
+      <div class="text-side">
+        <p>
+        <h2>A whole world of freelance talent at your fingertips</h2>
+        <ul>
+          <li>
+            <section class="flex align-center"><span class="icon" v-html="getSvg('videoUl')"></span>
+              <h6>The best for every budget</h6>
+            </section>
+            <p> Find high-quality services at every price point. No hourly rates, just project-based pricing.</p>
+          </li>
+          <li>
+            <section class="flex align-center"><span class="icon" v-html="getSvg('videoUl')"></span>
+              <h6>Quality work done quickly</h6>
+            </section>
+            <p> Find the right freelancer to begin working on your project within minutes.</p>
+          </li>
+          <li>
+            <section class="flex align-center"><span class="icon" v-html="getSvg('videoUl')"></span>
+              <h6>Protected payments, every time</h6>
+            </section>
+            <p> Always know what you'll pay upfront. Your payment isn't released until you approve the work.</p>
+          </li>
+          <li>
+            <section class="flex align-center"><span class="icon" v-html="getSvg('videoUl')"></span>
+              <h6>24/7 support</h6>
+            </section>
+            <p> Questions? Our round-the-clock support team is available to help anytime, anywhere.</p>
+          </li>
+        </ul>
+        </p>
+      </div>
 
-    <div class="side-video">
-      <img :src="imgVideo" />
-    </div>
-    <!-- </div> -->
-  </section>
-</div>
+      <div class="video-side">
+        <img :src="imgVideo" />
+      </div>
+    </section>
+  </div>
 
   <section class="marketplace-container">
-    <p class="bold">Explore the marketplace</p>
-
-    <section class="svg-container">
+    <p class="marketplace-title">Explore the marketplace</p>
+    <section class="marketplace-svg">
       <div>
         <span class="flex" v-html="getSvg('GraphicsAndDesign')"></span>
         <h4 class="svg-type">Graphics &amp; Design</h4>
@@ -132,6 +132,7 @@
 </template>
 
 <script>
+import { utilService } from '../services/util.service.js'
 import { svgServive } from '../services/svg.service.js'
 import { VueperSlides, VueperSlide } from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
@@ -139,17 +140,20 @@ export default {
   name: 'home',
   data() {
     return {
+      filterParams: {
+        subCategory:'subCategory',
+        category:'category',
+        search: 'title'
+      },
       currIdx: 0,
       heroImgs: [
         {
           img: 'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/93085acc959671e9e9e77f3ca8147f82-1599427734108/bg-hero-4-1792-x1.png',
           owner: 'Zach, Bar Owner',
-          reviews: 0
         },
         {
           img: 'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049983/bg-hero-1-1792-x1.png',
           owner: 'Andrea, Fashion Designer',
-          reviews: 0
         },
         {
           img: 'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/2413b8415dda9dbd7756d02cb87cd4b1-1599595203045/bg-hero-2-1792-x1.png',
@@ -159,7 +163,6 @@ export default {
         {
           img: 'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/d14871e2d118f46db2c18ad882619ea8-1599835783966/bg-hero-3-1792-x1.png',
           owner: 'Ritika, Shoemaker and Designer',
-          reviews: 0
         },
         {
           img: 'https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049970/bg-hero-5-1792-x1.png',
@@ -225,11 +228,11 @@ export default {
           content: 'Translation',
           image: 'https://fiverr-res.cloudinary.com/q_auto,f_auto,w_550,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741674/translation-2x.png',
         },
-        {
-          title: 'Learn your business',
-          content: 'Data Entry',
-          image: 'https://fiverr-res.cloudinary.com/q_auto,f_auto,w_550,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741664/data-entry-2x.png',
-        },
+        // {
+        //   title: 'Learn your business',
+        //   content: 'Data Entry',
+        //   image: 'https://fiverr-res.cloudinary.com/q_auto,f_auto,w_550,dpr_1.0/v1/attachments/generic_asset/asset/055f758c1f5b3a1ab38c047dce553860-1598561741664/data-entry-2x.png',
+        // },
       ],
       imgVideo: 'https://res.cloudinary.com/dhsdxj3y3/image/upload/v1670793711/gigs/ostlxosopzlu6ccomezg.webp'
     }
@@ -246,9 +249,10 @@ export default {
       return (this.icon = svgServive.getGigSvg(iconName))
     },
     popularFilter(content) {
-      // console.log('content', content)
-      this.$router.push('/explore')
-    }
+      utilService.setQueryStringParams(this.filterParams.subCategory, content)
+      // this.$router.push('/explore')
+    },
+
   },
   components: {
     VueperSlides,

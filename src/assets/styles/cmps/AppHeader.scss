@@ -4,14 +4,13 @@
     left: 0;
     right: 0;
     z-index: 100;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: $clr-3;
     transition: .5s ease;
 
-   
-
     header {
-        padding-top: 6px;
+        padding-top: rem(6px);
         height: rem(77px);
+
         .main-nav {
             align-items: center;
             justify-content: space-between;
@@ -32,81 +31,89 @@
             margin-inline-start: 210px;
         }
 
-        nav a:not(:first-child) {
-            padding: rem(10px) rem(16px);
-            margin: rem(10px);
-        }
+        nav {
+            a:not(:first-child) {
+                padding: rem(10px) rem(16px);
+                margin: rem(10px);
+            }
 
-        nav a {
-            color: $clr2;
-        }
+            a {
+                color: $clr2;
+            }
 
-        nav a:hover {
-            color: $clr4;
-            text-decoration: none;
-            color: $clr0;
+            a:hover {
+                color: $clr4;
+                text-decoration: none;
+                color: $clr0;
+            }
+
+
+
+            .join {
+                font-weight: 700;
+                margin: 0;
+                cursor: pointer;
+                font-family: macan-bold;
+                margin-left: auto;
+                color: $clr2;
+                background-color: $clr-3;
+                border: 1px solid $clr2;
+                border-radius: rem(4px);
+                transition: border-radius color 0.8s;
+                padding: rem(10px) rem(16px);
+                transition: 0.8s;
+            }
+
+            .join:hover {
+                color: $clr2;
+                background-color: $clr0;
+                border: 1px solid $clr0;
+                transition: 0.8s;
+            }
         }
 
         .search-container {
             position: relative;
             opacity: 0;
-        }
 
-        input {
-            bottom: 11px;
-            border: 1px solid $clr11;
-            border-radius: rem(4px) 0 0 rem(4px);
-            font-family: macan-regular;
-            font-size: 1rem;
-            height: rem(42px);
-            letter-spacing: normal;
-            padding: rem(10px) rem(2px) rem(10px) rem(16px);
-            width: rem(534px);
-        }
+            input {
+                border: rem(1px) solid $clr11;
+                border-radius: rem(4px) 0 0 rem(4px);
+                font-family: macan-regular;
+                font-size: 1rem;
+                letter-spacing: normal;
+                height: rem(42px);
+                width: rem(534px);
+                padding: rem(10px) rem(2px) rem(10px) rem(16px);
+                bottom: rem(11px);
+            }
 
-        button.btn-serch {
-            cursor: pointer;
-            background-color: $clr5;
-            height: rem(42px);
-            padding: rem(8px) rem(16px);
-            border-radius: 0 rem(4px) rem(4px) 0;
-            font-size: rem(14px);
-            text-shadow: none;
-            display: inline;
-            position: absolute;
-            right: -9px;
-            top: -5px;
-        }
+            .btn-serch {
+                cursor: pointer;
+                background-color: $clr5;
+                height: rem(42px);
+                padding: rem(8px) rem(16px);
+                border-radius: 0 rem(4px) rem(4px) 0;
+                font-size: rem(14px);
+                text-shadow: none;
+                display: inline;
+                position: absolute;
+                right: -9px;
+                top: -5px;
+                transition: 0.8s;
+            }
 
-        button:hover {
-            background-color: $clr3;
-        }
-
-        nav button.join {
-            font-weight: 700;
-            margin: 0;
-            cursor: pointer;
-            font-family: macan-bold;
-            margin-left: auto;
-            color: $clr2;
-            background-color: #ffffff00;
-            border: 1px solid $clr2;
-            border-radius: rem(4px);
-            transition: border-radius color 0.8s;
-            padding: rem(10px) rem(16px);
-        }
-
-        .join:hover {
-            color: $clr2;
-            background-color: $clr0;
-            border: 1px solid $clr0;
-            transition: 0.8s;
+            .btn-serch:hover {
+                background-color: $clr3;
+                transition: 0.8s;
+            }
         }
     }
 }
 
 .static-pos {
     position: static;
+    grid-column: 1/-1;
 }
 
 .subheader {
@@ -115,7 +122,6 @@
     border-top: rem(1px) solid $clr6;
     border-bottom: rem(1px) solid $clr6;
     transition: background-color .5s ease;
-
 }
 
 .categories-list {
@@ -141,13 +147,15 @@
 
 .first-expansion {
     background-color: $clr2;
-    .header-links{
-         button.join{
+
+    .header-links {
+        button.join {
             color: $clr0;
             background-color: #ffffff00;
             border: 1px solid $clr0;
         }
     }
+
     nav {
         .logo {
             color: $clr3;
@@ -162,7 +170,7 @@
             color: $clr4;
             margin-inline-end: 22px;
         }
-       
+
     }
 }
 
@@ -232,4 +240,3 @@
 }
 
 @media only screen and (min-width: 1160px) {}
-
