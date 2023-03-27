@@ -9,6 +9,7 @@ import GigExplore from './views/GigExplore.vue'
 import GigDetails from './views/GigDetails.vue'
 import GigEdit from './views/GigEdit.vue'
 import GigPayment from './views/GigPayment.vue'
+import BecomeSeller from './views/BecomeSeller.vue'
 
 const routes = [
   {
@@ -31,6 +32,12 @@ const routes = [
     path: '/payment/:gigId?',
     name: 'GigPayment',
     component: GigPayment
+  },
+
+  {
+    path: '/seller',
+    name: 'BecomeSeller',
+    component: BecomeSeller,
   },
 
   {

@@ -18,16 +18,15 @@ window.cs = gigService
 
 async function query(filterBy = { txt: '', DeliveryTime: '', }) {
     var gigs = await storageService.query(STORAGE_KEY)
-
-    if (filterBy.title) {
-        console.log('hello filterBy.title you arrived to gig service local congratulations ')
-        const regex = new RegExp(filterBy.title, 'i')
+    if (filterBy.txt) {
+        const regex = new RegExp(filterBy.txt, 'i')
         gigs = gigs.filter(gig => regex.test(gig.title) || regex.test(gig.description))
     }
     if (filterBy.min && filterBy.max) {
-        console.log('hello filterBy.minmax price you arrived to gig service local congratulations ', filterBy.min, filterBy.max)
+        console.log('hello filterBy.bugdet you arrived to gig service local congratulations ', filterBy.min, filterBy.max)
         gigs = gigs.filter(gig => gig.price > filterBy.min && gig.price < filterBy.max)
     }
+
 
     if (filterBy.DeliveryTime) {
         console.log('hello filterBy.DeliveryTime you arrived to gig service local congratulations ')
@@ -36,30 +35,7 @@ async function query(filterBy = { txt: '', DeliveryTime: '', }) {
         if (filterBy.DeliveryTime === '7') gigs = gigs.filter(gig => gig.daysToMake < 7)
 
     }
-
-    if (filterBy.category) {
-        console.log('hello filterBy.category you arrived to gig service local congratulations ')
-        gigs = gigs.filter(gig => gig.tags.includes(filterBy.category))
-    }
-
-
-    console.log('gigs from service local before before', gigs)
-    if (filterBy.sortBy) {
-        console.log('hello filterBy.sortby you arrived to gig service local congratulations ')
-        if (filterBy.sortBy === 'Best price') {
-            console.log('service local sort by price ')
-            console.log('gigs from service local before', gigs)
-            gigs = gigs.sort((a, b) => (b.price - a.price))
-            console.log('gigs from service local after', gigs)
-        }
-        if (filterBy.sortBy === 'delivery Time') gigs = gigs.sort((a, b) => (a.daysToMake - b.daysToMake))
-        if (filterBy.sortBy === 'Highest Rating') gigs = gigs.sort((a, b) => (a.daysToMake - b.daysToMake))
-
-    }
-
-
     return gigs
-
 }
 
 function getById(gigId) {
@@ -434,4 +410,10 @@ function getEmptyGig() {
 //             ]
 //         })
 // })()
+<<<<<<< HEAD
+=======
+//        
+   
+
+>>>>>>> 27220d745a5c117af11f2e22a03783193066bde1
 
