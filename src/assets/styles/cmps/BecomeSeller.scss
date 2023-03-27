@@ -1,0 +1,129 @@
+//HEADER
+.step-header {
+    border-bottom: 1px solid #e4e5e7;
+    padding-top: 40px;
+
+    .step-h {
+        color: #62646a;
+        font-size: 32px;
+        line-height: 120%;
+        margin-bottom: 12px;
+    }
+
+    p {
+        color: #95979d;
+        width: 475px;
+        font-size: 15px;
+        line-height: 23px;
+        padding: 5px 20px 0 0;
+        display: block;
+    }
+}
+
+
+form {
+    background-color: #fff;
+    width: 770px;
+    height: fit-content;
+    border: 1px solid var(--yro5245);
+    background: white;
+    padding: 30px;
+    margin: 0 auto;
+
+    label {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 50px;
+
+        span {
+            width: 200px;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            font-weight: 600;
+            color: #404145;
+            padding-top: 10px;
+
+            p {
+                margin-top: 10px;
+                font-size: .9rem;
+                color: #828385;
+                font-family: Macan-Regular;
+                font-weight: 400;
+                line-height: 21px;
+            }
+        }
+
+        .input {
+            height: 50px;
+            padding: 10px;
+            width: 100%;
+            font-size: 1rem;
+            font-family: Macan-Regular;
+            color: #404145;
+            border: 1px solid rgba(0, 0, 0, .274);
+            border-radius: 4px;
+        }
+    }
+
+    div {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 50px;
+        
+        span{
+            width: 200px;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    font-weight: 600;
+    color: #404145;
+    padding-top: 10px;
+
+    p{
+        margin-top: 10px;
+    font-size: .9rem;
+    color: #828385;
+    font-family: Macan-Regular;
+    font-weight: 400;
+    line-height: 21px;
+    }
+        }
+
+
+
+        textarea {
+            color: #404145;
+            border: 1px solid rgba(0, 0, 0, .274);
+            border-radius: 4px;
+        }
+
+        input {
+            color: #404145;
+            border: 1px solid rgba(0, 0, 0, .274);
+            border-radius: 4px;
+            height: 50px;
+            padding: 10px;
+            width: 100%;
+            font-size: 1rem;
+            font-family: Macan-Regular;
+        }
+    }
+
+    span {
+        width: 200px;
+        font-size: 1.2rem;
+        flex-shrink: 0;
+        font-weight: 600;
+        color: #404145;
+        padding-top: 10px;
+
+
+        p {
+            margin-top: 10px;
+            font-size: .9rem;
+            color: #828385;
+            font-family: Macan-Regular;
+            font-weight: 400;
+            line-height: 21px;
+        }
+    }
+}

@@ -1,5 +1,6 @@
 <template>
     <section class="gig-nav">
+      
         <ul class="nav-info" ref="nav-info">
             <li><a :class="{ selected: selectedLink === 'overview' }"
                     @click.prevent="scrollToElement('overview')">Overview</a></li>
@@ -99,9 +100,12 @@
                 </section>
             </section>
 
-            <!-- <section v-else class="review-list-container">
-                No review yet
-            </section> -->
+            <router-link  :to="'/seller'">
+                        <button class="continue-btn">
+                            SELLER
+                        </button>
+            </router-link>
+       
 
             <div class="about-the-gig">
                 <h2>About the gig</h2>
@@ -480,11 +484,14 @@
             </section>
         </section>
 
+        
+
     </section>
 </template>
   
 <script>
 import MyStarRating from '../cmps/MyStarRating.vue'
+
 
 import { VueperSlides, VueperSlide } from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
@@ -564,7 +571,7 @@ export default {
     components: {
         MyStarRating,
         VueperSlides,
-        VueperSlide
+        VueperSlide,
     },
 }
 
