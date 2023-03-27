@@ -21,18 +21,18 @@
         </nav>
       </section>
     </header>
-
+    
     <section class="full subheader main-container">
       <section class="main-container">
         <div class="categories-list ">
-          <RouterLink to="/explore">Graphics & Design</RouterLink>
-          <RouterLink to="/explore">Digital Marketing</RouterLink>
-          <RouterLink to="/explore">Writing & Translation</RouterLink>
-          <RouterLink to="/explore">Video & Animation</RouterLink>
-          <RouterLink to="/explore">Music & Audio</RouterLink>
-          <RouterLink to="/explore">Programming & Tech</RouterLink>
-          <RouterLink to="/explore">Photography</RouterLink>
-          <RouterLink to="/explore">Business</RouterLink>
+          <RouterLink to="/explore?category=Graphics+%26+Design">Graphics & Design</RouterLink>
+          <RouterLink to="/explore?category=Digital+Marketing">Digital Marketing</RouterLink>
+          <RouterLink to="/explore?category=Writing+%26+Translation">Writing & Translation</RouterLink>
+          <RouterLink to="/explore?category=Video+%26+Animation">Video & Animation</RouterLink>
+          <RouterLink to="/explore?category=Music+%26+Audio">Music & Audio</RouterLink>
+          <RouterLink to="/explore?category=Programming+%26+Tech">Programming & Tech</RouterLink>
+          <RouterLink to="/explore?category=Photography">Photography</RouterLink>
+          <RouterLink to="/explore?category=Business">Business</RouterLink>
           <RouterLink to="/explore">AI Services</RouterLink>
         </div>
       </section>
@@ -51,7 +51,6 @@
 
 <script>
 import { emitToFilter } from '../services/event-bus.service'
-import { utilService } from '../services/util.service'
 export default {
   data() {
     return {
