@@ -43,7 +43,7 @@
       <vueper-slide v-for="(slide, i) in slides" :key="i" 
                     :image="slide.image" :title="slide.title"
                     :content="slide.content"
-                     @click="popularFilter(slide.content)" class="popular-imgs" />
+                    @click="popularFilter(slide.content)" class="popular-imgs" />
     </vueper-slides>
   </section>
 
@@ -92,7 +92,7 @@
     <section class="marketplace-svg">
       <div @click="marketplaceRoutes(market.titleMarketplace)"
            v-for="market in marketPlaces">
-        <span class="flex" v-html="getSvg(market.svgMarketplace)"></span>
+        <a class="flex" v-html="getSvg(market.svgMarketplace)"></a>
         <h4 class="svg-type">{{ market.titleMarketplace }}</h4>
       </div>
     </section>  
