@@ -1,42 +1,101 @@
 .user-profile {
-    background-color: rgb(175, 146, 146);
-    min-height: 90vh;
     display: grid;
-    grid-template-columns: minmax(24px, 1fr) minmax(auto, 1400px) minmax(24px, 1fr);
-    gap: 20px;
+    grid-template-columns: minmax(auto, 400px) minmax(auto, 1000px);
+    gap: rem(20px);
+    background-color: #eeeeee;
+    min-height: 90vh;
 
     .user-card {
-        background-color: aquamarine;
-        width: 337px;
-        height: 260px;
+        margin: rem(10px);
+        background-color: $clr2;
+        width: rem(380px);
+        height: rem(260px);
+        margin-top: rem(20px);
+        outline: 1px solid rgb(225, 225, 225);
 
         .form-user-profile {
             grid-column: 1;
             display: flex;
+            justify-content: flex-end;
+            flex-direction: column;
+            align-items: center;
             width: 100%;
-            justify-content: center;
 
-            .user-img {
-                border-radius: 50%;
-                background-color: aqua;
-                svg {
-                    width: 120px;
-                    // height: 120px;
-                }
+            .user-img svg {
+                margin-top: rem(10px);
+                width: rem(120px);
             }
         }
 
-        .user-details{
-            background-color: rgb(212, 190, 150);
-            padding-left: 10px;
-            div {
-                display: flex;
+        .user-details {
+            padding-left: rem(10px);
+
+            p {
+                font-family: macan-regular;
+                line-height: 1.7em;
+                color: $clr9;
+                width: 100%;
+            }
+
+            svg {
+                width: rem(16px);
+                margin-inline-end: rem(10px);
+                color: $clr9;
+            }
+        }
+    }
+
+    .description-card {
+        margin: rem(10px);
+        margin-top: 15px;
+        margin-bottom: 15px;
+        background-color: $clr2;
+        width: rem(380px);
+        height: 100%;
+        padding: 20px;
+        outline: 1px solid rgb(225, 225, 225);
+
+        .user-description-text {
+            letter-spacing: .005em;
+            margin-block-start: 0.5em;
+            font-family: macan-regular;
+            color: #62646a;
+        }
+    }
+
+
+    .tabs-side {
+        grid-column: 2;
+
+        .tab-btns {
+            margin: rem(20px);
+            background-color: $clr2;
+            height: rem(50px);
+            display: flex;
+            gap: 10px;
+            outline: 1px solid rgb(225, 225, 225);
+            button {
+                cursor: pointer;
+                height: rem(45px);
+                background-color:$clr2;
+                border: none;
+                font-family: macan-regular;
+                font-size: 1rem;
+                font-weight: 600;
+                color: $clr5;
+            }
+            button.selectedTab {
+                box-shadow: inset 0 -4px $clr0;
             }
         }
 
-        svg {
-            width: 16px;
-            margin-inline-end: 10px;
+        .gigs-tabs{
+            margin-top: 20px;
+            margin-bottom: 20px;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-gap: 8px;
         }
+
     }
 }

@@ -19,7 +19,7 @@
     align-self: center;
     gap: 28px;
 
-    margin: 0 auto;
+    // margin: 0 auto;
     color: $clr2;
 
     h1 {
@@ -68,11 +68,12 @@
         color: #fff;
         font-weight: 600;
         font-size: 1rem;
-        height: 3rem;
-        position: absolute;
-        right: 747px;
-        top: -5px;
+        // height: 3rem; ??
+        // position: absolute;
+        // right: 747px;
+        // top: -5px;
         width: 99px;
+        margin: 0;
     }
 
     button:hover {

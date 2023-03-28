@@ -1,7 +1,19 @@
 // Breakpoints
+
+
+$paddingLayout: 20px;
+
 $mobile-breakpoint: 460px; // 600
 $narrow-breakpoint: 720px; // 900
 $normal-breakpoint: 960px; // 1160
+$wide-breakpoint: 1400px; // 1160
+
+$p-mobile-breakpoint: 2 * $paddingLayout + $mobile-breakpoint; // 600
+$p-narrow-breakpoint: 2 * $paddingLayout + $narrow-breakpoint; // 900
+$p-normal-breakpoint: 2 * $paddingLayout + $normal-breakpoint; // 1160
+$p-wide-breakpoint: 2 * $paddingLayout + $wide-breakpoint; // 1160
+
+
 
 //  Colors fiver:
 

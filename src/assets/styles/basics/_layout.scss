@@ -18,18 +18,15 @@
     }
 
     @include for-narrow-layout {
-        grid-template-columns:
-            20px 1fr 20px;
+        grid-template-columns: minmax($paddingLayout, 1fr) minmax(auto, $narrow-breakpoint) minmax($paddingLayout, 1fr);
     }
 
     @include for-normal-layout {
-        grid-template-columns:
-            minmax(20px, 1fr) $narrow-breakpoint minmax(20px, 1fr);
+        grid-template-columns: minmax($paddingLayout, 1fr) minmax(auto, $normal-breakpoint) minmax($paddingLayout, 1fr);
     }
 
     @include for-wide-layout {
-        grid-template-columns:
-            minmax(20px, 1fr) minmax(auto, rem(1337px)) minmax(20px, 1fr);
+        grid-template-columns: minmax($paddingLayout, 1fr) minmax(auto, $wide-breakpoint) minmax($paddingLayout, 1fr);
     }
 }
 
