@@ -3,13 +3,16 @@
     <header>
       <section>
         <nav class="flex first-scroll main-nav">
-          <RouterLink to="/">
-            <span aria-label="logo" class="logo first-scroll">winner</span>
-          </RouterLink>
+          <div class="flex ">
 
-          <div class="search-container">
-            <input type="text" v-model="userSearch" placeholder="What service are you looking for today?" />
-            <button class="btn-serch" @click="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <RouterLink to="/">
+              <span aria-label="logo" class="logo first-scroll">winner</span>
+            </RouterLink>
+
+            <div class="search-container">
+              <input type="text" v-model="userSearch" placeholder="What service are you looking for today?" />
+              <button class="btn-serch" @click="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
           </div>
 
           <section class="header-links flex justify-center align-center">
@@ -21,7 +24,7 @@
         </nav>
       </section>
     </header>
-    
+
     <section class="full subheader main-container">
       <section class="main-container">
         <div class="categories-list ">
@@ -58,7 +61,7 @@ export default {
       isFirstScroll: false,
       isSecondScroll: false,
       userSearch: '',
-    
+
     }
   },
   created() {
