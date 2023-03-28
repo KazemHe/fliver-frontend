@@ -46,10 +46,11 @@ async function query(filterBy = { title: '', DeliveryTime: '', }) {
     if (filterBy.sortBy) {
         console.log('hello filterBy.sort you arrived to gig service local congratulations ')
         if (filterBy.sortBy === 'Best price') {
-            gigs = gigs.sort((a, b) => b.price - a.price)
-            console.log('giiiiiiiiiiiiiiiiiiiigs',gigs);
+            gigs = gigs.sort((a, b) => a.price - b.price)
+            console.log('giiiiiiiiiiiiiiiiiiiigs', gigs);
         }
-        if (filterBy.sortBy === 'delivery Time') gigs = gigs.sort((a, b) => b.daysToMake - a.daysToMake * (-1))
+        console.log('hello filterBy.sort you arrived to gig service local congratulations ')
+        if (filterBy.sortBy === 'delivery Time') gigs = gigs.sort((a, b) => a.daysToMake - b.daysToMake)
         // if (filterBy.sortBy === 'check') gigs = gigs.sort((a, b) => b.price - a.price)
     }
     return gigs

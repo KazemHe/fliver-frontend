@@ -148,8 +148,11 @@ a {
 }
 
 .rating-wrapper {
+    display: flow-root;
+
     >* {
-        padding: rem(2.5px);
+        padding: .1rem;
+
         font-size: 14px;
 
     }
@@ -164,6 +167,9 @@ a {
     text-decoration: none;
     flex: 1;
     font-size: rem(16px);
+    // white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 

@@ -57,9 +57,9 @@
                 <!-- <p>Encourage buyers to choose your Gig by featuring avariety of your work.</p> -->
                 <!-- <section class="img-uploader"> -->
                     <!-- <label class="upload-container">Upload image</label> -->
-                    <ImgUploader class="img-uploader" @uploaded="onUploaded" />
                     <!-- <input type="file" accept="img/*" id="imgUpload">
-                    <label for="imgUpload"> -->
+                        <label for="imgUpload">  -->
+                        <ImgUploader class="img-uploader" @uploaded="onUploaded" />
                     <!-- </label> -->
                     <div class="upload-preview flex"></div>
                 <!-- </section> -->
@@ -120,7 +120,7 @@ export default {
             }
         },
         onUploaded(imgUrl) {
-            this.gigToEdit.images = [imgUrl]
+            this.gigToEdit.images.push(imgUrl)
         },
     },
     computed: {
