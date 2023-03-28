@@ -10,6 +10,7 @@ import GigDetails from './views/GigDetails.vue'
 import GigEdit from './views/GigEdit.vue'
 import GigPayment from './views/GigPayment.vue'
 import BecomeSeller from './views/BecomeSeller.vue'
+import UserProfile from './views/UserProfile.vue'
 
 const routes = [
   {
@@ -39,6 +40,11 @@ const routes = [
     name: 'BecomeSeller',
     component: BecomeSeller,
   },
+  {
+    path: '/user-profile',
+    name: 'UserProfile',
+    component: UserProfile,
+  },
 
   {
     path: '/review',
@@ -66,7 +72,7 @@ const routes = [
     component: GigEdit
   },
 
-  
+
 ]
 
 

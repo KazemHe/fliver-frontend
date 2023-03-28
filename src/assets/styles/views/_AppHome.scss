@@ -80,7 +80,7 @@
     }
 
     .categories {
-       opacity: 0;
+        opacity: 0;
         flex-wrap: wrap;
         text-decoration: none;
         align-items: center;
@@ -301,15 +301,15 @@
         cursor: pointer;
     }
 
-    section.marketplace-svg {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        justify-items: center;
-        gap: 2.3125rem;
-        padding-inline-start: rem(20px);
-        padding-inline-end: rem(20px);
-
-        
+    .marketplace-svg {
+        display: flex;
+        flex-wrap: wrap;
+        // display: grid;
+        // grid-template-columns: repeat(2, 1fr);
+        // justify-items: center;
+        // gap: 2.3125rem;
+        // padding-inline-start: rem(20px);
+        // padding-inline-end: rem(20px);
     }
 
     .marketplace-title {
@@ -321,17 +321,34 @@
     }
 
     svg {
-        width: rem(48px);
-        height: 80px;
+        // width: rem(48px);
+        // height: 80px;
+        display: block;
+        height: 48px;
+        margin: 0 auto 15px;
+        width: 48px;
+    }
+
+    div {
+        width: 20%;
+        padding-bottom: 67px;
+    }
+
+    h4 {
+        color: #222325;
+        display: inline-block;
+        position: relative;
+        text-align: center;
+        bottom: -9px;
     }
 
     div a::after {
         content: "";
         position: absolute;
-        top: rem(60px);
+        top: rem(51px);
         right: 50%;
         transform: translate(50%);
-        padding: 0 0 rem(8px);
+        // padding: 0 0 rem(8px);
         width: rem(48px);
         border-bottom: 2px solid $clr11;
         transition: border-color .2s ease-in-out, width .2s ease-in-out;
@@ -343,6 +360,9 @@
         transition: border-color .2s ease-in-out, width .2s ease-in-out;
     }
 
+    // div:nth-child(n+6) {
+    //     padding-bottom: 0;
+    // }
 }
 
 @media only screen and (min-width: 600px) {}
@@ -351,6 +371,7 @@
     .hero-search-container .categories {
         opacity: 1;
     }
+
     .bgc-video {
         height: rem(750px);
 
