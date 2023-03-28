@@ -1,0 +1,42 @@
+.user-profile {
+    background-color: rgb(175, 146, 146);
+    min-height: 90vh;
+    display: grid;
+    grid-template-columns: minmax(24px, 1fr) minmax(auto, 1400px) minmax(24px, 1fr);
+    gap: 20px;
+
+    .user-card {
+        background-color: aquamarine;
+        width: 337px;
+        height: 260px;
+
+        .form-user-profile {
+            grid-column: 1;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+
+            .user-img {
+                border-radius: 50%;
+                background-color: aqua;
+                svg {
+                    width: 120px;
+                    // height: 120px;
+                }
+            }
+        }
+
+        .user-details{
+            background-color: rgb(212, 190, 150);
+            padding-left: 10px;
+            div {
+                display: flex;
+            }
+        }
+
+        svg {
+            width: 16px;
+            margin-inline-end: 10px;
+        }
+    }
+}

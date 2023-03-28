@@ -162,7 +162,8 @@
         }
 
         a:not(:first-child) {
-            margin-inline-start: 263px;
+            margin-inline-start: 163px;
+            // margin-inline-start: 263px;
             color: $clr4;
         }
 
@@ -170,7 +171,6 @@
             color: $clr4;
             margin-inline-end: 22px;
         }
-
     }
 }
 
@@ -232,9 +232,9 @@
 @media only screen and (min-width: 900px) {
     .main-header {
         header {
-            // .header-links {
-            //     // margin-inline-start: 250px;
-            // }
+            .header-links {
+                // margin-inline-start: 250px;
+            }
         }
     }
 }

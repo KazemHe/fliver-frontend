@@ -91,8 +91,9 @@
     <p class="marketplace-title">Explore the marketplace</p>
     <section class="marketplace-svg">
       <div @click="marketplaceRoutes(market.titleMarketplace)"
-           v-for="market in marketPlaces">
-        <a class="flex" v-html="getSvg(market.svgMarketplace)"></a>
+           v-for="market in marketPlaces"
+           >
+        <a class="" v-html="getSvg(market.svgMarketplace)"></a>
         <h4 class="svg-type">{{ market.titleMarketplace }}</h4>
       </div>
     </section>  
@@ -257,7 +258,7 @@ export default {
       this.$router.push({ query: { subCategory: content }, path: '/explore' })
     },
     search() {
-      this.$router.push({ query: { title: this.userSearch } })
+      this.$router.push({ query: { title: this.userSearch }, path: '/explore' })
     },
     marketplaceRoutes (title) {
       this.$router.push({ query: { categories: title }, path: '/explore' })

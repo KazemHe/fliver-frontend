@@ -6,17 +6,17 @@
                 <h4 class="flex align-center justify-center">© Winner International Ltd. 2023</h4>
             </div>
 
-            <div class="flex footer-links">
-                <a class="flex-center" href="https://twitter.com/fiverr">
-                    <span class="flex-center" v-html="getSvg('twitter')"></span></a>
-                <a class="flex-center" href="https://www.facebook.com/Fiverr/">
-                    <span class="flex-center" v-html="getSvg('facebook')"></span></a>
-                <a class="flex-center" href="https://www.linkedin.com/company/fiverr-com">
-                    <span class="flex-center" v-html="getSvg('linkedIn')"></span></a>
-                <a class="flex-center" href="https://www.pinterest.com/fiverr/">
-                    <span class="flex-center" v-html="getSvg('pinterest')"></span></a>
-                <a class="flex-center" href="https://www.instagram.com/fiverr/">
-                    <span class="flex-center" v-html="getSvg('instagram')"></span></a>
+            <div class="footer-links">
+                <a class="" href="https://twitter.com/fiverr">
+                    <span class="" v-html="getSvg('twitter')"></span></a>
+                <a class="" href="https://www.facebook.com/Fiverr/">
+                    <span class="" v-html="getSvg('facebook')"></span></a>
+                <a class="" href="https://www.linkedin.com/company/fiverr-com">
+                    <span class="" v-html="getSvg('linkedIn')"></span></a>
+                <a class="" href="https://www.pinterest.com/fiverr/">
+                    <span class="" v-html="getSvg('pinterest')"></span></a>
+                <a class="" href="https://www.instagram.com/fiverr/">
+                    <span class="" v-html="getSvg('instagram')"></span></a>
             </div>
         </div>
     </footer>
