@@ -116,13 +116,36 @@
 
 import { svgServive } from '../services/svg.service.js'
 import { gigService } from '../services/gig.service.local'
+// import { orderService } from '../services/order.service.local'
 export default {
 
     data() {
         return {
             list: ['Include 3D mockup', 'Printable file', 'Logo transparency', '1 concept included'],
             gig: null,
-            // loginUser:loggedInUser()
+            loggedinUser: loggedInUser() | '',
+            order: [
+                {
+                    "_id": "o1225",
+                    "buyer": {
+                        "_id": "loggedinUser._id",
+                        "username": "loggedinUser.username",
+                        "user": "loggedinUser.user",
+                    },
+                    "seller": {
+                        "_id": "gig.owner._id",
+                        "fullname": "gig.owner.fullname",
+                    },
+                    "gig": {
+                        "_id": "i101",
+                        "name": "Design Logo",
+                        "price": 20
+                    },
+                    "status": "pending"
+
+                }
+            ],
+
         }
     },
 
@@ -154,23 +177,28 @@ export default {
             if (!this.loggedInUser) {
                 return
             }
-            
+
             const order =
             {
+                "_id": "o1225",
                 "buyer": {
-                    name: this.loggedinUser.name,
-                    id:this.loggedinUser._id,
-                    username:this.loggedInUser.username
+                    "id": this.loggedInUser._id,
+                    "name": this.loggedInUser.name,
+                    "username": this.loggedInUser.username
                 },
-                // "seller": {this.gig.owner
-                //     ID USER, NAME, USERNAME
-                // }
+
+                "seller": {
+                    "_id": gig.owner._id,
+                    "fullname": gig.owner.fullname,
+                },
+
                 "gig": {
                     "_id": this.gig._id,
                     "name": this.gig.title,
                     "price": this.gig.price,
                     "img": this.gig.images[0]
                 },
+
                 "status": "Pending",
             }
             this.$store.dispatch({ type: 'saveOrder', order: { ...order } })

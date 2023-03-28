@@ -1,5 +1,5 @@
 <template>
-  <section class="hero-container home text-center full" :style="{ 'background-image': `url(${heroImgs[currIdx].img})` }">
+  <section class="hero-container main-container home text-center full" :style="{ 'background-image': `url(${heroImgs[currIdx].img})` }">
 
     <div class="hero-search-container main-container flex">
       <h1>Find the perfect<span>freelance</span> services for your business</h1>
