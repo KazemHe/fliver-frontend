@@ -2,7 +2,7 @@
   <section class="up-filter">
     <h2>explore</h2>
   </section>
-  <FloatingFilter :gigs="gigs" @setFilterBy="setFilterBy" />
+  <FloatingFilter @setFilterBy="setFilterBy" />
 </template>
 <script>
 
@@ -32,14 +32,14 @@ export default {
 </script>
 <style>
 .up-filter {
- padding: 40px 0 0;
- margin-bottom: 10px;
- color: #222325;
-    font-size: 25px;
-    font-family: macan-regular;
-    font-weight: 700;
-    line-height: 36px;
-    padding: 8px 0;
-    text-transform: none!important;
+  padding: 40px 0 0;
+  margin-bottom: 10px;
+  color: #222325;
+  font-size: 25px;
+  font-family: macan-regular;
+  font-weight: 700;
+  line-height: 36px;
+  padding: 8px 0;
+  text-transform: none !important;
 }
 </style>
