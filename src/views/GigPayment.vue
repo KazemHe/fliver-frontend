@@ -116,36 +116,13 @@
 
 import { svgServive } from '../services/svg.service.js'
 import { gigService } from '../services/gig.service.local'
-// import { orderService } from '../services/order.service.local'
+import { orderService } from '../services/order.service.local'
 export default {
 
     data() {
         return {
             list: ['Include 3D mockup', 'Printable file', 'Logo transparency', '1 concept included'],
             gig: null,
-            loggedinUser: loggedInUser() | '',
-            order: [
-                {
-                    "_id": "o1225",
-                    "buyer": {
-                        "_id": "loggedinUser._id",
-                        "username": "loggedinUser.username",
-                        "user": "loggedinUser.user",
-                    },
-                    "seller": {
-                        "_id": "gig.owner._id",
-                        "fullname": "gig.owner.fullname",
-                    },
-                    "gig": {
-                        "_id": "i101",
-                        "name": "Design Logo",
-                        "price": 20
-                    },
-                    "status": "pending"
-
-                }
-            ],
-
         }
     },
 
@@ -174,17 +151,18 @@ export default {
 
     methods: {
         addOrder() {
-            if (!this.loggedInUser) {
-                return
-            }
-
+            const gig = this.gig
+            console.log(gig);
+            // if (!this.loggedInUser) {
+            //     return
+            // }
             const order =
             {
-                "_id": "o1225",
+                "_id": '',
                 "buyer": {
-                    "id": this.loggedInUser._id,
-                    "name": this.loggedInUser.name,
-                    "username": this.loggedInUser.username
+                    "id": 2 || this.loggedInUser._id,
+                    "name":"muki" || this.loggedInUser.name,
+                    "username": "mukmuk" || this.loggedInUser.username
                 },
 
                 "seller": {
@@ -201,6 +179,7 @@ export default {
 
                 "status": "Pending",
             }
+            console.log('order', order);
             this.$store.dispatch({ type: 'saveOrder', order: { ...order } })
             setTimeout(() => {
                 this.$router.push('/')

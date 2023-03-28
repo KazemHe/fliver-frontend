@@ -93,7 +93,7 @@ async function changeScore(by) {
 
 
 function saveLocalUser(user) {
-    user = {_id: user._id, fullname: user.fullname, imgUrl: user.imgUrl, score: user.score}
+    user = {_id: user._id, fullname: user.fullname, imgUrl: user.imgUrl, score: user.score, isSeller:false}
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
     return user
 }
@@ -103,11 +103,11 @@ function getLoggedinUser() {
 }
 
 
-// ;(async ()=>{
-//     await userService.signup({fullname: 'Puki Norma', username: 'puki', password:'123',score: 10000, isAdmin: false})
-//     await userService.signup({fullname: 'Master Adminov', username: 'admin', password:'123', score: 10000, isAdmin: true})
-//     await userService.signup({fullname: 'Muki G', username: 'muki', password:'123', score: 10000})
-// })()
+;(async ()=>{
+    // await userService.signup({fullname: 'Puki Norma', username: 'puki', password:'123',score: 10000, isAdmin: false , country:'iran', description:'what am i doing here?'})
+    // await userService.signup({fullname: 'Master Adminov', username: 'admin', password:'123', score: 10000, isAdmin: true, country:'iran', description:'what am i doing here?'})
+    // await userService.signup({fullname: 'Muki G', username: 'muki', password:'123', score: 10000, country:'iran', description:'what am i doing here?'})
+})()
 
 
 

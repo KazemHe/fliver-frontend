@@ -235,7 +235,9 @@
                     <section>
 
                         <ul class="clean-list">
-                            <section class="review-preview">
+
+
+                       `     <section class="review-preview">
                                 <section class="review-preview-long grid"><img class="reviewer-img"
                                         src="https://randomuser.me/api/portraits/men/17.jpg" alt="user-img">
                                     <section class="reviewer-details flex column">
@@ -264,6 +266,7 @@
                                     </section>
                                 </section>
                             </section>
+
                             <section class="review-preview">
                                 <section class="review-preview-long grid"><img class="reviewer-img"
                                         src="https://randomuser.me/api/portraits/men/9.jpg" alt="user-img">
@@ -384,7 +387,7 @@
                                         <p class="review-description">{{ gig.reviews[4].review }}</p>
                                     </section>
                                 </section>
-                            </section>
+                            </section>`
                         </ul>
                     </section>
                 </section>
