@@ -17,14 +17,13 @@
                         <h2>user</h2>
                     </div>
                     <section class="user-details">
-                        <p>Seller</p>
                         <div class="flex">
                             <span class="svg-user-card" v-html="getSvg('location')"></span>
-                            <p> From:</p>
+                            <p> From: United-state </p>
                         </div>
                         <div class="flex">
                             <span class="svg-user-card" v-html="getSvg('userProfile')"></span>
-                            <p> Member since:</p>
+                            <p> Member since: June 2018</p>
                         </div>
                     </section>
                 </div>
@@ -67,14 +66,17 @@
                     </section>
                 </div>
 
-                <div v-if="selected === 'My Orders'">
+                <div v-if="selected === 'My Orders' && gigs">
                     <article class="card-orders">
+                        <div class="flex">
+                            <img class="user-img" :src="gigs[0].imgUrl"/>
+                            <p>Price: ${{ gigs[0].price }}</p>
+                            <p>Order date: {{ gigs[0].memberSince }}</p>
+                            <p>Status: approved</p>
+                        </div>
                         <div class="user-img">
                            <img :src="gigs[0].images[3]"/>
                         </div>
-                        <p>Price: ${{ gigs[0].price }}</p>
-                        <p>Order date: {{ gigs[0].memberSince }}</p>
-                        <p>Status: approved</p>
                     </article>
                 </div>
                 <div v-if="selected === 'Received Orders'">received-orders</div>

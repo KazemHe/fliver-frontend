@@ -3,7 +3,7 @@
     <header>
       <section>
         <nav class="flex first-scroll main-nav">
-          <div class="flex ">
+          <div class="flex align-center">
 
             <RouterLink to="/">
               <span aria-label="logo" class="logo first-scroll">winner</span>
@@ -85,9 +85,7 @@ export default {
       }
     },
     search() {
-      this.$router.push({ query: { title: this.userSearch } })
-
-      // emitToFilter(txt) // ?
+      this.$router.push({ query: { title: this.userSearch }, path: '/explore' })
       this.userSearch = ''
     },
   },
