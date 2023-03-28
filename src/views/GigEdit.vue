@@ -5,7 +5,7 @@
         </h1>
 
         <form @submit.prevent="addGig">
-            <input type="text" placeholder="gig name" v-model="gigToEdit.name" />
+            <input type="text" placeholder="gig title" v-model="gigToEdit.title" />
             <input type="number" placeholder="Price" v-model.number="gigToEdit.price" />
             <button>Save</button>
         </form>
@@ -18,7 +18,7 @@
 import { gigService } from '../services/gig.service.local'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 export default {
-    name: 'GigEdit',
+    title: 'GigEdit',
     data() {
         return {
             gig: null,

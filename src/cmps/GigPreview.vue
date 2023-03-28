@@ -10,9 +10,9 @@
         </vueper-slides>
         <div class="inner-seller">
 
-            <img :src="gig.owner.imgUrl" class="owner-img" alt="">
+            <img :src="gig.owner?.imgUrl" class="owner-img" alt="">
             <div class="owner-previwe">
-                <div class="full-name">{{ gig.owner.fullname }}</div>
+                <div class="full-name">{{ gig.owner?.fullname }}</div>
                 <div>{{ gig.owner.level }}</div>
             </div>
         </div>
@@ -53,28 +53,6 @@ export default {
     data() {
         return {
 
-
-            slides: [
-                {
-                    title: 'El Teide Volcano, Spain',
-                    content: 'Photo by Max Rive',
-                    // You can also provide a URL for the image.
-                    image: 'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/231682055/original/77cc585046a1ceb81a809218fef35ee8252bbb3b.jpg'
-                },
-                {
-                    title: 'El Teide Volcano, Spain',
-                    content: 'Photo by Max Rive',
-                    // You can also provide a URL for the image.
-                    image: 'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs2/275390527/original/68da5d5d026f7f8802f24056eb95a3c662b5f2dc.png'
-                },
-                {
-                    title: 'dark life',
-                    content: 'Photo by eli',
-                    // You can also provide a URL for the image.
-                    image: 'https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/155512325/original/9d62fbdec2b0bffd0318f9af43c2de023b62f5f0.jpg'
-                    // Other slides.
-                }
-            ],
 
             like: false,
         }

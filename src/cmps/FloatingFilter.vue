@@ -4,7 +4,7 @@
       <button class="filter-btn">budget <span class="icon" v-html="getSvg('filterArrow')"></span></button>
       <template #popper>
         <section class="filter-mode" style="left: 0px;">
-          <form id="filters" class="budget-modal" name="budget" @submit.prevent="setFilterBy">
+          <form id="filters" class="budget-modal" name="budget" @submit.prevent="setFilterBy(null)">
             <div class="min">
               <p>MIN.</p>
               <div class="minmax-input"><input v-model="filterBy.bugdet.min" placeholder="Any$" type="number" name="min"
@@ -27,7 +27,7 @@
       <button class="filter-btn">Delivery Time <span class="icon arrow" v-html="getSvg('filterArrow')"></span></button>
       <template #popper>
         <section class="filter-mode " style="left: 301px;">
-          <form id="filters" name="daysToMake" class="delivery" @submit.prevent="setFilterBy">
+          <form id="filters" name="daysToMake" class="delivery" @submit.prevent="setFilterBy(null)">
             <div class="delivery-option"><input class="delivery-input" type="radio" id="24h" name="delivery-time"
                 v-model="filterBy.DeliveryTime" value="1"><label for="24h">Express 24H</label></div>
             <div class="delivery-option"><input class="delivery-input" type="radio" id="3d" name="delivery-time"
@@ -69,7 +69,7 @@ export default {
     return {
       filterBy: {
         title: '',
-        bugdet: { min: 'Any', max: 'Any' },
+        bugdet: { min: '', max: '' },
         DeliveryTime: 0,
         category: '',
         sortBy: '',
@@ -91,16 +91,17 @@ export default {
     //   this.filterBy.sortBy = sortBy
     // },
     setFilterBy(sortBy) {
+      console.log('sortBy', sortBy);
       console.log('check the filter', this.filterBy)
 
-      this.filterBy.sortBy = sortBy
+      if (sortBy) this.filterBy.sortBy = sortBy
       this.$router.push({
         query: {
+          category: this.filterBy.category || '',
           title: this.filterBy.title || '',
           min: this.filterBy.bugdet?.min || '',
           max: this.filterBy.bugdet?.max || '',
           DeliveryTime: this.filterBy.DeliveryTime || '',
-          category: this.filterBy.category || '',
           sortBy: this.filterBy.sortBy || '',
         }
       })
@@ -114,7 +115,7 @@ export default {
   computed: {
 
     changeSortTxt() {
-      return this.sortTxt
+      return this.filterBy.sortBy
     }
   },
 
@@ -122,8 +123,9 @@ export default {
   watch: {
     "$route.query.": {
       handler(newValue) {
-        const filterBy = this.$route.query
-        // console.log(filter)
+        const filterBy = this.$route.query  
+        console.log(filterBy)
+        if (filterBy.category) this.filterBy.category = filterBy.category
         // this.filterBy = newValue 
 
         // filterBy = filter

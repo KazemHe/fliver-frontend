@@ -16,10 +16,12 @@ export const gigService = {
 window.cs = gigService
 
 
-async function query(filterBy = { txt: '', DeliveryTime: '', }) {
+async function query(filterBy = { title: '', DeliveryTime: '', }) {
     var gigs = await storageService.query(STORAGE_KEY)
-    if (filterBy.txt) {
-        const regex = new RegExp(filterBy.txt, 'i')
+    if (filterBy.title) {
+
+        console.log('hello filterBy.title you arrived to gig service local congratulations ')
+        const regex = new RegExp(filterBy.title, 'i')
         gigs = gigs.filter(gig => regex.test(gig.title) || regex.test(gig.description))
     }
     if (filterBy.min && filterBy.max) {
@@ -27,12 +29,28 @@ async function query(filterBy = { txt: '', DeliveryTime: '', }) {
         gigs = gigs.filter(gig => gig.price > filterBy.min && gig.price < filterBy.max)
     }
 
-
     if (filterBy.DeliveryTime) {
         console.log('hello filterBy.DeliveryTime you arrived to gig service local congratulations ')
         if (filterBy.DeliveryTime === '1') gigs = gigs.filter(gig => gig.daysToMake < 2)
         if (filterBy.DeliveryTime === '3') gigs = gigs.filter(gig => gig.daysToMake < 4)
         if (filterBy.DeliveryTime === '7') gigs = gigs.filter(gig => gig.daysToMake < 7)
+
+    }
+
+    if (filterBy.category) {
+        console.log('hello filterBy.category you arrived to gig service local congratulations ')
+        // gigs = gigs.filter(gig => gig.tags.includes(filterBy.category))
+        gigs = gigs.filter(gig => gig.tags.some(tag => tag.name === filterBy.category))
+    }
+
+
+    if (filterBy.sortBy) {
+        console.log('hello filterBy.sort you arrived to gig service local congratulations ')
+        if (filterBy.sortBy === 'Best price') gigs = gigs.sort((a, b) => b.price - a.price)
+        if (filterBy.sortBy === 'delivery Time') gigs = gigs.sort((a, b) => b.daysToMake - a.daysToMake)
+        // if (filterBy.sortBy === 'check') gigs = gigs.sort((a, b) => b.price - a.price)
+
+
 
     }
     return gigs
