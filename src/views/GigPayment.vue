@@ -68,10 +68,10 @@
                         </section>
                         <h3 class="price">US${{ gig.price }}</h3>
                         <p>
-                            <span v-for="(tag) in list"> {{tag}} +</span>
+                            <span v-for="(tag) in list"> {{ tag }} +</span>
                         </p>
-                            
-                        <ul class="features clean-list" >
+
+                        <ul class="features clean-list">
                             <li class="regular" v-for="(tag) in list" :key="index">
                                 <div class="v-svg-container">
                                     <span>
@@ -96,13 +96,13 @@
                         </div>
                         <div class="pricing total">
                             <p class="bold-price">Total</p>
-                            <p class="bold-price">{{lastPrice}}</p>
+                            <p class="bold-price">{{ lastPrice }}</p>
                         </div>
                         <div class="pricing">
                             <p class="bold-price">Delivery Time</p>
                             <p class="bold-price">1 Days</p>
                         </div>
-                        <button class="continue-btn">Confirm And Pay</button>
+                        <button @click="addOrder" class="continue-btn">Confirm And Pay</button>
                     </section>
                 </section>
             </section>
@@ -122,6 +122,7 @@ export default {
         return {
             list: ['Include 3D mockup', 'Printable file', 'Logo transparency', '1 concept included'],
             gig: null,
+            // loginUser:loggedInUser()
         }
     },
 
@@ -133,34 +134,61 @@ export default {
             immediate: true,
         },
     },
-    computed: {
-        lastPrice(){
-           return this.gig.price + 7.26 + 7.5
-        },
-        loggedInUser() {
-            return this.$store.getters.loggedinUser
-        },
-        gigs() {
-            return this.$store.getters.gigs
-        }
-    },
-
     async created() {
         const { gigId } = this.$route.params
         const gig = await gigService.getById(gigId)
         this.gig = gig
     },
+
+    computed: {
+        lastPrice() {
+            return this.gig.price + 7.26 + 7.5
+        },
+        loggedInUser() {
+            return this.$store.getters.loggedinUser
+        },
+    },
+
     methods: {
+        addOrder() {
+            if (!this.loggedInUser) {
+                return
+            }
+            
+            const order =
+            {
+                "buyer": {
+                    name: this.loggedinUser.name,
+                    id:this.loggedinUser._id,
+                    username:this.loggedInUser.username
+                },
+                // "seller": {this.gig.owner
+                //     ID USER, NAME, USERNAME
+                // }
+                "gig": {
+                    "_id": this.gig._id,
+                    "name": this.gig.title,
+                    "price": this.gig.price,
+                    "img": this.gig.images[0]
+                },
+                "status": "Pending",
+            }
+            this.$store.dispatch({ type: 'saveOrder', order: { ...order } })
+            setTimeout(() => {
+                this.$router.push('/')
+            }, 500)
+        },
+
         getSvg(iconName) {
             return (this.icon = svgServive.getGigSvg(iconName))
         },
 
         printGigToConsole(gig) {
-        console.log('Gig msgs:', gig.msgs)
+            console.log('Gig msgs:', gig.msgs)
+        },
     },
-    },
-    
-   
+
+
 
 
 }
