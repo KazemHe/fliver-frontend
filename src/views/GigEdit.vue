@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <!-- <section>
         <h1>
             gig edit
         </h1>
@@ -10,10 +10,76 @@
             <button>Save</button>
         </form>
         <router-link to="/explore">Back</router-link>
+    </section> -->
+
+
+    <section class="gig-edit full">
+        <form @submit.prevent="addGig">
+            <div class="top-form flex column space-between"><label class="title"><span class="flex-column">Gig Title
+                        <p> your gig title should be cool sipmle and funny for more engagement</p>
+                    </span>
+                    <input type="text" placeholder="I will..." v-model="gigToEdit.title">
+                </label>
+                <label class="description"><span class="flex-column">Description <p>
+                            Briefly Describe Your Gig</p></span><textarea
+                        placeholder="Lorem Ipsum is simply dummy text of the printing and typesetting industry...."
+                        v-model="gigToEdit.description"> </textarea></label>
+            </div>
+            <div class="bottom-form flex space-between"><label class="category flex column">
+                    <span class="flex-column">Category <p>Choose the category most suitable for your Gig.</p></span>
+                    <select name="Graphics and Design" id="" v-model="gigToEdit.category">
+                        <option value="Graphics &amp; Design">Graphics &amp; Design</option>
+                        <option value="Digital Marketing">Digital Marketing</option>
+                        <option value="Writing &amp; Translation">Writing &amp; Translation</option>
+                        <option value="Video &amp; Animation">Video &amp; Animation</option>
+                        <option value="Music &amp; Audio">Music &amp; Audio</option>
+                        <option value="Programming &amp; Tech">Programming &amp; Tech</option>
+                        <option value="Busines">Busines</option>
+                        <option value="Lifestyle">Lifestyle</option>
+                        <option value="Data">Data</option>
+                    </select>
+
+                </label>
+                <label class="days-to-make flex column">
+                    <span>Days to Make <p>Days it will take you on average to finish this gig</p></span>
+                    <select name="" id="" v-model="gigToEdit.daysToMake">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </label>
+                <label class="price flex column">
+                    <span>Price <p>Price you're offering for this gig</p></span>
+                    <input class="price-input" type="number" name="" id="" v-model="this.gigToEdit.price">
+                </label>
+            </div>
+            <div class="images flex-column">
+                <!-- <p>Encourage buyers to choose your Gig by featuring avariety of your work.</p> -->
+                <!-- <section class="img-uploader"> -->
+                    <!-- <label class="upload-container">Upload image</label> -->
+                    <ImgUploader class="img-uploader" @uploaded="onUploaded" />
+                    <!-- <input type="file" accept="img/*" id="imgUpload">
+                    <label for="imgUpload"> -->
+                    <!-- </label> -->
+                    <div class="upload-preview flex"></div>
+                <!-- </section> -->
+            </div>
+
+            <section class="confirm-add btns">
+
+                <button class="save-btn ">Save</button>
+                <router-link to="/explore">
+                    <button class="cancel-btn">Cancel</button>
+                </router-link>
+            </section>
+        </form>
+
     </section>
 </template>
    
 <script>
+
+import ImgUploader from '../cmps/ImgUploader.vue'
 
 import { gigService } from '../services/gig.service.local'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
@@ -21,7 +87,6 @@ export default {
     title: 'GigEdit',
     data() {
         return {
-            gig: null,
             gigToEdit: '',
         }
     },
@@ -39,11 +104,13 @@ export default {
         async addGig() {
             console.log('saving gig')
             try {
+
+
                 const save = await this.$store.dispatch({ type: 'addGig', gig: this.gigToEdit })
 
                 showSuccessMsg('gig Added')
-                this.gigToEdit = gigService.getEmptyGig()
-                 this.$router.push('/explore')
+                // this.gigToEdit = gigService.getEmptyGig()
+                this.$router.push('/explore')
 
             }
 
@@ -52,6 +119,9 @@ export default {
                 this.$router.push('/explore')
             }
         },
+        onUploaded(imgUrl) {
+            this.gigToEdit.images = [imgUrl]
+        },
     },
     computed: {
         gigs() {
@@ -59,6 +129,7 @@ export default {
         }
     },
     components: {
+        ImgUploader
     }
 }
 </script>

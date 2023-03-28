@@ -1,5 +1,6 @@
 <template>
-  <section class="hero-container main-container home text-center full" :style="{ 'background-image': `url(${heroImgs[currIdx].img})` }">
+  <section class="hero-container main-container home text-center full" 
+           :style="{ 'background-image': `url(${heroImgs[currIdx].img})` }">
 
     <div class="hero-search-container main-container flex">
       <h1>Find the perfect<span>freelance</span> services for your business</h1>
@@ -13,10 +14,18 @@
         </button>
       </div>
       <div class="categories flex"> Popular:
-        <div class="tag"><RouterLink to="/explore?category=Website+Design">Website Design</RouterLink></div>
-        <div class="tag"><RouterLink to="/explore?category=WordPress">WordPress</RouterLink></div>
-        <div class="tag"><RouterLink to="/explore?category=Logo+Design">Logo Design</RouterLink></div>
-        <div class="tag"><RouterLink to="/explore?category=Video+Editing">Video Editing</RouterLink></div>
+        <div class="tag">
+          <RouterLink to="/explore?category=Website+Design">Website Design</RouterLink>
+        </div>
+        <div class="tag">
+          <RouterLink to="/explore?category=WordPress">WordPress</RouterLink>
+        </div>
+        <div class="tag">
+          <RouterLink to="/explore?category=Logo+Design">Logo Design</RouterLink>
+        </div>
+        <div class="tag">
+          <RouterLink to="/explore?category=Video+Editing">Video Editing</RouterLink>
+        </div>
       </div>
 
       <div class="owner-name">
@@ -37,13 +46,10 @@
 
   <section class="popular-container">
     <h1 class="popular-title">Popular professional services</h1>
-    <vueper-slides fixed-height="345px" :visible-slides="5" slide-multiple 
-                   :gap="3" :slide-ratio="1 / 4" :dragging-distance="200"
-                   :breakpoints="{ 800: { visibleSlides: 2, slideMultiple: 2 } }" class="no-shadow">
-      <vueper-slide v-for="(slide, i) in slides" :key="i" 
-                    :image="slide.image" :title="slide.title"
-                    :content="slide.content"
-                    @click="popularFilter(slide.content)" class="popular-imgs" />
+    <vueper-slides fixed-height="345px" :visible-slides="5" slide-multiple :gap="3" :slide-ratio="1 / 4"
+      :dragging-distance="200" :breakpoints="{ 800: { visibleSlides: 2, slideMultiple: 2 } }" class="no-shadow">
+      <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" :title="slide.title"
+        :content="slide.content" @click="popularFilter(slide.content)" class="popular-imgs" />
     </vueper-slides>
   </section>
 
@@ -90,13 +96,11 @@
   <section class="marketplace-container">
     <p class="marketplace-title">Explore the marketplace</p>
     <section class="marketplace-svg">
-      <div @click="marketplaceRoutes(market.titleMarketplace)"
-           v-for="market in marketPlaces"
-           >
+      <div @click="marketplaceRoutes(market.titleMarketplace)" v-for="market in marketPlaces">
         <a class="" v-html="getSvg(market.svgMarketplace)"></a>
         <h4 class="svg-type">{{ market.titleMarketplace }}</h4>
       </div>
-    </section>  
+    </section>
   </section>
 </template>
 
@@ -107,7 +111,7 @@ import 'vueperslides/dist/vueperslides.css'
 export default {
   name: 'home',
   data() {
-    return {     
+    return {
       userSearch: '',
       currIdx: 0,
       marketPlaces: [
@@ -260,8 +264,8 @@ export default {
     search() {
       this.$router.push({ query: { title: this.userSearch }, path: '/explore' })
     },
-    marketplaceRoutes (title) {
-      this.$router.push({ query: { categories: title }, path: '/explore' })
+    marketplaceRoutes(title) {
+      this.$router.push({ query: { category: title }, path: '/explore' })
     }
   },
   components: {

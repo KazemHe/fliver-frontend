@@ -123,9 +123,10 @@ export default {
   watch: {
     "$route.query.": {
       handler(newValue) {
-        const filterBy = this.$route.query  
+        const filterBy = this.$route.query
         console.log(filterBy)
         if (filterBy.category) this.filterBy.category = filterBy.category
+        if (filterBy.title) this.filterBy.title = filterBy.title
         // this.filterBy = newValue 
 
         // filterBy = filter

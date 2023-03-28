@@ -9,6 +9,7 @@
                             <label for="imgupload">
                                 <input type="file" id="imgupload" style="display: none;">
                                 <div class="user-img">
+                                    <!-- <img :src="gigs[0].imgUrl"/> -->
                                     <span v-html="getSvg('userProfile')"></span>
                                 </div>
                             </label>
@@ -43,17 +44,42 @@
             <section class="tabs-side">
                 <div>
                     <div class="tab-btns">
-                        <button class="selectedTab"> My Gigs </button>
-                        <button class=""> My Orders </button>
-                        <button class=""> Received Orders </button>
-                        <button class=""> Reviews </button>
+                        <button v-for="tab in tabs" @click="selectedTab(tab)" :class="{ 'selected-tab': selected === tab }">
+                            {{ tab }} </button>
                     </div>
                 </div>
 
-                <div class="gigs-tabs">
-                    <section class="">
-                        
+                <div class="gigs-tabs" v-if="selected === 'My Gigs'">
+                    <section>
+                        <ul class="flex">
+                            <li class="gigs-user">
+                                <router-link to="/gig/edit">
+                                    <div class="card-new-gig">
+                                        <span class="btn-add-gig">+</span>
+                                        <p>Create a new Gig</p>
+                                    </div>
+                                </router-link>
+                            </li>
+                            <li class="gigs-user" v-for="gig in gigs" :key="gig._id">
+                                <GigPreview :gig="gig" @removeGig="removeGig" />
+                            </li>
+                        </ul>
                     </section>
+                </div>
+
+                <div v-if="selected === 'My Orders'">
+                    <article class="card-orders">
+                        <div class="user-img">
+                           <img :src="gigs[0].images[3]"/>
+                        </div>
+                        <p>Price: ${{ gigs[0].price }}</p>
+                        <p>Order date: {{ gigs[0].memberSince }}</p>
+                        <p>Status: approved</p>
+                    </article>
+                </div>
+                <div v-if="selected === 'Received Orders'">received-orders</div>
+                <div v-if="selected === 'Reviews'">
+                    <h1>reviews</h1>
                 </div>
             </section>
         </div>
@@ -62,22 +88,38 @@
 
 <script>
 import { svgServive } from '../services/svg.service.js'
+import GigList from '../cmps/GigList.vue'
+import GigPreview from '../cmps/GigPreview.vue'
 
 export default {
     name: 'UserProfile',
     data() {
-        return {}
+        return {
+            selected: 'My Gigs',
+            tabs: ['My Gigs', 'My Orders', 'Received Orders', 'Reviews'],
+        }
     },
     computed: {
         gigs() {
             return this.$store.getters.gigs
-        }
+        },
+        loggedInUser() {
+            return this.$store.getters.loggedinUser
+        },
     },
-    created() { },
     methods: {
         getSvg(iconName) {
             return (this.icon = svgServive.getGigSvg(iconName))
         },
+        selectedTab(selected) {
+            this.selected = selected
+            console.log(this.selected)
+        }
     },
+    created() { },
+    components: {
+        GigList,
+        GigPreview
+    }
 }
 </script>
