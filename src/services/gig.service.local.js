@@ -19,7 +19,6 @@ window.cs = gigService
 async function query(filterBy = { title: '', DeliveryTime: '', }) {
     var gigs = await storageService.query(STORAGE_KEY)
     if (filterBy.title) {
-
         console.log('hello filterBy.title you arrived to gig service local congratulations ')
         const regex = new RegExp(filterBy.title, 'i')
         gigs = gigs.filter(gig => regex.test(gig.title) || regex.test(gig.description))
@@ -46,12 +45,12 @@ async function query(filterBy = { title: '', DeliveryTime: '', }) {
 
     if (filterBy.sortBy) {
         console.log('hello filterBy.sort you arrived to gig service local congratulations ')
-        if (filterBy.sortBy === 'Best price') gigs = gigs.sort((a, b) => b.price - a.price)
-        if (filterBy.sortBy === 'delivery Time') gigs = gigs.sort((a, b) => b.daysToMake - a.daysToMake)
+        if (filterBy.sortBy === 'Best price') {
+            gigs = gigs.sort((a, b) => b.price - a.price)
+            console.log('giiiiiiiiiiiiiiiiiiiigs',gigs);
+        }
+        if (filterBy.sortBy === 'delivery Time') gigs = gigs.sort((a, b) => b.daysToMake - a.daysToMake * (-1))
         // if (filterBy.sortBy === 'check') gigs = gigs.sort((a, b) => b.price - a.price)
-
-
-
     }
     return gigs
 }
@@ -70,7 +69,7 @@ async function save(gig) {
         savedGig = await storageService.put(STORAGE_KEY, gig)
     } else {
         // Later, owner is set by the backend
-        gig.owner = userService.getLoggedinUser()
+        // gig.owner = userService.getLoggedinUser()
         savedGig = await storageService.post(STORAGE_KEY, gig)
     }
     return savedGig
@@ -96,7 +95,17 @@ function getEmptyGig() {
     return {
         title: '',
         price: 0,
-        about: ''
+        description: '',
+        category: '',
+        daysToMake: '',
+        images: [],
+        owner: {
+            fillname: 'moti', imgUrl
+                :
+                "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/4abf6f5b58e4d78cfb7c410cf8d7a9ac-1626111679444/4a04b77c-22ee-4ce8-b4be-747fd059e9ff.jpg",
+            level: "basic/premium", rate: 2
+        }
+
     }
 }
 

@@ -40,6 +40,10 @@ li {
 .gig-preview {
     align-items: center;
     border: 1px solid #efeff0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 
     >.owner-previwe {
         padding: rem(9px);
@@ -158,6 +162,8 @@ a {
 
 .link {
     text-decoration: none;
+    flex: 1;
+    font-size: rem(16px);
 }
 
 
