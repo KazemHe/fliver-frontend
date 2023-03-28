@@ -20,6 +20,9 @@
             flex-direction: column;
             align-items: center;
             width: 100%;
+            h2{
+                margin-bottom: 15px;
+            }
 
             .user-img svg {
                 cursor: pointer;
@@ -86,7 +89,7 @@
                 color: $clr5;
             }
 
-           
+
         }
 
         .gigs-tabs {
@@ -103,12 +106,14 @@
             .gigs-user {
                 width: 284px;
                 background-color: #fff;
+
                 .card-new-gig {
                     cursor: pointer;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     justify-content: center;
+
                     p {
                         color: $clr4;
                     }
@@ -116,7 +121,7 @@
 
                 .btn-add-gig {
                     margin-top: rem(135px);
-                    color:$clr2;
+                    color: $clr2;
                     width: 65px;
                     height: 65px;
                     background-color: #78cdd2;
@@ -130,6 +135,27 @@
         }
 
         .card-orders {
+            grid-column: 1/-1;
+            background-color: $clr2;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            margin: 1.25rem;
+
+            img.user-img{
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+            }
+
+            div {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                >* {
+                    margin: 10px;
+                }
+            }
         }
     }
 }
