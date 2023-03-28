@@ -10,7 +10,7 @@
     <section class="seller-register main-layout full">
         <form class="becomseller-form" v-on:submit.prevent="submitForm">
             <label><span class="flex-column">Username <p>this name will be shown to other users</p></span>
-                <input v-model="loggedInUser.fullname">
+                <input v-model="this.editUser.fullname">
             </label>
             <div><span class="flex-column">Profile Picture <p>Add a profile picture of yourself so customers will know
                         exactly who they’ll be working with. </p></span>
@@ -28,12 +28,12 @@
             <label>
                 <span class="flex-column">Description <p>Share a bit about your work experience, cool projects you’ve
                         completed, and your area of expertise.</p></span>
-                <textarea v-model="loggedInUser.description"></textarea>
+                <textarea v-model="this.editUser.description"></textarea>
             </label>
             <label>
                 <span>Country <p>Where are you from?</p>
                 </span>
-                <input v-model="loggedInUser.country">
+                <input v-model="this.editUser.country">
             </label>
         </form>
 
@@ -50,19 +50,19 @@ export default {
     name: 'become- seller',
     data() {
         return {
-            //  user:loggedInUser(),
+            editUser:'',
             gig: null,
         }
     },
 
     created() {
         const loggedinUser = this.$store.getters.loggedinUser
-        if (loggedinUser) {
-            this.userToEdit = loggedinUser
-        }
-        else {
-            this.userToEdit = userService.createEmptyUser()
-        }
+        // if (loggedinUser) {
+            this.editUser = loggedinUser
+        // }
+        // else {
+        //     this.editUser = userService.createEmptyUser()
+        // }
     },
 
     computed: {
@@ -77,13 +77,15 @@ export default {
             indow.scrollTo(0, 0)
         },
         submitForm() {
+            console.log('editUser', this.editUser);
+            
             // const formData = {
             //     username: loggedInUser.country,
             //     description: loggedInUser.description,
             //     country: loggedInUser.country
             // }
 
-            this.user.isSeller = true
+            // this.user.isSeller = true
             console.log(formData);
 
         }
