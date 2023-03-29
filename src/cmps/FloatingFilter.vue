@@ -134,7 +134,7 @@ export default {
 
   watch: {
     "$route.query.": {
-      handler(newValue) {
+      handler() {
         const filterBy = this.$route.query
         console.log(filterBy)
         if (filterBy.category) this.filterBy.category = filterBy.category
@@ -152,9 +152,5 @@ export default {
 }
 </script>
 <style>
-.sorting-txt {
-  color: black;
-  font-weight: bolder;
-  margin: px;
-}
+
 </style>

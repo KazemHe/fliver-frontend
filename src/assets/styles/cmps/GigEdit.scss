@@ -7,8 +7,8 @@
     background-color: #fff;
     width: 772px;
     height: fit-content;
-    border: 1px solid var(--yro5245);
-    background: white;
+
+
     padding: 30px;
     margin: 30px auto;
 }
@@ -136,6 +136,11 @@ p {
     background-color: $clr5;
     border: none;
     color: #fff;
+}
+
+.gig-edit .btns .save-btn:hover {
+    background-color: #404145;
+
 }
 
 
