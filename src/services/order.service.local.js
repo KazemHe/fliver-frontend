@@ -18,13 +18,13 @@ window.cs = orderService
 
 async function query(filterBy = { txt: '', price: 0 }) {
     var orders = await storageService.query(STORAGE_KEY)
-    if (filterBy.txt) {
-        const regex = new RegExp(filterBy.txt, 'i')
-        orders = orders.filter(order => regex.test(order.title) || regex.test(order.description))
-    }
-    if (filterBy.price) {
-        orders = orders.filter(order => order.price <= filterBy.price)
-    }
+    // if (filterBy.txt) {
+    //     const regex = new RegExp(filterBy.txt, 'i')
+    //     orders = orders.filter(order => regex.test(order.title) || regex.test(order.description))
+    // }
+    // if (filterBy.price) {
+    //     orders = orders.filter(order => order.price <= filterBy.price)
+    // }
     return orders
 }
 
