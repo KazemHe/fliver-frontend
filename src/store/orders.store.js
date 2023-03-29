@@ -8,6 +8,8 @@ export const ordersStore = {
     getters: {},
     mutations: {
         saveOrder(state, { order }) {
+            console.log('order', order);
+            
             const idx = state.orders.findIndex(o => o._id === order._id)
             if (idx !== -1) {
               state.orders.splice(idx, 1, order)
