@@ -18,8 +18,9 @@
               </div>
             </div>
           </form>
-          <div class="filters-footer"><button class="clear" type="button">Clear All</button><button class="apply"
-              form="filters" type="submit">Apply </button></div>
+          <div class="filters-footer"><button @click="clearMinMaxFilter" class="clear" type="button">Clear All</button>
+            <button class="apply" form="filters" type="submit">Apply </button>
+          </div>
         </section>
       </template>
     </VDropdown>
@@ -37,8 +38,8 @@
             <div class="delivery-option"><input class="delivery-input" type="radio" id="anytime" name="delivery-time"
                 value="" checked=""><label for="anytime">Anytime</label></div>
           </form>
-          <div class="filters-footer"><button class="clear" type="button">Clear All</button><button class="apply"
-              form="filters" type="submit">Apply</button></div>
+          <div class="filters-footer"><button @click="clearDeliveryTimeFilter" class="clear" type="button">Clear
+              All</button><button class="apply" form="filters" type="submit">Apply</button></div>
         </section>
       </template>
     </VDropdown>
@@ -74,22 +75,35 @@ export default {
         category: '',
         sortBy: '',
 
-
-        // sortBy: {
-        //   recomended: '',
-        //   BestSelling: '',
-        //   NewsArrival: ''
-        // }
       }
     }
   },
   methods: {
+    clearMinMaxFilter() {
+      this.$router.push({
+        query: {
+          category: this.filterBy.category || '',
+          title: this.filterBy.title || '',
+          min: '',
+          max: '',
+          DeliveryTime: this.filterBy.DeliveryTime || '',
+          sortBy: this.filterBy.sortBy || '',
+        }
+      })
+    },
+    clearDeliveryTimeFilter() {
+      this.$router.push({
+        query: {
+          category: this.filterBy.category || '',
+          title: this.filterBy.title || '',
+          min: this.filterBy.bugdet?.min || '',
+          max: this.filterBy.bugdet?.max || '',
+          DeliveryTime: '',
+          sortBy: this.filterBy.sortBy || '',
+        }
+      })
+    },
 
-
-    // sortTxtby(sortBy) {
-    //   console.log('txt', sortBy)
-    //   this.filterBy.sortBy = sortBy
-    // },
     setFilterBy(sortBy) {
       console.log('sortBy', sortBy);
       console.log('check the filter', this.filterBy)
@@ -106,7 +120,6 @@ export default {
         }
       })
 
-
     },
     getSvg(iconName) {
       return (this.icon = svgServive.getGigSvg(iconName))
@@ -119,10 +132,9 @@ export default {
     }
   },
 
-
   watch: {
     "$route.query.": {
-      handler(newValue) {
+      handler() {
         const filterBy = this.$route.query
         console.log(filterBy)
         if (filterBy.category) this.filterBy.category = filterBy.category
@@ -140,9 +152,5 @@ export default {
 }
 </script>
 <style>
-.sorting-txt {
-  color: black;
-  font-weight: bolder;
-  margin: px;
-}
+
 </style>

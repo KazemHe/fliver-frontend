@@ -60,11 +60,11 @@
     }
 
     .stars {
-        margin-block-start: 0;
+        margin-block-start: rem(-2px);
 
         >* {
-            padding-inline-start: 2px;
-            padding-inline-end: 2px
+            padding-inline-start: rem(2px);
+            padding-inline-end: rem(2px)
         }
 
         svg {

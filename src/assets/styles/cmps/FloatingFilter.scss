@@ -80,6 +80,7 @@
     justify-content: space-evenly;
     width: rem(300px);
     overflow-y: scroll;
+    align-items: center;
 }
 
 .budget-modal>* {
@@ -90,6 +91,7 @@
 .max-price {
     width: rem(120px);
     height: rem(40px);
+    border: 1px solid black;
 }
 
 .filters-footer {
@@ -97,10 +99,6 @@
     justify-content: space-between;
     border-top: 1px solid #e4e5e7;
     padding: 16px rem(24px);
-}
-
-.filters-footer>.apply {
-    background-color: #222325;
 }
 
 .clear {
@@ -113,6 +111,7 @@
     background-color: $clr2;
     color: gray;
     font: 400 16px/24px Macan-regular, Helvetica Neue, Helvetica, Arial, sans-serif;
+    cursor: pointer;
 }
 
 .apply {
@@ -132,7 +131,13 @@
     -webkit-transition: 70ms cubic-bezier(.75, 0, .25, 1);
     -o-transition: 70ms cubic-bezier(.75, 0, .25, 1);
     transition: 70ms cubic-bezier(.75, 0, .25, 1);
+    background-color: #222325;
 }
+
+.apply:hover {
+    background-color: #404145;
+}
+
 
 .v-popper :hover {
     cursor: pointer;
@@ -190,4 +195,10 @@
     font-weight: 600;
     line-height: rem(22px);
     padding-right: rem(10px);
+}
+
+.sorting-txt {
+    color: black;
+    font-weight: bolder;
+    margin: px;
 }

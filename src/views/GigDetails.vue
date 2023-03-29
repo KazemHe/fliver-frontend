@@ -600,12 +600,34 @@ export default {
 
 .gig-info {
     .vueperslides__arrow.vueperslides__arrow--next {
-        background: black;
-
+        background: white;
+        z-index: 4;
+        border-radius: 50%;
+        right: -2.4em;
+        box-shadow: 0px 1px  #b5b6ba;
         svg {
+          
+            color: black;
             display: block;
             height: 50px;
             width: 50px;
+            opacity: 1;
+        }
+
+    }
+
+    .vueperslides__arrow.vueperslides__arrow--prev {
+        background: white;
+        z-index: 4;
+        border-radius: 50%;
+        box-shadow: 0px 1px #b5b6ba;
+        left: -2.44em;
+        svg {
+            color: black;
+            display: block;
+            height: 50px;
+            width: 50px;
+            opacity: 1;
         }
 
     }

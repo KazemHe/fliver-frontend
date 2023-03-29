@@ -2,7 +2,7 @@
     <router-link to="/gig/edit">Add New gig</router-link>
 
     <GigFilter class="filter" @setFilterBy="setFilterBy" />
-    <GigList :gigs="gigs" @removeGig="removeGig"  />
+    <GigList :gigs="gigs" @removeGig="removeGig" />
 </template>
   
 <script>
@@ -38,7 +38,7 @@ export default {
 
         async setFilterBy(filterBy) {
 
-            console.log('filter by from explore', {...filterBy})
+            console.log('filter by from explore', { ...filterBy })
             // try {
             this.$store.dispatch({ type: 'filterGigs', ...filterBy })
             // }
