@@ -28,14 +28,21 @@
         </div>
 
         <div class="preview-footer">
-
             <span class="heart" :class="heartColor" @click="heartClick" v-html="getSvg('heart')"></span>
-
-
             <div><span class="starting-at">starting at </span><span class="gig-price">US${{ gig.price }}</span></div>
         </div>
-        <!-- <div @click="removeGig(gig._id)">x</div> -->
 
+        <!-- <div class="preview-footer">
+            <span class="btn-remove-gig" @click="removeGig(gig._id)">
+                <i class="fa-regular fa-trash-can"></i>
+            </span>
+            <span class="btn-remove-gig" @click="updateGig(gig)">
+                <i class="fa-solid fa-pencil"></i>
+            </span>
+        </div> -->
+        
+        <!-- <div><span class="starting-at">starting at </span><span class="gig-price">US${{ gig.price }}</span></div> -->
+        <!-- <div @click="removeGig(gig._id)">x</div> -->
 
     </article>
 </template>
@@ -64,11 +71,16 @@ export default {
         },
 
         removeGig(gigId) {
+            console.log(gigId) 
             this.$emit('removeGig', gigId)
         },
         getSvg(iconName) {
             return (this.icon = svgServive.getGigSvg(iconName))
         },
+        updateGig(gig) {
+            console.log(gig) 
+            this.$emit('updateGig', gig)
+        }
 
     },
 
@@ -93,6 +105,11 @@ export default {
             }
 
         },
+        handlePreviewFooter() {
+            return {
+                '': this.like,
+            }
+        }
     },
 
     components: {
@@ -214,6 +231,13 @@ export default {
     width: em(12px);
     height: em(12px);
     border-radius: em(12px);
+}
+
+ 
+.btn-remove-gig{
+    cursor: pointer;
+    width: 30px;
+    fill: red;
 }
 </style>
  

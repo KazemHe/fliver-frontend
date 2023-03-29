@@ -22,8 +22,16 @@
           <section class="header-links flex justify-center align-center">
             <RouterLink to="/explore">Explore</RouterLink>
             <RouterLink to="/gig/edit">Become a Seller</RouterLink>
-            <RouterLink to="/user-profile">Sign in</RouterLink>
-            <button @click="showJoinModal = !showJoinModal" class="join">Join</button>
+            <!-- <RouterLink to="/">Sign in</RouterLink> -->
+            <button @click="showSigninModal = !showSigninModal"
+                     v-if="!loggedInUser" 
+                     class="btn-signin">
+                     Sign in</button>
+
+            <button v-if="!loggedInUser" @click="showJoinModal = !showJoinModal" class="join">Join</button>
+            <div v-else class="login" @click="showUserModal = !showUserModal">
+              <img :src="loggedInUser.imgUrl" />
+            </div>
           </section>
         </nav>
       </section>
@@ -46,7 +54,8 @@
     </section>
   </div>
 
-  <div class="modal" v-if="showJoinModal">
+  <!-- JOIN MODAL -->
+  <div class="join-modal" v-if="showJoinModal">
     <h1>Join Fiverr</h1>
     <div class="user-picture"></div>
     <input type="text" placeholder="Your full name" />
@@ -54,13 +63,29 @@
     <input type="password" placeholder="Password" />
     <button @click="showJoinModal = false">Signup</button>
   </div>
+
+  <!-- SIGNIN MODAL -->
+  <div class="signin-modal" v-if="showSigninModal">
+   <LoginSignup/>
+  </div>
+
+  <!-- USER MODAL -->
+  <div class="user-modal" v-if="showUserModal">
+    <!-- <div class="mini-modal"></div> -->
+    <RouterLink @click="showUserModal = false" to="/user-profile">Profile</RouterLink>
+    <RouterLink @click="showUserModal = false" to="/user-profile">Dashboard</RouterLink>
+    <button @click="doLogout">Logout</button>
+  </div>
 </template>
 
 <script>
+import LoginSignup from '../views/LoginSignup.vue'
 import { emitToFilter } from '../services/event-bus.service'
 export default {
   data() {
     return {
+      showSigninModal: false,
+      showUserModal: false,
       showJoinModal: false,
       isFirstScroll: false,
       isSecondScroll: false,
@@ -92,6 +117,11 @@ export default {
       this.$router.push({ query: { title: this.userSearch }, path: '/explore' })
       this.userSearch = ''
     },
+    doLogout() {
+      this.showUserModal = false
+      this.$store.dispatch({ type: 'logout' })
+    },
+
   },
   computed: {
     loggedInUser() {
@@ -107,6 +137,9 @@ export default {
         'static-pos': !this.isHomePage
       }
     },
+  },
+  components: {
+    LoginSignup
   }
 }
 </script>
