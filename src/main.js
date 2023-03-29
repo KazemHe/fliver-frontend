@@ -25,6 +25,7 @@ const app = createApp(App)
 app.use(router)
 app.use(store)
 // app.use(FloatingVue)
+
 app.directive('tooltip', VTooltip)
 app.directive('close-popper', VClosePopper)
 app.component('VDropdown', Dropdown)

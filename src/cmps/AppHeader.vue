@@ -4,6 +4,10 @@
       <section>
         <nav class="flex first-scroll main-nav">
           <div class="flex align-center">
+            
+            <RouterLink to="/seller/orders">
+             <button>orders</button>
+            </RouterLink>
 
             <RouterLink to="/">
               <span aria-label="logo" class="logo first-scroll">winner</span>

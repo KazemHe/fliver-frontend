@@ -62,7 +62,7 @@
                     <section class="package-content">
                         <section class="header flex space-between">
                             <div class="img-container">
-                                <img :src=gig.images[0]>
+                                <img :src=gig.images[1]>
                             </div>
                             <p class="title">{{ gig.title }}</p>
                         </section>
@@ -126,14 +126,14 @@ export default {
         }
     },
 
-    watch: {
-        '$route.params': {
-            async handler() {
-                this.loadGig()
-            },
-            immediate: true,
-        },
-    },
+    // watch: {
+    //     '$route.params': {
+    //         async handler() {
+    //             // this.loadGig()
+    //         },
+    //         immediate: true,
+    //     },
+    // },
     async created() {
         const { gigId } = this.$route.params
         const gig = await gigService.getById(gigId)
@@ -160,9 +160,9 @@ export default {
             {
                 "_id": '',
                 "buyer": {
-                    "id": 2 || this.loggedInUser._id,
-                    "name":"muki" || this.loggedInUser.name,
-                    "username": "mukmuk" || this.loggedInUser.username
+                    "_id": this.loggedInUser._id,
+                    "name": this.loggedInUser.fullname,
+                    "username":this.loggedInUser.username
                 },
 
                 "seller": {
