@@ -80,6 +80,7 @@
     justify-content: space-evenly;
     width: rem(300px);
     overflow-y: scroll;
+    align-items: center;
 }
 
 .budget-modal>* {
@@ -90,6 +91,7 @@
 .max-price {
     width: rem(120px);
     height: rem(40px);
+    border: 1px solid black;
 }
 
 .filters-footer {
@@ -113,6 +115,7 @@
     background-color: $clr2;
     color: gray;
     font: 400 16px/24px Macan-regular, Helvetica Neue, Helvetica, Arial, sans-serif;
+    cursor: pointer;
 }
 
 .apply {

@@ -2,7 +2,7 @@
   <section class="hero-container main-container home text-center full" 
            :style="{ 'background-image': `url(${heroImgs[currIdx].img})` }">
 
-    <div class="hero-search-container main-container flex">
+    <div class="hero-search-container main-container ">
       <h1>Find the perfect<span>freelance</span> services for your business</h1>
       <div class="hero-search flex">
         <div class="flex input-container">
