@@ -41,49 +41,27 @@
             </section>
 
             <section class="tabs-side">
+                
                 <div>
                     <div class="tab-btns">
-                        <button v-for="tab in tabs" @click="selectedTab(tab)" :class="{ 'selected-tab': selected === tab }">
-                            {{ tab }} </button>
+                       
+                        <button
+                                @click="selectedTab('My gigs')"
+                                :class="{ 'selected-tab': selected === 'My gigs' }">
+                                <router-link to="/user-gigs">My gigs</router-link> </button>
+                        <button
+                                @click="selectedTab('My orders')"
+                                :class="{ 'selected-tab': selected === 'My orders' }">
+                                <router-link to="/user-order">My orders</router-link> </button>
                     </div>
                 </div>
+                <RouterView/>
+              
+                <!-- <div v-if="selected === 'Received Orders'">received-orders</div>
 
-                <div class="gigs-tabs" v-if="selected === 'My Gigs'">
-                    <section>
-                        <ul class="flex">
-                            <li class="gigs-user">
-                                <router-link to="/gig/edit">
-                                    <div class="card-new-gig">
-                                        <span class="btn-add-gig">+</span>
-                                        <p>Create a new Gig</p>
-                                    </div>
-                                </router-link>
-                            </li>
-                            <li class="gigs-user" v-for="gig in gigs" :key="gig._id">
-                                <GigPreview :gig="gig" @removeGig="removeGig" />
-                            </li>
-                        </ul>
-                    </section>
-                </div>
-
-                <div v-if="selected === 'My Orders' && gigs">
-                    <!-- {{ orders }} -->
-                    <article class="card-orders">
-                        <div class="flex">
-                            <img class="user-img" :src="gigs[0].imgUrl"/>
-                            <p>Price: ${{ gigs[0].price }}</p>
-                            <p>Order date: {{ gigs[0].memberSince }}</p>
-                            <p>Status: approved</p>
-                        </div>
-                        <div class="user-gig">
-                           <img :src="gigs[0].images[0]"/>
-                        </div>
-                    </article>
-                </div>
-                <div v-if="selected === 'Received Orders'">received-orders</div>
                 <div v-if="selected === 'Reviews'">
                     <h1>reviews</h1>
-                </div>
+                </div> -->
             </section>
         </div>
     </div>
@@ -91,6 +69,8 @@
 
 <script>
 import { svgServive } from '../services/svg.service.js'
+import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
+import { getActionRemoveGig, getActionUpdateGig, getActionAddGigMsg } from '../store/gig.store'
 import GigList from '../cmps/GigList.vue'
 import GigPreview from '../cmps/GigPreview.vue'
 
@@ -99,7 +79,7 @@ export default {
     data() {
         return {
             selected: 'My Gigs',
-            tabs: ['My Gigs', 'My Orders', 'Received Orders', 'Reviews'],
+            tabs: ['My Gigs', 'My Orders'],  // 'Received Orders', 'Reviews'
         }
     },
     computed: {
@@ -120,10 +100,34 @@ export default {
         selectedTab(selected) {
             this.selected = selected
             console.log(this.selected)
-        }
+        },
+        async removeGig(gigId) {
+            try {
+                await this.$store.dispatch(getActionRemoveGig(gigId))
+                showSuccessMsg('Gig removed')
+
+            } catch (err) {
+                console.log(err)
+                showErrorMsg('Cannot remove gig')
+            }
+        },
+        async updateGig(gig) {
+            console.log(gig )
+            try {
+                gig = { ...gig }
+                // gig.price = +prompt('New price?', gig.price)
+                this.$router.push(`/edit/${gig._id}`)
+                await this.$store.dispatch(getActionUpdateGig(gig))
+                showSuccessMsg('Gig updated')
+
+            } catch (err) {
+                console.log(err)
+                showErrorMsg('Cannot update gig')
+            }
+        },
     },
     created() { 
-        // console.log(orders)
+        this.$store.dispatch({ type: 'loadGigs' })
     },
     components: {
         GigList,

@@ -95,6 +95,7 @@ export const gigStore = {
             }
         },
         async removeGig(context, { gigId }) {
+            console.log(gigId) 
             try {
                 await gigService.remove(gigId)
                 context.commit(getActionRemoveGig(gigId))

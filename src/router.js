@@ -11,6 +11,8 @@ import GigEdit from './views/GigEdit.vue'
 import GigPayment from './views/GigPayment.vue'
 import BecomeSeller from './views/BecomeSeller.vue'
 import UserProfile from './views/UserProfile.vue'
+import UserGigs from './cmps/UserGigs.vue'
+import UserOrders from './cmps/UserOrders.vue'
 
 const routes = [
   {
@@ -44,6 +46,19 @@ const routes = [
     path: '/user-profile',
     name: 'UserProfile',
     component: UserProfile,
+    children: [
+      {
+        name: 'UserGigs',
+        path: '/user-gigs',
+        component: UserGigs,
+
+      },
+      {
+        name: 'UserOrders',
+        path: '/user-order',
+        component: UserOrders,
+      },
+    ]
   },
 
   {
@@ -56,11 +71,11 @@ const routes = [
     name: 'Chat',
     component: Chat
   },
-  {
-    path: '/login',
-    name: 'LoginSignup',
-    component: LoginSignup
-  },
+  // {
+  //   path: '/login',
+  //   name: 'LoginSignup',
+  //   component: LoginSignup
+  // },
   {
     path: '/user/:id',
     name: 'UserDetails',
