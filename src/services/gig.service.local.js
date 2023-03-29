@@ -105,7 +105,6 @@ function getEmptyGig() {
                 "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/4abf6f5b58e4d78cfb7c410cf8d7a9ac-1626111679444/4a04b77c-22ee-4ce8-b4be-747fd059e9ff.jpg",
             level: "basic/premium", rate: 2
         }
-
     }
 }
 
@@ -114,90 +113,226 @@ function getEmptyGig() {
 // ;(async ()=>{
 //     await storageService.post(STORAGE_KEY,  {
 //         "images": [
-//             "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/d098c50d82476b11568f3a50111a8a89-1636128369729/ef737ebd-6908-47bc-be50-963dabe16d0e.jpg",
-//             "https://fiverr-res.cloudinary.com/video/upload/so_1.760625,t_gig_cards_web/ffupfvrslj3mos2byhrh.png",
-//             "https://fiverr-res.cloudinary.com/video/upload/so_0.417227,t_gig_cards_web/wueaqwnevakmwnjrt6sf.png",
-//             "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/89030431/original/0272a30137eee42234b9facb859744af240197f7.jpg"
+//             "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/205390017/original/bb4cd6aee714c3e78c6a640a52985d01e41b5b8e/produce-food-photography-for-your-business.jpg",
+//             "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/205390017/original/3de664893bf6fdbe05758d16d948baeda7bc90db/produce-food-photography-for-your-business.jpg",
+//             "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/205390017/original/046ac15f30eb4f25a99c5818b0c18ff6c216766f/produce-food-photography-for-your-business.jpg"
 //         ],
-//         "title": "I will develop a content strategy for your brand or business",
-//         "description": "Quality content, industry-specific keywords, and a social media plan will help your business and brand soar! I am a digital marketing strategist and content creator who is ready to help build your online presence.\nWhat you will get:\nAn evaluation of your current page(s) to identify your strengths and weaknesses\nA custom strategy specific to your brand, mission, and standards\nCustom designed graphics created for your target audience\nSEO optimized keywords to use in captions and as hashtags\nAround the clock customer service and communication to help you with anything and everything you need\nI am here to take your brand to the next level! Message me with any questions you have.",
-//         "price": 150,
-//         "daysToMake": 23,
-//         "fullname": "mariarotunda",
-//         "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/d098c50d82476b11568f3a50111a8a89-1636128369729/ef737ebd-6908-47bc-be50-963dabe16d0e.jpg",
-//         "loc": "United States",
-//         "memberSince": "Jul 2020",
-//         "avgResponceTime": "7 hours",
-//         "lastDelivery": "1 week",
-//         "about": "Hello! My name is Maria, and I am a digital marketer with over 3 years of experience working with diverse brands and businesses. I am well versed in everything marketing, SEO, graphic design, writing, and video editing. I am a one-stop shop for whatever you and your brand needs. I look to working with you!",
+//         "title": "I will produce food photography and video",
+//         "description": "Hi, I am Lena and I am a food photographer. I cook and photograph food for culinary blogs, books and magazines. I am ready to discuss your projects and show my skills. Thank you",
+//         "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/38b2329008b00746276be91fc9fea9de-1620127239949/823ace64-7e64-4121-9bba-37267524c2f4.png",
 //         "owner": {
-//             "fullname": "frederickkessie",
-//             "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/4abf6f5b58e4d78cfb7c410cf8d7a9ac-1626111679444/4a04b77c-22ee-4ce8-b4be-747fd059e9ff.jpg",
-//             "level": "basic/premium",
-//             "rate": 2
+//             "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/38b2329008b00746276be91fc9fea9de-1620127239949/823ace64-7e64-4121-9bba-37267524c2f4.png",
+//             "fullname": "sevenperfection",
+//             "level": "basic/standard/premium",
+//             "rate": 4
 //         },
+//         "loc": "Germany",
+//         "Member since": "Jan 2021",
+//         "price": 160,
+//         "daysToMake": 10,
+//         "fullname": "sevenperfection",
+//         "avgResponceTime": "3 hours",
+//         "lastDelivery": "about 16 hours",
 //         "likedByUsers": [
 //             "mini-user"
 //         ],
 //         "reviews": [
 //             {
-//                 "name": "thaddeuswill410",
+//                 "name": "strawberryred78",
+//                 "country": "Germany",
+//                 "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1e9-1f1ea.png",
+//                 "review": "Savisione is easy to work with and delivers a high-quality product on time! I am enjoying working with them!",
+//                 "reviewedAt": "Published 3 months ago"
+//             },
+//             {
+//                 "name": "doja75",
+//                 "country": "India",
+//                 "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ee-1f1f3.png",
+//                 "review": " love working with Savissione! Professional, on time and excellent communication and photographs. Thank you again! Annie",
+//                 "reviewedAt": "Published 3 months ago"
+//             },
+//             {
+//                 "name": "annie4hf",
 //                 "country": "United States",
 //                 "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
-//                 "review": "Omg, This seller was amazing and exactly what we needed.. We were kinda in a funk and need to be saved. She did just that with amazing energy, a wonderful attitude and passion for what she does. The strategy was perfect, Thanks again for bringing us great value.. Highly Suggested..",
+//                 "review": "This is one of the best purchases I have made on fiverr (I have had some terrible luck lately, so thank you for turning that around!). The communication was very upbeat and positive and this was an all-around great experience. Thank you!",
 //                 "reviewedAt": "Published 2 weeks ago"
 //             },
 //             {
-//                 "name": "nickjuliano",
+//                 "name": "jayebiz",
 //                 "country": "United States",
 //                 "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
-//                 "review": "Excellent job! I’ve been using Fiverr for 3 years now and by far one of the best results/deliverables that I’ve gotten. The video describing what you did was a step above the rest. I’ll definitely be implementing your suggestions. I appreciate all of your hard work.",
-//                 "reviewedAt": "Published 1 month ago"
+//                 "review": "Seller communicated very well. They also genuinely interested in helping me create a nice image. The end results was the best I could have hoped.",
+//                 "reviewedAt": "Published 3 months ago"
 //             },
 //             {
-//                 "name": "joshuanathan474",
-//                 "country": "United States",
-//                 "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
-//                 "review": "Really smooth transaction. She went above and beyond in detail for the marketing / brand style guides. Looking to get more tasks completed with the Seller.",
-//                 "reviewedAt": "Published 2 months ago"
+//                 "name": "petro08",
+//                     "country": "Kenya",
+//                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1f0-1f1ea.png",
+//                     "review": "Great experience working with kaleem_studio. Great communication, high quality work, and fast delivery. I will hire him again. I recommend",
+//                     "reviewedAt": "Published 1 month ago"
 //             },
-//             {
-//                 "name": "onyxwoman",
-//                 "country": "United States",
-//                 "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
-//                 "review": "She did a really good job that prompted me to make some badly needed changes. The advice was really good. I especially liked the video input.",
-//                 "reviewedAt": "Published 1 month ago"
-//             },
-//             {
-//                 "name": "tcbrownvo",
-//                 "country": "United States",
-//                 "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
-//                 "review": "Provided excellent service and good direction. Thank you.",
-//                 "reviewedAt": "Published 1 week ago"
-//             }
 //         ],
 //         "tags": [
 //             {
-//                 "name": "instagram marketing"
+//                 "name": "video"
 //             },
 //             {
-//                 "name": "web marketing"
+//                 "name": "photograph"
 //             },
 //             {
-//                 "name": "social media manager"
-//             },
-//             {
-//                 "name": "social marketers"
-//             },
-//             {
-//                 "name": "seo marketing"
+//                 "name": "Instagram"
 //             }
 //         ]
 //     })
 //     await storageService.post(STORAGE_KEY,  {
 //         "images": [
-//             "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/5db4b0cccf5a3e138a9f57542175248c-1620011414308/8d7f7d68-efe9-465e-80d2-aedcc548efdb.JPG",
-//             "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/167364631/original/ddbe1967fc0deba979b6d66f2871051245a1544a.jpeg",
+//             "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/124129546/original/1901e91a0b24a22e440d52bb3a8969a6401a773e/research-podcasts-for-you-to-be-a-guest-on.jpg",
+//             "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/124129546/original/4bad77bb987bd7689e364a94113e3911f68b2a85/research-podcasts-for-you-to-be-a-guest-on.png",
+//         ],
+//         "title": "I will research podcasts for you to guest on",
+//         "about": "Podcasts are a great way to market yourself. You could be an author, singer, blogger or even a podcaster looking for a way to market your content and get your name/company out there. Well, theres no better and more fun way than by doing so whilst being a guest on a podcast you like. Let me do the heavy-lifting and find you the perfect podcasts for you to be on, as you focus on getting that amazing voice of yours ready for the show! I will provide you with a detailed list of Podcast shows, alongside their contact information which includes; - Podcast name - Host's name - iTunes link - Website link - Facebook page link - Twitter profile link - Instagram link - Email address - Brief notes on the Podcast Show Researched podcasts consistently produce episodes (released within the past 1 month) and host guests, to ensure that you, dear buyer, have great chances of being booked. Purchase the Standard or Premium gig and get a Free Pdf on how to pitch yourself/client to podcast shows.",
+//         "description": "Why me?\nI have worked with Fortune 500 brands such as Adidas, L’Oreal, Xiaomi & Pfizer on numerous marketing and branding campaigns.\nI’ve successfully delivered 4000+ hashtag strategies with over 2600+ happy clients to help them achieve organic instagram growth.\nWhy my service?\nI will strategically research, analyze & handpick best-performing hashtags tailored to your Instagram account. I will teach you:\n✅ How you can effectively use hashtags to rank and grow organically\n✅ How to avoid bad hashtags to avoid negative growth\n✅ Stand out from your competition and increase your sales\n✅ How to increase traffic and conversion organically\n✅ Account optimization and posting secrets to gain new Instagram followers\nWhat will you get?\n✅ Data-backed high-ranking hashtags tailored to your niche and brand\n✅ Profile optimization so you can be discovered quickly\n✅ Personalized hashtag strategy to help you grow and increase your followers\n✅ Expert video guide to teach you to find high-ranking hashtags\n✅ Monthly newsletter based on Instagram's newest algorithm updates\n✅ Masters Course 2021/2022 (Platinum or Diamond Gig)",
+//         "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/0e80055d93fad68d0f6abc465fec8fab-1670493288297/7f6eff4a-186e-4879-9034-a3b4253abf20.jpg",
+//         "owner": {
+//             "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/0e80055d93fad68d0f6abc465fec8fab-1670493288297/7f6eff4a-186e-4879-9034-a3b4253abf20.jpg",
+//             "fullname": "sevenperfection",
+//             "level": "basic/standard",
+//             "rate": 5
+//         },
+//         "loc": "Kenya",
+//         "Member since": "Dec 2018",
+//         "price": 60,
+//         "daysToMake": 7,
+//         "fullname": "sevenperfection",
+//         "avgResponceTime": "3 hours",
+//         "lastDelivery": "about 11 hours",
+//         "likedByUsers": [
+//             "mini-user"
+//         ],
+//         "reviews": [
+//             {
+//                 "name": "strawberryred78",
+//                 "country": "Netherlands",
+//                 "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1f3-1f1f1.png",
+//                 "review": "I appreciate the long list of relevant podcasts! The Ebook is an added bonus with helpful tips. Thank you! This will save me a lot of time researching podcasts.",
+//                 "reviewedAt": "Published 3 months ago"
+//             },
+//             {
+//                 "name": "vritvi",
+//                 "country": "India",
+//                 "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ee-1f1f3.png",
+//                 "review": "They provided exactly what I was asking for to repair or remove in the image, had good communications, answered all my questions, Highly recommend and will definitely come back.",
+//                 "reviewedAt": "Published 3 months ago"
+//             },
+//             {
+//                 "name": "kinniehearts",
+//                 "country": "United States",
+//                 "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
+//                 "review": "This is one of the best purchases I have made on fiverr (I have had some terrible luck lately, so thank you for turning that around!). The communication was very upbeat and positive and this was an all-around great experience. Thank you!",
+//                 "reviewedAt": "Published 2 weeks ago"
+//             },
+//             {
+//                 "name": "jayebiz",
+//                 "country": "United States",
+//                 "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
+//                 "review": "Seller communicated very well. They also genuinely interested in helping me create a nice image. The end results was the best I could have hoped.",
+//                 "reviewedAt": "Published 3 months ago"
+//             },
+//             {
+//                 "name": "mikezaff",
+//                 "country": "Romania",
+//                 "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
+//                 "review": "5 stars!!!!!!!!!!!!!!!!!!",
+//                 "reviewedAt": "Published 4 days ago"
+//             },
+//         ] ,
+//         "tags": [
+//             {
+//                 "name": "audio"
+//             },
+//             {
+//                 "name": "music"
+//             },
+//             {
+//                 "name": "instagram"
+//             },
+//             {
+//                 "name": "social media"
+//             }
+//         ]
+//     })
+//     await storageService.post(STORAGE_KEY,  {
+//         "images": [
+//             "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/295371479/original/6fcdd7ae738553c1cc9f265972383abedeeb6393/fix-your-ai-image-enhance-it-and-paint-over.jpg",
+//             "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/295371479/original/aaf0291b285fa54d4c321c90cf01387cc38087c7/fix-your-ai-image-enhance-it-and-paint-over.jpg",
+//             "https://fiverr-res.cloudinary.com/image/upload/t_gig_pdf_gallery_view_ver4,f_jpg/20230114/ai_fixes_example_cover_pl2n3m.jpg"
+//         ],
+//         "title": "I will fix your ai art, enhance the image and paint over it",
+//         "about": "Hi and welcome C I am a professional digital artist with years of experience and I would love to help you out with your AI-generated art. I can edit any style as I am good with copying art styles--my job literally requires it. Eyes, ears, hands, fingers, noses--all facial features and human anatomy are not an issue. But I wont limit you with humans only. I know how to paint animals and therefore how to fix possible AI flaws. Aside from characters, I am able to fix or improve backgrounds that you can possibly use for game art, including both nature and architecture+perspective. Let's make objects on your A.I. images make sense together! Prices are per one image and starting price is $5 for very simple fixes! Please contact me privately beforehand! I will need to see the AI picture that you want me to edit first, thats the starting point. Also, I can make a cover for you, based on your image. Fiction, music, book--you pick. Let’s discuss it if you are interested!",
+//         "description": "Why me?\nI have worked with Fortune 500 brands such as Adidas, L’Oreal, Xiaomi & Pfizer on numerous marketing and branding campaigns.\nI’ve successfully delivered 4000+ hashtag strategies with over 2600+ happy clients to help them achieve organic instagram growth.\nWhy my service?\nI will strategically research, analyze & handpick best-performing hashtags tailored to your Instagram account. I will teach you:\n✅ How you can effectively use hashtags to rank and grow organically\n✅ How to avoid bad hashtags to avoid negative growth\n✅ Stand out from your competition and increase your sales\n✅ How to increase traffic and conversion organically\n✅ Account optimization and posting secrets to gain new Instagram followers\nWhat will you get?\n✅ Data-backed high-ranking hashtags tailored to your niche and brand\n✅ Profile optimization so you can be discovered quickly\n✅ Personalized hashtag strategy to help you grow and increase your followers\n✅ Expert video guide to teach you to find high-ranking hashtags\n✅ Monthly newsletter based on Instagram's newest algorithm updates\n✅ Masters Course 2021/2022 (Platinum or Diamond Gig)",
+//         "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/a88bc096f5150b900c6ed40916a9b425-1423610811673570913.683484/AC210C0C-E82C-4C09-92DA-94556A6D4E9B",
+//         "owner": {
+//             "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/a88bc096f5150b900c6ed40916a9b425-1423610811673570913.683484/AC210C0C-E82C-4C09-92DA-94556A6D4E9B",
+//             "fullname": "sylvana_13",
+//             "level": "basic",
+//             "rate": 5
+//         },
+//         "loc": "Romania",
+//         "Member since": "Jan 2023",
+//         "price": 660,
+//         "daysToMake": 7,
+//         "fullname": "tommysiu",
+//         "avgResponceTime": "3 hours",
+//         "lastDelivery": "about 1 hour",
+//         "likedByUsers": [
+//             "mini-user"
+//         ],
+//         "reviews": [
+//             {
+//                 "name": "jayebiz",
+//                 "country": "United States",
+//                 "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
+//                 "review": "Seller communicated very well. They also genuinely interested in helping me create a nice image. The end results was the best I could have hoped.",
+//                 "reviewedAt": "Published 3 months ago"
+//             },
+//             {
+//                 "name": "jayebiz",
+//                 "country": "United States",
+//                 "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
+//                 "review": "They provided exactly what I was asking for to repair or remove in the image, had good communications, answered all my questions, Highly recommend and will definitely come back.",
+//                 "reviewedAt": "Published 2 months ago"
+//             },
+//             {
+//                 "name": "kinniehearts",
+//                 "country": "United States",
+//                 "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
+//                 "review": "Very approachable and open to questions! I had a couple of very specific requests, and for purchasing such a service for the first time, I'd say this has been a positive experience.",
+//                 "reviewedAt": "Published 3 weeks ago"
+//             },
+//             {
+//                 "name": "sabtainhaide209",
+//                 "country": "United States",
+//                 "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
+//                 "review": "Very approachable and open to questions! I had a couple of very specific requests, and for purchasing such a service for the first time, I'd say this has been a positive experience.",
+//                 "reviewedAt": "Published 3 weeks ago"
+//             },
+//             {
+//                 "name": "maximusdecim151",
+//                 "country": "Croatia",
+//                 "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ed-1f1f7.png",
+//                 "review": "Great job! The designs are cool and modern looking. He was very helpful and met all of my needs and changes I requested. I appreciate the fact he hopped on a call with me to further understand what I wanted..",
+//                 "reviewedAt": "Published 1 month ago"
+//             }
+//         ],
+//         "tags": [
+//             {
+//                 "name": "ai art"
+//             }
+//         ]
+//     })
+//     await storageService.post(STORAGE_KEY,  {
+//         "images": [
 //             "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/231682055/original/77cc585046a1ceb81a809218fef35ee8252bbb3b.jpg",
 //             "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/288940537/original/124ce1f01792804037c61cde23984a3400867407.png"
 //         ],
@@ -271,14 +406,12 @@ function getEmptyGig() {
 //                 "name": "youtube channel"
 //             },
 //             {
-//                 "name": "youtube promotion"
+//                 "name": "seo"
 //             }
 //         ]
 //     })
 //     await storageService.post(STORAGE_KEY,     {
 //         "images": [
-//             "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/429c1a9395f66cd8a36b38028ff35aa6-1550219507580/db25059c-6725-4e49-bf82-fa4d2af0a780.jpg",
-//             "https://fiverr-res.cloudinary.com/video/upload/so_0.0,t_gig_cards_web/jylhbgosxfqilptpru24.png",
 //             "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/231682055/original/77cc585046a1ceb81a809218fef35ee8252bbb3b.jpg",
 //             "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/288940537/original/124ce1f01792804037c61cde23984a3400867407.png"
 //         ],
@@ -356,7 +489,6 @@ function getEmptyGig() {
 //     })
 //     await storageService.post(STORAGE_KEY, {
 //             "images": [
-//                 "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/9e2d7f453419c08e138fbfe9e65347df-696051281638594671.588431/DD8E6DDC-C231-47D3-B61A-97274452D3BF",
 //                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs/157827646/original/8f14f50a81ddd1a60b4af990ea5154a26975d150.jpg",
 //                 "https://fiverr-res.cloudinary.com/t_gig_cards_web,q_auto,f_auto/gigs2/214005899/original/669295e46a3a1a7dad13e65fe73e1f9a12597618.jpeg",
 //                 "https://fiverr-res.cloudinary.com/video/upload/so_4.360211,t_gig_cards_web/k2m8lje6srmbwddsevci.png"
