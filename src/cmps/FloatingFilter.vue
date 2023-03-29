@@ -1,7 +1,7 @@
 <template>
   <section class="filter">
     <VDropdown>
-      <button class="filter-btn">budget <span class="icon" v-html="getSvg('filterArrow')"></span></button>
+      <button class="filter-btn">Budget  <span class="icon" v-html="getSvg('filterArrow')"></span></button>
       <template #popper>
         <section class="filter-mode" style="left: 0px;">
           <form id="filters" class="budget-modal" name="budget" @submit.prevent="setFilterBy(null)">
@@ -29,7 +29,7 @@
       <template #popper>
         <section class="filter-mode " style="left: 301px;">
           <form id="filters" name="daysToMake" class="delivery" @submit.prevent="setFilterBy(null)">
-            <div class="delivery-option"><input class="delivery-input" type="radio" id="24h" name="delivery-time"
+            <div class="delivery-option"><input class="delivery-input" type="radio"  id="24h" name="delivery-time"
                 v-model="filterBy.DeliveryTime" value="1"><label for="24h">Express 24H</label></div>
             <div class="delivery-option"><input class="delivery-input" type="radio" id="3d" name="delivery-time"
                 v-model="filterBy.DeliveryTime" value="3"><label for="3d">Up to 3 days</label></div>
@@ -54,7 +54,7 @@
           v-html="getSvg('filterArrow')"></span></button>
       <template #popper>
         <div class="sort-modal">
-          <button @click="setFilterBy('delivery Time')" class="sort-btn">delivery Time</button>
+          <button @click="setFilterBy('delivery Time')" class="sort-btn">Delivery Time</button>
           <button @click="setFilterBy('Best price')" class="sort-btn">Best price</button>
           <button @click="setFilterBy('Highest Rating')" class="sort-btn">Highest Rating</button>
 
@@ -152,5 +152,6 @@ export default {
 }
 </script>
 <style>
+
 
 </style>
