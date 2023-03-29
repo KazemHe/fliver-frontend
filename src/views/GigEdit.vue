@@ -56,19 +56,19 @@
             <div class="images flex-column">
                 <!-- <p>Encourage buyers to choose your Gig by featuring avariety of your work.</p> -->
                 <!-- <section class="img-uploader"> -->
-                    <!-- <label class="upload-container">Upload image</label> -->
-                    <!-- <input type="file" accept="img/*" id="imgUpload">
+                <!-- <label class="upload-container">Upload image</label> -->
+                <!-- <input type="file" accept="img/*" id="imgUpload">
                         <label for="imgUpload">  -->
-                        <ImgUploader class="img-uploader" @uploaded="onUploaded" />
-                    <!-- </label> -->
-                    <div class="upload-preview flex"></div>
+                <ImgUploader class="img-uploader" @uploaded="onUploaded" />
+                <!-- </label> -->
+                <div class="upload-preview flex"></div>
                 <!-- </section> -->
             </div>
 
             <section class="confirm-add btns">
 
                 <button class="save-btn ">Save</button>
-                <router-link to="/explore">
+                <router-link to="/user-profile">
                     <button class="cancel-btn">Cancel</button>
                 </router-link>
             </section>

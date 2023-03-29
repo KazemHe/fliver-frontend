@@ -101,10 +101,6 @@
     padding: 16px rem(24px);
 }
 
-.filters-footer>.apply {
-    background-color: #222325;
-}
-
 .clear {
     border: none;
     line-height: rem(24px);
@@ -135,7 +131,13 @@
     -webkit-transition: 70ms cubic-bezier(.75, 0, .25, 1);
     -o-transition: 70ms cubic-bezier(.75, 0, .25, 1);
     transition: 70ms cubic-bezier(.75, 0, .25, 1);
+    background-color: #222325;
 }
+
+.apply:hover {
+    background-color: #404145;
+}
+
 
 .v-popper :hover {
     cursor: pointer;
@@ -193,4 +195,10 @@
     font-weight: 600;
     line-height: rem(22px);
     padding-right: rem(10px);
+}
+
+.sorting-txt {
+    color: black;
+    font-weight: bolder;
+    margin: px;
 }

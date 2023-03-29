@@ -5,7 +5,14 @@ export const ordersStore = {
     state: {
         orders:[],
     },
-    getters: {},
+    getters: {
+        orders({orders}) {
+            return orders
+        },
+        setOrders() {
+            console.log('hi')
+        }
+    },
     mutations: {
         saveOrder(state, { order }) {
             console.log('order', order);
@@ -17,6 +24,9 @@ export const ordersStore = {
             }
             state.orders.unshift(order)
           },
+          setOrders(state, { orders }) {
+            state.orders = orders
+        },
     },
 
     actions: {
@@ -31,6 +41,15 @@ export const ordersStore = {
                 console.log('orderStore: Error in addOrder', err)
                 throw err
             }
-        }
+        },
+        async loadOrders(context) {
+            try {
+                const orders = await orderService.query()
+                context.commit({ type: 'setOrders', orders })
+            } catch (err) {
+                console.log('orderStore: Error in loadOrders', err)
+                throw err
+            }
+        },
     }
 }

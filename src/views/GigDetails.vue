@@ -100,11 +100,11 @@
                 </section>
             </section>
 
-            <router-link  :to="'/seller'">
+            <!-- <router-link  :to="'/seller'">
                         <button class="continue-btn">
                             SELLER
                         </button>
-            </router-link>
+            </router-link> -->
        
 
             <div class="about-the-gig">

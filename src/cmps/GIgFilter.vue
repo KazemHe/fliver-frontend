@@ -1,6 +1,6 @@
 <template>
   <section class="up-filter">
-    <h2>explore</h2>
+    <h2>Explore</h2>
   </section>
   <FloatingFilter @setFilterBy="setFilterBy" />
 </template>
@@ -41,5 +41,12 @@ export default {
   line-height: 36px;
   padding: 8px 0;
   text-transform: none !important;
+
+ 
 }
+
+
+.up-filter   h2 {
+    margin-top: 1rem;
+  }
 </style>
