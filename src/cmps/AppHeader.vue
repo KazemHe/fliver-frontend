@@ -18,7 +18,7 @@
           <section class="header-links flex justify-center align-center">
             <RouterLink to="/explore">Explore</RouterLink>
             <RouterLink to="/gig/edit">Become a Seller</RouterLink>
-            <RouterLink to="/login">Sign in</RouterLink>
+            <RouterLink to="/user-profile">Sign in</RouterLink>
             <button @click="showJoinModal = !showJoinModal" class="join">Join</button>
           </section>
         </nav>

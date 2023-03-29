@@ -14,7 +14,7 @@
                                 </div>
                             </label>
                         </form>
-                        <h2>user</h2>
+                        <h2>Pablopietro</h2>
                     </div>
                     <section class="user-details">
                         <div class="flex">
@@ -67,6 +67,7 @@
                 </div>
 
                 <div v-if="selected === 'My Orders' && gigs">
+                    <!-- {{ orders }} -->
                     <article class="card-orders">
                         <div class="flex">
                             <img class="user-img" :src="gigs[0].imgUrl"/>
@@ -74,8 +75,8 @@
                             <p>Order date: {{ gigs[0].memberSince }}</p>
                             <p>Status: approved</p>
                         </div>
-                        <div class="user-img">
-                           <img :src="gigs[0].images[3]"/>
+                        <div class="user-gig">
+                           <img :src="gigs[0].images[0]"/>
                         </div>
                     </article>
                 </div>
@@ -108,6 +109,9 @@ export default {
         loggedInUser() {
             return this.$store.getters.loggedinUser
         },
+        orders() {
+            return this.$store.getters.orders
+        }
     },
     methods: {
         getSvg(iconName) {
@@ -118,7 +122,9 @@ export default {
             console.log(this.selected)
         }
     },
-    created() { },
+    created() { 
+        // console.log(orders)
+    },
     components: {
         GigList,
         GigPreview
