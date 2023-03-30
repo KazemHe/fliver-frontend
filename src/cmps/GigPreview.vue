@@ -40,7 +40,7 @@
                 <i class="fa-solid fa-pencil"></i>
             </span>
         </div> -->
-        
+
         <!-- <div><span class="starting-at">starting at </span><span class="gig-price">US${{ gig.price }}</span></div> -->
         <!-- <div @click="removeGig(gig._id)">x</div> -->
 
@@ -71,14 +71,14 @@ export default {
         },
 
         removeGig(gigId) {
-            console.log(gigId) 
+            console.log(gigId)
             this.$emit('removeGig', gigId)
         },
         getSvg(iconName) {
             return (this.icon = svgServive.getGigSvg(iconName))
         },
         updateGig(gig) {
-            console.log(gig) 
+            console.log(gig)
             this.$emit('updateGig', gig)
         }
 
@@ -233,8 +233,8 @@ export default {
     border-radius: em(12px);
 }
 
- 
-.btn-remove-gig{
+
+.btn-remove-gig {
     cursor: pointer;
     width: 30px;
     fill: red;

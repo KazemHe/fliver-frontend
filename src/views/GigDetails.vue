@@ -505,7 +505,8 @@ import 'vueperslides/dist/vueperslides.css'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { getActionRemoveGig, getActionUpdateGig, getActionAddGigMsg } from '../store/gig.store'
 
-import { gigService } from '../services/gig.service.local'
+// import { gigService } from '../services/gig.service.local'
+import { gigService } from '../services/gig.service'
 import { svgServive } from '../services/svg.service.js'
 
 export default {

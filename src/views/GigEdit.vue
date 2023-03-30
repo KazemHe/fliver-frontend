@@ -68,7 +68,8 @@
 
 import ImgUploader from '../cmps/ImgUploader.vue'
 
-import { gigService } from '../services/gig.service.local'
+// import { gigService } from '../services/gig.service.local'
+import { gigService } from '../services/gig.service'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 export default {
     title: 'GigEdit',
@@ -97,7 +98,7 @@ export default {
 
                 showSuccessMsg('gig Added')
                 // this.gigToEdit = gigService.getEmptyGig()
-                this.$router.push('/explore')
+                this.$router.push('/user-profile')
 
             }
 

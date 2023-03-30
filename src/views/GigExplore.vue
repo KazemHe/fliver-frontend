@@ -7,7 +7,8 @@
   
 <script>
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
-import { gigService } from '../services/gig.service.local'
+// import { gigService } from '../services/gig.service.local'
+import { gigService } from '../services/gig.service'
 import { getActionRemoveGig, getActionUpdateGig, getActionAddGigMsg } from '../store/gig.store'
 import GigFilter from '../cmps/GIgFilter.vue'
 
