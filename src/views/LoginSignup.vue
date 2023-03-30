@@ -1,5 +1,5 @@
 <template>
-  <div class=" signin-modal">
+  <div class="join-modal">
     <p>{{ msg }}</p>
 
     <div v-if="loggedinUser">
@@ -9,17 +9,17 @@
         <!-- <button @click="doLogout">Logout</button> -->
       </h3>
     </div>
+    
     <div v-else>
-      <h2>Login</h2>
-
-      <form @submit.prevent="doLogin">
+      <form @submit.prevent="doLogin" v-if="signin">
+        <h2>Login</h2>
         <input type="text" v-model="loginCred.username" placeholder="User name" />
         <input type="text" v-model="loginCred.password" placeholder="Password" />
         <button>Login</button>
       </form>
 
       <!-- <p class="mute">user1 or admin, pass:123 </p> -->
-      <form @submit.prevent="doSignup">
+      <form @submit.prevent="doSignup" v-if="join">
         <h2>Signup</h2>
         <input type="text" v-model="signupCred.fullname" placeholder="Your full name" />
         <input type="text" v-model="signupCred.username" placeholder="Username" />
@@ -33,6 +33,7 @@
 <script>
 import ImgUploader from '../cmps/ImgUploader.vue'
 export default {
+  props: ['join', 'signin'],
   name: 'login-signup',
   data() {
     return {

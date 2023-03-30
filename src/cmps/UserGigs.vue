@@ -1,6 +1,7 @@
 <template>
     <div class="gigs-tabs" >
-        <section>
+        <section v-if="userGigs">
+            <!-- {{ userGigs }} -->
             <ul class="flex">
                 <li class="gigs-user">
                     <router-link to="/gig/edit">
@@ -10,7 +11,7 @@
                         </div>
                     </router-link>
                 </li>
-                <li class="gigs-user" v-for="gig in gigs" :key="gig._id">
+                <li class="gigs-user" v-for="gig in userGigs" :key="gig._id">
                     <GigPreview :gig="gig"
                                 @removeGig="removeGig(gig._id)"
                                 @updateGig="updateGig(gig)" />
@@ -30,20 +31,15 @@ export default {
     name: 'UserGigs',
     data() {
         return {
+            userGigs: '',
             selected: 'My Gigs',
             tabs: ['My Gigs', 'My Orders', 'Received Orders', 'Reviews'],
         }
     },
     computed: {
-        gigs() {
-            return this.$store.getters.gigs
-        },
-        loggedInUser() {
-            return this.$store.getters.loggedinUser
-        },
-        orders() {
-            return this.$store.getters.orders
-        }
+        gigs() { return this.$store.getters.gigs  },
+        orders() { return this.$store.getters.orders },
+        loggedInUser() { return this.$store.getters.loggedinUser },
     },
     methods: {
         getSvg(iconName) {
@@ -77,9 +73,17 @@ export default {
                 showErrorMsg('Cannot update gig')
             }
         },
+        getUserGigs() {
+            // this.userGigs = 'hi'
+            this.userGigs = this.gigs.filter(gig => gig.owner._id === this.loggedInUser._id)
+            console.log(this.userGigs)
+        }
     },
     created() { 
-        // console.log(orders)
+        this.getUserGigs()
+        // console.log('user gigs',this.userGigs)
+        console.log('user gigs',this.gigs)
+        this.$store.dispatch({ type: 'loadGigs' })
     },
     components: {
         GigList,
