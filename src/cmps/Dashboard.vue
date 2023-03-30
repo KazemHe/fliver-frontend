@@ -1,33 +1,34 @@
 <template>
-    <section v-for="currOrder in order">
+    
+    <section>
         <div class="table-entity flex">
             <div class="buyer-col flex column align-center user-col">
               
-                <p class="regular">{{ currOrder.buyer.name }}</p>
+                <p class="regular">{{ order.buyer.name }}</p>
             </div>
             <div class="gig-col flex column">
-                <span class="table-span regular">{{ currOrder.gig.name }}</span>
+                <span class="table-span regular">{{ order.gig.name }}</span>
             </div>
 
             <div class="due-on-col flex column">
                 <span class="table-span regular">
-                    {{ new Date(currOrder.createdAt).toLocaleDateString() }}
+                    {{ new Date(order.createdAt).toLocaleDateString() }}
                 </span>
             </div>
 
             <div class="total-col flex column">
                 
-                    <span class="table-span regular">US${{ currOrder.gig.price }}</span>
+                    <span class="table-span regular">US${{ order.gig.price }}</span>
                 </div>
-                <div>
+                <div class="flex column">
 
                 <div @click="toggleSet()" class="status-col flex column">
-                    <div class="status flex" :class="className(currOrder.status)">
-                        <span class="regular">{{ currOrder.status }}</span>
+                    <div class="status flex" :class="className(order.status)">
+                        <span class="regular">{{ order.status }}</span>
                     </div>
                 </div>
                 <div>
-                    <select  @change="changeStatus($event.target.value, currOrder)">
+                    <select class="status-select"  @change="changeStatus($event.target.value, order)">
                         <option value="Completed">Completed</option>
                         <option value="Progress">Progress</option>
                         <option value="Rejected">Rejected</option>
@@ -60,9 +61,11 @@ export default {
         //     console.log('hey');
         //     this.setOpen = !this.setOpen
         // },
-        changeStatus(status, currOrder) {
-            console.log('currOrder',currOrder);
-              this.$emit('change', { status, currOrder })
+
+        changeStatus(status, order) {
+            console.log('order',status, order);
+            event.stopPropagation()
+              this.$emit('change', status, order)
             // this.toggleSet()
         },
     },

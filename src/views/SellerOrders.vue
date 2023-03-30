@@ -1,5 +1,4 @@
 <template>
-    {{ orders.length }}
     <section class="dashboard flex">
         <section class="profile-progress">
             <div class="profile flex">
@@ -79,8 +78,9 @@
                         <h4>Status</h4>
                     </div>
                 </div>
-                <dashboard v-for="(order, idx) in orders" :key="order._id" :order="order" :idx="idx"
-                    @change="changeStatus" />
+                <div v-for="order in orders" :key="order._id">
+                    <dashboard @change="change" :order="order" />
+                </div>
             </div>
         </section>
     </section>
@@ -113,15 +113,17 @@ export default {
         loadOrders() {
             this.$store.dispatch({ type: 'loadOrders' })
         },
-        selectOrder({ currOrder, status }) {
-            this.selectedOrder = { ...currOrder }
-            this.selectedOrder.status = status
-            console.log('this.selectedOrder', this.selectedOrder);
+        selectOrder( status , order ) {
+            console.log(status, order);
+             this.selectedOrder = { ...order }
+             this.selectedOrder.status = status
+             console.log('this.selectedOrder', this.selectedOrder);
         },
 
-        changeStatus({ status, currOrder }) {
-            this.selectOrder({ currOrder, status })
-            this.$store.dispatch({ type: 'saveOrder', order: this.selectedOrder })
+        change(status, order) {
+            console.log("hello", status, order);
+             this.selectOrder(status, order)
+             this.$store.dispatch({ type: 'saveOrder', order: this.selectedOrder })
         },
     },
     computed: {
