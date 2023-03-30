@@ -1,5 +1,5 @@
 .dashboard {
-    .in-progress {
+    .Progress {
         background-color: #ffbe5b;
     }
 
@@ -219,4 +219,8 @@
         }
 
     }
+}
+
+.status-select{
+    padding-left: rem(8px);
 }

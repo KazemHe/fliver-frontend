@@ -1,6 +1,8 @@
 <template>
-    <section class="gig-nav">
-      
+
+    <section class="main-container full gig-nav">
+
+    <section >
         <ul class="nav-info" ref="nav-info">
             <li><a :class="{ selected: selectedLink === 'overview' }"
                     @click.prevent="scrollToElement('overview')">Overview</a></li>
@@ -11,6 +13,7 @@
         </ul>
     </section>
 
+</section>
     <section class="gig-info flex" ref="overview">
         <section class="main-gig">
             <div class="gig-overview">
@@ -136,7 +139,7 @@
                             <section class="seller-reviews-stat flex align-center">
                                 <my-star-rating :gig="gig"></my-star-rating>
                             </section>
-                            <button class="contact-me-btn">Contact Me</button>
+                           
                         </section>
                     </section>
                 </section>
@@ -164,6 +167,7 @@
             </section>
 
             <section ref="reviews" id="reviews" class="reviews-container">
+                <h2 class="title-reviews">Reviews</h2>
                 <section v-if="gig.reviews" class="reviews-stat flex column">
                     <section class="stat-header flex align-center">
                         <h2>344 Reviews </h2>
@@ -184,6 +188,7 @@
                         </section>
                     </section>
                     <section class="stat-main flex">
+                        
                         <section class="stars-counters">
                             <ul class="clean-list flex column">
                                 <li class="flex align-center"><span class="key">5 Stars</span>
@@ -481,9 +486,7 @@
                         </button>
                     </router-link>
                 </section>
-                <section class="contact-seller">
-                    <button>Contact Seller</button>
-                </section>
+                
             </section>
         </section>
 
@@ -502,7 +505,8 @@ import 'vueperslides/dist/vueperslides.css'
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { getActionRemoveGig, getActionUpdateGig, getActionAddGigMsg } from '../store/gig.store'
 
-import { gigService } from '../services/gig.service.local'
+// import { gigService } from '../services/gig.service.local'
+import { gigService } from '../services/gig.service'
 import { svgServive } from '../services/svg.service.js'
 
 export default {

@@ -32,6 +32,8 @@ progress[value]::-webkit-progress-value {
 .gig-info {
     padding-top: rem(32px);
     padding-bottom: rem(32px);
+    margin-left: rem(24px);
+    margin-right: rem(24px);
 }
 
 
@@ -63,12 +65,19 @@ progress[value]::-webkit-progress-value {
     font-size: 1.75rem;
     padding-block-end: 0.5714285714em;
     overflow-wrap: break-word;
-    color: var(--yro524);
+    color: $clr3;
     font-weight: 700;
     line-height: 130%;
 }
 
+.title-reviews{
+    color: $clr3;
+    padding-block-end: 0.5rem;
+    font-size: 1.25rem;
+    line-height: 1.4em;
+    font-weight: 700;
 
+}
 
 .contact-btn {
     padding: rem(24px);

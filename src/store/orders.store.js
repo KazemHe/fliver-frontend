@@ -1,4 +1,5 @@
 import { orderService } from '../services/order.service.local'
+// import { orderService } from '../services/order.service'
 import { userStore } from '../store/user.store'
 
 export const ordersStore = {
@@ -19,8 +20,7 @@ export const ordersStore = {
         },
 
         sellerOrders({ orders }) {
-
-            const filteredOrders = { orders }
+            const filteredOrders =  orders 
             // orders.filter(
             //     order => order.seller._id === userStore.state.loggedinUser._id
             // )
@@ -34,8 +34,7 @@ export const ordersStore = {
     // },
     mutations: {
         saveOrder(state, { order }) {
-            console.log('order', order);
-
+            console.log('order', order._id);
             const idx = state.orders.findIndex(o => o._id === order._id)
             if (idx !== -1) {
                 state.orders.splice(idx, 1, order)

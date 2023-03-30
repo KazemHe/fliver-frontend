@@ -50,7 +50,7 @@ async function query(filterBy = { title: '', DeliveryTime: '', }) {
             console.log('giiiiiiiiiiiiiiiiiiiigs', gigs);
         }
         console.log('hello filterBy.sort you arrived to gig service local congratulations ')
-        if (filterBy.sortBy === 'delivery Time') gigs = gigs.sort((a, b) => a.daysToMake - b.daysToMake)
+        if (filterBy.sortBy === 'Dlivery Time') gigs = gigs.sort((a, b) => a.daysToMake - b.daysToMake)
         // if (filterBy.sortBy === 'check') gigs = gigs.sort((a, b) => b.price - a.price)
     }
     return gigs
@@ -1081,6 +1081,84 @@ function getEmptyGig() {
 //                     "name": "shohnloser",
 //                     "country": "Germany",
 //                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1e9-1f1ea.png",
+// //                     "review": "It was a pleasure working with faaizanmanzoor. He was acting in a professional manner being pro-active in communication and precise in fulfilling all the tasks of the job. He made very helpful suggestions to even improve the results. During the whole process of working on the order placed I felt that we were both on the same page",
+// //                     "reviewedAt": "Published 2 weeks ago"
+// //                 },
+// //                 {
+// //                     "name": "elisa1026",
+// //                     "country": "Romania",
+// //                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
+// //                     "review": "I just want to be short and clear she is the BEST ! Very happy and satisfied what she did to my youtube channel ! A lot of subscribers and more what she said and more watch hours.If you want to grow your youtube channel fast and organic 100% real she is the ONE who can do it ! Thank you very much Farah !",
+// //                     "reviewedAt": "Published 7 weeks ago"
+// //                 }
+// //             ],
+// //             "tags": [
+// //                 {
+// //                     "name": "bookcovers"
+// //                 },
+// //                 {
+// //                     "name": "word-press"
+// //                 },
+               
+// //             ]
+// //         })
+
+// //eli 
+//         await storageService.post(STORAGE_KEY,  {
+//             "images": [
+//                 "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/167094387/original/dd006e572d30979126ec55f6bd0f84e6c4ac451c/build-responsive-wordpress-website-design.jpg",
+//                 "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs2/167094387/original/d2ed29826edeca4143e2ba84cd6d149c5a25e1bf/build-responsive-wordpress-website-design.jpg",
+//                 "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs3/167094387/original/89a653a71f4294c967f89507dfc3c7329a67a268/build-responsive-wordpress-website-design.jpg",
+//                 "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/3e22ac9a47c96067642881ac2c58e4a2-1678641956/HIke%20explore%20recharge/build-responsive-wordpress-website-design.jpg"
+//             ],
+//             "title": "I will build modern and responsive wordpress website design",
+//             "category": "word-press",
+//             "subCategory": "Social Media Marketing",
+//             "description": "Do you want to Monitize your YouTube Channel?\ni'm the best for digital media marketing, i will help you make youtube monetization\nSafe methods we use:\n· Web 2.0\n· iFrame Embedding\n· PPC advertising campaign\n· Do SEO friendly Video optimization\n· Will share video in Suggested & related videos\n· Add video in Niche related playlists for more impressions\nI strictly follow YT and Fiverr TOS so it means you will get organic You Tube Promotion for your channel monetization.\nREQUIREMENT:\nChannel Link\nWhat do you get from this gig?\n● Watch time boost\n● Compliance with YT TOS\n● Fully Organic And Real Traffic\n● 100% chances of monetization\n● Naturally helps in Video Ranking\nThink that your best friend is Elon Musk, and tomorrow morning you are asking him to post a post asking people to watch your vide0, probably you will get monetized in less than an hour!\nI do the same, just without Elon Musk :)",
+//             "price": 534,
+//             "daysToMake": 17,
+//             "fullname": "faaizanmanzoor",
+//             "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/c33f4fbaccfb5ab1d7fc9c0ae2a79c3f-1673212524946/c607f589-fcba-448a-918f-b23d8d6b5165.png",
+//             "loc": "Pakistan",
+//             "memberSince": "Nov 2019",
+//             "avgResponceTime": "Jul 2020",
+//             "lastDelivery": "about 4 hours",
+//             "about": "I am trained in online marketing, and I have studied SEO, Ads (Google, Facebook, Bing...), I have 6 years of experience in digital marketing, in which time working at fiverr is 3 years, with more than 2000 completed orders, the main work that I do is: - Youtube seo and promotion - SEO - Website traffics - Spotify promotion - Instagram promotion Contact me if you have any questions!",
+//             "owner": {
+//                 "fullname": "faaizanmanzoor",
+//                 "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/c33f4fbaccfb5ab1d7fc9c0ae2a79c3f-1673212524946/c607f589-fcba-448a-918f-b23d8d6b5165.png",
+//                 "level": "basic",
+//                 "rate": 1
+//             },
+//             "likedByUsers": [
+//                 "mini-user"
+//             ],
+//             "reviews": [
+//                 {
+//                     "name": "tonyamajette",
+//                     "country": "United States",
+//                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
+//                     "review": "The seller got me the promotion that I needed, however, she stated that I could contact her if I had any problems and I did and she was not helpful. This is my second gig with her and she was great at many things but not so much at helping me to understand or correct issues with the result of her efforts. I had planned to use her for many other gigs but in light of her response to my request for help, I cannot. I do recommend her for getting you the numbers that you need but if you are denied, do not expect any help from her to actually get passed the review process for monetization.",
+//                     "reviewedAt": "Published 1 month ago"
+//                 },
+//                 {
+//                     "name": "robertpetyko",
+//                     "country": "United States",
+//                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
+//                     "review": "It was a pleasure working with Fezan. He was very communicative, and always pleasant regardless of the time of day or night. He delivered a beautiful and fully functional website as per my specifications. I could not have chosen a better person to help design my website. I would use him again and highly recommend his services. Many thanks",
+//                     "reviewedAt": "Published 1 week ago"
+//                 },
+//                 {
+//                     "name": "brucefrausto893",
+//                     "country": "United States",
+//                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1f9-1f1ed.png",
+//                     "review": "This is our second website build done by Faizaan and the service and work done are fantastic. A beautiful responsive design for our website is going to create more conversions. Fantastic job!!!.",
+//                     "reviewedAt": "Published 1 month ago"
+//                 },
+//                 {
+//                     "name": "shohnloser",
+//                     "country": "Germany",
+//                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1e9-1f1ea.png",
 //                     "review": "It was a pleasure working with faaizanmanzoor. He was acting in a professional manner being pro-active in communication and precise in fulfilling all the tasks of the job. He made very helpful suggestions to even improve the results. During the whole process of working on the order placed I felt that we were both on the same page",
 //                     "reviewedAt": "Published 2 weeks ago"
 //                 },
@@ -1181,79 +1259,79 @@ function getEmptyGig() {
         //     ]
         // })
 // //eli
-//         await storageService.post(STORAGE_KEY,  {
-//             "images": [
-//                 "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/275390527/original/448116a88c877384b2afc515b8d804f3ca04f325/design-a-creative-website-ui-ux-template-mockup-in-figma.png",
-//                 "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/8d31cbb5e44c3eee897dffe5771cf3b1-1679619726/MOCKUP%20(47)/design-a-creative-website-ui-ux-template-mockup-in-figma.png",
-//                 "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/429c0cc9f73fc1fa888786b008ac93e7-1679567315/MOCKUP%20(45)/design-a-creative-website-ui-ux-template-mockup-in-figma.png",
-//                 "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/fe102d32d5b3ec222bc8d1c6afce2025-1678915323/MOCKUP%20(28)/design-a-creative-website-ui-ux-template-mockup-in-figma.png"
-//             ],
-//             "title": "I will build modern and responsive wordpress website design",
-//             "category": "word-press",
-//             "subCategory": "Social Media Marketing",
-//             "description": "Hello and welcome to my gig! Are you looking for a professional and eye-catching website for your business or personal brand? Look no further, because I am here to help you with my WordPress Elementor skills!  With Elementor, the most popular page builder for WordPress, I can create beautiful, responsive and easy-to-use websites that will help you stand out from the competition. Whether you need a simple landing page, a blog, an e-commerce site, or a complex business website, I can make it happen. Here's what I offer in this gig:  Custom designs based on your preferences and branding Responsive layouts that work on all devices and screen sizes Fast loading speed and optimized performance SEO-friendly structure and metadat Integration with your favorite plugins and tools  Unlimited revisions until you are 100% satisfied To get started, all you need to do is provide me with your requirements, content, and any references you may have. I will then create a draft design for your approval, and once you're happy with it, I will proceed to build the website and deliver it to you in a timely manner.",
-//             "price": 534,
-//             "daysToMake": 17,
-//             "fullname": "kaleem_studio",
-//             "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/c33f4fbaccfb5ab1d7fc9c0ae2a79c3f-1673212524946/c607f589-fcba-448a-918f-b23d8d6b5165.png",
-//             "loc": "Pakistan",
-//             "memberSince": "Nov 2019",
-//             "avgResponceTime": "Jul 2020",
-//             "lastDelivery": "about 4 hours",
-//             "about": "Hi👋 My name is Kaleem, a UI/UX Designing specialist who also has a flair for graphic designing. I have expertise in designing websites and app UI using different tools, focusing on looks. With my creative work, I aim to create user interfaces that are easy to use and visually appealing.",
-//             "owner": {
-//                 "fullname": "kaleem_studio",
-//                 "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/73f4d5001e523c4005b30bc7da3484f7-1662802407624/24995ee5-7395-4afc-804b-9c69517cbe78.png",
-//                 "level": "Top rated Seller",
-//                 "rate": 4
-//             },
-//             "likedByUsers": [
-//                 "mini-user"
-//             ],
-//             "reviews": [
-//                 {
-//                     "name": "maximusdecim151",
-//                     "country": "Croatia",
-//                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ed-1f1f7.png",
-//                     "review": "Great job! The designs are cool and modern looking. He was very helpful and met all of my needs and changes I requested. I appreciate the fact he hopped on a call with me to further understand what I wanted..",
-//                     "reviewedAt": "Published 1 month ago"
-//                 },
-//                 {
-//                     "name": "umarhussainbfd",
-//                     "country": "United Kingdom",
-//                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ec-1f1e7.png",
-//                     "review": "Great work, good designs and the contractor has been very communicative. We gave good and bad feedback throughout the project and the contractor was onboard with a very positive attitude and revised as requested. Thank you",
-//                     "reviewedAt": "Published 3 weeks ago"
-//                 },
-//                 {
-//                     "name": "eeshachavan",
-//                     "country": "India",
-//                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ee-1f1f3.png",
-//                     "review": "Fast and efficient. Work was delivered as promised and on time! Had a last-minute need for help with a Figma project and he came through.",
-//                     "reviewedAt": "Published 5 days ago"
-//                 },
-//                 {
-//                     "name": "petro08",
-//                     "country": "Kenya",
-//                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1f0-1f1ea.png",
-//                     "review": "Great experience working with kaleem_studio. Great communication, high quality work, and fast delivery. I will hire him again. I recommend",
-//                     "reviewedAt": "Published 1 month ago"
-//                 },
-//                 {
-//                     "name": "mikezaff",
-//                     "country": "Romania",
-//                     "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
-//                     "review": "5 stars!!!!!!!!!!!!!!!!!!",
-//                     "reviewedAt": "Published 4 days ago"
-//                 }
-//             ],
-//             "tags": [
-//                 {
-//                     "name": "bookcovers"
-//                 },
-//                 {
-//                     "name": "word-press"
-//                 },
+        // await storageService.post(STORAGE_KEY,  {
+        //     "images": [
+        //         "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/275390527/original/448116a88c877384b2afc515b8d804f3ca04f325/design-a-creative-website-ui-ux-template-mockup-in-figma.png",
+        //         "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/8d31cbb5e44c3eee897dffe5771cf3b1-1679619726/MOCKUP%20(47)/design-a-creative-website-ui-ux-template-mockup-in-figma.png",
+        //         "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/429c0cc9f73fc1fa888786b008ac93e7-1679567315/MOCKUP%20(45)/design-a-creative-website-ui-ux-template-mockup-in-figma.png",
+        //         "https://fiverr-res.cloudinary.com/images/t_smartwm/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/fe102d32d5b3ec222bc8d1c6afce2025-1678915323/MOCKUP%20(28)/design-a-creative-website-ui-ux-template-mockup-in-figma.png"
+        //     ],
+        //     "title": "I will build modern and responsive wordpress website design",
+        //     "category": "word-press",
+        //     "subCategory": "Social Media Marketing",
+        //     "description": "Hello and welcome to my gig! Are you looking for a professional and eye-catching website for your business or personal brand? Look no further, because I am here to help you with my WordPress Elementor skills!  With Elementor, the most popular page builder for WordPress, I can create beautiful, responsive and easy-to-use websites that will help you stand out from the competition. Whether you need a simple landing page, a blog, an e-commerce site, or a complex business website, I can make it happen. Here's what I offer in this gig:  Custom designs based on your preferences and branding Responsive layouts that work on all devices and screen sizes Fast loading speed and optimized performance SEO-friendly structure and metadat Integration with your favorite plugins and tools  Unlimited revisions until you are 100% satisfied To get started, all you need to do is provide me with your requirements, content, and any references you may have. I will then create a draft design for your approval, and once you're happy with it, I will proceed to build the website and deliver it to you in a timely manner.",
+        //     "price": 534,
+        //     "daysToMake": 17,
+        //     "fullname": "kaleem_studio",
+        //     "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/c33f4fbaccfb5ab1d7fc9c0ae2a79c3f-1673212524946/c607f589-fcba-448a-918f-b23d8d6b5165.png",
+        //     "loc": "Pakistan",
+        //     "memberSince": "Nov 2019",
+        //     "avgResponceTime": "Jul 2020",
+        //     "lastDelivery": "about 4 hours",
+        //     "about": "Hi👋 My name is Kaleem, a UI/UX Designing specialist who also has a flair for graphic designing. I have expertise in designing websites and app UI using different tools, focusing on looks. With my creative work, I aim to create user interfaces that are easy to use and visually appealing.",
+        //     "owner": {
+        //         "fullname": "kaleem_studio",
+        //         "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/73f4d5001e523c4005b30bc7da3484f7-1662802407624/24995ee5-7395-4afc-804b-9c69517cbe78.png",
+        //         "level": "Top rated Seller",
+        //         "rate": 4
+        //     },
+        //     "likedByUsers": [
+        //         "mini-user"
+        //     ],
+        //     "reviews": [
+        //         {
+        //             "name": "maximusdecim151",
+        //             "country": "Croatia",
+        //             "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ed-1f1f7.png",
+        //             "review": "Great job! The designs are cool and modern looking. He was very helpful and met all of my needs and changes I requested. I appreciate the fact he hopped on a call with me to further understand what I wanted..",
+        //             "reviewedAt": "Published 1 month ago"
+        //         },
+        //         {
+        //             "name": "umarhussainbfd",
+        //             "country": "United Kingdom",
+        //             "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ec-1f1e7.png",
+        //             "review": "Great work, good designs and the contractor has been very communicative. We gave good and bad feedback throughout the project and the contractor was onboard with a very positive attitude and revised as requested. Thank you",
+        //             "reviewedAt": "Published 3 weeks ago"
+        //         },
+        //         {
+        //             "name": "eeshachavan",
+        //             "country": "India",
+        //             "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ee-1f1f3.png",
+        //             "review": "Fast and efficient. Work was delivered as promised and on time! Had a last-minute need for help with a Figma project and he came through.",
+        //             "reviewedAt": "Published 5 days ago"
+        //         },
+        //         {
+        //             "name": "petro08",
+        //             "country": "Kenya",
+        //             "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1f0-1f1ea.png",
+        //             "review": "Great experience working with kaleem_studio. Great communication, high quality work, and fast delivery. I will hire him again. I recommend",
+        //             "reviewedAt": "Published 1 month ago"
+        //         },
+        //         {
+        //             "name": "mikezaff",
+        //             "country": "Romania",
+        //             "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
+        //             "review": "5 stars!!!!!!!!!!!!!!!!!!",
+        //             "reviewedAt": "Published 4 days ago"
+        //         }
+        //     ],
+        //     "tags": [
+        //         {
+        //             "name": "bookcovers"
+        //         },
+        //         {
+        //             "name": "word-press"
+        //         },
                
-//             ]
-//         })
+        //     ]
+        // })
