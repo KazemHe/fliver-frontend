@@ -162,21 +162,21 @@ export default {
                 "buyer": {
                     "_id": this.loggedInUser._id,
                     "name": this.loggedInUser.fullname,
-                    "username":this.loggedInUser.username
+                    "username": this.loggedInUser.username
                 },
 
                 "seller": {
                     "_id": gig.owner._id,
                     "fullname": gig.owner.fullname,
                 },
-
+              
                 "gig": {
                     "_id": this.gig._id,
                     "name": this.gig.title,
                     "price": this.gig.price,
                     "img": this.gig.images[0]
                 },
-
+                "createdAt":new Date(),
                 "status": "Pending",
             }
             console.log('order', order);
