@@ -30,6 +30,7 @@ export default {
     },
     created() {
         this.$store.dispatch({ type: 'loadGigs' })
+        window.scroll(0, 0)
 
 
     },
@@ -56,6 +57,7 @@ export default {
                 showSuccessMsg('Gig added')
                 this.gigToAdd = gigService.getEmptyGig()
             } catch (err) {
+
                 console.log(err)
                 showErrorMsg('Cannot add gig')
             }

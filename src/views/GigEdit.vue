@@ -1,17 +1,4 @@
 <template>
-    <!-- <section>
-        <h1>
-            gig edit
-        </h1>
-
-        <form @submit.prevent="addGig">
-            <input type="text" placeholder="gig title" v-model="gigToEdit.title" />
-            <input type="number" placeholder="Price" v-model.number="gigToEdit.price" />
-            <button>Save</button>
-        </form>
-        <router-link to="/explore">Back</router-link>
-    </section> -->
-
 
     <section class="gig-edit full">
         <form @submit.prevent="addGig">

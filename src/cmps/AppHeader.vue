@@ -78,6 +78,15 @@
   </div>
 </template>
 
+
+
+
+
+
+
+
+
+
 <script>
 import LoginSignup from '../views/LoginSignup.vue'
 import { emitToFilter } from '../services/event-bus.service'
