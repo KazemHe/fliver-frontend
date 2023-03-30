@@ -1,18 +1,19 @@
 <template>
     <div class=" main-container full">
-        <div class=" user-profile">
+        <div class="">
             <section class="tabs-side">
-                <div v-if="selected === 'My Orders' && gigs">
-                    <!-- {{ orders }} -->
+                <!--  v-if="selected === 'My Orders' && gigs" -->
+                <div v-if="orders" v-for="order in orders">
+                    {{ buyerOrders }}
                     <article class="card-orders">
-                        <div class="flex">
-                            <img class="user-img" :src="gigs[0].imgUrl" />
-                            <p>Price: ${{ gigs[0].price }}</p>
-                            <p>Order date: {{ gigs[0].memberSince }}</p>
-                            <p>Status: approved</p>
-                        </div>
-                        <div class="user-gig">
-                            <img :src="gigs[0].images[0]" />
+                        <div class="">
+                            <div class="user-gig">
+                                <img :src="order.gig.img" />
+                            </div>
+                            <!-- <img class="user-img" :src="order.gig.img" /> -->
+                            <p>Price: ${{ order.gig.price }}</p>
+                            <!-- <p>Order date: {{ gigs[0].memberSince }}</p> -->
+                            <p>Status: {{ order.status }}</p>
                         </div>
                     </article>
                 </div>
@@ -25,10 +26,10 @@
 import { svgServive } from '../services/svg.service.js'
 
 export default {
-    name: 'UserOrders',
+    name: 'user-order',
     data() {
-        return {
-          
+        return {      
+            buyerOrders: ''
         }
     },
     computed: {
@@ -39,7 +40,7 @@ export default {
             return this.$store.getters.loggedinUser
         },
         orders() {
-            return this.$store.getters.orders
+            return this.$store.getters.buyerOrders
         }
     },
     methods: {
@@ -48,7 +49,9 @@ export default {
         },
     },
     created() {
-        this.$store.dispatch({ type: 'loadGigs' })
+        this.buyerOrders = this.orders 
+        console.log('in orders') 
+        // this.$store.dispatch({ type: 'loadGigs' })
     },
     components: {
       

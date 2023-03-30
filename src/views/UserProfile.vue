@@ -14,7 +14,7 @@
                                 </div>
                             </label>
                         </form>
-                        <h2>Pablopietro</h2>
+                        <h2>{{ loggedInUser.fullname }}</h2>
                     </div>
                     <section class="user-details">
                         <div class="flex">
@@ -41,20 +41,19 @@
             </section>
 
             <section class="tabs-side">
-                
                 <div>
                     <div class="tab-btns">
-                       
                         <button
-                                @click="selectedTab('My gigs')"
-                                :class="{ 'selected-tab': selected === 'My gigs' }">
-                                <router-link to="/user-gigs">My gigs</router-link> </button>
+                                @click="selectedTab('My Gigs')"
+                                :class="{ 'selected-tab': selected === 'My Gigs' }">
+                                <router-link to="/user-profile">My Gigs</router-link> </button>
                         <button
                                 @click="selectedTab('My orders')"
                                 :class="{ 'selected-tab': selected === 'My orders' }">
                                 <router-link to="/user-order">My orders</router-link> </button>
                     </div>
                 </div>
+                
                 <RouterView/>
               
                 <!-- <div v-if="selected === 'Received Orders'">received-orders</div>
@@ -78,8 +77,9 @@ export default {
     name: 'UserProfile',
     data() {
         return {
+            userGigs: [],
             selected: 'My Gigs',
-            tabs: ['My Gigs', 'My Orders'],  // 'Received Orders', 'Reviews'
+            tabs: ['My Gigs', 'My Orders'], // 'Received Orders', 'Reviews'
         }
     },
     computed: {
@@ -125,8 +125,14 @@ export default {
                 showErrorMsg('Cannot update gig')
             }
         },
+        getUserGigs() {
+            // this.userGigs = 'hi'
+            this.userGigs = this.gigs.filter(gig => gig.owner.fullname === this.loggedInUser.fullname)
+            console.log(this.userGigs)
+        }
     },
     created() { 
+        this.getUserGigs()
         this.$store.dispatch({ type: 'loadGigs' })
     },
     components: {

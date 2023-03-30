@@ -5,9 +5,9 @@
         <nav class="flex first-scroll main-nav">
           <div class="flex align-center">
             
-            <RouterLink to="/seller/orders">
+            <!-- <RouterLink to="/seller/orders">
              <button>orders</button>
-            </RouterLink>
+            </RouterLink> -->
 
             <RouterLink to="/">
               <span aria-label="logo" class="logo first-scroll">winner</span>
@@ -56,17 +56,18 @@
 
   <!-- JOIN MODAL -->
   <div class="join-modal" v-if="showJoinModal">
-    <h1>Join Fiverr</h1>
+    <!-- <h1>Join Fiverr</h1>
     <div class="user-picture"></div>
     <input type="text" placeholder="Your full name" />
     <input type="text" placeholder="Username" />
     <input type="password" placeholder="Password" />
-    <button @click="showJoinModal = false">Signup</button>
+    <button @click="showJoinModal = false">Signup</button> -->
+    <LoginSignup :join="showJoinModal"/>
   </div>
 
   <!-- SIGNIN MODAL -->
-  <div class="signin-modal" v-if="showSigninModal">
-   <LoginSignup/>
+  <div class="join-modal" v-if="showSigninModal">
+   <LoginSignup :signin="showSigninModal"/>
   </div>
 
   <!-- USER MODAL -->
@@ -128,9 +129,9 @@ export default {
     },
     doLogout() {
       this.showUserModal = false
+      this.$router.push('/')
       this.$store.dispatch({ type: 'logout' })
     },
-
   },
   computed: {
     loggedInUser() {

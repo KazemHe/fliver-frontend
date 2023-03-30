@@ -1,6 +1,6 @@
 <template>
-  <pre>{{orders}}</pre>
-<section class="dashboard flex">
+    {{ orders.length }}
+    <section class="dashboard flex">
         <section class="profile-progress">
             <div class="profile flex">
                 <div v-if="loggedUser" class="img-container">
@@ -79,22 +79,21 @@
                         <h4>Status</h4>
                     </div>
                 </div>
-                <dashboardArticle  v-for="order in orders" :order="order" :key="order._id"
-                @change="changeStatus" />
+                <dashboard v-for="(order, idx) in orders" :key="order._id" :order="order" :idx="idx"
+                    @change="changeStatus" />
             </div>
         </section>
     </section>
-    
 </template>
 
 <script>
 // import { socketService } from '../services/socket-service'
 
-import dashboardArticle from '../cmps/DashboardArticle.vue'
+import dashboard from '../cmps/Dashboard.vue'
 export default {
     name: 'SellerOrders',
     components: {
-         dashboardArticle,
+        dashboard,
     },
     data() {
         return {
@@ -102,7 +101,7 @@ export default {
             deliveredOnTime: 95,
             responseRate: 95,
             loggedUser: null,
-            
+
         }
     },
     created() {
@@ -114,19 +113,15 @@ export default {
         loadOrders() {
             this.$store.dispatch({ type: 'loadOrders' })
         },
-        selectOrder(order) {
-            this.selectedOrder = { ...order }
-            this.toggleSet()
-        },
-        toggleSet() {
-            this.setOpen = !this.setOpen
-        },
-        changeStatus({ status, order }) {
-            console.log('hello from seller order',{ status, order } );
-            this.selectOrder(order)
+        selectOrder({ currOrder, status }) {
+            this.selectedOrder = { ...currOrder }
             this.selectedOrder.status = status
+            console.log('this.selectedOrder', this.selectedOrder);
+        },
+
+        changeStatus({ status, currOrder }) {
+            this.selectOrder({ currOrder, status })
             this.$store.dispatch({ type: 'saveOrder', order: this.selectedOrder })
-            // socketService.emit('order-change-status', this.selectedOrder.buyer)
         },
     },
     computed: {

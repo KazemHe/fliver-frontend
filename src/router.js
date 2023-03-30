@@ -57,12 +57,11 @@ const routes = [
     children: [
       {
         name: 'UserGigs',
-        path: '/user-gigs',
+        path: '',
         component: UserGigs,
-
       },
       {
-        name: 'UserOrders',
+        name: 'user-order',
         path: '/user-order',
         component: UserOrders,
       },

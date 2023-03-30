@@ -8,15 +8,17 @@ export const ordersStore = {
 
     getters: {
         buyerOrders({ orders }) {
-
+            console.log({ orders })
+            console.log(orders)
             const filteredOrders = orders.filter(
                 order => order.buyer._id === userStore.state.loggedinUser._id
+
             )
+            console.log('filteredOrders', filteredOrders);
             return filteredOrders
         },
 
         sellerOrders({ orders }) {
-
             const filteredOrders = { orders }
             // orders.filter(
             //     order => order.seller._id === userStore.state.loggedinUser._id
@@ -31,13 +33,20 @@ export const ordersStore = {
     // },
     mutations: {
         saveOrder(state, { order }) {
-            console.log('order', order);
-
+            console.log('order', order._id);
+            console.log('');
+            
             const idx = state.orders.findIndex(o => o._id === order._id)
+            console.log('idx', idx);
+            
             if (idx !== -1) {
+                console.log('im here');
+                
                 state.orders.splice(idx, 1, order)
                 return
             }
+            console.log('im here 2');
+            
             state.orders.unshift(order)
         },
 
