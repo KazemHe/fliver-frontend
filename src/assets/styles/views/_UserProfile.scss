@@ -109,10 +109,11 @@
 
                 .card-new-gig {
                     cursor: pointer;
+                    height: 366px;
+
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    justify-content: center;
 
                     p {
                         color: $clr4;
@@ -139,8 +140,9 @@
             background-color: $clr2;
             display: flex;
             justify-content: space-between;
-            padding: 10px;
-            margin: 1.25rem;
+            // padding: 10px;
+            // margin: 1.25rem;
+            width: 345px;
 
             img.user-img{
                 width: 70px;
@@ -148,6 +150,7 @@
                 border-radius: 50%;
             }
             .user-gig img{ 
+                width: 300px;
                 height: 215px;
             }
 

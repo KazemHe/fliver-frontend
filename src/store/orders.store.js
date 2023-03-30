@@ -8,10 +8,13 @@ export const ordersStore = {
 
     getters: {
         buyerOrders({ orders }) {
-
+            console.log({ orders })
+            console.log(orders)
             const filteredOrders = orders.filter(
                 order => order.buyer._id === userStore.state.loggedinUser._id
+
             )
+            console.log('filteredOrders', filteredOrders);
             return filteredOrders
         },
 
