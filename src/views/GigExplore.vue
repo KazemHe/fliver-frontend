@@ -7,7 +7,8 @@
   
 <script>
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
-import { gigService } from '../services/gig.service.local'
+// import { gigService } from '../services/gig.service.local'
+import { gigService } from '../services/gig.service'
 import { getActionRemoveGig, getActionUpdateGig, getActionAddGigMsg } from '../store/gig.store'
 import GigFilter from '../cmps/GIgFilter.vue'
 
@@ -30,6 +31,7 @@ export default {
     },
     created() {
         this.$store.dispatch({ type: 'loadGigs' })
+        window.scroll(0, 0)
 
 
     },
@@ -56,6 +58,7 @@ export default {
                 showSuccessMsg('Gig added')
                 this.gigToAdd = gigService.getEmptyGig()
             } catch (err) {
+
                 console.log(err)
                 showErrorMsg('Cannot add gig')
             }

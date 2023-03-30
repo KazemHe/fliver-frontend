@@ -1,17 +1,4 @@
 <template>
-    <!-- <section>
-        <h1>
-            gig edit
-        </h1>
-
-        <form @submit.prevent="addGig">
-            <input type="text" placeholder="gig title" v-model="gigToEdit.title" />
-            <input type="number" placeholder="Price" v-model.number="gigToEdit.price" />
-            <button>Save</button>
-        </form>
-        <router-link to="/explore">Back</router-link>
-    </section> -->
-
 
     <section class="gig-edit full">
         <form @submit.prevent="addGig">
@@ -81,7 +68,8 @@
 
 import ImgUploader from '../cmps/ImgUploader.vue'
 
-import { gigService } from '../services/gig.service.local'
+// import { gigService } from '../services/gig.service.local'
+import { gigService } from '../services/gig.service'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 export default {
     title: 'GigEdit',
@@ -110,7 +98,7 @@ export default {
 
                 showSuccessMsg('gig Added')
                 // this.gigToEdit = gigService.getEmptyGig()
-                this.$router.push('/explore')
+                this.$router.push('/user-profile')
 
             }
 
