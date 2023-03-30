@@ -100,13 +100,14 @@ function getEmptyGig() {
         category: '',
         daysToMake: '',
         images: [],
-        owner: {
-            fullname: 'moti',
-            imgUrl
-                :
-                "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/4abf6f5b58e4d78cfb7c410cf8d7a9ac-1626111679444/4a04b77c-22ee-4ce8-b4be-747fd059e9ff.jpg",
-            level: "basic/premium", rate: 2
-        },
+        owner:  userService.getLoggedinUser(),
+        // {
+        //     fullname:
+        //     imgUrl
+        //         :
+        //         "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/4abf6f5b58e4d78cfb7c410cf8d7a9ac-1626111679444/4a04b77c-22ee-4ce8-b4be-747fd059e9ff.jpg",
+        //     level: "basic/premium", rate: 2
+        // },
         reviews: [
             {
                 "name": "thaddeuswill410",

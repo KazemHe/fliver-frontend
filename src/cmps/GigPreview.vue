@@ -27,20 +27,20 @@
                     }}</span><span class="review-count">({{ sumOfReviews }})</span></div>
         </div>
 
-        <div class="preview-footer">
+        <div class="preview-footer" v-if="isExplorePage">
             <span class="heart" :class="heartColor" @click="heartClick" v-html="getSvg('heart')"></span>
             <div><span class="starting-at">starting at </span><span class="gig-price">US${{ gig.price }}</span></div>
         </div>
 
-        <!-- <div class="preview-footer">
+        <div class="preview-footer" v-if="isUserPage">
             <span class="btn-remove-gig" @click="removeGig(gig._id)">
                 <i class="fa-regular fa-trash-can"></i>
             </span>
             <span class="btn-remove-gig" @click="updateGig(gig)">
                 <i class="fa-solid fa-pencil"></i>
             </span>
-        </div> -->
-        
+        </div>
+
         <!-- <div><span class="starting-at">starting at </span><span class="gig-price">US${{ gig.price }}</span></div> -->
         <!-- <div @click="removeGig(gig._id)">x</div> -->
 
@@ -71,20 +71,27 @@ export default {
         },
 
         removeGig(gigId) {
-            console.log(gigId) 
+            console.log(gigId)
             this.$emit('removeGig', gigId)
         },
         getSvg(iconName) {
             return (this.icon = svgServive.getGigSvg(iconName))
         },
         updateGig(gig) {
-            console.log(gig) 
+            console.log(gig)
             this.$emit('updateGig', gig)
-        }
+        },
+
 
     },
 
     computed: {
+        isExplorePage() {
+            return this.$route.path === '/explore'
+        },
+        isUserPage() {
+            return this.$route.path === '/user-profile'
+        },
         gigImages() {
             // check if images 
             // if not return custom images array
@@ -105,11 +112,6 @@ export default {
             }
 
         },
-        handlePreviewFooter() {
-            return {
-                '': this.like,
-            }
-        }
     },
 
     components: {
@@ -233,8 +235,8 @@ export default {
     border-radius: em(12px);
 }
 
- 
-.btn-remove-gig{
+
+.btn-remove-gig {
     cursor: pointer;
     width: 30px;
     fill: red;

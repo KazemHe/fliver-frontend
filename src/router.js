@@ -62,7 +62,7 @@ const routes = [
       },
       {
         name: 'user-order',
-        path: '/user-order',
+        path: 'user-order',
         component: UserOrders,
       },
     ]

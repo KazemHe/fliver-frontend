@@ -4,7 +4,7 @@
       <section>
         <nav class="flex first-scroll main-nav">
           <div class="flex align-center">
-            
+
             <!-- <RouterLink to="/seller/orders">
              <button>orders</button>
             </RouterLink> -->
@@ -23,11 +23,9 @@
             <RouterLink to="/explore">Explore</RouterLink>
             <RouterLink to="/gig/edit">Become a Seller</RouterLink>
             <!-- <RouterLink to="/">Sign in</RouterLink> -->
-            <button @click="showSigninModal = !showSigninModal"
-                     v-if="!loggedInUser" 
-                     class="btn-signin">
-                     Sign in</button>
-
+            <button @click="showSigninModal = !showSigninModal" class="btn-signin">
+              Sign in</button>
+            <!-- v-if="!loggedInUser" -->
             <button v-if="!loggedInUser" @click="showJoinModal = !showJoinModal" class="join">Join</button>
             <div v-else class="login" @click="showUserModal = !showUserModal">
               <img :src="loggedInUser.imgUrl" />
@@ -56,25 +54,19 @@
 
   <!-- JOIN MODAL -->
   <div class="join-modal" v-if="showJoinModal">
-    <!-- <h1>Join Fiverr</h1>
-    <div class="user-picture"></div>
-    <input type="text" placeholder="Your full name" />
-    <input type="text" placeholder="Username" />
-    <input type="password" placeholder="Password" />
-    <button @click="showJoinModal = false">Signup</button> -->
-    <LoginSignup :join="showJoinModal"/>
+    <LoginSignup :join="showJoinModal" />
   </div>
 
   <!-- SIGNIN MODAL -->
   <div class="join-modal" v-if="showSigninModal">
-   <LoginSignup :signin="showSigninModal"/>
+    <LoginSignup :signin="showSigninModal" />
   </div>
 
   <!-- USER MODAL -->
   <div class="user-modal" v-if="showUserModal">
     <!-- <div class="mini-modal"></div> -->
     <RouterLink @click="showUserModal = false" to="/user-profile">Profile</RouterLink>
-    <RouterLink @click="showUserModal = false" to="/user-profile">Dashboard</RouterLink>
+    <RouterLink @click="showUserModal = false" to="/seller/orders">Dashboard</RouterLink>
     <button @click="doLogout">Logout</button>
   </div>
 </template>
@@ -91,7 +83,6 @@ export default {
       isFirstScroll: false,
       isSecondScroll: false,
       userSearch: '',
-
     }
   },
   created() {

@@ -53,7 +53,6 @@ export default {
             try {
                 await this.$store.dispatch(getActionRemoveGig(gigId))
                 showSuccessMsg('Gig removed')
-
             } catch (err) {
                 console.log(err)
                 showErrorMsg('Cannot remove gig')
@@ -64,7 +63,7 @@ export default {
             try {
                 gig = { ...gig }
                 // gig.price = +prompt('New price?', gig.price)
-                this.$router.push(`/edit/${gig._id}`)
+                this.$router.push(`gig/edit/${gig._id}`)
                 await this.$store.dispatch(getActionUpdateGig(gig))
                 showSuccessMsg('Gig updated')
 
@@ -75,7 +74,7 @@ export default {
         },
         getUserGigs() {
             // this.userGigs = 'hi'
-            this.userGigs = this.gigs.filter(gig => gig.owner._id === this.loggedInUser._id)
+            this.userGigs = this.gigs.filter(gig => gig.owner.fullname === this.loggedInUser.fullname)
             console.log(this.userGigs)
         }
     },

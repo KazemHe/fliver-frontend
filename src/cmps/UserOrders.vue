@@ -4,7 +4,7 @@
             <section class="tabs-side">
                 <!--  v-if="selected === 'My Orders' && gigs" -->
                 <div v-if="orders" v-for="order in orders">
-                    {{ buyerOrders }}
+                    <!-- {{ buyerOrders }} -->
                     <article class="card-orders">
                         <div class="">
                             <div class="user-gig">
@@ -29,7 +29,6 @@ export default {
     name: 'user-order',
     data() {
         return {      
-            buyerOrders: ''
         }
     },
     computed: {
@@ -49,6 +48,7 @@ export default {
         },
     },
     created() {
+        this.$store.dispatch({ type: 'loadOrders' })
         this.buyerOrders = this.orders 
         console.log('in orders') 
         // this.$store.dispatch({ type: 'loadGigs' })

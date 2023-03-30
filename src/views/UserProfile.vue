@@ -46,11 +46,11 @@
                         <button
                                 @click="selectedTab('My Gigs')"
                                 :class="{ 'selected-tab': selected === 'My Gigs' }">
-                                <router-link to="/user-profile">My Gigs</router-link> </button>
+                                <RouterLink to="/user-profile">My Gigs</RouterLink> </button>
                         <button
                                 @click="selectedTab('My orders')"
                                 :class="{ 'selected-tab': selected === 'My orders' }">
-                                <router-link to="/user-order">My orders</router-link> </button>
+                                <RouterLink to="/user-profile/user-order">My orders</RouterLink> </button>
                     </div>
                 </div>
                 
