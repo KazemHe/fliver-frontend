@@ -117,8 +117,8 @@
 import { svgServive } from '../services/svg.service.js'
 // import { gigService } from '../services/gig.service.local'
 import { gigService } from '../services/gig.service'
-import { orderService } from '../services/order.service.local'
-// import { orderService } from '../services/order.service'
+// import { orderService } from '../services/order.service.local'
+import { orderService } from '../services/order.service'
 
 export default {
 
@@ -161,7 +161,6 @@ export default {
             // }
             const order =
             {
-                "_id": '',
                 "buyer": {
                     "_id": this.loggedInUser._id,
                     "name": this.loggedInUser.fullname,
@@ -172,14 +171,14 @@ export default {
                     "_id": gig.owner._id,
                     "fullname": gig.owner.fullname,
                 },
-              
+
                 "gig": {
                     "_id": this.gig._id,
                     "name": this.gig.title,
                     "price": this.gig.price,
                     "img": this.gig.images[0]
                 },
-                "createdAt":new Date(),
+                "createdAt": new Date(),
                 "status": "Pending",
             }
             console.log('order', order);
