@@ -139,27 +139,6 @@
     transition: background-color .5s ease;
 }
 
-.categories-list {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    font-family: macan-regular;
-    font-size: rem(16px);
-
-    a {
-        // width: max-content;
-        color: $clr1;
-        text-decoration: none;
-        padding-block: rem(8px);
-        line-height: rem(24px);
-    }
-
-    a:hover {
-        box-shadow: 0 -3px $clr0 inset;
-    }
-}
 
 .first-expansion {
     background-color: $clr2;
@@ -272,7 +251,6 @@
 
     transition: all .3s;
 
-<<<<<<< HEAD
     // cursor: pointer;
     // display: flex;
     // flex-direction: column;
@@ -289,8 +267,6 @@
     // border: solid 1px #dadbdd;
     
 
-=======
->>>>>>> 251f0a55e4e5e660727a7342f271a8a8c0da37b2
     >* {
         color: $clr4;
         padding: 5px;
