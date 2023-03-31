@@ -1,18 +1,5 @@
 .dashboard {
-    .Pending{
-        background-color: #62646a;
-    }
-    .Progress {
-        background-color: #ffbe5b;
-    }
-
-    .completed {
-        background-color: #1dbf73;
-    }
-
-    .rejected {
-        background-color: #c43333;
-    }
+   
 
     margin: 30px 40px 50px;
 
@@ -226,4 +213,18 @@
 
 .status-select{
     padding-left: rem(8px);
+}
+.Pending{
+    background-color: #62646a;
+}
+.Progress {
+    background-color: #ffbe5b;
+}
+
+.completed {
+    background-color: #1dbf73;
+}
+
+.rejected {
+    background-color: #c43333;
 }

@@ -23,40 +23,40 @@
 
 
             </div>
-          
 
 
 
 
-                <VDropdown>
-                    <div @click="toggleSet()" class="status-col flex column">
-                        <div class="status flex" :class="className(order.status)">
-                            <span class="regular">{{ order.status }}</span>
-                            </div>
-                        </div>
-                        <template #popper>
 
-                            <!-- <select class="status-select" @change="changeStatus($event.target.value, order)">
+            <VDropdown>
+                <div @click="toggleSet()" class="status-col flex column">
+                    <div class="status flex" :class="className(order.status)">
+                        <span class="regular">{{ order.status }}</span>
+                    </div>
+                </div>
+                <template #popper>
+
+                    <!-- <select class="status-select" @change="changeStatus($event.target.value, order)">
                                 <option value="Completed">Completed</option>
                                 <option value="Progress">Progress</option>
                                 <option value="Rejected">Rejected</option>
                             </select> -->
 
 
-                            <div class="muckerfucker">
+                    <div class="muckerfucker">
 
-                                <button  @click="changeStatus('Completed', order)"  class="Completed-r" >Completed</button>
-                                <button>Progress</button>
-                                <button>Rejected</button>
-</div>
+                        <button @click="changeStatus('Completed', order)" class="Completed">Completed</button>
+                        <button @click="changeStatus('Progress', order)">Progress</button>
+                        <button @click="changeStatus('Rejected', order)">Rejected</button>
+                    </div>
 
-                        </template>
-                </VDropdown>
+                </template>
+            </VDropdown>
 
 
-      
 
-        
+
+
         </div>
     </section>
 </template>
@@ -67,7 +67,7 @@ export default {
     },
     data() {
         return {
-            
+
             setOpen: false,
         }
     },
@@ -94,17 +94,15 @@ export default {
 </script>
 
 <style>
+.muckerfucker {
 
-.muckerfucker{
-  
     display: flex;
     flex-direction: column;
-padding: .5em;
+    padding: .5em;
 
 }
 
-.Completed-r{
-background-color: green;
+.Completed-r {
+    background-color: green;
 }
-
 </style>
