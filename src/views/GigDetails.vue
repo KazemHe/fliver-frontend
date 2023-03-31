@@ -1,20 +1,19 @@
 <template>
-
     <section class="main-container full gig-nav">
 
-    <section >
-        <ul class="nav-info" ref="nav-info">
-            <li><a :class="{ selected: selectedLink === 'overview' }"
-                    @click.prevent="scrollToElement('overview')">Overview</a></li>
-            <li><a :class="{ selected: selectedLink === 'aboutSeller' }"
-                    @click.prevent="scrollToElement('aboutSeller')">About the seller</a></li>
-            <li v-if="gig.reviews"><a :class="{ selected: selectedLink === 'reviews' }"
-                    @click.prevent="scrollToElement('reviews')">Reviews</a></li>
-        </ul>
-    </section>
+        <section>
+            <ul class="nav-info" ref="nav-info">
+                <li><a :class="{ selected: selectedLink === 'overview' }"
+                        @click.prevent="scrollToElement('overview')">Overview</a></li>
+                <li><a :class="{ selected: selectedLink === 'aboutSeller' }"
+                        @click.prevent="scrollToElement('aboutSeller')">About the seller</a></li>
+                <li><a :class="{ selected: selectedLink === 'reviews' }"
+                        @click.prevent="scrollToElement('reviews')">Reviews</a></li>
+            </ul>
+        </section>
 
-</section>
-    <section class="gig-info flex" ref="overview">
+    </section>
+    <section class="gig-info flex" ref="overview" v-if="gig">
         <section class="main-gig">
             <div class="gig-overview">
                 <h1>{{ gig.title }}</h1>
@@ -108,7 +107,7 @@
                             SELLER
                         </button>
             </router-link> -->
-       
+
 
             <div class="about-the-gig">
                 <h2>About the gig</h2>
@@ -139,7 +138,7 @@
                             <section class="seller-reviews-stat flex align-center">
                                 <my-star-rating :gig="gig"></my-star-rating>
                             </section>
-                           
+
                         </section>
                     </section>
                 </section>
@@ -188,7 +187,7 @@
                         </section>
                     </section>
                     <section class="stat-main flex">
-                        
+
                         <section class="stars-counters">
                             <ul class="clean-list flex column">
                                 <li class="flex align-center"><span class="key">5 Stars</span>
@@ -242,7 +241,7 @@
                         <ul class="clean-list">
 
 
-                       `     <section class="review-preview">
+                            ` <section class="review-preview">
                                 <section class="review-preview-long grid"><img class="reviewer-img"
                                         src="https://randomuser.me/api/portraits/men/17.jpg" alt="user-img">
                                     <section class="reviewer-details flex column">
@@ -477,7 +476,7 @@
                                 </svg></span> Include social media kit</li>
                     </ul>
 
-                    <router-link  :to="'/payment/' + gig._id">
+                    <router-link :to="'/payment/' + gig._id">
                         <button class="continue-btn">
                             Continue
                             <span>
@@ -486,11 +485,11 @@
                         </button>
                     </router-link>
                 </section>
-                
+
             </section>
         </section>
 
-        
+
 
     </section>
 </template>
@@ -608,9 +607,10 @@ export default {
         z-index: 4;
         border-radius: 50%;
         right: -2.4em;
-        box-shadow: 0px 1px  #b5b6ba;
+        box-shadow: 0px 1px #b5b6ba;
+
         svg {
-          
+
             color: black;
             display: block;
             height: 50px;
@@ -626,6 +626,7 @@ export default {
         border-radius: 50%;
         box-shadow: 0px 1px #b5b6ba;
         left: -2.44em;
+
         svg {
             color: black;
             display: block;

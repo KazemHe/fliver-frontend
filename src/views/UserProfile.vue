@@ -43,19 +43,17 @@
             <section class="tabs-side">
                 <div>
                     <div class="tab-btns">
-                        <button
-                                @click="selectedTab('My Gigs')"
-                                :class="{ 'selected-tab': selected === 'My Gigs' }">
-                                <RouterLink to="/user-profile">My Gigs</RouterLink> </button>
-                        <button
-                                @click="selectedTab('My orders')"
-                                :class="{ 'selected-tab': selected === 'My orders' }">
-                                <RouterLink to="/user-profile/user-order">My orders</RouterLink> </button>
+                        <button @click="selectedTab('My Gigs')" :class="{ 'selected-tab': selected === 'My Gigs' }">
+                            <RouterLink to="/user-profile">My Gigs</RouterLink>
+                        </button>
+                        <button @click="selectedTab('My orders')" :class="{ 'selected-tab': selected === 'My orders' }">
+                            <RouterLink to="/user-profile/user-order">My orders</RouterLink>
+                        </button>
                     </div>
                 </div>
-                
-                <RouterView/>
-              
+
+                <RouterView />
+
                 <!-- <div v-if="selected === 'Received Orders'">received-orders</div>
 
                 <div v-if="selected === 'Reviews'">
@@ -112,7 +110,7 @@ export default {
             }
         },
         async updateGig(gig) {
-            console.log(gig )
+            console.log(gig)
             try {
                 gig = { ...gig }
                 // gig.price = +prompt('New price?', gig.price)
@@ -127,11 +125,11 @@ export default {
         },
         getUserGigs() {
             // this.userGigs = 'hi'
-            this.userGigs = this.gigs.filter(gig => gig.owner.fullname === this.loggedInUser.fullname)
+            this.userGigs = this.gigs.filter(gig => gig.owner._id === this.loggedInUser._id)
             console.log(this.userGigs)
         }
     },
-    created() { 
+    created() {
         this.getUserGigs()
         this.$store.dispatch({ type: 'loadGigs' })
     },
