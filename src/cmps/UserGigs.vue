@@ -1,5 +1,5 @@
 <template>
-    <div class="gigs-tabs" >
+    <div class="gigs-tabs">
         <section v-if="userGigs">
             <!-- {{ userGigs }} -->
             <ul class="flex">
@@ -12,9 +12,7 @@
                     </router-link>
                 </li>
                 <li class="gigs-user" v-for="gig in userGigs" :key="gig._id">
-                    <GigPreview :gig="gig"
-                                @removeGig="removeGig(gig._id)"
-                                @updateGig="updateGig(gig)" />
+                    <GigPreview :gig="gig" @removeGig="removeGig(gig._id)" @updateGig="updateGig(gig)" />
                 </li>
             </ul>
         </section>
@@ -37,7 +35,7 @@ export default {
         }
     },
     computed: {
-        gigs() { return this.$store.getters.gigs  },
+        gigs() { return this.$store.getters.gigs },
         orders() { return this.$store.getters.orders },
         loggedInUser() { return this.$store.getters.loggedinUser },
     },
@@ -59,7 +57,7 @@ export default {
             }
         },
         async updateGig(gig) {
-            console.log(gig )
+            console.log(gig)
             try {
                 gig = { ...gig }
                 // gig.price = +prompt('New price?', gig.price)
@@ -74,14 +72,14 @@ export default {
         },
         getUserGigs() {
             // this.userGigs = 'hi'
-            this.userGigs = this.gigs.filter(gig => gig.owner.fullname === this.loggedInUser.fullname)
+            this.userGigs = this.gigs.filter(gig => gig.owner._id === this.loggedInUser._id)
             console.log(this.userGigs)
         }
     },
-    created() { 
+    created() {
         this.getUserGigs()
         // console.log('user gigs',this.userGigs)
-        console.log('user gigs',this.gigs)
+        console.log('user gigs', this.gigs)
         this.$store.dispatch({ type: 'loadGigs' })
     },
     components: {

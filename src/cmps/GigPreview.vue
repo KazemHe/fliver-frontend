@@ -13,7 +13,7 @@
             <img :src="gig.owner?.imgUrl" class="owner-img" alt="">
             <div class="owner-previwe">
                 <div class="full-name">{{ gig.owner?.fullname }}</div>
-                <div>{{ gig.owner.level }}</div>
+                <div>{{ gig.owner?.level }}</div>
             </div>
         </div>
 
@@ -101,7 +101,7 @@ export default {
             return this.gig.reviews?.length
         },
         ownerRate() {
-            return this.gig.owner.rate
+            return this.gig.owner?.rate
         },
 
         heartColor() {
