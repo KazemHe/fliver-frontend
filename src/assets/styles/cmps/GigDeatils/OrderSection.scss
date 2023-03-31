@@ -109,18 +109,18 @@
             font-weight: 500;
             color: $clr1;
         }
-
+        
         .continue-btn {
             background-color: #1dbf73;
             color: #fff;
             margin: 0;
 
-            >span {
-                width: rem(16px);
-                height: rem(16px);
+            span {
+                width: 1rem;
+                height: 1rem;
                 float: right;
+            }   
             }
         }
     }
 
-}

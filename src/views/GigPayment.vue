@@ -184,7 +184,7 @@ export default {
             console.log('order', order);
             this.$store.dispatch({ type: 'saveOrder', order: { ...order } })
             setTimeout(() => {
-                this.$router.push('/')
+                this.$router.push('/user-profile/user-order')
             }, 500)
         },
 

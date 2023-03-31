@@ -4,7 +4,7 @@
         <div class="table-entity flex">
             <div class="buyer-col flex column align-center user-col">
               
-                <p class="regular">{{ order.buyer.name }}</p>
+                <p class="regular">{{ order.buyer.fullname }}</p>
             </div>
             <div class="gig-col flex column">
                 <span class="table-span regular">{{ order.gig.name }}</span>
@@ -47,6 +47,7 @@ export default {
     },
     data() {
         return {
+            
             setOpen: false,
         }
     },
