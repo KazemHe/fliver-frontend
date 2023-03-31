@@ -1,5 +1,5 @@
 .dashboard {
-   
+
 
     margin: 30px 40px 50px;
 
@@ -90,7 +90,7 @@
                     display: -webkit-box;
                     overflow: hidden;
                     text-overflow: ellipsis;
-                    padding-inline-start: 10px;
+                    // padding-inline-start: 10px;
                 }
 
                 .buyer-col {
@@ -151,6 +151,7 @@
         }
 
         .income-order-dashboard {
+            
             justify-content: space-evenly;
             align-items: center;
             height: 150px;
@@ -211,20 +212,51 @@
     }
 }
 
-.status-select{
+.status-select {
     padding-left: rem(8px);
 }
-.Pending{
-    background-color: #62646a;
-}
-.Progress {
-    background-color: #ffbe5b;
+
+
+@media screen and (max-width: 650px) {
+    .dashboard .seller-orders .income-order-dashboard {
+        display: none;
+
+    }
 }
 
-.completed {
-    background-color: #1dbf73;
-}
+@media screen and (max-width: 480px) {
+    .dashboard {
+     flex-direction: column;   
 
-.rejected {
-    background-color: #c43333;
-}
+    .profile-progress {
+        margin: 0;
+        width: 315px;
+        .user-desc {
+            flex-direction: none;
+            justify-content: space-between;
+            align-items: center;
+            height: 78px;
+            margin-inline-start: 0;
+        }
+        .profile {
+            justify-content: unset;
+        }
+    }
+
+    .dashboard .profile-progress .progress-item .progress-txt {
+        margin-bottom: 10px;
+        justify-content: unset;
+
+        p {
+            margin-left: 10px;
+        }
+    }
+  
+    .dashboard .seller-orders .order-table {
+         overflow-x: scroll; 
+         overflow-y: auto; 
+        max-width: 227px;
+        max-height: 180px;
+    }
+
+}    }

@@ -59,6 +59,7 @@
                     <h3 v-if="(orders.length > 0)">{{ pendingOrders }}</h3>
                 </div>
             </div>
+            
             <h2 class="headline">Manage Orders</h2>
             <div class="order-table">
                 <div class="table-head flex">
