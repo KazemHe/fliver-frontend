@@ -125,6 +125,8 @@ export default {
         },
         getUserGigs() {
             // this.userGigs = 'hi'
+
+            console.log(this.userGigs)
             this.userGigs = this.gigs.filter(gig => gig.owner._id === this.loggedInUser._id)
             console.log(this.userGigs)
         }

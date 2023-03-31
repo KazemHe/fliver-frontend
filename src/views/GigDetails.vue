@@ -539,6 +539,8 @@ import { getActionRemoveGig, getActionUpdateGig, getActionAddGigMsg } from '../s
 // import { gigService } from '../services/gig.service.local'
 import { gigService } from '../services/gig.service'
 import { svgServive } from '../services/svg.service.js'
+import { socketService, SOCKET_EMIT_USER_WATCH } from '../services/socket.service'
+
 
 export default {
     props: ['gig'],
@@ -586,25 +588,34 @@ export default {
                 const { gigId } = this.$route.params
                 const gig = await gigService.getById(gigId)
                 this.gig = gig
+                socketService.emit(SOCKET_EMIT_USER_WATCH, this.gig.owner)
             } catch {
                 console.log('Could Not load gig')
             }
-        }
+        },
+
+        async addGigMsg(gigId) {
+            try {
+                await this.$store.dispatch(getActionAddGigMsg(gigId))
+                showSuccessMsg('Gig msg added')
+            } catch (err) {
+                console.log(err)
+                showErrorMsg('Cannot add gig msg')
+            }
+        },
+
+        printGigToConsole(gig) {
+            console.log('Gig msgs:', gig.msgs)
+        },
     },
 
-    async addGigMsg(gigId) {
-        try {
-            await this.$store.dispatch(getActionAddGigMsg(gigId))
-            showSuccessMsg('Gig msg added')
-        } catch (err) {
-            console.log(err)
-            showErrorMsg('Cannot add gig msg')
-        }
-    },
 
-    printGigToConsole(gig) {
-        console.log('Gig msgs:', gig.msgs)
-    },
+    // created() {
+
+    //     if (this.loggedInUser && this.loggedInUser._id !== this.gig.owner._id)
+    //         socketService.emit(SOCKET_EMIT_USER_WATCH, this.gig.owner)
+    // },
+
 
     components: {
         MyStarRating,
