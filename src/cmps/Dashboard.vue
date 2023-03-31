@@ -1,9 +1,8 @@
 <template>
-    
     <section>
         <div class="table-entity flex">
             <div class="buyer-col flex column align-center user-col">
-              
+
                 <p class="regular">{{ order.buyer.name }}</p>
             </div>
             <div class="gig-col flex column">
@@ -17,29 +16,50 @@
             </div>
 
             <div class="total-col flex column">
-                
-                    <span class="table-span regular">US${{ order.gig.price }}</span>
-                </div>
-                <div class="flex column">
 
-                <div @click="toggleSet()" class="status-col flex column">
-                    <div class="status flex" :class="className(order.status)">
-                        <span class="regular">{{ order.status }}</span>
-                    </div>
-                </div>
-                <div>
-                    <select class="status-select"  @change="changeStatus($event.target.value, order)">
-                        <option value="Completed">Completed</option>
-                        <option value="Progress">Progress</option>
-                        <option value="Rejected">Rejected</option>
-                    </select>
-                </div>
-               
+                <span class="table-span regular">US${{ order.gig.price }}</span>
             </div>
+            <div class="flex column">
+
+
+            </div>
+          
+
+
+
+
+                <VDropdown>
+                    <div @click="toggleSet()" class="status-col flex column">
+                        <div class="status flex" :class="className(order.status)">
+                            <span class="regular">{{ order.status }}</span>
+                            </div>
+                        </div>
+                        <template #popper>
+
+                            <!-- <select class="status-select" @change="changeStatus($event.target.value, order)">
+                                <option value="Completed">Completed</option>
+                                <option value="Progress">Progress</option>
+                                <option value="Rejected">Rejected</option>
+                            </select> -->
+
+
+                            <div class="muckerfucker">
+
+                                <button  @click="changeStatus('Completed', order)"  class="Completed-r" >Completed</button>
+                                <button>Progress</button>
+                                <button>Rejected</button>
+</div>
+
+                        </template>
+                </VDropdown>
+
+
+      
+
+        
         </div>
     </section>
 </template>
-
 <script>
 export default {
     props: {
@@ -63,12 +83,27 @@ export default {
         // },
 
         changeStatus(status, order) {
-            console.log('order',status, order);
+            console.log('order', status, order);
             event.stopPropagation()
-              this.$emit('change', status, order)
+            this.$emit('change', status, order)
             // this.toggleSet()
         },
     },
 }
 </script>
 
+<style>
+
+.muckerfucker{
+  
+    display: flex;
+    flex-direction: column;
+padding: .5em;
+
+}
+
+.Completed-r{
+background-color: green;
+}
+
+</style>

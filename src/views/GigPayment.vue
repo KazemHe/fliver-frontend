@@ -119,6 +119,8 @@ import { svgServive } from '../services/svg.service.js'
 import { gigService } from '../services/gig.service'
 // import { orderService } from '../services/order.service.local'
 import { orderService } from '../services/order.service'
+// import { socketService } from '../services/socket.service'
+
 
 export default {
 

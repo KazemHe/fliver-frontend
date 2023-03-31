@@ -87,7 +87,7 @@
 </template>
 
 <script>
-// import { socketService } from '../services/socket-service'
+import { socketService } from '../services/socket.service'
 
 import dashboard from '../cmps/Dashboard.vue'
 export default {
@@ -124,6 +124,8 @@ export default {
             console.log("hello", status, order);
              this.selectOrder(status, order)
              this.$store.dispatch({ type: 'saveOrder', order: this.selectedOrder })
+             socketService.emit('order-change-status', this.selectedOrder.buyer)
+
         },
     },
     computed: {
