@@ -113,18 +113,18 @@ export default {
         loadOrders() {
             this.$store.dispatch({ type: 'loadOrders' })
         },
-        selectOrder( status , order ) {
+        selectOrder(status, order) {
             console.log(status, order);
-             this.selectedOrder = { ...order }
-             this.selectedOrder.status = status
-             console.log('this.selectedOrder', this.selectedOrder);
+            this.selectedOrder = { ...order }
+            this.selectedOrder.status = status
+            console.log('this.selectedOrder', this.selectedOrder);
         },
 
         change(status, order) {
             console.log("hello", status, order);
-             this.selectOrder(status, order)
-             this.$store.dispatch({ type: 'saveOrder', order: this.selectedOrder })
-             socketService.emit('order-change-status', this.selectedOrder.buyer)
+            this.selectOrder(status, order)
+            this.$store.dispatch({ type: 'saveOrder', order: this.selectedOrder })
+            socketService.emit('order-change-status', this.selectedOrder.buyer)
 
         },
     },

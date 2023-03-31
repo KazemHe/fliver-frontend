@@ -59,8 +59,6 @@ export default {
 
     data() {
         return {
-
-
             like: false,
         }
     },
@@ -92,11 +90,6 @@ export default {
         isUserPage() {
             return this.$route.path === '/user-profile'
         },
-        gigImages() {
-            // check if images 
-            // if not return custom images array
-            // this.gig.images ? [this.gig.imgUrl,]
-        },
         sumOfReviews() {
             return this.gig.reviews?.length
         },
@@ -122,124 +115,6 @@ export default {
 }
 </script>
 <style  lang="scss">
-.gig-preview .vueperslides__inner {
-    height: 100%;
-}
 
-.gig-preview .vueperslides__parallax-wrapper {
-    height: 100%;
-}
-
-.vueperslides__arrows {
-    margin: 3rem;
-}
-
-
-
-
-.gig-preview .vueperslides__parallax-wrapper {
-    position: relative;
-    overflow: hidden;
-    // padding-bottom: 61.8% !important;
-}
-
-.gig-preview .vueperslides {
-    position: relative;
-
-    .vueperslides__arrow {
-        width: 25px;
-        padding: 0.2em 0.1em;
-        transition: 0.2s;
-
-        & svg {
-            width: 1.6em;
-            height: 1.4em;
-            vertical-align: middle;
-            stroke: currentColor;
-            fill: none;
-            padding: 0.3em 0;
-            stroke-width: 2;
-            color: transparent;
-        }
-    }
-
-    .vueperslides__arrow--prev {
-        border-radius: 0 50px 50px 0;
-
-        & svg {
-            width: 1em;
-        }
-    }
-
-    .vueperslides__arrow--next {
-        border-radius: 50px 0 0 50px;
-    }
-
-    &:hover .vueperslides__arrow {
-        margin: 0 -9px;
-        background-color: #ffffff;
-        opacity: 1;
-        border: 1px solid rgba(126, 125, 125, 0.6);
-
-        & svg {
-            color: rgba(99, 97, 97, 0.828);
-        }
-    }
-
-    .vueperslides__arrow--prev {
-        border-radius: 0 50px 50px 0;
-
-        & svg {
-            width: 1em;
-        }
-
-        .vueperslides__arrow--next {
-            border-radius: 50px 0 0 50px;
-        }
-    }
-}
-
-.gig-preview .vueperslides__inner {
-    position: relative;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-}
-
-.gig-preview .vueperslides__parallax-wrapper {
-    position: relative;
-    overflow: hidden;
-}
-
-.gig-preview .vueperslides__bullet {
-    margin: 0.6em 0.2em;
-    padding: 0;
-    border: none;
-    background: none;
-}
-
-.gig-preview .vueperslides__bullet .default {
-    width: em(8px);
-    height: em(8px);
-    border-radius: em(8px);
-    border: em(1px) solid currentColor;
-    background-color: #fafafa;
-    box-shadow: 0 0 1px #00000080, 0 0 3px #0000004d;
-    transition: 0.4s ease-in-out;
-    box-sizing: border-box;
-}
-
-.gig-preview .vueperslides__bullet--active .default {
-    width: em(12px);
-    height: em(12px);
-    border-radius: em(12px);
-}
-
-
-.btn-remove-gig {
-    cursor: pointer;
-    width: 30px;
-    fill: red;
-}
 </style>
  
