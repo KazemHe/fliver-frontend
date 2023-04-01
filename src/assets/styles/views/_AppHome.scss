@@ -183,11 +183,13 @@
 
     .vueperslides__arrow svg {
         font-size: rem(14px);
-        color: $clr3;
         background-color: $clr2;
+        color: $clr3;
+        color:#555;
         height: rem(48px);
         border-radius: 50%;
         box-shadow: 0px 1px $clr6;
+        stroke-width: 2.5px;
     }
 
     .vueperslides__arrow.vueperslides__arrow--prev {
@@ -198,6 +200,7 @@
     .vueperslides__arrow.vueperslides__arrow--next {
         right: -2.4em;
         opacity: 1;
+        stroke-width: 2.5px;
     }
 
     .vueperslides__bullet .default {
@@ -282,7 +285,7 @@
 }
 
 .marketplace-container {
-    margin-bottom: 64px;
+    // margin-bottom: 64px;
 
     h4 {
         text-align: center;
@@ -403,12 +406,15 @@
 
     .trusted-by {
         gap: 20px;
-        span {
+
+        span,
+        img:last-child {
             display: none;
         }
-        img:last-child{
-            display: none;
-        }
+
+        //     {
+        //     display: none;
+        // }
     }
 
     div .video-section {
