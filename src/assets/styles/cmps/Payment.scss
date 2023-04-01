@@ -230,3 +230,12 @@
     width: rem(100px);
 }
 
+@media only screen and (max-width: 800px) {
+ 
+.gig-payment {
+
+    .payment-details-container {
+        margin-right: 0;
+    }
+}
+}

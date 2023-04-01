@@ -27,7 +27,7 @@
                                     @click.prevent="scrollToElement('aboutSeller')">
                                     <p class="seller-username">{{ gig.owner.fullname }}</p>
                                 </a>
-                                <p class="seller-level">Level {{ gig.owner.level }} Seller </p>
+                                <p class="seller-level"> {{ gig.owner.level }}  </p>
                                 <div class="line"> |
                                 </div>
                             </div>
