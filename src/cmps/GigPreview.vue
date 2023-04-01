@@ -10,7 +10,7 @@
 
         <div class="inner-seller">
 
-            <img :src="gig.owner?.imgUrl" class="owner-img" alt="">
+            <img :src="gig.owner.imgUrl" class="owner-img" alt="">
             <div class="owner-previwe">
                 <div class="full-name">{{ gig.owner?.fullname }}</div>
                 <div>{{ gig.owner?.level }}</div>
@@ -23,8 +23,10 @@
         </RouterLink>
         <div class="content-info">
             <div class="rating-wrapper"><span class="gig-rating ">
-                    <span class="svg" v-html="getSvg('goldStar')"></span></span><span class="owner-rate">{{ ownerRate
-                    }}</span><span class="review-count">({{ this.numOfreviews }})</span></div>
+                    <span class="svg" v-html="getSvg('goldStar')"></span></span>
+                <span class="owner-rate">{{ ownerRate }}</span>
+                <span class="review-count">({{ this.numOfreviews }})</span>
+            </div>
         </div>
 
         <div class="preview-footer" v-if="isExplorePage">
