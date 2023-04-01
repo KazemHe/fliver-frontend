@@ -59,6 +59,7 @@
                     <h3 v-if="(orders.length > 0)">{{ pendingOrders }}</h3>
                 </div>
             </div>
+            
             <h2 class="headline">Manage Orders</h2>
             <div class="order-table">
                 <div class="table-head flex">
@@ -87,7 +88,7 @@
 </template>
 
 <script>
-// import { socketService } from '../services/socket-service'
+import { socketService } from '../services/socket.service'
 
 import dashboard from '../cmps/Dashboard.vue'
 export default {
@@ -114,16 +115,16 @@ export default {
             this.$store.dispatch({ type: 'loadOrders' })
         },
         selectOrder( status , order ) {
-            console.log(status, order);
              this.selectedOrder = { ...order }
              this.selectedOrder.status = status
              console.log('this.selectedOrder', this.selectedOrder);
         },
 
         change(status, order) {
-            console.log("hello", status, order);
              this.selectOrder(status, order)
              this.$store.dispatch({ type: 'saveOrder', order: this.selectedOrder })
+             socketService.emit('order-change-status', this.selectedOrder.buyer)
+
         },
     },
     computed: {

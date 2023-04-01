@@ -43,12 +43,13 @@
         </section>
       </template>
     </VDropdown>
-  </section>
+  </section>y
+  
 
 
 
   <section class="sorting">
-    <div class="count">11 services available</div>
+    <div class="count"><span>{{}}</span> services available</div>
     <VDropdown>
       <button class="sort-btn">Sort by <span class="sorting-txt">{{ changeSortTxt }} </span><span class="icon arrow"
           v-html="getSvg('filterArrow')"></span></button>
@@ -57,7 +58,7 @@
           <button @click="setFilterBy('Delivery Time')" class="sort-btn">Delivery Time</button>
           <button @click="setFilterBy('Best price')" class="sort-btn">Best price</button>
           <button @click="setFilterBy('Highest Rating')" class="sort-btn">Highest Rating</button>
-
+  
         </div>
       </template>
     </VDropdown>
@@ -66,6 +67,7 @@
 <script>
 import { svgServive } from '../services/svg.service.js'
 export default {
+  props:['gigs'],
   data() {
     return {
       filterBy: {

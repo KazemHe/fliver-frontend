@@ -2,12 +2,14 @@
   <section class="up-filter">
     <h2>Explore</h2>
   </section>
-  <FloatingFilter @setFilterBy="setFilterBy" />
+  <FloatingFilter :gigs="gigs" @setFilterBy="setFilterBy" />
 </template>
 <script>
 
 import FloatingFilter from './FloatingFilter.vue'
 export default {
+  props: ['gigs'],
+
 
   methods: {
 

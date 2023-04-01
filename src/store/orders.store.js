@@ -20,11 +20,11 @@ export const ordersStore = {
         },
 
         sellerOrders({ orders }) {
-            const filteredOrders =  orders 
-            // orders.filter(
-            //     order => order.seller._id === userStore.state.loggedinUser._id
-            // )
-            // console.log('filteredOrders', filteredOrders);
+
+            const filteredOrders = orders.filter(
+                order => order.seller._id === userStore.state.loggedinUser._id
+            )
+            console.log('filteredOrders', filteredOrders);
             return filteredOrders
         },
     },
