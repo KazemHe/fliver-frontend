@@ -20,12 +20,14 @@ export default {
       this.$emit('setFilterBy', { ...filterBy })
     },
   },
+
   computed: {
 
     labels() {
 
       return this.$store.getters.labels
-    }
+    },
+
   },
   components: {
     FloatingFilter
@@ -44,11 +46,11 @@ export default {
   padding: 8px 0;
   text-transform: none !important;
 
- 
+
 }
 
 
-.up-filter   h2 {
-    margin-top: 1rem;
-  }
+.up-filter h2 {
+  margin-top: 1rem;
+}
 </style>
