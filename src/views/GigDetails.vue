@@ -388,7 +388,7 @@
                                                         v-html="getSvg('goldStar')"></span></li>
                                             </ul>
                                             <p class="rating-score">4</p>
-                                            <p class="reviewed-at">{{ gig.reviews[4].reviewedAt }}</p>
+                                            <p class="reviewed-at">Published 1 hour ago</p>
                                         </section>
                                         <p class="review-description">Excellent job! I’ve been using Winner for 3 years now
                                             and Omg, This seller was amazing and exactly what i needed. I was kinda in a
