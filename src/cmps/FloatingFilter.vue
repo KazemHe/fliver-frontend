@@ -43,8 +43,8 @@
         </section>
       </template>
     </VDropdown>
-  </section>y
-  
+  </section>
+
 
 
 
@@ -58,7 +58,7 @@
           <button @click="setFilterBy('Delivery Time')" class="sort-btn">Delivery Time</button>
           <button @click="setFilterBy('Best price')" class="sort-btn">Best price</button>
           <button @click="setFilterBy('Highest Rating')" class="sort-btn">Highest Rating</button>
-  
+
         </div>
       </template>
     </VDropdown>
@@ -67,7 +67,7 @@
 <script>
 import { svgServive } from '../services/svg.service.js'
 export default {
-  props:['gigs'],
+  props: ['gigs'],
   data() {
     return {
       filterBy: {
@@ -153,6 +153,4 @@ export default {
   },
 }
 </script>
-<style>
-
-</style>
+<style></style>

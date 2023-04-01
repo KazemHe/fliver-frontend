@@ -13,7 +13,8 @@
             "imgUrl": "https://fiverr-res.cloudinary.com/image/upload/f_auto,q_auto,t_profile_small/v1/attachments/profile/photo/0e80055d93fad68d0f6abc465fec8fab-1670493288297/7f6eff4a-186e-4879-9034-a3b4253abf20.jpg",
             "fullname": "Varun Davera",
             "level": "basic/standard",
-            "rate": 5
+            "rate": 5.0,
+            "username": "varun"
         },
         "loc": "Kenya",
         "Member since": "Dec 2018",
@@ -90,7 +91,8 @@
             "fullname": "radioice",
             "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/fdd60455841fbfcf50bd848a2fe782cf-1605909079056/73c8d442-d7a3-4000-9ed9-90969481a16d.jpg",
             "level": "Level 2 Seller",
-            "rate": 4
+            "rate": 4.8,
+            "username": "radioice"
         },
         "likedByUsers": [
             "mini-user"
@@ -158,7 +160,8 @@
             "fullname": "thequreshi",
             "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/507b9ed4ff8bff97f636f169030ea318-1581001434097/93472a9c-7bc2-4d89-a143-b579901d9342.png",
             "level": "Level 2 Seller",
-            "rate": 4
+            "rate": 4.7,
+            "username": "thequreshi"
         },
         "likedByUsers": [
             "mini-user"
@@ -231,9 +234,10 @@
         "owner": {
             "id": "",
             "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_thumb,q_auto,f_auto/attachments/profile/photo/a88bc096f5150b900c6ed40916a9b425-1423610811673570913.683484/AC210C0C-E82C-4C09-92DA-94556A6D4E9B",
-            "fullname": "sylvana_13",
+            "fullname": "Sylvana shorto",
             "level": "basic",
-            "rate": 5
+            "rate": 5.0,
+            "username": "sylvana_13"
         },
         "loc": "Romania",
         "Member since": "Jan 2023",
@@ -295,10 +299,11 @@
         "about": "Are you looking for a Stunning Website design? Tired of using template work? Are you an agency looking to outsource projects? If yes, we're to the rescue. We make your brand look its best with a stunning design.",
         "owner": {
             "_id": "",
-            "fullname": "frederickkessie",
+            "fullname": "frederick kessie",
             "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/4abf6f5b58e4d78cfb7c410cf8d7a9ac-1626111679444/4a04b77c-22ee-4ce8-b4be-747fd059e9ff.jpg",
             "level": "basic/premium",
-            "rate": 4.5
+            "rate": 4.5,
+            "username": "frederickkessie"
         },
         "likedByUsers": [
             "mini-user"
@@ -367,10 +372,11 @@
         "lastDelivery": "about 4 hours",
         "about": "I am trained in online marketing, and I have studied SEO, Ads (Google, Facebook, Bing...), I have 6 years of experience in digital marketing, in which time working at fiverr is 3 years, with more than 2000 completed orders, the main work that I do is: - Youtube seo and promotion - SEO - Website traffics - Spotify promotion - Instagram promotion Contact me if you have any questions!",
         "owner": {
-            "fullname": "faaizanmanzoor",
+            "fullname": "faaizan manzoor",
             "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/c33f4fbaccfb5ab1d7fc9c0ae2a79c3f-1673212524946/c607f589-fcba-448a-918f-b23d8d6b5165.png",
             "level": "basic",
-            "rate": 5
+            "rate": 5.0,
+            "username": "faaizan"
         },
         "likedByUsers": [
             "mini-user"
@@ -438,10 +444,11 @@
         "about": "I am trained in online marketing, and I have studied SEO, Ads (Google, Facebook, Bing...), I have 6 years of experience in digital marketing, in which time working at fiverr is 3 years, with more than 2000 completed orders, the main work that I do is: - Youtube seo and promotion - SEO - Website traffics - Spotify promotion - Instagram promotion Contact me if you have any questions!",
         "owner": {
             "_id": "",
-            "fullname": "elis",
+            "fullname": "eli gal",
             "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/5f51f3fb29a56b4a4f692ae6b900bacf-1579009817378/e657cbc7-93e6-4869-a7c5-694251cd559e.JPG",
             "level": "basic",
-            "rate": 5
+            "rate": 5.0,
+            "username": "elis"
         },
         "likedByUsers": [
             "mini-user"
@@ -511,10 +518,11 @@
         "about": "Welcome to my Modern Minimalist Luxury Logo Design Gig. Are you looking for a Minimalist logo design? Look no further! Why nowadays we see mostly Minimal logos for successful brands like Instagram, Twitter & many more? Because it’s an Era of the clean and minimal theme.",
         "owner": {
             "_id": "",
-            "fullname": "jackiebalboa1",
+            "fullname": "jack iebalboa",
             "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/6e299af8599edcaf99e46f35d32ee685-1602167220801/0539feda-a4a2-4584-a35a-cc93a0021231.jpg",
             "level": "basic",
-            "rate": 5
+            "rate": 5.0,
+            "username":"jackiebalboa1"
         },
         "likedByUsers": [
             "mini-user"
@@ -583,10 +591,11 @@
         "about": "Hello, my name is Amith and I am an award-winning and published brand identity designer. I have worked on 500+ High-End creative logo projects Worldwide! A beautiful logo is essential to give your business that necessary touch of professionalism that it needs. We will work together to get to a final product that you love and that reflects your brands values.",
         "owner": {
             "_id": "",
-            "fullname": "arona",
+            "fullname": "arona mora",
             "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/30e92e848e31f67b12b8fbf44e95f601-1595522996184/217f2476-7574-446b-a50f-af192171f10e.jpg",
             "level": "basic",
-            "rate": 5
+            "rate": 4.6,
+            "username":"arona"
         },
         "likedByUsers": [
             "mini-user"
@@ -657,10 +666,11 @@
         "about": "Hi, I'm Nika, an AI artist with a passion for using cutting-edge technology to enhance creativity. I'm offering my expertise in midjourney AI services to help you transform your ideas into stunning pieces of art. From portraits to landscapes, abstract to realistic, I use the latest AI algorithms to produce art that stands out and leaves a lasting impression.",
         "owner": {
             "_id": "",
-            "fullname": "koalafication",
+            "fullname": "koala fication",
             "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/9011893847add9cba5ee7f0ae7724325-1524074777315/ffd3f7db-d7c8-4184-a444-7cbdafcfbcc5.png",
             "level": "basic",
-            "rate": 5
+            "rate": 5,
+            "username":"koala"
         },
         "likedByUsers": [
             "mini-user"
