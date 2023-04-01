@@ -129,6 +129,7 @@ b {
     .gig-info {
         flex-wrap: wrap;
         margin-inline-start: 0;
+        width: 120vw;
     }
     .main-gig{
         width: 100%;
@@ -151,7 +152,9 @@ b {
 
 @media only screen and (max-width: 440px){
     .gig-info{
-        padding: 12px
+        width: 97vw;
+        padding: 12px;
+        padding-left: 0;
     }
 .seller-preview-short .text-container {
     height: 40px;
