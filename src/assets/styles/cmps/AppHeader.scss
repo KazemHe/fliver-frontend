@@ -16,7 +16,7 @@
         }
 
         .main-nav {
-            margin-top: 5px;
+            // margin-top: 5px;
             align-items: center;
             justify-content: space-between;
         }
@@ -37,7 +37,7 @@
                 // padding: rem(10px) rem(16px);
                 margin: rem(10px);
                 width: max-content;
-                margin-inline-start: 27px;
+                // margin-inline-start: 27px;
             }
 
             a {
@@ -140,8 +140,8 @@
 .subheader {
     display: none;
     background-color: $clr2;
-    border-top: rem(1px) solid $clr6;
-    border-bottom: rem(1px) solid $clr6;
+    border-top: rem(1px) solid $clr-4;
+    border-bottom: rem(1px) solid $clr-4;
     transition: background-color .5s ease;
 }
 
@@ -281,6 +281,9 @@ div.join-modal {
 
 @media only screen and (max-width: 600px) {
     .main-header header {
+        .mobile-header{
+            position: sticky;
+        }
         padding: 0;
         position: fixed;
         z-index: 200;

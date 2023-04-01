@@ -1,13 +1,19 @@
 footer {
-    border-top: rem(1px) solid $clr6;
-    // bottom: 0;
-    // min-height: 70vh;
+    border-top: rem(1px) solid $clr-4;
+    height: 100px;
+    max-height: 100px;
+
+    div.footer-title {
+        margin: 15px;
+        flex-direction: column;
+    }
+
+    flex-direction: column;
 
     .logo {
         color: $clr6;
         font-family: macan-bold;
         font-size: 25px;
-        margin-inline-end: rem(30px);
     }
 
     .logo::after {
@@ -17,37 +23,54 @@ footer {
     }
 
     h4 {
+        margin-top: 14px;
         font-size: 11px;
     }
 
     .footer-links {
         display: flex;
-        a{
+
+        a {
             display: flex;
             align-items: center;
             justify-content: center;
-            span{
+
+            span {
                 display: flex;
                 align-items: center;
                 justify-content: center;
             }
         }
     }
-        .footer-links>* {
-            margin: 10px;
-            width: 40px;
-            height: 40px;
-        }
 
-        .footer-links>*:hover {
-            background-color: #efeff0;
-            border-radius: 50%;
-            transition: background-color .2s;
-        }
+    .footer-links>* {
+        margin-inline-start: 10px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .footer-links>*:hover {
+        background-color: #efeff0;
+        border-radius: 50%;
+        transition: background-color .2s;
+    }
 }
 
 @media only screen and (min-width: 600px) {}
 
-@media only screen and (min-width: 900px) {}
+@media only screen and (min-width: 900px) {
+    footer {
+        flex-direction: row;
+
+        div.footer-title {
+            margin: 0;
+            flex-direction: row;
+        }
+
+        .logo {
+            margin-inline-end: rem(30px);
+        }
+    }
+}
 
 @media only screen and (min-width: 1160px) {}
