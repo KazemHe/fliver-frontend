@@ -64,6 +64,7 @@ function validateToken(loginToken) {
 
 
 // ;(async ()=>{
+    
 //     await signup('bubu', '123', 'Bubu Bi')
 //     await signup('mumu', '123', 'Mumu Maha')
 // })()
