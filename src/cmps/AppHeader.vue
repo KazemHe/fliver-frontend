@@ -5,12 +5,14 @@
     <RouterLink to="/explore">Explore</RouterLink>
   </section>
 
-  <div class="main-header main-container" :class="handleHeader">
+  <div class="main-header main-container mobile-header" :class="handleHeader">
     <header>
       <section>
         <nav class="flex first-scroll main-nav">
           <div class="flex align-center">
-            <div @click="showSideMenu = !showSideMenu" class="menu-bar"><i class="fa-solid fa-bars"></i></div>
+            <div @click="showSideMenu = !showSideMenu" class="menu-bar">
+              <i class="fa-solid fa-bars"></i>
+            </div>
 
             <RouterLink to="/">
               <span aria-label="logo" class="logo first-scroll">Winner</span>

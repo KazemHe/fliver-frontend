@@ -1,9 +1,9 @@
 <template>
-    <footer class="main-container full">
-        <div class="flex space-between align-center">
-            <div class="flex">
-                <h3> <span aria-label="logo" class="logo">winner</span></h3>
-                <h4 class="flex align-center justify-center">© Winner International Ltd. 2023</h4>
+    <footer class="main-container flex space-between align-center">
+        <!-- <div class=""> -->
+            <div class="footer-title flex align-center justify-center">
+                <h3> <span aria-label="logo" class="logo">Winner</span></h3>
+                <h4 class="">© Winner International Ltd. 2023</h4>
             </div>
 
             <div class="footer-links">
@@ -18,10 +18,9 @@
                 <a class="" href="https://www.instagram.com/fiverr/">
                     <span class="" v-html="getSvg('instagram')"></span></a>
             </div>
-        </div>
+        <!-- </div> -->
     </footer>
 </template>
-
 
 <script>
 import { svgServive } from '../services/svg.service.js'

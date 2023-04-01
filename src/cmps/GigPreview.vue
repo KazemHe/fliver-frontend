@@ -24,7 +24,7 @@
         <div class="content-info">
             <div class="rating-wrapper"><span class="gig-rating ">
                     <span class="svg" v-html="getSvg('goldStar')"></span></span><span class="owner-rate">{{ ownerRate
-                    }}</span><span class="review-count">({{ sumOfReviews }})</span></div>
+                    }}</span><span class="review-count">({{ this.numOfreviews }})</span></div>
         </div>
 
         <div class="preview-footer" v-if="isExplorePage">
@@ -53,6 +53,7 @@
 import { VueperSlides, VueperSlide } from 'vueperslides'
 import 'vueperslides/dist/vueperslides.css'
 import { svgServive } from '../services/svg.service.js'
+import { utilService } from '../services/util.service'
 export default {
 
     props: ['gig', 'user'],
@@ -60,6 +61,7 @@ export default {
     data() {
         return {
             like: false,
+            numOfreviews: utilService.getRandomIntInclusive(100, 400),
         }
     },
 
