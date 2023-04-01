@@ -11,7 +11,7 @@ export const SOCKET_EVENT_REVIEW_ADDED = 'review-added'
 export const SOCKET_EVENT_REVIEW_ABOUT_YOU = 'review-about-you'
 
 const SOCKET_EMIT_LOGIN = 'set-user-socket'
-const SOCKET_EMIT_SIGNUP = 'set-user-socket'
+// const SOCKET_EMIT_SIGNUP = 'set-user-socket'
 const SOCKET_EMIT_LOGOUT = 'unset-user-socket'
 
 
@@ -50,14 +50,20 @@ function createSocketService() {
       socket.emit(eventName, data)
     },
     login(user) {
+      console.log('user from socket service',user)
       socket.emit(SOCKET_EMIT_LOGIN, user)
     },
-    signup(user) {
-      socket.emit(SOCKET_EMIT_SIGNUP, user)
-    },
+    // signup(user) {
+    //   socket.emit(SOCKET_EMIT_SIGNUP, user)
+    // },
     logout() {
       socket.emit(SOCKET_EMIT_LOGOUT)
     },
+
+
+
+
+
     terminate() {
       socket = null
     },
@@ -65,6 +71,12 @@ function createSocketService() {
   }
   return socketService
 }
+
+
+
+
+
+
 
 // eslint-disable-next-line
 // function createDummySocketService() {
@@ -77,9 +89,9 @@ function createSocketService() {
 //     terminate() {
 //       this.setup()
 //     },
-//     login() {   
+//     login() {
 //     },
-//     logout() {   
+//     logout() {
 //     },
 //     on(eventName, cb) {
 //       listenersMap[eventName] = [...(listenersMap[eventName]) || [], cb]

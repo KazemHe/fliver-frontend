@@ -9,7 +9,7 @@
         <!-- <button @click="doLogout">Logout</button> -->
       </h3>
     </div>
-    
+
     <div v-else>
       <form @submit.prevent="doLogin" v-if="signin">
         <h2>Login</h2>
