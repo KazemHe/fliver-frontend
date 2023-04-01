@@ -10,21 +10,21 @@ import { socketService } from './socket.service'
 
 const ORDER_URL = 'order/'
 
-;(() => {
-  setTimeout(() => {
-    socketService.on('new-order-seller', (order) => {
-      store.commit({ type: 'saveOrder', order })
-    })
+// ;(() => {
+//   setTimeout(() => {
+//     socketService.on('new-order-seller', (order) => {
+//       store.commit({ type: 'saveOrder', order })
+//     })
 
-    socketService.on('new-order-buyer', (order) => {
-      store.commit({ type: 'saveOrder', order })
-    })
+//     socketService.on('new-order-buyer', (order) => {
+//       store.commit({ type: 'saveOrder', order })
+//     })
 
-    socketService.on('order-changed-status', (order) => {
-      store.commit({ type: 'saveOrder', order })
-    })
-  }, 0)
-})()
+//     socketService.on('order-changed-status', (order) => {
+//       store.commit({ type: 'saveOrder', order })
+//     })
+//   }, 0)
+// })()
 
 export const orderService = {
   save,

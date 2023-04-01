@@ -50,6 +50,7 @@ function createSocketService() {
       socket.emit(eventName, data)
     },
     login(user) {
+      console.log('user from socket service',user)
       socket.emit(SOCKET_EMIT_LOGIN, user)
     },
     // signup(user) {

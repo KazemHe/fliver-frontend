@@ -20,7 +20,7 @@ export const ordersStore = {
         },
 
         sellerOrders({ orders }) {
-             
+
             const filteredOrders = orders.filter(
                 order => order.seller._id === userStore.state.loggedinUser._id
             )

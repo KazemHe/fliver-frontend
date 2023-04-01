@@ -1,13 +1,13 @@
 <template>
     <article className="gig-preview">
 
-
-
-        <!-- <RouterLink :gig="gig" class="link" :to="'/gig/' + gig._id"><img class="main-img" :src="gig.imgUrl" />
-        </RouterLink> -->
         <vueper-slides class="main-img" fade :touchable="false">
             <vueper-slide v-for="img in gig.images" :key="img" :image="img" />
         </vueper-slides>
+
+        <!-- <RouterLink :gig="gig" class="link" :to="'/gig/' + gig._id"><img class="main-img" :src="gig.imgUrl" />
+        </RouterLink> -->
+
         <div class="inner-seller">
 
             <img :src="gig.owner?.imgUrl" class="owner-img" alt="">
@@ -114,7 +114,5 @@ export default {
     emits: ['removeGig']
 }
 </script>
-<style  lang="scss">
-
-</style>
+<style  lang="scss"></style>
  

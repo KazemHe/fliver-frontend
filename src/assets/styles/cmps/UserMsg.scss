@@ -6,7 +6,7 @@
     padding: 1em;
 
     &.alert-success {
-        background-color: lightgreen;
+        background-color: lightgray;
     }
 
     &.alert-error {
@@ -25,7 +25,7 @@
     border-radius: em(4px, 14px);
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%);
     z-index: 9999;
-    color: wheat;
+    color: $clr3;
 
     @media screen and (max-width: 800px) {
         width: 80vw;
@@ -64,7 +64,7 @@
         background-color: inherit;
         margin-inline-end: 1.5em;
         font-size: 12px;
-        color: wheat;
+        color: $clr3;
     }
 
     &.alert-success {

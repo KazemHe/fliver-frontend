@@ -172,6 +172,7 @@ export default {
                 "seller": {
                     "_id": gig.owner._id,
                     "fullname": gig.owner.fullname,
+                    "username": gig.owner.username,
                 },
 
                 "gig": {
@@ -185,6 +186,7 @@ export default {
             }
             console.log('order', order);
             this.$store.dispatch({ type: 'saveOrder', order: { ...order } })
+            socketService.emit('gig-ordered', order)
             setTimeout(() => {
                 this.$router.push('/user-profile/user-order')
             }, 500)

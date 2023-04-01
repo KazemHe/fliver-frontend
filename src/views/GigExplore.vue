@@ -1,7 +1,8 @@
 <template>
     <!-- <router-link to="/gig/edit">Add New gig</router-link> -->
 
-    <GigFilter class="filter" @setFilterBy="setFilterBy" />
+    <GigFilter class="filter" @setFilterBy="setFilterBy" :gigs="gigs" />
+
     <GigList :gigs="gigs" @removeGig="removeGig" />
 </template>
   
