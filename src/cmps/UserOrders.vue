@@ -1,12 +1,12 @@
 <template>
     <div class=" main-container full">
         <div class="">
-            <section class="tabs-side">
+            <section class="tabs-orders">
                 <!--  v-if="selected === 'My Orders' && gigs" -->
-                <div v-if="orders" v-for="order in orders">
+                <div v-if="orders" v-for="order in orders"  class="user-orders">
                     <!-- {{ buyerOrders }} -->
                     <article class="card-orders">
-                        <div class="">
+                        <div class="order">
                             <div class="user-gig">
                                 <img :src="order.gig.img" />
                             </div>
@@ -58,3 +58,15 @@ export default {
     }
 }
 </script>
+
+<style>
+.tabs-orders{
+    display: flex;
+    gap: 26px;
+}
+.user-gig-img{
+    width: 256px;
+    height: 155px;
+}
+
+</style>

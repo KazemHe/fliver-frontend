@@ -1,16 +1,19 @@
 <template>
+  <section class="side-menu" v-if="showSideMenu"  @click="showSideMenu = flase" >
+    <a  @click="showSigninModal = !showSigninModal">Sign in</a>
+    <a  @click="showJoinModal = !showJoinModal">Join</a>
+    <RouterLink to="/explore">Explore</RouterLink>
+  </section>
+
   <div class="main-header main-container" :class="handleHeader">
     <header>
       <section>
         <nav class="flex first-scroll main-nav">
           <div class="flex align-center">
-
-            <!-- <RouterLink to="/seller/orders">
-             <button>orders</button>
-            </RouterLink> -->
+            <div @click="showSideMenu = !showSideMenu" class="menu-bar"><i class="fa-solid fa-bars"></i></div>
 
             <RouterLink to="/">
-              <span aria-label="logo" class="logo first-scroll">winner</span>
+              <span aria-label="logo" class="logo first-scroll">Winner</span>
             </RouterLink>
 
             <div class="search-container">
@@ -69,16 +72,23 @@
     <RouterLink @click="showUserModal = false" to="/seller/orders">Dashboard</RouterLink>
     <button @click="doLogout">Logout</button>
   </div>
+
+  <!-- <section class="vuper-display">
+    <vueper-slides class="no-shadow" ref="vueperslides2" :slide-ratio="1 / 8" :touchable="false"
+      @slide="$refs.vueperslides1 && $refs.vueperslides1.goToSlide($event.currentSlide.index, { emit: false })"
+      :breakpoints="breakpointsCategories" :visible-slides="5" fixed-height="40px" disable-arrows-on-edges>
+      <vueper-slide v-for="category in categories" :key="category" @click="categoryFilter(`${category.name}`)">
+        <template #content>
+          <div class="vueperslide__content-wrapper">
+            <router-link to="/explore">
+              {{ category.name }}
+            </router-link>
+          </div>
+        </template>
+      </vueper-slide>
+    </vueper-slides>
+  </section> -->
 </template>
-
-
-
-
-
-
-
-
-
 
 <script>
 import LoginSignup from '../views/LoginSignup.vue'
@@ -86,6 +96,7 @@ import { emitToFilter } from '../services/event-bus.service'
 export default {
   data() {
     return {
+      showSideMenu: false,
       showSigninModal: false,
       showUserModal: false,
       showJoinModal: false,
@@ -123,6 +134,9 @@ export default {
       this.$router.push('/')
       this.$store.dispatch({ type: 'logout' })
     },
+    toggleSideMenu() {
+      showSigninModal = !showSigninModal
+    }
   },
   computed: {
     loggedInUser() {

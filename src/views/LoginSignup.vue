@@ -1,30 +1,30 @@
 <template>
   <div class="join-modal">
     <p>{{ msg }}</p>
-
+<!-- 
     <div v-if="loggedinUser">
       <h3>
         Loggedin User:
         {{ loggedinUser.fullname }}
-        <!-- <button @click="doLogout">Logout</button> -->
+        <button @click="doLogout">Logout</button>
       </h3>
-    </div>
+    </div> -->
     
-    <div v-else>
-      <form @submit.prevent="doLogin" v-if="signin">
-        <h2>Login</h2>
+    <div>
+      <form @submit.prevent="doLogin" v-if="signin" class="login-form">
+        <h2>Sign In to Winner</h2>
         <input type="text" v-model="loginCred.username" placeholder="User name" />
         <input type="text" v-model="loginCred.password" placeholder="Password" />
         <button>Login</button>
       </form>
 
       <!-- <p class="mute">user1 or admin, pass:123 </p> -->
-      <form @submit.prevent="doSignup" v-if="join">
-        <h2>Signup</h2>
+      <form @submit.prevent="doSignup" v-if="join" class="login-form">
+        <h2>Join Winner</h2>
         <input type="text" v-model="signupCred.fullname" placeholder="Your full name" />
         <input type="text" v-model="signupCred.username" placeholder="Username" />
         <input type="password" v-model="signupCred.password" placeholder="Password" />
-        <button>Signup</button>
+        <button>Continue</button>
       </form>
     </div>
   </div>
