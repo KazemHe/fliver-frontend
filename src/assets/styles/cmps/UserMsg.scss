@@ -1,12 +1,12 @@
 .alert {
-    background-color: lightgray;
+    background-color: white;
     position: fixed;
     top: 0;
     right: 0.5em;
     padding: 1em;
 
     &.alert-success {
-        background-color: lightgray;
+        background-color: white;
     }
 
     &.alert-error {
@@ -18,11 +18,11 @@
 .alert {
     background-color: #fff;
     position: fixed;
-    top: 150px;
+    top: 0;
     left: 50vw;
     margin-inline-end: 2%;
     transform: translateX(-50%);
-    border-radius: em(4px, 14px);
+    border-radius: em(4px, 14px) solid darkgray;
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%);
     z-index: 9999;
     color: $clr3;
