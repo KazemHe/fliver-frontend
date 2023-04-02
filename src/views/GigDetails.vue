@@ -22,7 +22,7 @@
                         <div class="img-container"><img :src=gig.owner.imgUrl></div>
                         <div class="text-container">
                             <div class="text">
-                                <a aria-current="page" href="#aboutSeller"
+                                <a aria-current="page" href="#aboutSeller" ref="aboutSeller"
                                     class="router-link-active router-link-exact-active"
                                     @click.prevent="scrollToElement('aboutSeller')">
                                     <p class="seller-username">{{ gig.owner.fullname }}</p>
@@ -166,7 +166,7 @@
                 <h2 class="title-reviews">Reviews</h2>
                 <section v-if="gig.reviews" class="reviews-stat flex column">
                     <section class="stat-header flex align-center">
-                        <h2>344 Reviews </h2>
+                        <h2>347 Reviews </h2>
                         <section class="reviews-rate flex">
                             <ul class="stars clean-list flex">
                                 <li><span class="svg flex justify-center align-center" v-html="getSvg('goldStar')"></span>
@@ -332,7 +332,7 @@
                             </section>
                             <section class="review-preview">
                                 <section class="review-preview-long grid"><img class="reviewer-img"
-                                        src="https://ca.slack-edge.com/T04CLB0SNC9-U04CGA7H2AW-81c30fa248fe-512"
+                                        src="https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/fad336296217f94a5b5235247939ae74-1562675367707/56dd2f2c-67c3-4024-8632-f5cdeb47f818.jpg"
                                         alt="user-img">
                                     <section class="reviewer-details flex column">
                                         <p class="username">{{ gig.reviews[3].name }}</p>
@@ -403,7 +403,7 @@
                 </section>
             </section>
 
-          
+
 
         </section>
 
@@ -519,9 +519,31 @@ export default {
     props: ['gig'],
     data() {
         return {
+            // isIntersected: false,
             gig: null,
             selectedLink: 'overview',
         }
+    },
+
+    mounted() {
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                const ref = entry.target.getAttribute('ref');
+                const link = this.$refs['nav-info'].querySelector(`a[href="#${ref}"]`);
+                if (entry.isIntersecting) {
+                    link.classList.add('selected-link');
+                    this.selectedLink = ref;
+                } else {
+                    link.classList.remove('selected-link');
+                }
+            });
+        }, 
+        { rootMargin: '-100% 0% -25% 0%' });
+
+        // observe each section
+        const sections = Object.values(this.$refs).filter(ref => ref.getAttribute('ref') && ref.getAttribute('ref').startsWith('section-'));
+        sections.forEach(section => observer.observe(section));
     },
 
     watch: {
@@ -533,12 +555,12 @@ export default {
         },
     },
     computed: {
-        green() {
-            return {
-                'green': this.green,
-                'no-green': !this.green
-            }
-        },
+        // green() {
+        //     return {
+        //         'green': this.green,
+        //         'no-green': !this.green
+        //     }
+        // },
         loggedInUser() {
             return this.$store.getters.loggedinUser
         },
@@ -561,7 +583,7 @@ export default {
                 const { gigId } = this.$route.params
                 const gig = await gigService.getById(gigId)
                 this.gig = gig
-                socketService.emit(SOCKET_EMIT_USER_WATCH, this.gig.owner)
+                // socketService.emit(SOCKET_EMIT_USER_WATCH, this.gig.owner)
             } catch {
                 console.log('Could Not load gig')
             }
@@ -582,12 +604,6 @@ export default {
         },
     },
 
-
-    // created() {
-
-    //     if (this.loggedInUser && this.loggedInUser._id !== this.gig.owner._id)
-    //         socketService.emit(SOCKET_EMIT_USER_WATCH, this.gig.owner)
-    // },
 
 
     components: {
@@ -670,7 +686,8 @@ export default {
 
 .vueperslides__parallax-wrapper {
     height: 50vh;
-}</style>
+}
+</style>
 
 
 

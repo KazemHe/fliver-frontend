@@ -31,7 +31,8 @@ export default {
         }
     },
     created() {
-        this.$store.dispatch({ type: 'loadGigs' })
+        // this.$store.dispatch({ type: 'loadGigs' })
+
         window.scroll(0, 0)
 
 
@@ -44,6 +45,7 @@ export default {
             console.log('filter by from explore', { ...filterBy })
             // try {
             this.$store.dispatch({ type: 'filterGigs', ...filterBy })
+            
             // }
 
             // catch {

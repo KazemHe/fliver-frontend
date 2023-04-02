@@ -102,6 +102,7 @@ export default {
             deliveredOnTime: 95,
             responseRate: 95,
             loggedUser: null,
+            
 
         }
     },
@@ -109,10 +110,17 @@ export default {
         this.loadOrders()
         this.loggedUser = this.$store.getters.loggedinUser
         window.scrollTo({ top: 0, behavior: 'smooth' })
+        socketService.on('user-ordered-gig', (msg) => {
+    //   showSuccessMsg(msg)
+      this.loadOrders()
+    //   console.log(msg)
+    })
+        
     },
     methods: {
         loadOrders() {
             this.$store.dispatch({ type: 'loadOrders' })
+            console.log('hi from loader')
         },
         selectOrder( status , order ) {
              this.selectedOrder = { ...order }
