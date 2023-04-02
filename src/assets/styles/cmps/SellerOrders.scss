@@ -7,7 +7,7 @@
         border-radius: 5px;
         background-color: #fff;
         border: 1px solid #dadbdd;
-        margin: 0 40px 60px 0;
+        margin: 40px 40px 60px 0;
         padding: 30px 20px 50px;
         width: 400px;
         max-height: 400px;
@@ -26,8 +26,9 @@
         }
 
         .img-container {
-            width: 120px;
-            height: 120px;
+            width: 150px;
+            height: 150px;
+            margin: auto;
 
             img {
                 width: 100%;
@@ -97,12 +98,13 @@
                 .buyer-col {
                     width: 20%;
                     min-width: 80px;
-                    p{
+
+                    p {
                         margin-left: 10px;
                     }
 
-                    h4{
-                         margin-left: 10px;
+                    h4 {
+                        margin-left: 10px;
                     }
                 }
 
@@ -124,7 +126,8 @@
             .due-on-col {
                 width: 15%;
                 min-width: 100px;
-                h4{
+
+                h4 {
                     text-align: center;
                 }
             }
@@ -132,7 +135,8 @@
             .total-col {
                 width: 10%;
                 min-width: 80px;
-                h4{
+
+                h4 {
                     text-align: center;
                 }
             }
@@ -166,11 +170,11 @@
         }
 
         .income-order-dashboard {
-            
+            width: 100%;
             justify-content: space-evenly;
             align-items: center;
             height: 150px;
-            margin: 0 0 40px;
+            margin: 10px 0 40px;
             padding: 30px 0;
 
             .dashboard-item {
@@ -188,6 +192,15 @@
                     font-weight: 700;
                     font-size: 1rem;
                     color: #74767e;
+                }
+
+                .Progres {
+                    color: #ffbe5b;
+                    ;
+                }
+
+                .Completed {
+                    color: #1dbf73;
                 }
             }
 
@@ -227,6 +240,11 @@
     }
 }
 
+.headline {
+    padding-top: 20px;
+    text-align: center;
+}
+
 .status-select {
     padding-left: rem(8px);
 }
@@ -241,37 +259,241 @@
 
 @media screen and (max-width: 480px) {
     .dashboard {
-     flex-direction: column;   
+        flex-direction: column;
 
-    .profile-progress {
-        margin: 0;
-        width: 315px;
-        .user-desc {
-            flex-direction: none;
-            justify-content: space-between;
-            align-items: center;
-            height: 78px;
-            margin-inline-start: 0;
+        .profile-progress {
+            margin: 0;
+            width: 315px;
+
+            .user-desc {
+                flex-direction: none;
+                justify-content: space-between;
+                align-items: center;
+                height: 78px;
+                margin-inline-start: 0;
+            }
+
+            .profile {
+                justify-content: unset;
+            }
         }
-        .profile {
+
+        .dashboard .profile-progress .progress-item .progress-txt {
+            margin-bottom: 10px;
             justify-content: unset;
+
+            p {
+                margin-left: 10px;
+            }
+        }
+
+        .dashboard .seller-orders .order-table {
+            overflow-x: scroll;
+            overflow-y: auto;
+            max-width: 227px;
+            max-height: 180px;
+        }
+
+    }
+}
+
+.el-progress {
+    position: relative;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+}
+
+.el-progress-bar {
+    flex-grow: 1;
+    box-sizing: border-box;
+
+
+    .el-progress-bar__outer {
+
+        height: 6px;
+        border-radius: 100px;
+        background-color: #ebeef5;
+        overflow: hidden;
+        position: relative;
+        vertical-align: middle;
+
+        .el-progress-bar__inner {
+            width: 95%;
+            animation-duration: 3s;
+            background-color: rgb(29, 191, 115);
+
+
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background-color: #ebeef5;
+            text-align: right;
+            border-radius: 100px;
+            line-height: 1;
+            white-space: nowrap;
+            transition: width .6s ease;
         }
     }
+}
 
-    .dashboard .profile-progress .progress-item .progress-txt {
-        margin-bottom: 10px;
-        justify-content: unset;
 
-        p {
-            margin-left: 10px;
+.dashboard .profile-progress .progress .el-progress__text {
+    display: none;
+}
+
+.el-progress__text {
+    font-size: 14.4px;
+    color: #ebeef5;
+    margin-left: 5px;
+    min-width: 50px;
+    line-height: 1;
+}
+
+.card {
+    margin: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #eceef3;
+    border-radius: 0.75rem;
+}
+
+
+.col-xl-3 {
+    flex: 0 0 auto;
+    width: 25%;
+
+
+}
+
+.shadow {
+    transition: all .2s ease-in-out;
+    box-shadow: 0px 3px 3px -1px rgba(10, 22, 70, .1), 0px 0px 1px 0px rgba(10, 22, 70, .06) !important;
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 1.5rem 1.5rem;
+    color: #525f7f;
+}
+
+.row {
+
+    --x-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--x-gutter-y)*-1);
+    margin-right: calc(var(--x-gutter-x)*-0.5);
+    margin-left: calc(var(--x-gutter-x)*-0.5);
+
+}
+
+.mt-2 {
+    margin-top: 0.5rem !important;
+}
+
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+
+.text-sm {
+    font-size: 0.875rem !important;
+}
+
+.card-header:first-child {
+    border-radius: calc(0.75rem - 1px) calc(0.75rem - 1px) 0 0;
+    margin-top: 0;
+    font-weight: 600;
+    line-height: 1.3;
+    color: #16192c;
+}
+
+.card-header {
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 0;
+    color: #16192c;
+    background-color: transparent;
+    border-bottom: 1px solid #eceef3;
+}
+
+.table-responsive {
+    overflow-x: auto;
+
+    .table {
+        width: 100%;
+        vertical-align: middle;
+        border-color: #e7eaf0;
+
+        >thead {
+            vertical-align: bottom;
+        }
+
+        tr {
+            height: 50px;
         }
     }
-  
-    .dashboard .seller-orders .order-table {
-         overflow-x: scroll; 
-         overflow-y: auto; 
-        max-width: 227px;
-        max-height: 180px;
-    }
+}
 
-}    }
+
+.table>thead {
+    vertical-align: bottom;
+}
+
+.table>:not(:last-child)>:last-child>* {
+    border-bottom-color: #e7eaf0;
+}
+
+.table.table-light thead th,
+.table .thead-light th {
+    background-color: #f5f9fc;
+    color: #525f7f;
+}
+
+.table>tbody {
+    vertical-align: inherit;
+}
+
+.table td {
+    font-size: .8125rem;
+    white-space: nowrap;
+}
+
+.rounded-circle {
+    border-radius: 50% !important;
+}
+
+.text-heading {
+    --x-text-opacity: 1;
+    color: rgba(var(--x-heading-rgb), var(--x-text-opacity)) !important;
+}
+
+.table td {
+    font-size: .8125rem;
+    white-space: nowrap;
+}
+
+.avatar {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    font-size: 1rem;
+    font-weight: 600;
+    height: 2.875rem;
+    width: 2.875rem;
+    border-radius: 0.375rem;
+}
+
+.avatar-sm {
+    width: 2.25rem;
+    height: 2.25rem;
+    font-size: 0.75rem;
+    border-radius: 0.25rem;
+}
