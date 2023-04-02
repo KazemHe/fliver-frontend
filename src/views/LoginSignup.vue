@@ -69,8 +69,10 @@ export default {
         this.msg = 'Please fill up the form'
         return
       }
+
       await this.$store.dispatch({ type: 'signup', userCred: this.signupCred })
       this.$router.push('/')
+      // this.$emit()
     },
     loadUsers() {
       this.$store.dispatch({ type: "loadUsers" })
