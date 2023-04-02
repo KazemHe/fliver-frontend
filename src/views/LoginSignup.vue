@@ -37,6 +37,7 @@ export default {
   name: 'login-signup',
   data() {
     return {
+      hideModal: false,
       msg: '',
       loginCred: { username: '', password: '' },
       signupCred: { username: '', password: '', fullname: '', imgUrl: '' },
@@ -59,6 +60,7 @@ export default {
       try {
         await this.$store.dispatch({ type: "login", userCred: this.loginCred })
         this.$router.push('/')
+        this.$emit('closeModal', this.hideModal)
       } catch (err) {
         console.log(err)
         this.msg = 'Failed to login'
@@ -69,8 +71,10 @@ export default {
         this.msg = 'Please fill up the form'
         return
       }
+
       await this.$store.dispatch({ type: 'signup', userCred: this.signupCred })
       this.$router.push('/')
+      this.$emit('closeModal', this.hideModal)
     },
     loadUsers() {
       this.$store.dispatch({ type: "loadUsers" })

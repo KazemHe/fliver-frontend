@@ -1,25 +1,25 @@
 <template>
     <div class=" main-container full">
-        <div class="">
+        <!-- <div class=""> -->
             <section class="tabs-orders">
                 <!--  v-if="selected === 'My Orders' && gigs" -->
-                <div v-if="orders" v-for="order in orders" class="user-orders">
-                    <!-- {{ buyerOrders }} -->
-                    <article class="card-orders">
-                        <div class="order">
-                            <div class="user-gig">
-                                <img :src="order.gig.img" />
-                            </div>
-                            <!-- <img class="user-img" :src="order.gig.img" /> -->
-                            <p>Price: ${{ order.gig.price }}</p>
-                            <!-- <p>Order date: {{ gigs[0].memberSince }}</p> -->
-                            <p>Status: {{ order.status }}</p>
+                <div v-if="orders" v-for="(order, i) in orders" class="card-orders" >
+                    <!-- {{ order }} -->
+                    <div class="order">
+                        <div class="user-gig">
+                            <img :src="order.gig.img" />
                         </div>
-                    </article>
+                        <p>Order status: <span>{{ order.status }}</span></p>
+                        <p>Title: <span>{{ order.gig.name }} </span></p>
+                        <p>Price: <span>${{ order.gig.price }}</span></p>
+                        <p>By: <span>{{ order.seller.fullname }} </span></p>
+                        <!-- :class="statusStyle" -->
+                        <!-- :style="{'yellow': order.status === 'Progress'} -->
+                    </div>
                 </div>
             </section>
         </div>
-    </div>
+    <!-- </div> -->
 </template>
 
 <script>
@@ -29,6 +29,8 @@ export default {
     name: 'user-order',
     data() {
         return {
+            status: 'Progress'
+            //  ['Progress', 'Pending', 'Completed', 'Rejected']
         }
     },
     computed: {
@@ -40,6 +42,11 @@ export default {
         },
         orders() {
             return this.$store.getters.buyerOrders
+        },
+        statusStyle() {
+            return {
+                 'yellow': this.order.status === 'Progress'
+            }
         }
     },
     methods: {
@@ -76,5 +83,17 @@ export default {
 .user-gig-img {
     width: 256px;
     height: 155px;
+}
+
+.order p{
+    border-top: 1px solid #efefef;
+    /* color: rgb(39, 38, 38); */
+}
+p span{
+    /* color: red; */
+    font-size: 15px;
+}
+.yellow {
+    color: yellow;
 }
 </style>

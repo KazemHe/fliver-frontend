@@ -1,7 +1,7 @@
 <template>
   <section class="main-container">
     <AppHeader />
-    <RouterView />
+    <RouterView class="min-height"/>
     <UserMsg />
     <appFooter />
   </section>

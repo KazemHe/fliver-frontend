@@ -1,7 +1,6 @@
 <template>
-    <div class=" main-container full">
+    <div class=" main-container full bgc-user-profile">
         <div class=" user-profile">
-
             <section class="user-side">
                 <div class="user-card">
                     <div class="form-user-profile">
@@ -10,8 +9,9 @@
                                 <input type="file" id="imgupload" style="display: none;">
                                 <div class="user-img">
                                     <!-- <ImgUploader class="img-uploader" @uploaded="onUploaded" /> -->
-                                    <img :src="loggedInUser.imgUrl" v-if="loggedInUser.imgUrl" @uploaded="onUploaded" />
-                                    <span v-html="getSvg('userProfile')" v-else></span>
+                                    <img :src="loggedInUser.imgUrl"
+                                         v-if="loggedInUser.imgUrl" @uploaded="onUploaded" />
+                                    <span v-else v-html="getSvg('userProfile')"></span>
                                 </div>
                             </label>
                         </form>
@@ -44,8 +44,8 @@
             <section class="tabs-side">
                 <div>
                     <div class="tab-btns">
-                        <button @click="selectedTab('My Gigs')" :class="{ 'selected-tab': selected === 'My Gigs' }">
-                            <RouterLink to="/user-profile">My Gigs</RouterLink>
+                        <button @click="selectedTab('My gigs')" :class="{ 'selected-tab': selected === 'My gigs' }">
+                            <RouterLink to="/user-profile">My gigs</RouterLink>
                         </button>
                         <button @click="selectedTab('My orders')" :class="{ 'selected-tab': selected === 'My orders' }">
                             <RouterLink to="/user-profile/user-order">My orders</RouterLink>
@@ -55,11 +55,6 @@
 
                 <RouterView />
 
-                <!-- <div v-if="selected === 'Received Orders'">received-orders</div>
-
-                <div v-if="selected === 'Reviews'">
-                    <h1>reviews</h1>
-                </div> -->
             </section>
         </div>
     </div>
@@ -78,8 +73,8 @@ export default {
     data() {
         return {
             userGigs: [],
-            selected: 'My Gigs',
-            tabs: ['My Gigs', 'My Orders'], // 'Received Orders', 'Reviews'
+            selected: 'My gigs',
+            tabs: ['My gigs', 'My orders'], // 'Received Orders', 'Reviews'
         }
     },
     computed: {
@@ -99,6 +94,8 @@ export default {
         },
         selectedTab(selected) {
             this.selected = selected
+            if(this.selected  === 'My gigs') this.$router.push('/user-profile')
+            if(this.selected  === 'My orders') this.$router.push('/user-profile/user-order')
             console.log(this.selected)
         },
         async removeGig(gigId) {
@@ -135,6 +132,7 @@ export default {
     created() {
         this.getUserGigs()
         this.$store.dispatch({ type: 'loadGigs' })
+        this.selected =  (this.$route.path === '/user-profile') ? 'My gigs' : 'My orders'
     },
     components: {
         GigList,
@@ -144,3 +142,6 @@ export default {
     }
 }
 </script>
+<style>
+
+</style>

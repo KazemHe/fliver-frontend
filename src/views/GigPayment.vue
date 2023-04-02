@@ -186,8 +186,7 @@ export default {
                 "createdAt": new Date(),
                 "status": "Pending",
             }
-            console.log('order', order);
-          
+            
             this.$store.dispatch({ type: 'saveOrder', order: { ...order } })
             socketService.emit('gig-ordered', order)
             setTimeout(() => {

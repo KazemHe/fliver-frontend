@@ -1,4 +1,7 @@
 .card-orders {
+   article{
+       width: 457px;
+   }
     img.user-img{
         width: 70px;
         height: 70px;
@@ -8,6 +11,7 @@
         width: 300px;
         height: 215px;
     }
+    
 
     div {
         // display: flex;
@@ -17,4 +21,9 @@
             margin: 10px;
         }
     }
+}
+.tabs-orders {
+    display: flex;
+    gap: 26px;
+    flex-wrap: wrap;
 }
