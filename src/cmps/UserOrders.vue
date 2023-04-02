@@ -3,7 +3,7 @@
         <div class="">
             <section class="tabs-orders">
                 <!--  v-if="selected === 'My Orders' && gigs" -->
-                <div v-if="orders" v-for="order in orders"  class="user-orders">
+                <div v-if="orders" v-for="order in orders" class="user-orders">
                     <!-- {{ buyerOrders }} -->
                     <article class="card-orders">
                         <div class="order">
@@ -28,7 +28,7 @@ import { svgServive } from '../services/svg.service.js'
 export default {
     name: 'user-order',
     data() {
-        return {      
+        return {
         }
     },
     computed: {
@@ -49,24 +49,32 @@ export default {
     },
     created() {
         this.$store.dispatch({ type: 'loadOrders' })
-        this.buyerOrders = this.orders 
-        console.log('in orders') 
+        this.buyerOrders = this.orders
+        console.log('in orders')
         // this.$store.dispatch({ type: 'loadGigs' })
+
+        socketService.on('order-approved', (msg) => {
+            this.$store.dispatch({ type: 'loadOrders' })
+        })
+        socketService.on('order-status-update', (msg) => {
+            this.$store.dispatch({ type: 'loadOrders' })
+        })
+
     },
     components: {
-      
+
     }
 }
 </script>
 
 <style>
-.tabs-orders{
+.tabs-orders {
     display: flex;
     gap: 26px;
 }
-.user-gig-img{
+
+.user-gig-img {
     width: 256px;
     height: 155px;
 }
-
 </style>
