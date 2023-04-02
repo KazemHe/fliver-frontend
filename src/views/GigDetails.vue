@@ -561,7 +561,7 @@ export default {
                 const { gigId } = this.$route.params
                 const gig = await gigService.getById(gigId)
                 this.gig = gig
-                socketService.emit(SOCKET_EMIT_USER_WATCH, this.gig.owner)
+                // socketService.emit(SOCKET_EMIT_USER_WATCH, this.gig.owner)
             } catch {
                 console.log('Could Not load gig')
             }
