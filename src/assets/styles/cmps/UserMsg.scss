@@ -4,7 +4,7 @@
     top: 0;
     right: 0.5em;
     padding: 1em;
-
+    border-radius: 10px;
     &.alert-success {
         background-color: white;
     }
@@ -23,6 +23,7 @@
     margin-inline-end: 2%;
     transform: translateX(-50%);
     border-radius: em(4px, 14px) solid darkgray;
+    // border-radius: 10px;
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%);
     z-index: 9999;
     color: $clr3;

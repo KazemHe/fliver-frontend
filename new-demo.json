@@ -1,0 +1,71 @@
+[
+    {
+        "images": [
+            "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs3/139643482/original/832c450de3d531e3f9ad6d5c9131a335495ece74/design-fully-responsive-wordpress-website-or-blog.jpg",
+            "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs2/139643482/original/f2a981bad641a093991a5b1d6022c883b2b5b596/design-fully-responsive-wordpress-website-or-blog.jpg"
+        ],
+        "title": "I will design fully responsive wordpress website or blog",
+        "about": "Welcome! I design unique websites for WordPress with a creative, modern day look and strategic vision that shape forward-thinking brands and empowers websites and businesses with online advantage. I am a full stack web developer with over 6 years of experience and has worked with many companies and businesses to take their online presence to the next level. When i work i put my full potential to ensure that the output design is professional and FULL WITH EMOTIONAL VALUE. Check out clients' reviews on my profile to get an idea about my quality of services :)",
+        "description": "Hello there, I'm Bimsara 😋 I am a full stack web developer and a WordPress expert. Also I am a computer science undergraduate of no.1 ranked university in Sri Lanka. And I have achieved the 'Raising Talent' badge from Winner. I have completed the diploma of Professional Web Development Using Joomla and WordPress conducted by the Open University of Sri Lanka. I have been developing websites since 2014. Since 2014 I have been working with WordPress, CSS3, HTML 5, Bootstrap 4, JavaScript, REACT JS, Woo commerce, Node JS (for back end development), Joomla, PHP, MySQL, API 's and more.",
+        "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/a78c9c767382574b7931ec6fba09ba3f-1668493997175/40ba2411-6d4e-4a6f-9948-aa146338883b.PNG",
+        "owner": {
+            "_id": "",
+            "imgUrl": "https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/a78c9c767382574b7931ec6fba09ba3f-1668493997175/40ba2411-6d4e-4a6f-9948-aa146338883b.PNG",
+            "fullname": "bkdeveloping",
+            "level": "basic/standard",
+            "rate": 5.0,
+            "username": "Bimsara"
+        },
+        "loc": "Sri Lanka",
+        "Member since": "Jul 2019",
+        "price": 60,
+        "daysToMake": 7,
+        "fullname": "Varun Davera",
+        "avgResponceTime": "3 hours",
+        "lastDelivery": "2 days",
+        "likedByUsers": [
+            "mini-user"
+        ],
+        "reviews": [
+            {
+                "name": "undergroundfish",
+                "country": "United Kingdom",
+                "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ec-1f1e7.png",
+                "review": "BK delivers a Fantastic Service! The communication is the best I've ever received on Winner, and the work was expertly done! I couldn't possibly recommend this gig enough - I'll be back whenever I need a website or anything related to web development!",
+                "reviewedAt": "Published 3 weeks ago"
+            },
+            {
+                "name": "pepe_pepe",
+                "country": "India",
+                "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ee-1f1f3.png",
+                "review": "Seller was VERY helpful answering all of my questions and showing me how to do things by making short YouTube videos. I would highly recommend this seller, and if I am ever in need of tasks again I will reach out for sure!",
+                "reviewedAt": "Published 3 days ago"
+            },
+            {
+                "name": "firestarterhk",
+                "country": "Hong Kong",
+                "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1ed-1f1f0.png",
+                "review": "This is one of the best purchases I have made on winner (I have had some terrible luck lately, so thank you for turning that around!). The communication was very upbeat and positive and this was an all-around great experience. Thank you!",
+                "reviewedAt": "Published 2 months ago"
+            },
+            {
+                "name": "lucho_99",
+                "country": "France",
+                "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1eb-1f1f7.png",
+                "review": "I am over the moon happy with the delivery! Michael did a fantastic job and created the perfect intro/outro for my new podcast. I would highly recommend him!",
+                "reviewedAt": "Published 3 months ago"
+            },
+            {
+                "name": "surfgirl19761",
+                "country": "Romania",
+                "flag": "https://fiverr-dev-res.cloudinary.com/general_assets/flags/1f1fa-1f1f8.png",
+                "review": "esponded faster than I thought he would. hours later have an intro and outro that are incredible! Definitely recommend his service!",
+                "reviewedAt": "Published 4 days ago"
+            }
+        ],
+        "tags": [
+            "Wordpress",
+            "Web"
+        ]
+    }
+]

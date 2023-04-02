@@ -1,7 +1,6 @@
 <template>
     <div class=" main-container full bgc-user-profile">
         <div class=" user-profile">
-
             <section class="user-side">
                 <div class="user-card">
                     <div class="form-user-profile">
@@ -95,6 +94,8 @@ export default {
         },
         selectedTab(selected) {
             this.selected = selected
+            if(this.selected  === 'My gigs') this.$router.push('/user-profile')
+            if(this.selected  === 'My orders') this.$router.push('/user-profile/user-order')
             console.log(this.selected)
         },
         async removeGig(gigId) {
@@ -131,6 +132,7 @@ export default {
     created() {
         this.getUserGigs()
         this.$store.dispatch({ type: 'loadGigs' })
+        this.selected =  (this.$route.path === '/user-profile') ? 'My gigs' : 'My orders'
     },
     components: {
         GigList,
@@ -140,3 +142,6 @@ export default {
     }
 }
 </script>
+<style>
+
+</style>

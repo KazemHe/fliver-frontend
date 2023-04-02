@@ -28,7 +28,7 @@
             <RouterLink to="/explore">Explore</RouterLink>
             <RouterLink to="/seller">Become a Seller</RouterLink>
             <!-- <RouterLink to="/">Sign in</RouterLink> -->
-            <button @click="showSigninModal = !showSigninModal" class="btn-signin">
+            <button v-if="!loggedInUser" @click="showSigninModal = !showSigninModal" class="btn-signin">
               Sign in</button>
             <!-- v-if="!loggedInUser" -->
             <button v-if="!loggedInUser" @click="showJoinModal = !showJoinModal" class="join">Join</button>
@@ -59,12 +59,12 @@
 
   <!-- JOIN MODAL -->
   <div class="join-modal" v-if="showJoinModal">
-    <LoginSignup :join="showJoinModal" />
+    <LoginSignup :join="showJoinModal" @closeModal="closeModal" />
   </div>
 
   <!-- SIGNIN MODAL -->
   <div class="join-modal" v-if="showSigninModal">
-    <LoginSignup :signin="showSigninModal" />
+    <LoginSignup :signin="showSigninModal"  @closeModal="closeModal"/>
   </div>
 
   <!-- USER MODAL -->
@@ -122,8 +122,12 @@ export default {
       this.$router.push('/')
       this.$store.dispatch({ type: 'logout' })
     },
-    toggleSideMenu() {
-      showSigninModal = !showSigninModal
+    // toggleSideMenu() {
+    //   showSigninModal = !showSigninModal
+    // },
+    closeModal(modal) {
+      this.showSigninModal = modal
+      this.showJoinModal = modal
     }
   },
   computed: {
