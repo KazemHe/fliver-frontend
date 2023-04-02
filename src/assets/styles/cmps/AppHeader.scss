@@ -8,7 +8,7 @@
     transition: .5s ease;
 
     header {
-        padding-top: rem(6px);
+        // padding-top: rem(6px);
         height: rem(77px);
 
         .menu-bar {
@@ -16,6 +16,7 @@
         }
 
         .main-nav {
+            margin-top: 11px;
             // margin-top: 5px;
             align-items: center;
             justify-content: space-between;
@@ -35,9 +36,13 @@
         nav {
             a:not(:first-child) {
                 // padding: rem(10px) rem(16px);
-                margin: rem(10px);
+                // margin: rem(10px); //?
                 width: max-content;
                 // margin-inline-start: 27px;
+            }
+            a:first-child {
+                // color: $clr4;
+                margin-inline-end: 22px;
             }
 
             a {
@@ -84,6 +89,7 @@
 
             .login img {
                 cursor: pointer;
+                border-radius: 50%;
                 width: 40px;
                 height: 40px;
                 margin-left: 11px;
@@ -98,6 +104,7 @@
             opacity: 0;
 
             input {
+                margin-inline-start: 20px;
                 border: rem(1px) solid $clr11;
                 border-radius: rem(4px) 0 0 rem(4px);
                 font-family: macan-regular;
@@ -122,6 +129,7 @@
                 right: -9px;
                 top: -5px;
                 transition: 0.8s;
+                width: 50px;
             }
 
             .btn-serch:hover {
@@ -193,6 +201,15 @@
     .subheader {
         display: block;
         transition: .25s ease;
+    }
+}
+
+.header-payment {
+    border-bottom: 1px solid $clr-4;
+    .search-container,
+    .header-links,
+    .subheader {
+        display: none;
     }
 }
 
@@ -281,9 +298,10 @@ div.join-modal {
 
 @media only screen and (max-width: 600px) {
     .main-header header {
-        .mobile-header{
+        .mobile-header {
             position: sticky;
         }
+
         padding: 0;
         position: fixed;
         z-index: 200;
@@ -329,17 +347,19 @@ div.join-modal {
         width: 270px;
         box-shadow: 20px 0px 20px 800px rgba(51, 50, 50, 0.53);
         padding-inline-start: 20px;
+
         button {
             background-color: $clr-3;
-            width:100px;
+            width: 100px;
         }
+
         >* {
             margin-top: 20px;
             color: $clr4;
             font-size: 23px;
             border-bottom: 1px solid #ccc;
         }
-      
+
     }
 
 }

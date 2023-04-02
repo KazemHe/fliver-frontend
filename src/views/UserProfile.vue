@@ -9,8 +9,9 @@
                             <label for="imgupload">
                                 <input type="file" id="imgupload" style="display: none;">
                                 <div class="user-img">
-                                    <!-- <img :src="gigs[0].imgUrl"/> -->
-                                    <span v-html="getSvg('userProfile')"></span>
+                                    <!-- <ImgUploader class="img-uploader" @uploaded="onUploaded" /> -->
+                                    <img :src="loggedInUser.imgUrl" v-if="loggedInUser.imgUrl" @uploaded="onUploaded" />
+                                    <span v-html="getSvg('userProfile')" v-else></span>
                                 </div>
                             </label>
                         </form>
@@ -70,6 +71,7 @@ import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
 import { getActionRemoveGig, getActionUpdateGig, getActionAddGigMsg } from '../store/gig.store'
 import GigList from '../cmps/GigList.vue'
 import GigPreview from '../cmps/GigPreview.vue'
+import ImgUploader from '../cmps/ImgUploader.vue'
 
 export default {
     name: 'UserProfile',
@@ -124,12 +126,11 @@ export default {
             }
         },
         getUserGigs() {
-            // this.userGigs = 'hi'
-
-            console.log(this.userGigs)
             this.userGigs = this.gigs.filter(gig => gig.owner._id === this.loggedInUser._id)
-            console.log(this.userGigs)
-        }
+        },
+        onUploaded(imgUrl) {
+            this.loggedInUser.imgUrl = imgUrl
+        },
     },
     created() {
         this.getUserGigs()
@@ -137,7 +138,9 @@ export default {
     },
     components: {
         GigList,
-        GigPreview
+        GigPreview,
+        ImgUploader
+
     }
 }
 </script>

@@ -29,6 +29,7 @@ footer {
 
     .footer-links {
         display: flex;
+        padding-bottom: 10px;
 
         a {
             display: flex;
@@ -60,15 +61,21 @@ footer {
 
 @media only screen and (min-width: 900px) {
     footer {
+        margin-top: 32px;
         flex-direction: row;
 
         div.footer-title {
             margin: 0;
             flex-direction: row;
         }
-
+        div h4 {
+            margin-top: 5px;
+        }
         .logo {
             margin-inline-end: rem(30px);
+        }
+        div.footer-links {
+            padding-bottom: 0;
         }
     }
 }

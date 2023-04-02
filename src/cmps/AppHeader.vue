@@ -75,21 +75,7 @@
     <button @click="doLogout">Logout</button>
   </div>
 
-  <!-- <section class="vuper-display">
-    <vueper-slides class="no-shadow" ref="vueperslides2" :slide-ratio="1 / 8" :touchable="false"
-      @slide="$refs.vueperslides1 && $refs.vueperslides1.goToSlide($event.currentSlide.index, { emit: false })"
-      :breakpoints="breakpointsCategories" :visible-slides="5" fixed-height="40px" disable-arrows-on-edges>
-      <vueper-slide v-for="category in categories" :key="category" @click="categoryFilter(`${category.name}`)">
-        <template #content>
-          <div class="vueperslide__content-wrapper">
-            <router-link to="/explore">
-              {{ category.name }}
-            </router-link>
-          </div>
-        </template>
-      </vueper-slide>
-    </vueper-slides>
-  </section> -->
+  <div class="header-payment full"></div>
 </template>
 
 <script>
@@ -147,11 +133,15 @@ export default {
     isHomePage() {
       return this.$route.path === '/'
     },
+    isPaymentPage() {
+      return this.$route.path.startsWith('/payment')
+    },
     handleHeader() {
       return {
         'first-expansion': !this.isHomePage || this.isFirstScroll,
         'second-expansion': !this.isHomePage || this.isSecondScroll,
-        'static-pos': !this.isHomePage
+        'static-pos': !this.isHomePage,
+        'header-payment':  this.isPaymentPage
       }
     },
   },

@@ -49,7 +49,7 @@
 
 
   <section class="sorting">
-    <div class="count"><span>{{}}</span> services available</div>
+    <div class="count"><span>{{ availableGigs }}</span> services available</div>
     <VDropdown>
       <button class="sort-btn">Sort by <span class="sorting-txt">{{ changeSortTxt }} </span><span class="icon arrow"
           v-html="getSvg('filterArrow')"></span></button>
@@ -131,8 +131,14 @@ export default {
 
     changeSortTxt() {
       return this.filterBy.sortBy
-    }
+    },
+    availableGigs() {
+
+
+      return this.gigs.length
+    },
   },
+
 
   watch: {
     "$route.query.": {

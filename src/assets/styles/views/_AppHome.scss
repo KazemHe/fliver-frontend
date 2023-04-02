@@ -183,11 +183,13 @@
 
     .vueperslides__arrow svg {
         font-size: rem(14px);
-        color: $clr3;
         background-color: $clr2;
+        color: $clr3;
+        color:#555;
         height: rem(48px);
         border-radius: 50%;
         box-shadow: 0px 1px $clr6;
+        stroke-width: 2.5px;
     }
 
     .vueperslides__arrow.vueperslides__arrow--prev {
@@ -198,6 +200,7 @@
     .vueperslides__arrow.vueperslides__arrow--next {
         right: -2.4em;
         opacity: 1;
+        stroke-width: 2.5px;
     }
 
     .vueperslides__bullet .default {
@@ -282,7 +285,7 @@
 }
 
 .marketplace-container {
-    margin-bottom: 64px;
+    // margin-bottom: 64px;
 
     h4 {
         text-align: center;
@@ -367,11 +370,9 @@
 
 @media only screen and (max-width: 600px) {
 
-    // .hero-container {
-    // }
-
     .hero-search-container {
         margin-top: 84px;
+
         input {
             width: 259px;
             border-radius: 0 5px 5px 0;
@@ -380,7 +381,7 @@
         h1 {
             font-size: 32px;
             line-height: 40px;
-            
+
             span {
                 font-size: 42px;
                 font-weight: 500;
@@ -397,10 +398,47 @@
         div .categories {
             opacity: 1;
         }
+
         .owner-name {
             opacity: 0;
         }
     }
+
+    .trusted-by {
+        gap: 20px;
+
+        span,
+        img:last-child {
+            display: none;
+        }
+
+        //     {
+        //     display: none;
+        // }
+    }
+
+    div .video-section {
+        .text-side {
+            max-width: 350px;
+
+            h2 {
+                width: 24.4375rem;
+            }
+        }
+
+        .video-side img {
+            width: 373px;
+            height: 240px;
+        }
+    }
+
+    .marketplace-container {
+        .marketplace-svg {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
 }
 
 @media only screen and (min-width: 900px) {
@@ -417,11 +455,11 @@
         }
     }
 
-    .marketplace-container {
-        section.marketplace-svg {
-            grid-template-columns: repeat(3, 1fr);
-        }
-    }
+    // .marketplace-container {
+    //     section.marketplace-svg {
+    //         grid-template-columns: repeat(3, 1fr);
+    //     }
+    // }
 }
 
 @media only screen and (min-width: 1160px) {
