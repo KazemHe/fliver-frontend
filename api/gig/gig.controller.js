@@ -18,7 +18,8 @@ async function getGigs(req, res) {
     res.json(gigs)
   } catch (err) {
     logger.error('Failed to get gigs', err)
-    res.status(500).send({ err: 'Failed to get gigs' })
+    res.status(500).send({ err: 'Failed to get gigws' })
+
   }
 }
 
