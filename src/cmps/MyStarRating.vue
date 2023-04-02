@@ -12,7 +12,7 @@
         </li>
       </ul>
       <p class="rate-score">{{gig.owner.rate}}</p>
-      <p v-if="gig.reviews" class="seller-reviews-count">({{gig.reviews.length}})</p>
+      <p v-if="gig.reviews" class="seller-reviews-count">(347)</p>
   </template>
 
   <script>

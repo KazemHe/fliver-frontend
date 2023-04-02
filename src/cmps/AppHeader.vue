@@ -26,7 +26,7 @@
 
           <section class="header-links flex justify-center align-center">
             <RouterLink to="/explore">Explore</RouterLink>
-            <RouterLink to="/gig/edit">Become a Seller</RouterLink>
+            <RouterLink to="/seller">Become a Seller</RouterLink>
             <!-- <RouterLink to="/">Sign in</RouterLink> -->
             <button @click="showSigninModal = !showSigninModal" class="btn-signin">
               Sign in</button>

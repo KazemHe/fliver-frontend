@@ -156,6 +156,8 @@ export default {
 
     methods: {
         addOrder() {
+            console.log(this.loggedInUser);    
+            if ( !this.loggedInUser) this.$router.push('/')
             const gig = this.gig
             console.log(gig);
             // if (!this.loggedInUser) {
@@ -185,6 +187,7 @@ export default {
                 "status": "Pending",
             }
             console.log('order', order);
+          
             this.$store.dispatch({ type: 'saveOrder', order: { ...order } })
             socketService.emit('gig-ordered', order)
             setTimeout(() => {
