@@ -1,8 +1,8 @@
 <template>
-   <pre>
-   </pre> 
+    <pre>
+       </pre>
     <h2 class="headline">{{ loggedUser.fullname }}'s - Dashboard profile</h2>
-   <div class="row g-6 mb-6 flex">
+    <div class="row g-6 mb-6 flex">
         <div class="col-xl-3 col-sm-6 col-12">
             <div class="card shadow border-0">
                 <div class="card-body">
@@ -86,7 +86,7 @@
                         </div>
                     </div>
                     <div class="mt-2 mb-0 text-sm">
-                        <span  class="text-nowrap text-xs text-muted">Still waiting your
+                        <span class="text-nowrap text-xs text-muted">Still waiting your
                             reference</span>
                     </div>
                 </div>
@@ -94,49 +94,58 @@
         </div>
     </div>
     <div class="card shadow border-0 mb-7">
-                <div class="card-header">
-                    <h5 class="mb-0">Orders data</h5>
-                </div>
-                <div class="table-responsive" >
-                    <table class="table table-hover table-nowrap">
-                        <thead class="thead-light">
-                            <tr>
-                                <th scope="col">Buyer</th>
-                                <th scope="col">Gig name</th>
-                                <th scope="col">Order Date</th>
-                                <th scope="col">Total</th>
-                                <th scope="col">Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr v-for="order in orders" :key="order._id">
-                                <td >
-                                    <img 
-                                        :src="order.buyer.imgUrl"
-                                        class="avatar avatar-sm rounded-circle me-2">
-                                    <a class="text-heading font-semibold" href="#">
-                                        {{order.buyer.fullname}} 
-                                    </a>
-                                </td>
-                                <td>
-                                    {{order.gig.name}} 
-                                </td>
-                                <td>
-                                    {{ new Date(order.createdAt).toLocaleDateString() }}
-                                </td>
-                                <td>
-                                 US${{ order.gig.price }}
-                                </td>
-                                <td>
-                                    <dashboard @change="change" :order="order" />
-                                </td>
-                                <td class="text-end">
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>       
-            </div>
+        <div class="card-header">
+            <h5 class="mb-0">Orders data</h5>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-hover table-nowrap">
+                <thead class="thead-light">
+                    <tr>
+
+                        <th scope="col">
+                            <p class="p-in-th">Buyer</p>
+                        </th>
+                        <th scope="col" >
+                            <p class="p-in-th">Gig name</p>
+                        </th>
+                        <th scope="col">
+                            <p class="p-in-th">Order Date</p>
+                        </th>
+                        <th scope="col">
+                            <p class="p-in-th">Total</p>
+                        </th>
+                        <th scope="col">
+                            <p class="p-in-th">Status</p>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="order in orders" :key="order._id">
+                        <td>
+                            <img :src="order.buyer.imgUrl" class="avatar avatar-sm rounded-circle me-2">
+                            <a class="text-heading font-semibold" href="#">
+                                {{ order.buyer.fullname }}
+                            </a>
+                        </td>
+                        <td>
+                         <p class="p-in-th"> {{ order.gig.name }}</p>  
+                        </td>
+                        <td>
+                            <p class="p-in-th"> {{ new Date(order.createdAt).toLocaleDateString() }}</p>  
+                        </td>
+                        <td>
+                            <p class="p-in-th"> US${{ order.gig.price }}</p>  
+                        </td>
+                        <td>
+                            <p class="p-in-th"> <dashboard @change="change" :order="order" /></p>  
+                        </td>
+                        <td class="text-end">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -154,7 +163,7 @@ export default {
             deliveredOnTime: 95,
             responseRate: 98,
             loggedUser: null,
-            
+
 
         }
     },
@@ -163,11 +172,11 @@ export default {
         this.loggedUser = this.$store.getters.loggedinUser
         window.scrollTo({ top: 0, behavior: 'smooth' })
         socketService.on('user-ordered-gig', (msg) => {
-    //   showSuccessMsg(msg)
-      this.loadOrders()
-    //   console.log(msg)
-    })
-        
+            //   showSuccessMsg(msg)
+            this.loadOrders()
+            //   console.log(msg)
+        })
+
     },
     methods: {
         loadOrders() {

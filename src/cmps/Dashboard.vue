@@ -56,18 +56,18 @@ export default {
 }
 
 .pending {
-    background-color: #62646a;
+    color: #62646a;
 }
 
 .Progress {
-    background-color: #ffbe5b;
+    color: #ffbe5b;
 }
 
 .completed {
-    background-color: #1dbf73;
+   color: #1dbf73;
 }
 
 .rejected {
-    background-color: #c43333;
+   color: #c43333;
 }
 </style>

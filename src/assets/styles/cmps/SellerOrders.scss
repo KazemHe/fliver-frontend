@@ -200,6 +200,7 @@
                 }
 
                 .Completed {
+                    background-color: none;
                     color: #1dbf73;
                 }
             }
@@ -430,9 +431,7 @@
         vertical-align: middle;
         border-color: #e7eaf0;
 
-        >thead {
-            vertical-align: bottom;
-        }
+       
 
         tr {
             height: 8vh;
@@ -442,7 +441,9 @@
 
 
 .table>thead {
-    vertical-align: bottom;
+    margin-left: 10px;
+    text-align: left;
+    vertical-align: inherit;
 }
 
 .table>:not(:last-child)>:last-child>* {
@@ -492,8 +493,13 @@
 }
 
 .avatar-sm {
+    margin-left: 10px;
+
     width: 2.25rem;
     height: 2.25rem;
     font-size: 0.75rem;
     border-radius: 0.25rem;
+}
+.p-in-th{
+    margin-left: 10px;
 }
