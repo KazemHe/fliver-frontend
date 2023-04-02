@@ -323,10 +323,18 @@ div.join-modal {
         }
     }
 
+    // .first-expansion {
+    //     >* {
+    //         display: none;
+    //     }
+    // }
 
-
-    .first-expansion {
-        >* {
+    .second-expansion {
+        header .search-container {
+            opacity: 0;
+        }
+    
+        .subheader {
             display: none;
         }
     }

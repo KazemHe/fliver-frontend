@@ -3,19 +3,16 @@
         <div class="">
             <section class="tabs-orders">
                 <!--  v-if="selected === 'My Orders' && gigs" -->
-                <div v-if="orders" v-for="order in orders"  class="user-orders">
-                    <!-- {{ buyerOrders }} -->
-                    <article class="card-orders">
+                <div v-if="orders" v-for="order in orders"  class="card-orders">
+                    <!-- {{ order }} -->
                         <div class="order">
                             <div class="user-gig">
                                 <img :src="order.gig.img" />
                             </div>
-                            <!-- <img class="user-img" :src="order.gig.img" /> -->
                             <p>Price: ${{ order.gig.price }}</p>
-                            <!-- <p>Order date: {{ gigs[0].memberSince }}</p> -->
                             <p>Status: {{ order.status }}</p>
+                            <p>Seller: {{ order.seller.fullname }}</p>
                         </div>
-                    </article>
                 </div>
             </section>
         </div>

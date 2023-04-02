@@ -1,7 +1,6 @@
 <template>
     <div class="gigs-tabs">
         <section v-if="userGigs">
-            <!-- {{ userGigs }} -->
             <ul class="flex">
                 <li class="gigs-user">
                     <router-link to="/gig/edit">
@@ -31,7 +30,7 @@ export default {
         return {
             userGigs: '',
             selected: 'My Gigs',
-            tabs: ['My Gigs', 'My Orders', 'Received Orders', 'Reviews'],
+            tabs: ['My Gigs', 'My Orders', 'Received Orders'],
         }
     },
     computed: {
@@ -62,7 +61,6 @@ export default {
             console.log(gig)
             try {
                 gig = { ...gig }
-                // gig.price = +prompt('New price?', gig.price)
                 this.$router.push(`gig/edit/${gig._id}`)
                 await this.$store.dispatch(getActionUpdateGig(gig))
                 showSuccessMsg('Gig updated')
@@ -73,15 +71,12 @@ export default {
             }
         },
         getUserGigs() {
-            // this.userGigs = 'hi'
             this.userGigs = this.gigs.filter(gig => gig.owner._id === this.loggedInUser._id)
             console.log(this.userGigs)
         }
     },
     created() {
         this.getUserGigs()
-        // console.log('user gigs',this.userGigs)
-        console.log('user gigs', this.gigs)
         this.$store.dispatch({ type: 'loadGigs' })
     },
     components: {
