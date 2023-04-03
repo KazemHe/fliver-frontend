@@ -9,12 +9,10 @@
                         <div class="user-gig">
                             <img :src="order.gig.img" />
                         </div>
-                        <p>Order status: <span>{{ order.status }}</span></p>
-                        <p>Title: <span>{{ order.gig.name }} </span></p>
-                        <p>Price: <span>${{ order.gig.price }}</span></p>
-                        <p>By: <span>{{ order.seller.fullname }} </span></p>
-                        <!-- :class="statusStyle" -->
-                        <!-- :style="{'yellow': order.status === 'Progress'} -->
+                        <p> <span :class="statusStyle(order)">{{ order.status }}</span></p>
+                        <p><span>{{ order.gig.name }} </span></p>
+                        <p><span>${{ order.gig.price }}</span></p>
+                        <p><span>{{ order.seller.fullname }} </span></p>
                     </div>
                 </div>
             </section>
@@ -30,7 +28,6 @@ export default {
     data() {
         return {
             status: 'Progress'
-            //  ['Progress', 'Pending', 'Completed', 'Rejected']
         }
     },
     computed: {
@@ -43,22 +40,24 @@ export default {
         orders() {
             return this.$store.getters.buyerOrders
         },
-        statusStyle() {
-            return {
-                 'yellow': this.order.status === 'Progress'
-            }
-        }
+       
     },
     methods: {
         getSvg(iconName) {
             return (this.icon = svgServive.getGigSvg(iconName))
         },
+        statusStyle(order) {
+            return {
+                 'gray': order.status === 'Pending',
+                 'progress': order.status === 'Progress',
+                 'completed': order.status === 'Completed',
+                 'rejected': order.status === 'Rejected'
+            }
+        }
     },
     created() {
         this.$store.dispatch({ type: 'loadOrders' })
         this.buyerOrders = this.orders
-        console.log('in orders')
-        // this.$store.dispatch({ type: 'loadGigs' })
 
         socketService.on('order-approved', (msg) => {
             this.$store.dispatch({ type: 'loadOrders' })
@@ -73,27 +72,3 @@ export default {
     }
 }
 </script>
-
-<style>
-.tabs-orders {
-    display: flex;
-    gap: 26px;
-}
-
-.user-gig-img {
-    width: 256px;
-    height: 155px;
-}
-
-.order p{
-    border-top: 1px solid #efefef;
-    /* color: rgb(39, 38, 38); */
-}
-p span{
-    /* color: red; */
-    font-size: 15px;
-}
-.yellow {
-    color: yellow;
-}
-</style>

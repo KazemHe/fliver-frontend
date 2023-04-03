@@ -4,6 +4,7 @@
             <section class="user-side">
                 <div class="user-card">
                     <div class="form-user-profile">
+
                         <form>
                             <label for="imgupload">
                                 <input type="file" id="imgupload" style="display: none;">
@@ -20,11 +21,11 @@
                     <section class="user-details">
                         <div class="flex">
                             <span class="svg-user-card" v-html="getSvg('location')"></span>
-                            <p> From: United-state </p>
+                            <p> From: Israel</p>
                         </div>
                         <div class="flex">
                             <span class="svg-user-card" v-html="getSvg('userProfile')"></span>
-                            <p> Member since: June 2018</p>
+                            <p> Member since: June 2019</p>
                         </div>
                     </section>
                 </div>
@@ -54,7 +55,7 @@
                 </div>
 
                 <RouterView />
-
+                <!-- <pre>{{ loggedInUser }}</pre> -->
             </section>
         </div>
     </div>
