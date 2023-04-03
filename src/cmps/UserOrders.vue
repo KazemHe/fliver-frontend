@@ -90,7 +90,7 @@ export default {
     /* color: rgb(39, 38, 38); */
 }
 p span{
-    /* color: red; */
+   
     font-size: 15px;
 }
 .yellow {

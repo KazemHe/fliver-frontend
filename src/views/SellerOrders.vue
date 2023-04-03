@@ -3,28 +3,7 @@
        </pre>
     <h2 class="headline">{{ loggedUser.fullname }}'s - Dashboard profile</h2>
     <div class="row g-6 mb-6 flex">
-        <div class="col-xl-3 col-sm-6 col-12">
-            <div class="card shadow border-0">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col">
-                            <span class="h6 font-semibold text-muted text-sm d-block mb-2">Annual Revenue - </span>
-                            <span class="h3 font-bold mb-0">${{ annualIncome }}</span>
-                        </div>
-                        <div class="col-auto">
-                            <div class="icon icon-shape bg-tertiary text-white text-lg rounded-circle">
-                                <i class="bi bi-credit-card"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-2 mb-0 text-sm">
-                        <span class="badge badge-pill bg-soft-success text-success me-2">
-                        </span>
-                        <span class="text-nowrap text-xs text-muted">Since last year</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+       
         <div class="col-xl-3 col-sm-6 col-12">
             <div class="card shadow border-0">
                 <div class="card-body">
@@ -48,29 +27,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xl-3 col-sm-6 col-12">
-            <div class="card shadow border-0">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col">
-                            <span class="h6 font-semibold text-muted text-sm d-block mb-2">Completed Orders - </span>
-                            <span class="h3 font-bold mb-0">{{ annualOrdersComplete }}</span>
-                        </div>
-                        <div class="col-auto">
-                            <div class="icon icon-shape bg-info text-white text-lg rounded-circle">
-                                <i class="bi bi-clock-history"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-2 mb-0 text-sm">
-                        <span class="badge badge-pill bg-soft-danger text-danger me-2">
-                            <i class="bi bi-arrow-down me-1"></i>
-                        </span>
-                        <span class="text-nowrap text-xs text-muted">Since you join </span>
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <div class="col-xl-3 col-sm-6 col-12">
             <div class="card shadow border-0">
                 <div class="card-body">
@@ -91,8 +48,88 @@
                     </div>
                 </div>
             </div>
+        </div>  
+
+        <div class="col-xl-3 col-sm-6 col-12">
+            <div class="card shadow border-0">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <span class="h6 font-semibold text-muted text-sm d-block mb-2 Progress" >In progress Orders - </span>
+                            <span class="h3 font-bold mb-0 Progress ">{{ InprogresOrders }}</span>
+                        </div>
+                        <div class="col-auto">
+                            <div class="icon icon-shape bg-info text-white text-lg rounded-circle">
+                                <i class="bi bi-clock-history"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-2 mb-0 text-sm">
+                        <span class="badge badge-pill bg-soft-danger text-danger me-2">
+                            <i class="bi bi-arrow-down me-1"></i>
+                        </span>
+                        <span class="text-nowrap text-xs text-muted">Since you join </span>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <div class="col-xl-3 col-sm-6 col-12">
+            <div class="card shadow border-0">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <span class="h6 font-semibold text-muted text-sm d-block mb-2 rejected">Rejected Orders - </span>
+                            <span class="h3 font-bold mb-0 rejected">{{ rejectedOrders }}</span>
+                        </div>
+                        <div class="col-auto">
+                            <div class="icon icon-shape bg-info text-white text-lg rounded-circle">
+                                <i class="bi bi-clock-history"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-2 mb-0 text-sm">
+                        <span class="badge badge-pill bg-soft-danger text-danger me-2">
+                            <i class="bi bi-arrow-down me-1"></i>
+                        </span>
+                        <span class="text-nowrap text-xs text-muted">Since you join </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-sm-6 col-12">
+            <div class="card shadow border-0">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <span class="h6 font-semibold text-muted text-sm d-block mb-2 completed">Completed Orders - </span>
+                            <span class="h3 font-bold mb-0 completed">{{ annualOrdersComplete }}</span>
+                        </div>
+                        <div class="col-auto">
+                            <div class="icon icon-shape bg-info text-white text-lg rounded-circle">
+                                <i class="bi bi-clock-history"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-2 mb-0 text-sm">
+                        <span class="badge badge-pill bg-soft-danger text-danger me-2">
+                            <i class="bi bi-arrow-down me-1"></i>
+                        </span>
+                        <span class="text-nowrap text-xs text-muted">Since you join </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+      
     </div>
+
+
+
+
+
+    
     <div class="card shadow border-0 mb-7">
         <div class="card-header">
             <h5 class="mb-0">Orders data</h5>
@@ -222,6 +259,13 @@ export default {
                 if (order.status === "Pending") { pending++ }
             })
             return pending
+        },
+        rejectedOrders() {
+            var rejected = 0
+            this.orders.forEach(order => {
+                if (order.status === "Rejected") { rejected++ }
+            })
+            return rejected
         },
         annualOrdersComplete() {
             var complete = 0

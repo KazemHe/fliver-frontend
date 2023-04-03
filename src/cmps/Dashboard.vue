@@ -1,15 +1,15 @@
 <template>
     <VDropdown>
-        <div @click="toggleSet()" class="status-col flex column">
+        <div class="status-col flex column">
             <div class="status flex" :class="className(order.status)">
                 <span class="regular">{{ order.status }}</span>
             </div>
         </div>
         <template #popper>
             <div class="dash-options">
-                <button @click="changeStatus('Completed', order)" class="completed">Completed</button>
-                <button @click="changeStatus('Progress', order)" class="Progress">Progress</button>
-                <button @click="changeStatus('Rejected', order)" class="rejected">Rejected</button>
+                <button @click="changeStatus('Completed', order)" class="completed dash-options-btn">Completed</button>
+                <button @click="changeStatus('Progress', order)" class="Progress dash-options-btn">Progress</button>
+                <button @click="changeStatus('Rejected', order)" class="rejected dash-options-btn">Rejected</button>
             </div>
 
         </template>
@@ -33,10 +33,7 @@ export default {
             if (str === 'Progress') return 'Progress'
             if (str === 'Rejected') return 'rejected'
         },
-        // toggleSet() {
-        //     console.log('hey');
-        //     this.setOpen = !this.setOpen
-        // },
+
 
         changeStatus(status, order) {
             console.log('order', status, order);
@@ -64,10 +61,43 @@ export default {
 }
 
 .completed {
-   color: #1dbf73;
+    background-color: none;
+    color: #1dbf73;
 }
 
 .rejected {
-   color: #c43333;
+    color: #c43333;
+}
+
+.completed:hover {
+    cursor: pointer;
+}
+
+.rejected:hover {
+    cursor: pointer;
+}
+
+.Progress:hover {
+    cursor: pointer;
+}
+
+.dash-options-btn:first-child {
+    color: white;
+    background-color: #1dbf73;
+    border-radius: 4px;
+}
+
+.dash-options-btn:nth-child(2) {
+    color: white;
+    background-color: #ffbe5b;
+    border-radius: 4px;
+}
+
+.dash-options-btn:nth-child(3) {
+    color: white;
+    background-color: #c43333;
+    border-radius: 4px;
 }
 </style>
+
+
