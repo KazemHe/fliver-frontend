@@ -9,8 +9,8 @@
                 <div class="card-body">
                     <div class="row flex">
                         <div class="col">
-                            <span class="h6 font-semibold text-muted text-sm d-block mb-2">Monthly revenue - </span>
-                            <span class="h3 font-bold mb-0">${{ monthIncome }}</span>
+                            <span class="h6 font-semibold text-muted text-sm d-block mb-2">Monthly revenue: ${{ monthIncome }} </span>
+                           
                         </div>
                         <div class="col-auto">
                             <div class="icon icon-shape bg-warning text-white text-lg rounded-circle">
@@ -32,8 +32,8 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col">
-                            <span class="h6 font-semibold text-muted text-sm d-block mb-2">Pending orders - </span>
-                            <span class="h3 font-bold mb-0">{{ pendingOrders }}</span>
+                            <span class="h6 font-semibold text-muted text-sm d-block mb-2">Pending orders: {{ pendingOrders }} </span>
+                       
                         </div>
                         <div class="col-auto">
                             <div class="icon icon-shape bg-warning text-white text-lg rounded-circle">
@@ -55,9 +55,9 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col">
-                            <span class="h6 font-semibold text-muted text-sm d-block mb-2 Progress">In progress orders -
+                            <span class="h6 font-semibold text-muted text-sm d-block mb-2 Progress">In progress orders: {{ InprogresOrders }}
                             </span>
-                            <span class="h3 font-bold mb-0 Progress ">{{ InprogresOrders }}</span>
+                         
                         </div>
                         <div class="col-auto">
                             <div class="icon icon-shape bg-warning text-white text-lg rounded-circle">
@@ -82,9 +82,9 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col">
-                            <span class="h6 font-semibold text-muted text-sm d-block mb-2 rejected">Rejected orders -
+                            <span class="h6 font-semibold text-muted text-sm d-block mb-2 rejected">Rejected orders: {{ rejectedOrders }}
                             </span>
-                            <span class="h3 font-bold mb-0 rejected">{{ rejectedOrders }}</span>
+                     
                         </div>
                         <div class="col-auto">
                             <div class="icon icon-shape bg-warning text-white text-lg rounded-circle">
@@ -109,9 +109,9 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col">
-                            <span class="h6 font-semibold text-muted text-sm d-block mb-2 completed">Completed orders -
+                            <span class="h6 font-semibold text-muted text-sm d-block mb-2 completed">Completed orders: {{ annualOrdersComplete }}
                             </span>
-                            <span class="h3 font-bold mb-0 completed">{{ annualOrdersComplete }}</span>
+                        
                         </div>
 
                         <div class="col-auto">

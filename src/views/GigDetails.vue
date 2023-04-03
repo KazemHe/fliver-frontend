@@ -658,7 +658,7 @@ export default {
         border-radius: 50%;
         box-shadow: 0px 1px #b5b6ba;
         left: -2.44em;
-
+        
         svg {
             color: black;
             display: block;
