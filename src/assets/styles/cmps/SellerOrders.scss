@@ -558,6 +558,18 @@ td {
         font-size: 16px;
         font-family: macan-regular;
     }
+
+
+  
+
+}
+
+td:nth-child(1){
+    text-align: left;
+}
+
+td:nth-child(2){
+    text-align: left;
 }
 
 .row {
@@ -569,3 +581,5 @@ td {
 tbody tr:nth-child(even) {
     background-color: #e0e4f54c;
 }
+
+

@@ -3,6 +3,9 @@
     <a  @click="showSigninModal = !showSigninModal">Sign in</a>
     <a  @click="showJoinModal = !showJoinModal">Join</a>
     <RouterLink to="/explore">Explore</RouterLink>
+    <RouterLink v-if="loggedInUser" to="/user-profile">Profile</RouterLink>
+    <RouterLink v-if="loggedInUser" to="/user-profile/user-order">Orders</RouterLink>
+    <RouterLink v-if="loggedInUser" to="/seller/orders">Dashboard</RouterLink>
   </section>
 
   <div class="main-header main-container mobile-header" :class="handleHeader">
