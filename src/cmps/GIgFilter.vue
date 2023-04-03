@@ -60,7 +60,7 @@ export default {
 }
 
 .explore-title {
-  font-family: macan-regular;
+  font-family: macan-bold;
   font-weight: 700;
   font-size: 2rem;
 }

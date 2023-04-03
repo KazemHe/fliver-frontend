@@ -25,7 +25,7 @@
                         </div>
                         <div class="flex">
                             <span class="svg-user-card" v-html="getSvg('userProfile')"></span>
-                            <p> Member since: June 2019</p>
+                            <p> Member since: April 2023</p>
                         </div>
                     </section>
                 </div>
