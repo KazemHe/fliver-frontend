@@ -1,6 +1,6 @@
 <template>
     <VDropdown>
-        <div @click="toggleSet()" class="status-col flex column">
+        <div class="status-col flex column">
             <div class="status flex" :class="className(order.status)">
                 <span class="regular">{{ order.status }}</span>
             </div>
