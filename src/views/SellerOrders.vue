@@ -186,7 +186,7 @@
                             <p class="p-in-th"> {{ order.gig.name }}</p>
                         </td>
                         <td>
-                            <p class="p-in-th"> {{ new Date(order.createdAt).toLocaleDateString() }}</p>
+                            <p class="p-in-th"> {{ new Date(order.createdAt).toLocaleDateString("en-US") }}</p>
                         </td>
                         <td>
                             <p class="p-in-th"> US${{ order.gig.price }}</p>

@@ -432,7 +432,12 @@
 
 }
 
-
+// .p-in-th:nth-child(1){
+//     text-align: initial
+// }
+// tr:nth-child(2){
+//     text-align: initial
+// }
 
 .mt-2 {
     margin-top: 0.5rem !important;
@@ -564,6 +569,12 @@ td {
 
 }
 
+th:nth-child(1){
+    text-align: left
+}
+th:nth-child(2){
+text-align: left
+}
 td:nth-child(1){
     text-align: left;
 }
