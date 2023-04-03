@@ -143,7 +143,7 @@
                     <section class="seller-stat">
                         <ul class="grid clean-list user-info">
                             <li class="flex column"><span class="key">From</span>
-                                <span class="value">Bangladesh</span>
+                                <span class="value">Israel</span>
                             </li>
                             <li class="flex column"><span class="key">Member since</span>
                                 <span class="value">Jan 2023</span>
