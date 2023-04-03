@@ -200,7 +200,7 @@
                 }
 
                 .Completed {
-                   
+
                     color: #1dbf73;
                 }
             }
@@ -242,6 +242,7 @@
 }
 
 .headline {
+    padding-bottom: 20px;
     padding-top: 20px;
     text-align: center;
 }
@@ -379,13 +380,15 @@
 }
 
 .card-body {
+    min-height: 70px;
     flex: 1 1 auto;
-    padding: 1.5rem 1.5rem;
+    padding: rem(10px);
     color: #525f7f;
+
 }
 
 .row {
-
+    font-size: 16px;
     --x-gutter-y: 0;
     display: flex;
     flex-wrap: wrap;
@@ -393,7 +396,42 @@
     margin-right: calc(var(--x-gutter-x)*-0.5);
     margin-left: calc(var(--x-gutter-x)*-0.5);
 
+    .col {
+        flex: 1 0 0%;
+    }
+
+    .col-auto {
+        flex: 0 0 auto;
+        width: auto;
+
+        .rounded-circle {
+            border-radius: 50% !important;
+        }
+        .bg-warning {
+            background-color: rgba(181, 198, 209, 0.739) !important;
+        }
+        .text-white {
+            --x-text-opacity: 1;
+            color: rgba(255, 255, 255, 0.966)  !important;
+        }
+        .text-lg {
+            font-size: 1.25rem !important;
+        }
+        .icon-shape {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            vertical-align: middle;
+            border-radius: 0.375rem;
+            width: 2rem;
+            height: 2rem;
+        }
+    }
+
 }
+
+
 
 .mt-2 {
     margin-top: 0.5rem !important;
@@ -432,7 +470,7 @@
         vertical-align: middle;
         border-color: #e7eaf0;
 
-       
+
 
         tr {
             text-align: center;
@@ -444,7 +482,7 @@
 
 .table>thead {
     margin-left: 10px;
-    text-align: center  ;
+    text-align: center;
     vertical-align: inherit;
 }
 
@@ -502,7 +540,8 @@
     font-size: 0.75rem;
     border-radius: 0.25rem;
 }
-.p-in-th{
+
+.p-in-th {
     font-weight: 600;
     margin-left: 10px;
     font-size: 16px;
@@ -510,20 +549,20 @@
 }
 
 td {
-    a{
+    a {
         font-weight: 600;
-    margin-left: 10px;
-    font-size: 16px;
-    font-family: macan-regular;
+        margin-left: 10px;
+        font-size: 16px;
+        font-family: macan-regular;
     }
 }
 
-.row{
-    .col{
+.row {
+    .col {
         font-weight: bold;
     }
 }
 
-tbody tr:nth-child(even){
+tbody tr:nth-child(even) {
     background-color: #e0e4f54c;
 }
