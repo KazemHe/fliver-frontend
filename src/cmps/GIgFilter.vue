@@ -1,6 +1,6 @@
 <template>
   <section class="up-filter">
-    <h2>Explore</h2>
+    <h1 class="explore-title">{{ explore }}</h1>
   </section>
   <FloatingFilter :gigs="gigs" @setFilterBy="setFilterBy" />
 </template>
@@ -11,11 +11,21 @@ export default {
   props: ['gigs'],
 
 
+
+  data() {
+    return {
+      category: 'ALL'
+    }
+  },
+
   methods: {
 
     setFilterBy(filterBy) {
 
-      console.log('check the filter', filterBy)
+      console.log('check the filter', { ...filterBy })
+
+      if (filterBy.filterBy.category) this.category = filterBy.filterBy.category
+      else this.category = 'ALL'
 
       this.$emit('setFilterBy', { ...filterBy })
     },
@@ -23,9 +33,9 @@ export default {
 
   computed: {
 
-    labels() {
+    explore() {
 
-      return this.$store.getters.labels
+      return this.category
     },
 
   },
@@ -49,8 +59,13 @@ export default {
 
 }
 
+.explore-title {
+  font-family: macan-regular;
+  font-weight: 700;
+  font-size: 2rem;
+}
 
-.up-filter h2 {
+.up-filter h1 {
   margin-top: 1rem;
 }
 </style>
