@@ -149,11 +149,14 @@
 }
 
 .subheader {
-    display: none;
+    // display: none;
     background-color: $clr2;
+    // background-color: $clr2;// new color
     border-top: rem(1px) solid $clr-4;
     border-bottom: rem(1px) solid $clr-4;
-    transition: background-color .5s ease;
+    transition:  .5s ease;
+    opacity:0;
+    height: 0;
 }
 
 .first-expansion {
@@ -207,8 +210,10 @@
     }
 
     .subheader {
-        display: block;
-        transition: .25s ease;
+        // display: block;
+        // transition: .25s ease;
+        height:auto;
+        opacity: 1;
     }
 }
 

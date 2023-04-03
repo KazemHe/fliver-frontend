@@ -14,9 +14,7 @@
     
 
     div {
-        // display: flex;
-        // flex-direction: column;
-        // justify-content: flex-end;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
         >* {
             margin: 10px;
         }
@@ -26,4 +24,31 @@
     display: flex;
     gap: 26px;
     flex-wrap: wrap;
+}
+
+.tabs-orders {
+    display: flex;
+    gap: 26px;
+}
+
+.user-gig-img {
+    width: 256px;
+    height: 155px;
+}
+
+p span{
+    font-size: 15px;
+}
+.progress {
+    color: #ffbe5b;
+}
+.completed {
+    background-color: none;
+    color: #1dbf73;
+}
+.rejected {
+    color: #c43333;
+}
+.gray{
+    color: gray;
 }
