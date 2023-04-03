@@ -18,13 +18,16 @@
 .alert {
     background-color: #fff;
     position: fixed;
-    top: 0;
+    top: .5rem;
     left: 50vw;
+    // font-family: manac-regular;
+    font-weight: 500;
     margin-inline-end: 2%;
     transform: translateX(-50%);
     border-radius: em(4px, 14px) solid darkgray;
     // border-radius: 10px;
-    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%);
+    border-left: 15px solid $clr0;
+    box-shadow: 0 2px 5px 10px rgb(0 0 0 / 15%);
     z-index: 9999;
     color: $clr3;
 

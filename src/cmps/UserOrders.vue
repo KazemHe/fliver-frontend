@@ -66,7 +66,7 @@ export default {
         socketService.on('order-status-update', (msg) => {
             this.$store.dispatch({ type: 'loadOrders' })
         })
-
+        window.scroll(0, 0)
     },
     components: {
 
