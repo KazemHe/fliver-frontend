@@ -49,10 +49,10 @@
                     </div>
                     <div class="name-inputs flex">
                         <div>
-                            <p>First Name</p><input class="name-input" type="text" placeholder="fr">
+                            <p>First Name</p><input class="name-input" type="text" placeholder="eli">
                         </div>
                         <div>
-                            <p>Last Name</p><input class="name-input" type="text" placeholder="fr">
+                            <p>Last Name</p><input class="name-input" type="text" placeholder="gal">
                         </div>
                     </div>
                 </section>
