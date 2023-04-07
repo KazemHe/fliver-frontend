@@ -35,11 +35,13 @@
                 v-model="filterBy.DeliveryTime" value="3"><label for="3d">Up to 3 days</label></div>
             <div class="delivery-option"><input class="delivery-input" type="radio" id="7d" name="delivery-time"
                 v-model="filterBy.DeliveryTime" value="7"><label for="7d">Up to 7 days</label></div>
-            <div class="delivery-option"><input class="delivery-input" type="radio" id="anytime" name="delivery-time"
+            <div class="delivery-option"><input  class="delivery-input" type="radio" id="anytime" name="delivery-time"
                 value="" checked=""><label for="anytime">Anytime</label></div>
           </form>
-          <div class="filters-footer"><button @click="clearDeliveryTimeFilter" class="clear" type="button">Clear
-              All</button><button class="apply" form="filters" type="submit">Apply</button></div>
+          <div class="filters-footer">
+            <button @click="clearDeliveryTimeFilter" class="clear" type="button">Clear All</button>
+            <button class="apply" form="filters" type="submit">Apply</button>
+          </div>
         </section>
       </template>
     </VDropdown>
@@ -107,9 +109,6 @@ export default {
     },
 
     setFilterBy(sortBy) {
-      console.log('sortBy', sortBy);
-      console.log('check the filter', this.filterBy)
-
       if (sortBy) this.filterBy.sortBy = sortBy
       this.$router.push({
         query: {
@@ -144,13 +143,9 @@ export default {
     "$route.query.": {
       handler() {
         const filterBy = this.$route.query
-        console.log(filterBy)
         if (filterBy.category) this.filterBy.category = filterBy.category
         if (filterBy.title) this.filterBy.title = filterBy.title
-        // this.filterBy = newValue 
 
-        // filterBy = filter
-        // console.log(this.filterBy)
         this.$emit('setFilterBy', { filterBy })
       },
       deep: true,
@@ -159,4 +154,3 @@ export default {
   },
 }
 </script>
-<style></style>

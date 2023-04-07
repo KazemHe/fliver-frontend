@@ -35,9 +35,9 @@ export default {
 
 
 
-    socketService.on('user-is-watching', (msg) => {
-      showSuccessMsg(msg)
-    })
+    // socketService.on('user-is-watching', (msg) => {
+    //   showSuccessMsg(msg)
+    // })
     socketService.on('user-ordered-gig', (msg) => {
       showSuccessMsg(msg)
       this.isActiveDashboard = true

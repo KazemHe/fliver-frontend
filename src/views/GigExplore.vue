@@ -1,8 +1,5 @@
 <template>
-    <!-- <router-link to="/gig/edit">Add New gig</router-link> -->
-
     <GigFilter class="filter" @setFilterBy="setFilterBy" :gigs="gigs" />
-
     <GigList :gigs="gigs" @removeGig="removeGig" />
 </template>
   
@@ -43,15 +40,13 @@ export default {
         async setFilterBy(filterBy) {
 
             console.log('filter by from explore', { ...filterBy })
-            // try {
-            this.$store.dispatch({ type: 'filterGigs', ...filterBy })
-            
-            // }
-
-            // catch {
-            //     console.log(err)
-            //     showErrorMsg('Cannot filter Gigs')
-            // }
+            try {
+                this.$store.dispatch({ type: 'filterGigs', ...filterBy })
+            }
+            catch {
+                console.log(err)
+                showErrorMsg('Cannot filter Gigs')
+            }
 
         },
 
@@ -81,7 +76,7 @@ export default {
                 gig = { ...gig }
                 gig.price = +prompt('New price?', gig.price)
                 await this.$store.dispatch(getActionUpdateGig(gig))
-                showSuccessMsg('Gig updated')
+                // showSuccessMsg('Gig updated')
 
             } catch (err) {
                 console.log(err)
@@ -104,9 +99,6 @@ export default {
     components: {
         GigFilter,
         GigList,
-
     }
-
-
 }
 </script>

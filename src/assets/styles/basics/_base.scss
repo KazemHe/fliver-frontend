@@ -32,7 +32,9 @@ h6 {
 }
 
 
-section, main, footer {
+section,
+main,
+footer {
     // padding: 5px;
 }
 
@@ -46,7 +48,7 @@ p {
     // max-width: 40ch;
 }
 
-span{
+span {
     font-family: macan-regular;
 }
 
@@ -60,9 +62,10 @@ a:hover {
     text-decoration: underline;
 }
 
-li{
+li {
     font-family: macan-regular;
 }
+
 ul {
     font-family: macan-regular;
     list-style: none;
@@ -73,6 +76,11 @@ ul {
 .green {
     box-shadow: 0 rem(-4px) #1dbf73 inset;
 }
-.no-green{
-    box-shadow:none;
+
+.no-green {
+    box-shadow: none;
+}
+
+button {
+    cursor: pointer;
 }

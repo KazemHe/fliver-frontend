@@ -1,7 +1,7 @@
 <template>
   <div class="join-modal">
     <p>{{ msg }}</p>
-<!-- 
+    <!-- 
     <div v-if="loggedinUser">
       <h3>
         Loggedin User:
@@ -14,7 +14,7 @@
       <form @submit.prevent="doLogin" v-if="signin" class="login-form">
         <h2>Sign In to Winner</h2>
         <input type="text" v-model="loginCred.username" placeholder="User name" />
-        <input type="text" v-model="loginCred.password" placeholder="Password" />
+        <input type="password" v-model="loginCred.password" placeholder="Password" />
         <button>Login</button>
       </form>
 
@@ -24,9 +24,18 @@
         <input type="text" v-model="signupCred.fullname" placeholder="Your full name" />
         <input type="text" v-model="signupCred.username" placeholder="Username" />
         <input type="password" v-model="signupCred.password" placeholder="Password" />
-        <button>Continue</button>
-      </form>
-    </div>
+        <div>
+          <div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+  <button>Continue</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <button @click="loginWithFacebook">Login with Facebook</button>
   </div>
 </template>
 
@@ -39,7 +48,7 @@ export default {
     return {
       hideModal: false,
       msg: '',
-      loginCred: { username: '', password: '' },
+      loginCred: { username: 'kazem', password: '111' },
       signupCred: { username: '', password: '', fullname: '', imgUrl: '' },
     }
   },
@@ -87,6 +96,32 @@ export default {
         this.msg = 'Failed to remove user'
       }
     },
+    loginWithFacebook() {
+      // Initialize the Facebook SDK
+      FB.init({
+        appId: 'YOUR_APP_ID',
+        cookie: true,
+        xfbml: true,
+        version: 'v11.0'
+      });
+
+      // Trigger the Facebook login flow
+      FB.login(response => {
+        if (response.authResponse) {
+          // User is logged in
+          const accessToken = response.authResponse.accessToken;
+
+          // Use the access token to retrieve the user's information
+          FB.api('/me', { fields: 'name,email' }, userData => {
+            // Handle the user's data
+            console.log(userData);
+          });
+        } else {
+          // User cancelled login or did not fully authorize
+          console.log('User cancelled login or did not fully authorize.');
+        }
+      });
+    }
   },
   created() {
     this.loadUsers()
