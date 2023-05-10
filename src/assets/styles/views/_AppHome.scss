@@ -1,5 +1,5 @@
 .hero-container {
-    background-image: url('https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049983/bg-hero-1-1792-x1.png');
+    // background-image: url('https://fiverr-res.cloudinary.com/image/upload/q_auto,f_auto/v1/attachments/generic_asset/asset/bb5958e41c91bb37f4afe2a318b71599-1599344049983/bg-hero-1-1792-x1.png');
     background-size: cover;
     background-repeat: no-repeat;
     transition: 1s;
@@ -308,12 +308,6 @@
     .marketplace-svg {
         display: flex;
         flex-wrap: wrap;
-        // display: grid;
-        // grid-template-columns: repeat(2, 1fr);
-        // justify-items: center;
-        // gap: 2.3125rem;
-        // padding-inline-start: rem(20px);
-        // padding-inline-end: rem(20px);
     }
 
     .marketplace-title {
@@ -370,6 +364,11 @@
 }
 
 @media only screen and (max-width: 600px) {
+
+    .hero-container {
+        background-image: none !important;
+        background-color: #1a1b1d;
+    }
 
     .hero-search-container {
         margin-top: 84px;
@@ -434,7 +433,7 @@
     }
 
     .marketplace-container {
-        .marketplace-title{
+        .marketplace-title {
             font-size: 30px;
         }
 
@@ -444,6 +443,7 @@
             justify-items: center;
         }
     }
+
     .popular-container {
         padding: 18px;
     }
@@ -463,6 +463,7 @@
             justify-content: space-between;
         }
     }
+
     .popular-container {
         padding: 18px;
     }

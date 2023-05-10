@@ -1,6 +1,6 @@
 <template>
-  <section class="hero-container main-container home text-center full"
-    :style="{ 'background-image': `url(${heroImgs[currIdx].img})` }">
+  <section :style="{ 'background-image': `url(${heroImgs[currIdx].img})` }"
+   class="hero-container main-container home text-center full">
 
     <div class="hero-search-container main-container ">
       <h1>Find the perfect<span>freelance</span> services for your business</h1>
@@ -250,10 +250,10 @@ export default {
   },
   computed: {},
   created() {
-    setInterval(() => {
-      this.currIdx++
-      if (this.currIdx === this.heroImgs.length) this.currIdx = 0
-    }, 5000)
+    // setInterval(() => {
+    //   this.currIdx++
+    //   if (this.currIdx === this.heroImgs.length) this.currIdx = 0
+    // }, 5000)
   },
   methods: {
     getSvg(iconName) {
