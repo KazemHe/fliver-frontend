@@ -24,23 +24,21 @@
         <input type="text" v-model="signupCred.fullname" placeholder="Your full name" />
         <input type="text" v-model="signupCred.username" placeholder="Username" />
         <input type="password" v-model="signupCred.password" placeholder="Password" />
-        <div>
-          <div
-  class="fb-like"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
-  <button>Continue</button>
+    
+          <div class="fb-like" data-share="true" data-width="450" data-show-faces="true">
+            <button>Continue</button>
+    
         </div>
-      </div>
-    </form>
-  </div>
-  <button @click="loginWithFacebook">Login with Facebook</button>
+      </form>
+    </div>
+ 
   </div>
 </template>
 
 <script>
 import ImgUploader from '../cmps/ImgUploader.vue'
+import axios from 'axios';
+
 export default {
   props: ['join', 'signin'],
   name: 'login-signup',
@@ -96,32 +94,10 @@ export default {
         this.msg = 'Failed to remove user'
       }
     },
-    loginWithFacebook() {
-      // Initialize the Facebook SDK
-      FB.init({
-        appId: 'YOUR_APP_ID',
-        cookie: true,
-        xfbml: true,
-        version: 'v11.0'
-      });
 
-      // Trigger the Facebook login flow
-      FB.login(response => {
-        if (response.authResponse) {
-          // User is logged in
-          const accessToken = response.authResponse.accessToken;
 
-          // Use the access token to retrieve the user's information
-          FB.api('/me', { fields: 'name,email' }, userData => {
-            // Handle the user's data
-            console.log(userData);
-          });
-        } else {
-          // User cancelled login or did not fully authorize
-          console.log('User cancelled login or did not fully authorize.');
-        }
-      });
-    }
+  
+
   },
   created() {
     this.loadUsers()
@@ -131,3 +107,5 @@ export default {
   }
 }
 </script>
+
+
