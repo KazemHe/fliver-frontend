@@ -154,8 +154,8 @@
     // background-color: $clr2;// new color
     border-top: rem(1px) solid $clr-4;
     border-bottom: rem(1px) solid $clr-4;
-    transition:  .5s ease;
-    opacity:0;
+    transition: .5s ease;
+    opacity: 0;
     height: 0;
 }
 
@@ -212,7 +212,7 @@
     .subheader {
         // display: block;
         // transition: .25s ease;
-        height:auto;
+        height: auto;
         opacity: 1;
     }
 }
@@ -325,38 +325,39 @@ div.join-modal {
 }
 
 @media only screen and (max-width: 600px) {
-    .main-header header {
-        .mobile-header {
-            position: sticky;
-        }
 
-        padding: 0;
-        // position: fixed;
-        z-index: 200;
+    .main-header {
+
         background-color: $clr2;
+        border-bottom: 1px solid rgb(211, 209, 209);
 
-        .menu-bar {
-            cursor: pointer;
-            display: block;
-            margin-left: 20px;
-        }
+        header {
 
-        .logo {
-            margin-left: 96px;
-            text-align: center;
-            color: $clr5;
-        }
+            .mobile-header {
+                position: sticky;
+            }
 
-        .header-links {
-            display: none;
+            padding: 0;
+            z-index: 200;
+            // background-color: $clr2;
+
+            .menu-bar {
+                cursor: pointer;
+                display: block;
+                margin-left: 20px;
+            }
+
+            .logo {
+                margin-left: 96px;
+                text-align: center;
+                color: $clr5;
+            }
+
+            .header-links {
+                display: none;
+            }
         }
     }
-
-    // .first-expansion {
-    //     >* {
-    //         display: none;
-    //     }
-    // }
 
     .second-expansion {
         header .search-container {
