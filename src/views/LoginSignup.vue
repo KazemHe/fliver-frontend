@@ -1,7 +1,7 @@
 <template>
   <div class="join-modal">
     <p>{{ msg }}</p>
-<!-- 
+    <!-- 
     <div v-if="loggedinUser">
       <h3>
         Loggedin User:
@@ -14,7 +14,7 @@
       <form @submit.prevent="doLogin" v-if="signin" class="login-form">
         <h2>Sign In to Winner</h2>
         <input type="text" v-model="loginCred.username" placeholder="User name" />
-        <input type="text" v-model="loginCred.password" placeholder="Password" />
+        <input type="password" v-model="loginCred.password" placeholder="Password" />
         <button>Login</button>
       </form>
 
@@ -24,14 +24,21 @@
         <input type="text" v-model="signupCred.fullname" placeholder="Your full name" />
         <input type="text" v-model="signupCred.username" placeholder="Username" />
         <input type="password" v-model="signupCred.password" placeholder="Password" />
-        <button>Continue</button>
+    
+          <div class="fb-like" data-share="true" data-width="450" data-show-faces="true">
+            <button>Continue</button>
+    
+        </div>
       </form>
     </div>
+ 
   </div>
 </template>
 
 <script>
 import ImgUploader from '../cmps/ImgUploader.vue'
+import axios from 'axios';
+
 export default {
   props: ['join', 'signin'],
   name: 'login-signup',
@@ -39,7 +46,7 @@ export default {
     return {
       hideModal: false,
       msg: '',
-      loginCred: { username: '', password: '' },
+      loginCred: { username: 'kazem', password: '111' },
       signupCred: { username: '', password: '', fullname: '', imgUrl: '' },
     }
   },
@@ -87,6 +94,10 @@ export default {
         this.msg = 'Failed to remove user'
       }
     },
+
+
+  
+
   },
   created() {
     this.loadUsers()
@@ -96,3 +107,5 @@ export default {
   }
 }
 </script>
+
+

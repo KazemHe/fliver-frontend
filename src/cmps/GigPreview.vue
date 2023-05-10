@@ -5,25 +5,20 @@
             <vueper-slide v-for="img in gig.images" :key="img" :image="img" />
         </vueper-slides>
 
-        <!-- <RouterLink :gig="gig" class="link" :to="'/gig/' + gig._id"><img class="main-img" :src="gig.imgUrl" />
-        </RouterLink> -->
-
         <div class="inner-seller">
-
             <img :src="gig.owner.imgUrl" class="owner-img" alt="">
             <div class="owner-previwe">
                 <div class="full-name">{{ gig.owner?.fullname }}</div>
                 <div>{{ gig.owner?.level }}</div>
             </div>
         </div>
-
         <RouterLink class="link" :to="'/gig/' + gig._id">
             <h1 class="preview-title">{{ gig.title }}</h1>
-
         </RouterLink>
         <div class="content-info">
             <div class="rating-wrapper"><span class="gig-rating ">
-                    <span class="svg" v-html="getSvg('goldStar')"></span></span>
+                    <span class="svg" v-html="getSvg('goldStar')"></span>
+                </span>
                 <span class="owner-rate">{{ ownerRate }}</span>
                 <span class="review-count">({{ this.numOfreviews }})</span>
             </div>
@@ -42,9 +37,6 @@
                 <i class="fa-solid fa-pencil"></i>
             </span>
         </div>
-
-        <!-- <div><span class="starting-at">starting at </span><span class="gig-price">US${{ gig.price }}</span></div> -->
-        <!-- <div @click="removeGig(gig._id)">x</div> -->
 
     </article>
 </template>
@@ -118,5 +110,5 @@ export default {
     emits: ['removeGig']
 }
 </script>
-<style  lang="scss"></style>
+
  

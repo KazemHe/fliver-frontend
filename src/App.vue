@@ -1,7 +1,7 @@
 <template>
   <section class="main-container">
     <AppHeader />
-    <RouterView class="min-height"/>
+    <RouterView />
     <UserMsg />
     <appFooter />
   </section>
@@ -35,9 +35,9 @@ export default {
 
 
 
-    socketService.on('user-is-watching', (msg) => {
-      showSuccessMsg(msg)
-    })
+    // socketService.on('user-is-watching', (msg) => {
+    //   showSuccessMsg(msg)
+    // })
     socketService.on('user-ordered-gig', (msg) => {
       showSuccessMsg(msg)
       this.isActiveDashboard = true

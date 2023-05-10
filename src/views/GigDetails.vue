@@ -638,16 +638,20 @@ export default {
         background: white;
         z-index: 4;
         border-radius: 50%;
-        right: -2.4em;
+        right: -2.1em;
         box-shadow: 0px 1px #b5b6ba;
+        opacity: 1;
+        width: 3.75rem;
+        height: 3.75rem;
 
         svg {
 
-            color: black;
+            color: rgb(54, 51, 51);
             display: block;
             height: 50px;
             width: 50px;
             opacity: 1;
+            stroke-width: 2.5px;
         }
 
     }
@@ -657,14 +661,19 @@ export default {
         z-index: 4;
         border-radius: 50%;
         box-shadow: 0px 1px #b5b6ba;
-        left: -2.44em;
+        left: -2.1em;
+        opacity: 1;
+        width: 3.75rem;
+        height: 3.75rem;
+        padding-left: 0.112em;
 
         svg {
-            color: black;
+            color:rgb(54, 51, 51);
             display: block;
             height: 50px;
             width: 50px;
             opacity: 1;
+            stroke-width: 2.5px;
         }
 
     }

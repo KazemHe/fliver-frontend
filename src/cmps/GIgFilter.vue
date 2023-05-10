@@ -10,8 +10,6 @@ import FloatingFilter from './FloatingFilter.vue'
 export default {
   props: ['gigs'],
 
-
-
   data() {
     return {
       category: 'ALL'
@@ -44,28 +42,3 @@ export default {
   }
 }
 </script>
-<style>
-.up-filter {
-  padding: 40px 0 0;
-  margin-bottom: 10px;
-  color: #222325;
-  font-size: 25px;
-  font-family: macan-regular;
-  font-weight: 700;
-  line-height: 36px;
-  padding: 8px 0;
-  text-transform: none !important;
-
-
-}
-
-.explore-title {
-  font-family: macan-regular;
-  font-weight: 700;
-  font-size: 2rem;
-}
-
-.up-filter h1 {
-  margin-top: 1rem;
-}
-</style>

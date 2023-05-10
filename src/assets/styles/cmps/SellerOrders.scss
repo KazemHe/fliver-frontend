@@ -388,6 +388,7 @@
 }
 
 .row {
+    padding-top: 10px;
     font-size: 16px;
     --x-gutter-y: 0;
     display: flex;
@@ -431,18 +432,25 @@
 
 }
 
-
+// .p-in-th:nth-child(1){
+//     text-align: initial
+// }
+// tr:nth-child(2){
+//     text-align: initial
+// }
 
 .mt-2 {
     margin-top: 0.5rem !important;
 }
 
 .mb-0 {
+    font-size: 20px;
     margin-bottom: 0 !important;
 }
 
 .text-sm {
-    font-size: 0.875rem !important;
+    vertical-align: -webkit-baseline-middle;
+    font-size: rem(17px)  !important;
 }
 
 .card-header:first-child {
@@ -555,6 +563,24 @@ td {
         font-size: 16px;
         font-family: macan-regular;
     }
+
+
+  
+
+}
+
+th:nth-child(1){
+    text-align: left
+}
+th:nth-child(2){
+text-align: left
+}
+td:nth-child(1){
+    text-align: left;
+}
+
+td:nth-child(2){
+    text-align: left;
 }
 
 .row {
@@ -566,3 +592,5 @@ td {
 tbody tr:nth-child(even) {
     background-color: #e0e4f54c;
 }
+
+

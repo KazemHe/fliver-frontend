@@ -1,5 +1,4 @@
 <template>
-
     <section class="gig-edit full">
         <form @submit.prevent="addGig">
             <div class="top-form flex column space-between"><label class="title"><span class="flex-column">Gig Title
@@ -33,6 +32,13 @@
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
                     </select>
                 </label>
                 <label class="price flex column">
@@ -41,15 +47,8 @@
                 </label>
             </div>
             <div class="images flex-column">
-                <!-- <p>Encourage buyers to choose your Gig by featuring avariety of your work.</p> -->
-                <!-- <section class="img-uploader"> -->
-                <!-- <label class="upload-container">Upload image</label> -->
-                <!-- <input type="file" accept="img/*" id="imgUpload">
-                        <label for="imgUpload">  -->
                 <ImgUploader class="img-uploader" @uploaded="onUploaded" />
-                <!-- </label> -->
                 <div class="upload-preview flex"></div>
-                <!-- </section> -->
             </div>
 
             <section class="confirm-add btns">
@@ -92,16 +91,11 @@ export default {
         async addGig() {
             console.log('saving gig')
             try {
-
-
                 const save = await this.$store.dispatch({ type: 'addGig', gig: this.gigToEdit })
-
                 showSuccessMsg('gig Added')
                 // this.gigToEdit = gigService.getEmptyGig()
                 this.$router.push('/user-profile')
-
             }
-
             catch {
                 showErrorMsg('Cannot add gig')
                 this.$router.push('/explore')
@@ -122,4 +116,3 @@ export default {
 }
 </script>
    
-<style></style>
