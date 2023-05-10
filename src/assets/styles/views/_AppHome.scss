@@ -259,6 +259,7 @@
             line-height: 140%;
             font-weight: 700;
             color: $clr5;
+            margin-bottom: 6px;
         }
 
         p {
@@ -433,10 +434,18 @@
     }
 
     .marketplace-container {
+        .marketplace-title{
+            font-size: 30px;
+        }
+
         .marketplace-svg {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
+            justify-items: center;
         }
+    }
+    .popular-container {
+        padding: 18px;
     }
 
 }
@@ -453,6 +462,9 @@
             display: flex;
             justify-content: space-between;
         }
+    }
+    .popular-container {
+        padding: 18px;
     }
 
     // .marketplace-container {

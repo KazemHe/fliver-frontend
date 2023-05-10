@@ -1,6 +1,6 @@
 <template>
-  <section class="hero-container main-container home text-center full" 
-           :style="{ 'background-image': `url(${heroImgs[currIdx].img})` }">
+  <section class="hero-container main-container home text-center full"
+    :style="{ 'background-image': `url(${heroImgs[currIdx].img})` }">
 
     <div class="hero-search-container main-container ">
       <h1>Find the perfect<span>freelance</span> services for your business</h1>
@@ -47,7 +47,8 @@
   <section class="popular-container">
     <h1 class="popular-title">Popular professional services</h1>
     <vueper-slides fixed-height="345px" :visible-slides="5" slide-multiple :gap="3" :slide-ratio="1 / 4"
-      :dragging-distance="200" :breakpoints="{ 800: { visibleSlides: 2, slideMultiple: 2 } }" class="no-shadow">
+      :dragging-distance="200" class="no-shadow"
+      :breakpoints="{ 700: { visibleSlides: 1, slideMultiple: 2 }, 1000: { visibleSlides: 3, slideMultiple: 2 }, 1500: { visibleSlides: 4, slideMultiple: 2 } }" >
       <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image" :title="slide.title"
         :content="slide.content" @click="popularFilter(slide.content)" class="popular-imgs" />
     </vueper-slides>
