@@ -259,7 +259,7 @@ export default {
       return (this.icon = svgServive.getGigSvg(iconName))
     },
     popularFilter(content) {
-      this.$router.push({ query: { subCategory: content }, path: '/explore' })
+      this.$router.push({ query: { category: content }, path: '/explore' })
     },
     search() {
       this.$router.push({ query: { title: this.userSearch }, path: '/explore' })
