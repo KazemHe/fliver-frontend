@@ -97,7 +97,11 @@ export default {
     color: white;
     background-color: #c43333;
     border-radius: 4px;
-}
+} 
+
+
+
+
 </style>
 
 

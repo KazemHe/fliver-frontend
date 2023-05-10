@@ -252,12 +252,7 @@
 }
 
 
-@media screen and (max-width: 650px) {
-    .dashboard .seller-orders .income-order-dashboard {
-        display: none;
 
-    }
-}
 
 @media screen and (max-width: 480px) {
     .dashboard {
@@ -594,3 +589,30 @@ tbody tr:nth-child(even) {
 }
 
 
+
+
+@media screen and (max-width: 650px) {
+    .dashboard .seller-orders .income-order-dashboard {
+        display: none;
+
+    }
+
+    .col-xl-3 {
+        flex: 0 0 auto;
+        width: 82%;
+        display: contents;
+    }
+
+    .row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 100%;
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .col-auto{
+        padding: .4rem;
+    }
+}
