@@ -250,10 +250,10 @@ export default {
   },
   computed: {},
   created() {
-    // setInterval(() => {
-    //   this.currIdx++
-    //   if (this.currIdx === this.heroImgs.length) this.currIdx = 0
-    // }, 5000)
+    setInterval(() => {
+      this.currIdx++
+      if (this.currIdx === this.heroImgs.length) this.currIdx = 0
+    }, 5000)
   },
   methods: {
     getSvg(iconName) {
