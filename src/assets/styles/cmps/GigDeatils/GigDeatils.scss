@@ -133,6 +133,7 @@ b {
     }
     .main-gig{
         width: 100%;
+        margin-right: 0;
     }
     .package-container{
         width: 99%;
@@ -152,9 +153,9 @@ b {
 
 @media only screen and (max-width: 440px){
     .gig-info{
-        width: 97vw;
+        width: 100%;
         padding: rem(12px);
-        padding-left: rem(19px);
+        // padding-left: rem(19px);
     }
 .seller-preview-short .text-container {
     height: 40px;
