@@ -41,7 +41,7 @@
 
             <section class="pic">
 
-                <vueper-slides ref="vueperslides1" :touchable="false" fade :autoplay="false" :bullets="false"
+                <vueper-slides  class="main-slide" ref="vueperslides1" :touchable="false" fade :autoplay="false" :bullets="false"
                     @slide="$refs.vueperslides2.goToSlide($event.currentSlide.index, { emit: false })" fixed-height="400px">
                     <vueper-slide v-for="(img, i) in gig.images" :key="i" :image="img">
                     </vueper-slide>
@@ -538,8 +538,8 @@ export default {
                     link.classList.remove('selected-link');
                 }
             });
-        }, 
-        { rootMargin: '-100% 0% -25% 0%' });
+        },
+            { rootMargin: '-100% 0% -25% 0%' });
 
         // observe each section
         const sections = Object.values(this.$refs).filter(ref => ref.getAttribute('ref') && ref.getAttribute('ref').startsWith('section-'));
@@ -634,6 +634,7 @@ export default {
 
 
 .gig-info {
+
     .vueperslides__arrow.vueperslides__arrow--next {
         background: white;
         z-index: 4;
@@ -668,7 +669,7 @@ export default {
         padding-left: 0.112em;
 
         svg {
-            color:rgb(54, 51, 51);
+            color: rgb(54, 51, 51);
             display: block;
             height: 50px;
             width: 50px;
@@ -696,6 +697,9 @@ export default {
 .vueperslides__parallax-wrapper {
     height: 50vh;
 }
+
+
+
 </style>
 
 

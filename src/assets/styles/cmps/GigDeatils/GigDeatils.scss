@@ -156,6 +156,7 @@ b {
         width: 100%;
         padding: rem(12px);
         // padding-left: rem(19px);
+        margin-right: 0;
     }
 .seller-preview-short .text-container {
     height: 40px;
@@ -164,6 +165,15 @@ b {
     .line{
         display: none;
     }
-}}
+}
+
+
+.pic {
+    >.vueperslides.main-slide {
+        height: 13em !important ;
+        padding: 1px;
+    }
+}
+}
 
 
