@@ -61,7 +61,7 @@ export const gigStore = {
                 context.commit({ type: 'setGigs', gigs })
                
             } catch (err) {
-                console.log('gigStore: Error in filtering', err)
+                console.error('gigStore: Error in filtering', err)
                 throw err
             }
         },
@@ -71,7 +71,7 @@ export const gigStore = {
                 context.commit(getActionAddGig(gig))
                 return gig
             } catch (err) {
-                console.log('gigStore: Error in addGig', err)
+                console.error('gigStore: Error in addGig', err)
                 throw err
             }
         },
@@ -81,7 +81,7 @@ export const gigStore = {
                 context.commit(getActionUpdateGig(gig))
                 return gig
             } catch (err) {
-                console.log('gigStore: Error in updateGig', err)
+                console.error('gigStore: Error in updateGig', err)
                 throw err
             }
         },
@@ -90,7 +90,7 @@ export const gigStore = {
                 const gigs = await gigService.query()
                 context.commit({ type: 'setGigs', gigs })
             } catch (err) {
-                console.log('gigStore: Error in loadGigs', err)
+                console.error('gigStore: Error in loadGigs', err)
                 throw err
             }
         },
@@ -100,7 +100,7 @@ export const gigStore = {
                 await gigService.remove(gigId)
                 context.commit(getActionRemoveGig(gigId))
             } catch (err) {
-                console.log('gigStore: Error in removeGig', err)
+                console.error('gigStore: Error in removeGig', err)
                 throw err
             }
         },
@@ -109,7 +109,7 @@ export const gigStore = {
                 const msg = await gigService.addGigMsg(gigId, txt)
                 context.commit({ type: 'addGigMsg', gigId, msg })
             } catch (err) {
-                console.log('gigStore: Error in addGigMsg', err)
+                console.error('gigStore: Error in addGigMsg', err)
                 throw err
             }
         },

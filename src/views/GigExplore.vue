@@ -39,7 +39,6 @@ export default {
 
         async setFilterBy(filterBy) {
 
-            console.log('filter by from explore', { ...filterBy })
             try {
                 this.$store.dispatch({ type: 'filterGigs', ...filterBy })
             }

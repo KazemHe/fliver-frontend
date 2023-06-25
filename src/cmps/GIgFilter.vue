@@ -19,12 +19,8 @@ export default {
   methods: {
 
     setFilterBy(filterBy) {
-
-      console.log('check the filter', { ...filterBy })
-
       if (filterBy.filterBy.category) this.category = filterBy.filterBy.category
       else this.category = 'ALL'
-
       this.$emit('setFilterBy', { ...filterBy })
     },
   },

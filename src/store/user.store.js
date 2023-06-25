@@ -36,16 +36,15 @@ export const userStore = {
     },
     actions: {
         async login({ commit }, { userCred }) {
-            console.log(userCred)
+
             try {
                 const user = await userService.login(userCred)
                 const localLoggedInUser = await userService.getLoggedinUser()
                 commit({ type: 'setLoggedinUser', user })
-                console.log('localLoggedInUser', localLoggedInUser)
                 socketService.login(localLoggedInUser)
                 return user
             } catch (err) {
-                console.log('userStore: Error in login', err)
+                console.error('userStore: Error in login', err)
                 throw err
             }
         },
@@ -55,7 +54,7 @@ export const userStore = {
                 commit({ type: 'setLoggedinUser', user })
                 return user
             } catch (err) {
-                console.log('userStore: Error in signup', err)
+                console.error('userStore: Error in signup', err)
                 throw err
             }
 
@@ -66,7 +65,7 @@ export const userStore = {
                 commit({ type: 'setLoggedinUser', user: null })
                 socketService.logout()
             } catch (err) {
-                console.log('userStore: Error in logout', err)
+                console.error('userStore: Error in logout', err)
                 throw err
             }
         },
@@ -76,7 +75,7 @@ export const userStore = {
                 const users = await userService.getUsers()
                 commit({ type: 'setUsers', users })
             } catch (err) {
-                console.log('userStore: Error in loadUsers', err)
+                console.error('userStore: Error in loadUsers', err)
                 throw err
             }
         },
@@ -86,7 +85,7 @@ export const userStore = {
                 commit({ type: 'setWatchedUser', user })
 
             } catch (err) {
-                console.log('userStore: Error in loadAndWatchUser', err)
+                console.error('userStore: Error in loadAndWatchUser', err)
                 throw err
             }
         },
@@ -95,7 +94,7 @@ export const userStore = {
                 await userService.remove(userId)
                 commit({ type: 'removeUser', userId })
             } catch (err) {
-                console.log('userStore: Error in removeUser', err)
+                console.error('userStore: Error in removeUser', err)
                 throw err
             }
         },
@@ -104,7 +103,7 @@ export const userStore = {
                 user = await userService.update(user)
                 commit({ type: 'setUser', user })
             } catch (err) {
-                console.log('userStore: Error in updateUser', err)
+                console.error('userStore: Error in updateUser', err)
                 throw err
             }
 
@@ -114,7 +113,7 @@ export const userStore = {
                 const score = await userService.changeScore(100)
                 commit({ type: 'setUserScore', score })
             } catch (err) {
-                console.log('userStore: Error in increaseScore', err)
+                console.error('userStore: Error in increaseScore', err)
                 throw err
             }
         },

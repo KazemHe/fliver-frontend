@@ -44,7 +44,6 @@ export default {
         },
         selectedTab(selected) {
             this.selected = selected
-            console.log(this.selected)
         },
         async removeGig(gigId) {
             try {
@@ -53,12 +52,11 @@ export default {
                 this.getUserGigs()
                 
             } catch (err) {
-                console.log(err)
+              console.error();(err)
                 showErrorMsg('Cannot remove gig')
             }
         },
         async updateGig(gig) {
-            console.log(gig)
             try {
                 gig = { ...gig }
                 this.$router.push(`gig/edit/${gig._id}`)
@@ -66,13 +64,12 @@ export default {
                 showSuccessMsg('Gig updated')
 
             } catch (err) {
-                console.log(err)
+                console.error(err)
                 showErrorMsg('Cannot update gig')
             }
         },
         getUserGigs() {
             this.userGigs = this.gigs.filter(gig => gig.owner._id === this.loggedInUser._id)
-            console.log(this.userGigs)
         }
     },
     created() {

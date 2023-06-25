@@ -11,7 +11,6 @@
 
 <script>
 import { showErrorMsg, showSuccessMsg } from '../services/event-bus.service'
-// import { gigService } from '../services/gig.service.local'
 import { gigService } from '../services/gig.service'
 import { getActionRemoveGig, getActionUpdateGig, getActionAddGigMsg } from '../store/gig.store'
 import GigPreview from '../cmps/GigPreview.vue'
@@ -41,7 +40,7 @@ export default {
                 showSuccessMsg('Gig added')
                 this.gigToAdd = gigService.getEmptyGig()
             } catch (err) {
-                console.log(err)
+                console.error(err)
                 showErrorMsg('Cannot add gig')
             }
         },
@@ -51,7 +50,7 @@ export default {
                 showSuccessMsg('Gig removed')
 
             } catch (err) {
-                console.log(err)
+                console.error(err)
                 showErrorMsg('Cannot remove gig')
             }
         },
@@ -63,7 +62,7 @@ export default {
                 showSuccessMsg('Gig updated')
 
             } catch (err) {
-                console.log(err)
+                console.error(err)
                 showErrorMsg('Cannot update gig')
             }
         },
@@ -72,13 +71,10 @@ export default {
                 await this.$store.dispatch(getActionAddGigMsg(gigId))
                 showSuccessMsg('Gig msg added')
             } catch (err) {
-                console.log(err)
+                console.error(err)
                 showErrorMsg('Cannot add gig msg')
             }
         },
-        printGigToConsole(gig) {
-            console.log('Gig msgs:', gig.msgs)
-        }
     },
 
     components: {

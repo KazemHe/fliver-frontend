@@ -65,14 +65,12 @@ export default {
         },
 
         removeGig(gigId) {
-            console.log(gigId)
             this.$emit('removeGig', gigId)
         },
         getSvg(iconName) {
             return (this.icon = svgServive.getGigSvg(iconName))
         },
         updateGig(gig) {
-            console.log(gig)
             this.$emit('updateGig', gig)
         },
 

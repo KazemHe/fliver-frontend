@@ -9,13 +9,11 @@ export const ordersStore = {
 
     getters: {
         buyerOrders({ orders }) {
-            console.log({ orders })
-            console.log(orders)
+
             const filteredOrders = orders.filter(
                 order => order.buyer._id === userStore.state.loggedinUser._id
 
             )
-            console.log('filteredOrders', filteredOrders);
             return filteredOrders
         },
 
@@ -24,14 +22,12 @@ export const ordersStore = {
             const filteredOrders = orders.filter(
                 order => order.seller._id === userStore.state.loggedinUser._id
             )
-            console.log('filteredOrders', filteredOrders);
+
             return filteredOrders
         },
     },
 
-    // orders({ orders }) {
-    //     return orders
-    // },
+
     mutations: {
         saveOrder(state, { order }) {
             console.log('order', order._id);
@@ -58,7 +54,7 @@ export const ordersStore = {
                 await orderService.remove(orderId)
                 context.commit({ type: 'removeOrder', orderId })
             } catch (err) {
-                console.log('orderStore: Error in removeOrder', err)
+                console.error('orderStore: Error in removeOrder', err)
                 throw err
             }
         },

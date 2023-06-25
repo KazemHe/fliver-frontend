@@ -31,12 +31,9 @@ export function showErrorMsg(txt) {
 
 
 export function emitToFilter(txt) {
-    console.log('im from event bus', txt)
     eventBus.emit('setFeltirBy', txt)
 }
 export function getFilterFrom(txt) {
-
-    console.log('got your event bus dude', txt)
     eventBus.on('setFeltirBy', txt)
 }
 

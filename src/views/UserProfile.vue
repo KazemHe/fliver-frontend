@@ -97,7 +97,7 @@ export default {
             this.selected = selected
             if(this.selected  === 'My gigs') this.$router.push('/user-profile')
             if(this.selected  === 'My orders') this.$router.push('/user-profile/user-order')
-            console.log(this.selected)
+
         },
         async removeGig(gigId) {
             try {
@@ -110,7 +110,7 @@ export default {
             }
         },
         async updateGig(gig) {
-            console.log(gig)
+
             try {
                 gig = { ...gig }
                 // gig.price = +prompt('New price?', gig.price)
