@@ -5,8 +5,7 @@ import { userService } from './user.service'
 import { store } from '../store/store'
 import { socketService } from './socket.service'
 
-// const ORDER_STORAGE_KEY = 'order'
-// const orderChannel = new BroadcastChannel('orderChannel')
+
 
 const ORDER_URL = 'order/'
 
